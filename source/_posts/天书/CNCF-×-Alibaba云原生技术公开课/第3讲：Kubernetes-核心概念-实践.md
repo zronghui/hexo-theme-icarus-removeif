@@ -6,6 +6,9 @@ uniqueId: '2020-02-28 09:23:25/"第3讲：Kubernetes 核心概念 实践".html'
 date: 2020-02-28 17:23:25
 thumbnail:
 categories:
+- 天书
+- CNCF-×-Alibaba云原生技术公开课
+toc: true
 tags:
 keywords:
 ---

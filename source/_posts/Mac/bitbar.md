@@ -6,6 +6,8 @@ uniqueId: '2020-02-28 05:20:11/"bitbar".html'
 date: 2020-02-28 13:20:11
 thumbnail:
 categories:
+- Mac
+toc: true
 tags:
 keywords:
 ---
