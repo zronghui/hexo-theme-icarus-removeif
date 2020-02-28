@@ -12,7 +12,9 @@ tags:
 
 <!--more-->
 
-[JSON Viewer Awesome - Chrome 网上应用店](https://chrome.google.com/webstore/detail/json-viewer-awesome/iemadiahhbebdklepanmkjenfdebfpfe/related)
+[dbohdan/structured-text-tools: A list of command line tools for manipulating structured text data](https://github.com/dbohdan/structured-text-tools)
+
+
 [dandavison/delta: A syntax-highlighter for git and diff output](https://github.com/dandavison/delta)
 [wolverinn/Waking-Up: 计算机基础（计算机网络/操作系统/数据库/Git...）面试问题全面总结](https://github.com/wolverinn/Waking-Up)
 [jackzhenguo/python-small-examples](https://github.com/jackzhenguo/python-small-examples)
