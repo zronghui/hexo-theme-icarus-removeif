@@ -400,3 +400,21 @@ Barsoom lets you hide any third-party icon in your menu bar. You can also rearra
 [HOME | Superbar](https://www.superbar.app/)
 [Raccoon - 从 Play 商店下载 Android 应用安装文件 .apk - 小众软件](https://www.appinn.com/raccoon-downloadapk/)
 [Tern - 字幕组机翻小助手：自动翻译英文字幕为中英双语字幕[Win/macOS] - 小众软件](https://www.appinn.com/tern-subtitle-file-translator/)
+
+
+
+## menu bar 自定义
+
+### textbar 等待破解
+
+[TextBar：彻底玩转你的 Menubar – Mac玩儿法](https://www.waerfa.com/textbar)
+[Today Scripts：打造个性化 Yosemite 通知栏插件 – Mac玩儿法](https://www.waerfa.com/today-scripts-for-yosemite-today-view)
+[[Mac] TextBar : 强大的菜单栏自定义内容显示工具 - Mac电报](https://www.macsofter.com/5561.html)
+[TextBar - Mac App](http://richsomerfield.com/apps/textbar/)
+[richie5um/TextBar-Recipes: TextBar Recipes](https://github.com/richie5um/TextBar-Recipes)
+
+### Bitbar 
+
+[监控疫情、看天气、查汇率…… Mac 菜单栏「万能」工具箱：BitBar - 少数派](https://sspai.com/post/58683)
+[Releases · matryer/bitbar](https://github.com/matryer/bitbar/releases)
+[BitBar - Put anything in your Mac OS X menu bar](https://getbitbar.com/)

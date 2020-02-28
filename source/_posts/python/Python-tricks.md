@@ -13,6 +13,10 @@ tags:
 
 <!--more-->
 
+# 02-28
+
+[Personalize your python prompt | Arpit Bhayani](https://arpitbhayani.me/blogs/python-prompts)
+
 # 02-14
 
 [Debugging in Python — A cakewalk with pdb - Python Features - Medium](https://medium.com/python-features/debugging-in-python-a-cakewalk-with-pdb-cd748ca62ee7)
