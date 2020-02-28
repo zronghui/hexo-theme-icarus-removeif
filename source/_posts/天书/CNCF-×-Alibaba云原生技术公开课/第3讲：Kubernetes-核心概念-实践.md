@@ -8,7 +8,6 @@ thumbnail:
 categories:
 - 天书
 - CNCF-×-Alibaba云原生技术公开课
-toc: true
 tags:
 keywords:
 ---
