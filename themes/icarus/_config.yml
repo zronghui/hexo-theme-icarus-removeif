@@ -20,7 +20,7 @@ head:
         type: blog
         # Page URL (og:url) (optional)
         # You should leave this blank for most of the time
-        url: https://removeif.github.io/
+        url: https://zronghui.github.io/
         # Page cover (og:image) (optional) Default to the Open Graph image or thumbnail of the page
         # You should leave this blank for most of the time
         image: https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg # https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg
@@ -56,7 +56,7 @@ head:
         description: # java,技术分享,后端开发,支付框架,数据接口,算法,leetcode
         # Page URL (optional)
         # You should leave this blank for most of the time
-        url: https://removeif.github.io/
+        url: https://zronghui.github.io/
         # Page author (article:author) (optional)
         # You should leave this blank for most of the time
         author: removeif
@@ -210,7 +210,7 @@ widgets:
 #                 url: 'mailto:removeif@163.com'
 #             Next:
 #                 icon: fab fa-dribbble
-#                 url: 'https://removeif.github.io/remove.io'
+#                 url: 'https://zronghui.github.io/remove.io'
             RSS:
                 icon: fas fa-rss
                 url: /atom.xml

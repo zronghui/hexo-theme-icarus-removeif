@@ -5,10 +5,10 @@ date: {{ date }}
 categories: 
 toc: true
 tags:
-recommend: 1
 keywords:
 uniqueId: {{ date }}/{{ title }}.html
 #以下为文章加密信息
+top: -1
 encrypt: true
 password: 1 #此处为文章密码
 abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看呢！

@@ -6,6 +6,7 @@ categories:
 toc: true
 tags:
 - tricks
+abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看呢！
 ---
 
 [toc]

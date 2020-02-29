@@ -1,7 +1,6 @@
 ---
 title: bitbar
 toc: true
-recommend: 1
 uniqueId: '2020-02-28 05:20:11/"bitbar".html'
 date: 2020-02-28 13:20:11
 thumbnail:
@@ -10,6 +9,7 @@ categories:
 tags:
 keywords:
 #以下为文章加密信息
+top: -1
 encrypt: true
 password: 1 #此处为文章密码
 abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看呢！
