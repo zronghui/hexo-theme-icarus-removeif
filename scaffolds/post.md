@@ -9,3 +9,7 @@ recommend: 1
 keywords:
 uniqueId: {{ date }}/{{ title }}.html
 ---
+
+[TOC]
+
+<!--more-->
