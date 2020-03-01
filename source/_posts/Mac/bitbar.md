@@ -51,13 +51,3 @@ AQI Detail... | href=http://aqicn.org/city/luan/
 [Aria2 on BitBar - Put anything in your Mac OS X menu bar](https://getbitbar.com/plugins/Network/aria2.3s.py)
 [ping on BitBar - Put anything in your Mac OS X menu bar](https://getbitbar.com/plugins/Network/ping.10s.sh)
 
-
-
-[weather on BitBar - Put anything in your Mac OS X menu bar](https://getbitbar.com/plugins/Weather/weather.15m.sh)
-
-
-
-获取空气质量 API：
-
-https://api.waqi.info/feed/beijing/?token=993bbeae0ace031d098a8f02a873abff8e2efd43
-

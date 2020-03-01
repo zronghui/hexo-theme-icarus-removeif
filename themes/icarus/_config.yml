@@ -1,12 +1,15 @@
 # Version of the configuration file
 version: 3.0.0
 # Path or URL to the website's logo
+# 首页旁边的 zronghui logo
+# 备用地址： ![8rwXST6iPv4EKVj](https://i.loli.net/2020/03/01/8rwXST6iPv4EKVj.jpg)
 logo: https://www.wntool.com/logo/image.php?output=png?fsize=35&font=Snow.ttf&text=zronghui&mirror=No&color=9933FF&vcolor=3333FF&bgcolor=FFFFFF&alpha=yes&output=png&spacing=5&shadow=no&transparent=yes&icon=no&iconic=&top_spacing=5&left_spacing=6&icon_size=48
 #https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191121115040.png
 # Page metadata configurations
+language: zh-CN
 head:
     # URL or path to the website's icon
-    favicon: https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png
+    favicon: https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png #https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png
     # Canonical URL of the current page
     canonical_url:
     # Open Graph metadata
@@ -23,7 +26,7 @@ head:
         url: https://zronghui.github.io/
         # Page cover (og:image) (optional) Default to the Open Graph image or thumbnail of the page
         # You should leave this blank for most of the time
-        image: https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg # https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg
+        image: https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg # 头像
         # Site name (og:site_name) (optional)
         # You should leave this blank for most of the time
         site_name: zronghui
@@ -62,7 +65,7 @@ head:
         author: removeif
         # Page images (optional) Default to the Open Graph image or thumbnail of the page
         # You should leave this blank for most of the time
-        image: https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg
+        image: https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg
     # Additional HTML meta tags in an array
     meta:
         # Meta tag specified in <attribute>=<value> style
@@ -89,7 +92,7 @@ navbar:
     links:
         Download on GitHub:
             icon: fab fa-github
-            url: 'https://github.com/removeif'
+            url: 'https://github.com/zronghui'
 # Page footer configurations
 footer:
     # Links to be shown on the right of the footer section
@@ -102,7 +105,7 @@ footer:
             url: 'https://creativecommons.org/licenses/by/4.0/'
         Download on GitHub:
             icon: fab fa-github
-            url: 'https://github.com/removeif'
+            url: 'https://github.com/zronghui'
 # Article related configurations
 article:
     # Code highlight settings
@@ -217,9 +220,9 @@ widgets:
 
     # Recommendation links widget configurations
     # Table of contents widget configurations
-    -
-        position: right
-        type: latest_comment
+#     -
+#         position: right
+#         type: latest_comment
 #    -
 #        # Where should the widget be placed, left sidebar or right sidebar
 #        position: left
@@ -256,7 +259,7 @@ widgets:
         # Hint text under the email input
         description: 输入邮箱开始订阅，更博后邮件通知！
         # Feedburner ID
-        feedburner_id: removeifFeedsId
+        feedburner_id: zronghui
     # Google AdSense unit configurations
 #    -
 #        # Where should the widget be placed, left sidebar or right sidebar

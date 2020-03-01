@@ -385,3 +385,10 @@ baidu_analytics: 上面步骤中记录的百度统计里用户的key值。
 gittalk 好看，livere 加载快
 
 [(...) Gitalk评论插件使用教程 - 个人文章 - SegmentFault 思否](https://segmentfault.com/a/1190000018072952)
+
+
+
+## 邮件订阅
+
+[Publicize :: Email Subscriptions](https://feedburner.google.com/fb/a/emailsyndicationSubmit)
+[How To Set Up RSS Feed For WordPress Using Feedburner](https://www.shoutmeloud.com/how-to-burn-your-feed-using-feedburner.html)
