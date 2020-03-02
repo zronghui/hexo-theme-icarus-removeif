@@ -392,3 +392,9 @@ gittalk 好看，livere 加载快
 
 [Publicize :: Email Subscriptions](https://feedburner.google.com/fb/a/emailsyndicationSubmit)
 [How To Set Up RSS Feed For WordPress Using Feedburner](https://www.shoutmeloud.com/how-to-burn-your-feed-using-feedburner.html)
+
+
+
+
+
+[ico图标制作,在线Favicon.ico制作转换工具,实时预览ico生成效果,ico图标下载](http://cn.faviconico.org/favicon)

@@ -9,7 +9,7 @@ logo: https://www.wntool.com/logo/image.php?output=png?fsize=35&font=Snow.ttf&te
 language: zh-CN
 head:
     # URL or path to the website's icon
-    favicon: https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png #https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png
+    favicon: https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png
     # Canonical URL of the current page
     canonical_url:
     # Open Graph metadata
