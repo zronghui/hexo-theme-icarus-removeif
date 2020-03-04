@@ -26,3 +26,34 @@ keywords:
 
 [Aerial 1.8.1 for Mac Apple TV 全套屏幕保护移植](https://www.macwk.com/soft/aerial)
 [Loopback 2.1.3 破解版 for Mac 非常强大的音频传递工具](https://www.macwk.com/soft/loopback)
+
+[Wifiner 1.3.189 中文破解版 for Mac WIFI信号盲区死角检测工具](https://www.macwk.com/soft/wifiner)
+[Capo 3.8.1 中文破解版 for Mac 音乐爱好者必备工具](https://www.macwk.com/soft/capo)
+[DoYourData AppUninser Professional 5.1 破解版 for Mac 应用软件卸载工具](https://www.macwk.com/soft/doyourdata-appuninser)
+[Playr 2.4.1 中文破解版 for Mac 小巧的全能Mac视频播放器](https://www.macwk.com/soft/playr)
+[Anytrans for Android 7.3.0.1124 破解版 for Mac mac安卓手机管理](https://www.macwk.com/soft/anytrans-for-android)
+[Lingon X 7.4.3 破解版 for Mac 应用/脚本自动化运行工具](https://www.macwk.com/soft/lingon-x)
+[Infinity Dashboard 1.4.9 破解版 for Mac 完全自定义的菜单栏仪表盘](https://www.macwk.com/soft/infinity-dashboard)
+[News Explorer 1.9.7 破解版 for Mac 专注的RSS阅读订阅工具](https://www.macwk.com/soft/news-explorer)
+[迅雷 6.6.6 中文破解版 for Mac 免登录即享VIP不限速](https://www.macwk.com/soft/thunder)
+[Weather Guru 2.3.6 破解版 for Mac 菜单栏天气预报小工具](https://www.macwk.com/soft/weather-guru)
+[InVision Studio 1.14.0 中文破解版 for Mac 全球最赞的界面设计工具](https://www.macwk.com/soft/invision-studio)
+[ApowerREC 1.2.7.10 中文破解版 for Mac 专业的mac屏幕录像工具](https://www.macwk.com/soft/apowerrec)
+[Canary Mail 2.21 中文破解版 for Mac 很漂亮的邮箱客户端](https://www.macwk.com/soft/canary-mail)
+
+
+
+[Battery Stats for AirPods 1.0 for Mac AirPods电量百分比及低电量提醒](https://www.macwk.com/soft/battery-stats-for-airpods)
+[macOS小助手 0.5 for Mac mac常用命令集合](https://www.macwk.com/soft/macos-assistant-macwk)
+[Cascadea 1.4.5 破解版 for Mac 修改任意网站的外观样式](https://www.macwk.com/soft/cascadea)
+[QQ小助手 3.3 for Mac QQ消息防撤回及抢红包神器](https://www.macwk.com/soft/qq-extension)
+[Folder Tidy 2.7.5 破解版 for Mac 将杂乱的文件进行分组整理](https://www.macwk.com/soft/folder-tidy)
+
+
+
+[MacWk - 精品mac软件下载](https://www.macwk.com/soft/all/p50)
+
+
+
+
+
