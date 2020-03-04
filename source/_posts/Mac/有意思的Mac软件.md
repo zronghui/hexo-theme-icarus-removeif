@@ -24,3 +24,5 @@ keywords:
 
 [Buttercup 1.19.0 for Mac 可跨平台同步的密码管理器](https://www.macwk.com/soft/buttercup)
 
+[Aerial 1.8.1 for Mac Apple TV 全套屏幕保护移植](https://www.macwk.com/soft/aerial)
+[Loopback 2.1.3 破解版 for Mac 非常强大的音频传递工具](https://www.macwk.com/soft/loopback)

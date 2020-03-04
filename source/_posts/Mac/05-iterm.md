@@ -1,8 +1,8 @@
 ---
-title: iterm 主题配置
+title: iterm
 toc: true
 recommend: 1
-uniqueId: '2020-03-03 08:25:46/"iterm 主题配置".html'
+uniqueId: '2020-03-03 08:25:46/"iterm".html'
 date: 2020-03-03 16:25:46
 thumbnail:
 categories:
@@ -15,7 +15,9 @@ keywords:
 
 <!--more-->
 
-<img src="https://i.loli.net/2020/03/03/CRcwrUEsTIxiM4F.png" alt="CRcwrUEsTIxiM4F" style="zoom:33%;" />
+#  主题配置
+
+<img src="https://i.loli.net/2020/03/04/9ckelYunJqL6m35.png" alt="9ckelYunJqL6m35" style="zoom:33%;" />
 
 
 
@@ -42,7 +44,7 @@ gem install colorls
 
 
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200303163117796.png" alt="image-20200303163117796" style="zoom: 33%;" />
+<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200303184052699.png" alt="image-20200303184052699" style="zoom:33%;" />
 
 
 
@@ -56,18 +58,17 @@ brew install ruby
 brew link --overwrite ruby
 # 你还可以使用rbenv在计算机上安装和运行不同版本的Ruby brew install rbenv
 
-# todo colorls 安装失败
 gem install colorls
+# 问题，gem/ruby 安装的 colorls 命令找不到
+colorls
+# zsh: command not found: colorls
+gem which colorls
+# /usr/local/lib/ruby/gems/2.6.0/gems/colorls-1.3.3/lib/colorls.rb
+/usr/local/lib/ruby/gems/2.6.0/bin/colorls
 
-
-sudo gem uninstall colorls
-gem install colorls
-
-sudo gem uninstall colorls
-gem install rubygems-update
-update_rubygems
-gem update --system
-gem install colorls
+vim ~/.zshrc
+export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+vim ~/.alias
 ```
 
 
@@ -75,7 +76,7 @@ gem install colorls
 ## powerlevel9k --zsh 主题安装
 
 ```shell
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
 # You then need to select this theme in your ~/.zshrc:
 ZSH_THEME="powerlevel9k/powerlevel9k"
 ```
@@ -139,23 +140,6 @@ else
 	echo
 	echo
 fi
-
-# -------------------------------- FUNCTIONS ---------------------------------
-function lazygit() {
-	git status .
-	git add .
-	git commit -m "$1"
-	git push origin HEAD
-}
-
-function find() {
-	if [ $# = 1 ];
-	then
-		command find . -iname "*$@*"
-	else
-		command find "$@"
-	fi
-}
 ```
 
 
@@ -189,3 +173,52 @@ highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=N
 ## 系统默认终端美化
 
 [10 个 Terminal 主题，让你的 macOS 终端更好看 - 少数派](https://sspai.com/post/53008)
+
+
+
+# iTerm2使用技巧
+
+## 启动一个连接到远程server的终端
+
+选择“Preferences->Profiles”，新增一个profile，并设置启动的快捷键和command命令
+
+## 分屏
+
+使用快捷键“cmd+d”实现左右分屏，快捷键“^+cmd+d”实现上下分屏, 效果如图：
+
+<img src="https://i.loli.net/2020/03/03/NH94jOBeYg8GZmk.jpg" alt="NH94jOBeYg8GZmk" style="zoom:33%;" />
+
+
+
+### 搜索及文本复制
+
+使用“cmd+f”可以调出搜索框进行文本搜索，然后有个很奇妙的快捷键“**tab**”键，使用它后会自动高亮当前文本后面的内容。最后按enter键将高亮文本复制到剪切板上。这几个按键连用代替了使用鼠标复制文本内容！
+
+<img src="https://i.loli.net/2020/03/03/gSTdjsQw7r1UPnv.jpg" alt="gSTdjsQw7r1UPnv" style="zoom:50%;" />
+
+
+
+## 没啥用的-显示当前行、右侧显示时间线、自动命令补全
+
+<img src="https://i.loli.net/2020/03/03/M8uQ3JlOIdczbSe.png" alt="M8uQ3JlOIdczbSe" style="zoom:33%;" />
+
+## 调出复制过的文本历史
+
+快捷键：“^+cmd+h”。
+
+## 按键回放
+
+这个简直功能太强大了！它能回放一段时间内的你敲过的所有字符。
+快捷键：“cmd+alt+b”，如图会弹出一个进度条，按左右键就可以实现按键回放了。
+
+
+
+
+
+## mac iterm2 以单词为单位移动的快捷键设置
+
+[Mac下iTerm2光标按照单词快速移动设置_运维_skyyws的博客-CSDN博客](https://blog.csdn.net/skyyws/article/details/78480132?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
+
+<img src="https://i.loli.net/2020/02/26/1aVChvexXkQbPI8.png" alt="1aVChvexXkQbPI8" style="zoom: 33%;" />
+
+<img src="https://i.loli.net/2020/02/26/Y5PywSNJf1bHWrQ.png" alt="Y5PywSNJf1bHWrQ" style="zoom:33%;" />
