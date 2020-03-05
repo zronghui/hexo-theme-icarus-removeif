@@ -17,6 +17,18 @@ keywords:
 
 
 
+## 撤销 push 到 GitHub 的 commit
+
+[git push提交成功后如何撤销回退 - 掘金](https://juejin.im/post/5a4c274851882560b652b23a)
+
+```shell
+git reset --hard commit-id
+git push -u origion master -f
+# commit id 可通过 git reflog 查看
+```
+
+
+
 
 
 ## Git-本地已有仓库推送到远程

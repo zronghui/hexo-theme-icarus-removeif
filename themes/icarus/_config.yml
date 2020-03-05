@@ -133,12 +133,12 @@ donate:
         # Donation entry name
         type: alipay
         # Qrcode image URL
-        qrcode: 'https://i.loli.net/2020/02/27/4ERraZoP1DIiegj.jpg'
+        qrcode: 'https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png'
     -
         # Donation entry name
         type: wechat
         # Qrcode image URL
-        qrcode: 'https://i.loli.net/2020/02/27/BlAgi9xYnve4wFj.png'
+        qrcode: 'https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png'
 #    -
 #    -
 #        type: patreon
