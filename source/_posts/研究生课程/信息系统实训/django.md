@@ -404,15 +404,413 @@ python3 manage.py runserver 0.0.0.0:8000
 
 
 
+## 7.static
+
+[static test · zronghui/helloDjango@fc19af7](https://github.com/zronghui/helloDjango/commit/fc19af71caf28b5d0130e621bd5766c42ee3c047?diff=unified)
+
+article/templates/staticTest.html
+
+```html
+{% load static %}
+<img src="{% static "template.jpg" %}" alt="My image">
+```
+
+helloDjango/settings.py
+
+```python
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+```
 
 
 
+## 8.去除模板中的硬编码 URL
+
+[编写你的第一个 Django 应用，第 3 部分 | Django 文档 | Django](https://docs.djangoproject.com/zh-hans/3.0/intro/tutorial03/#removing-hardcoded-urls-in-templates)
+
+## 9.自定义Error页面
 
 
 
-## 分页
+[django系列六：自定义Error页面 - 知乎](https://zhuanlan.zhihu.com/p/31433527)
+
+[No-Github/404-I-remember: 收集各种网站的404页面](https://github.com/No-Github/404-I-remember)
+
+[500 Error Page HTML Templates](https://freefrontend.com/500-error-page-html-templates/)
+[39 HTML 404 Page Templates](https://freefrontend.com/html-css-404-page-templates/)
+[25 HTML Funny 404 Pages](https://freefrontend.com/html-funny-404-pages/)
+
+### 404
+
+采用[404 - 先知社区](https://xz.aliyun.com/404)页面源代码
+
+代码：
+
+[404 · zronghui/helloDjango@cb21c95](https://github.com/zronghui/helloDjango/commit/cb21c95ff8c38385318b094e4a8f0c49228ef455)
+
+article/templates/error_404.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>页面找不到了(´･ω･`)</title>
+    <link rel="stylesheet" href="https://xz.aliyun.com/static/css/IE.css">
+</head>
+<body>
+  <div class="demo">
+    <p><span>4</span><span>0</span><span>4</span></p>
+    <p>页面找不到了(´･ω･`)</p>
+      <div style="text-align: center">
+          您可以 <a href="javascript:history.go(-1);">返回上一页</a>
+          或者 <a href="/">网站首页</a></div>
+  </div>
+</body>
+</html>
+```
+
+article/views.py
+
+```python
+def error_404(request, exception):
+    return render(request, 'error_404.html')
+```
+
+helloDjango/settings.py 
+
+```python
+DEBUG = False
+```
+
+helloDjango/urls.py 
+
+```python
+handler404 = error_404
+```
+
+### 500
+
+article/templates/error_404.html
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8/>
+    <title>500</title>
+    <style type="text/css">
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        body * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: normal 100%/1.15 "Merriweather", serif;
+            background-color: #7ed0f2;
+            color: #fff;
+        }
+
+        .wrapper {
+            position: relative;
+            max-width: 1298px;
+            height: auto;
+            margin: 2em auto 0 auto;
+        }
+
+        /* https://www.flaticon.com/authors/vectors-market */
+        /* https://www.flaticon.com/authors/icomoon */
+        .box {
+            max-width: 70%;
+            min-height: auto;
+            margin: 0 auto;
+            padding: 1em 1em;
+            text-align: center;
+            background: url("https://www.dropbox.com/s/xq0841cp3icnuqd/flame.png?raw=1") no-repeat top 10em center/128px 128px,
+            transparent url("https://www.dropbox.com/s/w7qqrcvhlx3pwnf/desktop-pc.png?raw=1") no-repeat top 13em center/128px 128px;
+        }
+
+        h1, p:not(:last-of-type) {
+            text-shadow: 0 0 6px #216f79;
+        }
+
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 8em;
+        }
+
+        p {
+            margin-bottom: 0.5em;
+            font-size: 3em;
+        }
+
+        p:first-of-type {
+            margin-top: 4em;
+        }
+
+        p > a {
+            border-bottom: 1px dashed #216f79;
+            font-style: italic;
+            text-decoration: none;
+            color: #216f79;
+        }
+
+        p > a:hover {
+            text-shadow: 0 0 6px #216f79;
+        }
+
+        p img {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="box">
+        <h1>500</h1>
+        <p>Sorry, it's me, not you.</p>
+        <p>&#58;&#40;</p>
+        <p><a href="/">Let me try again!</a></p>
+    </div>
+</div>
+
+</body>
+</html> 
+```
+
+article/views.py
+
+```python
+def error_500(request):
+    return render(request, 'error_500.html')
+```
+
+helloDjango/settings.py 
+
+```python
+DEBUG = False
+```
+
+helloDjango/urls.py 
+
+```python
+handler500 = error_500
+```
+
+## 10. 登录
+
+[django实现用户登陆访问限制@login_required-苦咖啡's运维之路-51CTO博客](https://blog.51cto.com/alsww/1732435)
+
+### 创建users
+
+```python
+python manage.py shell 
+
+from django.contrib.auth.models import User
+user = User.objects.create_user('tempUser', 'user@email.com', 'password')
+```
+
+以失败告终
+
+## 11.分页
 
 [RSS和分页 - Django 搭建简易博客教程 - 极客学院Wiki](https://wiki.jikexueyuan.com/project/django-set-up-blog/rss-paging.html)
+
+主要参考：
+
+[分页 | Django 文档 | Django](https://docs.djangoproject.com/zh-hans/3.0/topics/pagination/)
+
+代码详见：
+
+[pagination · zronghui/helloDjango@a9eac83](https://github.com/zronghui/helloDjango/commit/a9eac8311beb2810b519ff7be88b201b0bed9b65)
+
+article/templates/list.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paginator test</title>
+</head>
+<body>
+
+{% for contact in page_obj %}
+
+    {# Each "contact" is a Contact model object. #}
+    {{ contact }}
+    ...
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">next</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</body>
+</html>
+```
+
+article/views.py
+
+```python
+from django.core.paginator import Paginator
+
+def listing(request):
+    contact_list = list(range(100))
+    paginator = Paginator(contact_list, 2)  # Show 25 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'list.html', context={'page_obj': page_obj})
+```
+
+helloDjango/urls.py
+
+```python
+path('list', listing)
+```
+
+## 12.日志
+
+参考：[Django的日志配置 | 卡瓦邦噶！](https://www.kawabangga.com/posts/1878)
+
+### 理解Logger
+
+首先要理解logging的工作，这里面主要有四个东西：格式器formatter，过滤器filter，处理器handler，日志实例logger。
+
+```
+                         formatter
+logger ----> handler ---------------->  files, emails
+                         filter
+```
+
+### 配置方式
+
+Python中可以使用多种格式配置logging，比如.conf， .ini等。
+
+在Django中，我们是把有关logging的配置写到settings里面。相应的配置及解释如下（仅供参考）。
+
+
+
+**注意**：
+
+需要建立 log/debug.log 文件
+
+发送邮件没有生效
+
+真正生效的 logging 级别配置是最后的 loggers
+
+```python
+
+# 管理员邮箱
+ADMINS = (
+    ('zronghui', '*****@qq.com'),
+)
+
+# 非空链接，却发生404错误，发送通知MANAGERS
+SEND_BROKEN_LINK_EMAILS = True
+MANAGERS = ADMINS
+
+# Email设置
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.163.com'  # QQ邮箱SMTP服务器(邮箱需要开通SMTP服务)
+EMAIL_PORT = 25  # QQ邮箱SMTP服务端口
+EMAIL_HOST_USER = '*****@qq.com'  # 我的邮箱帐号
+EMAIL_HOST_PASSWORD = '*****'  # 授权码
+EMAIL_SUBJECT_PREFIX = 'website'  # 为邮件标题的前缀,默认是'[django]'
+EMAIL_USE_TLS = True  # 开启安全链接
+DEFAULT_FROM_EMAIL = SERVER_EMAIL = EMAIL_HOST_USER  # 设置发件人
+
+# logging日志配置
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {  # 日志格式
+        'standard': {
+            'format': '%(asctime)s [%(threadName)s:%(thread)d] [%(name)s:%(lineno)d] [%(module)s:%(funcName)s] [%(levelname)s]- %(message)s'}
+    },
+    'filters': {  # 过滤器
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse',
+        }
+    },
+    'handlers': {  # 处理器
+        'null': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler',
+        },
+        'mail_admins': {  # 发送邮件通知管理员
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            # 'filters': ['require_debug_false'],  # 仅当 DEBUG = False 时才发送邮件
+            'include_html': True,
+        },
+        'debug': {  # 记录到日志文件(需要创建对应的目录，否则会出错)
+            'level': 'INFO',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(BASE_DIR, "log", 'debug.log'),  # 日志输出文件
+            'maxBytes': 1024 * 1024 * 5,  # 文件大小
+            'backupCount': 5,  # 备份份数
+            'formatter': 'standard',  # 使用哪种formatters日志格式
+        },
+        'console': {  # 输出到控制台
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+            'formatter': 'standard',
+        },
+    },
+    # 真正生效的 logging 级别配置
+    'loggers': {  # logging管理器
+        'django': {
+            'handlers': ['debug', 'console'],
+            'level': 'INFO',
+            # 'level': 'DEBUG',
+            'propagate': False
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+        # 对于不在 ALLOWED_HOSTS 中的请求不发送报错邮件
+        'django.security.DisallowedHost': {
+            'handlers': ['null'],
+            'propagate': False,
+        },
+    }
+}
+```
+
+
+
+
+
+
+
+
 
 
 
@@ -424,10 +822,24 @@ pip install elasticsearch-dsl==5.4.0
 
 ## 注意
 
-1. xadmin 是对 Django admin 的美化，但是只能用于 Django 1.* ，[django-admin-bootstrap](https://github.com/douglasmiranda/django-admin-bootstrap)Support Django **1.11** and **2.1**
-2. 收集静态文件 python manage.py collectstatic 这一句话就会把以前放在app下static中的静态文件全部拷贝到 settings.py 中设置的 STATIC_ROOT 文件夹中
+xadmin 是对 Django admin 的美化，但是只能用于 Django 1.* ，[django-admin-bootstrap](https://github.com/douglasmiranda/django-admin-bootstrap)Support Django **1.11** and **2.1**
+
+
+收集静态文件 python manage.py collectstatic 这一句话就会把以前放在app下static中的静态文件全部拷贝到 settings.py 中设置的 STATIC_ROOT 文件夹中
+
+path('polls/', include('polls.urls')) 
+
+函数 include() 允许引用其它 URLconfs。每当 Django 遇到 include() 时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 URLconf 以供进一步处理。因为投票应用有它自己的 URLconf( polls/urls.py )，他们能够被放在 "/polls/" ， "/fun_polls/" ，"/content/polls/"，或者其他任何路径下，这个应用都能够正常工作。
+
+python manage.py shell 命令再次打开 Python 交互式命令行
+
+
 
 ## 参考链接
+
+[Django 官方中文文档](https://docs.djangoproject.com/zh-hans/3.0/topics/)
+
+
 
 [Django搭建简易博客教程_Django开发中文手册[PDF]下载-极客学院Wiki](https://wiki.jikexueyuan.com/project/django-set-up-blog/)
 
@@ -449,7 +861,7 @@ pip install elasticsearch-dsl==5.4.0
 [Django 部署基础 - Django 教程 - 自强学堂](https://code.ziqiangxuetang.com/django/django-deploy-base.html)
 [Django 部署(Nginx) - Django 教程 - 自强学堂](https://code.ziqiangxuetang.com/django/django-nginx-deploy.html)
 
-[管理静态文件（比如图片、JavaScript、CSS） | Django 文档 | Django](https://docs.djangoproject.com/zh-hans/3.0/howto/static-files/)
+[django系列四：静态文件 - 知乎](https://zhuanlan.zhihu.com/p/31208172)
 
 [Python Elasticsearch DSL 使用笔记(一) | Finger's Blog](http://fingerchou.com/2017/08/12/elasticsearch-dsl-with-python-usage-1/)
 
