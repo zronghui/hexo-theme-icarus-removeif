@@ -7,6 +7,7 @@ date: 2020-03-05 13:58:51
 thumbnail:
 categories:
 - 研究生课程
+- 信息系统实训
 tags:
 keywords:
 ---
@@ -40,9 +41,9 @@ pip3 install 'elasticsearch>=6.0.0,<7.0.0'
 
 ### 基本概念
 
-Field->type->document->index->node->cluster
+Relational DB: ->Databases->Tables->Rows->Columns 
 
-字段   分组   一条数据    一张表  节点    集群
+ElasticSearch: ->Indices->Types->Documents->Fields
 
 ## 使用
 
@@ -320,7 +321,284 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 
 
 
+## 建立索引 插入数据 查询数据 
+
+[ElasticSearch+python完成类似mysql的不分词查询 - 知乎](https://zhuanlan.zhihu.com/p/51242233)
+
+### 建立索引
+
+```json
+PUT /index_test          // index_test 对应mysql database_name
+{
+  "mappings":{
+    "doc_type":{        // doc_type对应 对应mysql table_name
+      "properties": {
+          "field1": {"type": "keyword"},
+          "field2": {"type": "keyword"},
+          "field3": {"type": "keyword"}
+      }
+    }
+  }
+}
+
+例如：
+
+PUT /fb2m
+{
+  "mappings":{
+    "kb_fact":{
+      "properties": {
+        "subject": {"type": "keyword"},
+        "predicate": {"type": "keyword"},
+        "object": {"type": "keyword"}
+      }
+    }
+  }
+}
+```
+
+### 批量插入数据
+
+```python
+import copy
+import elasticsearch
+from elasticsearch import helpers
+import json
+# 你的Elasticsearch所对应的IP地址和端口，注意，不是Kibanake可视化界面的地址
+es = elasticsearch.Elasticsearch([{'host':'xx.xx.x.xxx','port':xxxx}])
+
+print("============== index ================")
+count = 0
+i = 0
+j = 0
+num=0
+actions = []
+max_count = 2000
+with open('dataset/index_data','r',encoding='utf-8') as f:
+    for line in f:
+        j += 1
+        triple = line.strip().split(" ||| ")
+        try:
+            triple_dict = {'field1':triple[0],'field2':triple[1],'field3':triple[2]}
+            # 如果数据量小可以用index的方法一条条插入
+            # 这里index，doc_type就等于上一步建立索引所用的名称
+            #es.index(index='index_test',doc_type='doc_type',body=triple_dict)
+            action={
+            "_index":"index_test",
+            "_type":"doc_type",
+            "_id":i,
+            "_source":triple_dict
+            }
+            i += 1
+            count += 1
+            actions.append(action)
+        except:
+            print(" !!! "+ str(j) +" th row insert faied: "+line)
+            continue
+        if count>=max_count:
+            helpers.bulk(es, actions)
+            actions=[]
+            count=0
+            num+=1
+            print("Insert "+str(num*max_count)+" records.")
+helpers.bulk(es,actions)
+print('finish~~~')
+```
+
+### 查询数据
+
+
+
+```json
+1.不分词查询所有：
+select * from doc_type
+
+GET /index_test/doc_type/_search
+{
+  "query": {
+    "match_all": {
+    }
+  }
+}
+2.不分词匹配一个字段：
+select * from doc_type where filed1=value1
+
+GET /index_test/doc_type/_search
+{
+  "query": {
+    "term": { "filed1" :"value1 }
+  }
+}
+3.不分词同时匹配两个字段：
+
+mysql：select * from doc_type where filed1=value1 and filed2=value2
+
+ES可以用bool过滤器实现组合检索,一个bool过滤器由三部分组成：
+
+{
+   "bool" : {
+      "must" :     [],  //与 AND 等价
+      "should" :   [],  //与 OR 等价
+      "must_not" : [],  //与 NOT 等价
+   }
+}
+所有对应代码如下：
+
+GET /index_test/doc_type/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        { "term": { "filed1" :"value1 }},
+        { "term": {  "filed2" :"value2" }}
+      ]
+    }
+  }
+}
+
+多字段（Multi-filed）查询
+{
+    "query": {
+        "multi_match" : {
+            "query" : "elasticsearch guide",
+            "fields": ["title", "summary"]
+        }
+    }
+}
+
+需要提高某一个字段的分值。在下面的例子中，我们把 summary 字段的分数提高三倍
+{
+    "query": {
+        "multi_match" : {
+            "query" : "elasticsearch guide",
+            "fields": ["title", "summary^3"]
+        }
+    },
+    "_source": ["title", "summary", "publish_date"]
+}
+
+模糊（Fuzzy）查询
+{
+    "query": {
+        "multi_match" : {
+            "query" : "comprihensiv guide",
+            "fields": ["title", "summary"],
+            "fuzziness": "AUTO"
+        }
+    },
+    "_source": ["title", "summary", "publish_date"],
+    "size": 1
+}
+```
+
+```python
+Python代码检索：
+
+# 上面DSL代码query部分复制下来
+dsl = {
+ "query": {
+    "bool": {
+      "must": [
+        { "term": { "filed1" :"value1"}},
+        { "term": {  "filed2" :"value2"}}
+      ]
+    }
+  }
+}
+es_result = es.search(index='index_test', doc_type='doc_type', body=dsl)
+# es返回的是一个dict
+result = es_result['hits']['hits']
+print(result)
+
+
+```
+
+
+
+### 更多查询
+
+详见：[19 个很有用的 ElasticSearch 查询语句](https://n3xtchen.github.io/n3xtchen/elasticsearch/2017/07/05/elasticsearch-23-useful-query-example)
+
+7. 正则（Regexp）查询
+8. 短语匹配(Match Phrase)查询
+9. 短语前缀（Match Phrase Prefix）查询
+10. 查询字符串（Query String）
+11. 简单查询字符串（Simple Query String）
+12. 词条（Term）/多词条（Terms）查询
+13. 词条（Term）查询 - 排序（Sorted）
+14. 范围查询
+15. 过滤(Filtered)查询
+16. 多重过滤（Multiple Filters）
+17. 作用分值: 域值（Field Value）因子
+18. 作用分值: 衰变（Decay）函数
+19. 函数分值: 脚本评分
+
+### Query with highlight
+
+```
+{
+    "query" : { "match" : { "content" : "中国" }},
+    "highlight" : {
+        "pre_tags" : ["<tag1>", "<tag2>"],
+        "post_tags" : ["</tag1>", "</tag2>"],
+        "fields" : {
+            "content" : {}
+        }
+    }
+}
+```
+
+```json
+{
+    "took": 14,
+    "timed_out": false,
+    "_shards": {
+        "total": 5,
+        "successful": 5,
+        "failed": 0
+    },
+    "hits": {
+        "total": 2,
+        "max_score": 2,
+        "hits": [
+            {
+                "_index": "index",
+                "_type": "fulltext",
+                "_id": "4",
+                "_score": 2,
+                "_source": {
+                    "content": "中国驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首"
+                },
+                "highlight": {
+                    "content": [
+                        "<tag1>中国</tag1>驻洛杉矶领事馆遭亚裔男子枪击 嫌犯已自首 "
+                    ]
+                }
+            },
+            {
+                "_index": "index",
+                "_type": "fulltext",
+                "_id": "3",
+                "_score": 2,
+                "_source": {
+                    "content": "中韩渔警冲突调查：韩警平均每天扣1艘中国渔船"
+                },
+                "highlight": {
+                    "content": [
+                        "均每天扣1艘<tag1>中国</tag1>渔船 "
+                    ]
+                }
+            }
+        ]
+    }
+}
+```
+
+
+
 ## 相关社区、教程
+
+[Python Elasticsearch Client — Elasticsearch 7.5.1 documentation](https://elasticsearch-py.readthedocs.io/en/master/index.html)
 
 [Introduction | Elasticsearch权威指南（中文版）](https://es.xiaoleilu.com/index.html)
 [全文搜索引擎 Elasticsearch 入门教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2017/08/elasticsearch.html)
@@ -329,4 +607,8 @@ print(json.dumps(result, indent=2, ensure_ascii=False))
 ## 参考链接
 
 [Elasticsearch 基本介绍及其与 Python 的对接实现 | 静觅](https://cuiqingcai.com/6214.html)
+
+[19 个很有用的 ElasticSearch 查询语句](https://n3xtchen.github.io/n3xtchen/elasticsearch/2017/07/05/elasticsearch-23-useful-query-example)
+
+[elasticsearch-analysis-ik/README.md at master · medcl/elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik/blob/master/README.md)
 

@@ -13,6 +13,152 @@ tags:
 
 <!--more-->
 
+# 03-06
+
+[pip离线安装依赖包 - 曾春云 - 博客园](https://www.cnblogs.com/zengchunyun/p/9344664.html)
+
+#### pip安装离线本地包
+
+- 导出本地已有的依赖包
+
+```shell
+pip freeze > requirements.txt
+```
+
+- 将依赖包下载到本地
+
+```shell
+# 下载到当前目录,指定pip源
+pip download -r requirements.txt -d . -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
+```
+
+- 创建虚拟环境
+
+```shell
+# -q 安静的方式创建
+# --no-site-packages 不拷贝本地的第三方包,创建干净的虚拟python运行环境
+# --python=python3.7 指定创建python版本环境
+# .venv 虚拟环境目录
+virtualenv -q --no-site-packages --python=python3.7 .venv
+```
+
+- 进入虚拟环境
+
+```shell
+source .venv/bin/activate
+```
+
+- 安装本地依赖包
+
+```shell
+pip install --no-index --find-links=. -r requirements.txt
+```
+
+#### pip 其它使用方式
+
+- 安装最新版本
+
+```shell
+pip install 'SomeProject'
+```
+
+- 安装指定版本
+
+```shell
+pip install 'SomeProject==1.4'
+```
+
+- **ss**
+
+```shell
+pip install 'SomeProject>=1,<2'
+```
+
+- 安装兼容某个版本的包
+
+```shell
+pip install 'SomeProject~=1.4.2'
+```
+
+- 升级安装
+
+```shell
+pip install --upgrade SomeProject
+```
+
+- 指定依赖文件安装
+
+```shell
+pip install -r requirements.txt
+```
+
+- 安装从版本控制服务器
+
+```shell
+pip install -e git+https://git.repo/some_pkg.git#egg=SomeProject          # from git
+pip install -e hg+https://hg.repo/some_pkg#egg=SomeProject                # from mercurial
+pip install -e svn+svn://svn.repo/some_pkg/trunk/#egg=SomeProject         # from svn
+pip install -e git+https://git.repo/some_pkg.git@feature#egg=SomeProject  # from a branch
+```
+
+- 安装从其它索引服务器
+
+```shell
+pip install --index-url http://my.package.repo/simple/ --trusted-host my.package.repo SomeProject
+```
+
+- 安装时，如果默认索引服务器没有该依赖包则提供搜索额外的索引服务器进行搜索获取
+
+```shell
+pip install --extra-index-url http://my.package.repo/simple SomeProject
+```
+
+- 安装从本地
+
+```shell
+pip install -e <path>
+```
+
+或者
+
+```shell
+pip install <path>
+```
+
+- 安装从压缩包
+
+```shell
+pip install ./downloads/SomeProject-1.0.4.tar.gz
+```
+
+- 安装从本地目录搜索依赖包
+
+```shell
+pip install --no-index --find-links=file:///local/dir/ SomeProject
+pip install --no-index --find-links=/local/dir/ SomeProject
+pip install --no-index --find-links=relative/dir/ SomeProject
+```
+
+- 安装从其它源
+
+```shell
+pip install --extra-index-url http://localhost:7777 SomeProject
+```
+
+- 安装预发布版本
+
+```shell
+pip install --pre SomeProject
+```
+
+- 安装前配置
+
+```shell
+$ pip install SomePackage[PDF]
+$ pip install SomePackage[PDF]==3.0
+$ pip install -e .[PDF]==3.0  # editable project in current directory
+```
+
 # 02-28
 
 [Personalize your python prompt | Arpit Bhayani](https://arpitbhayani.me/blogs/python-prompts)

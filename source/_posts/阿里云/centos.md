@@ -50,6 +50,7 @@ keywords:
 ### oh my zsh 安装
 
 ```shell
+yum update
 yum install git
 yum -y install zsh # yum -y reinstall zsh # 覆盖安装
 cat /etc/shells
@@ -95,11 +96,26 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/power
 # You then need to select this theme in your ~/.zshrc:
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-sudo yum install ruby
-gem install colorls
-
 rsync -azvhP ~/.vimrc root@47.93.53.47:/root/
 rsync -azvhP ~/.dotfiles/.powerlevel9k root@47.93.53.47:/root/
+
+# colosls 安装
+yum install gcc-c++ patch readline readline-devel zlib zlib-devel ibffi-devel openssl-devel make bzip2 autoconf automake libtool bison sqlite-devel
+curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+curl -L get.rvm.io | bash -s stable
+source /etc/profile.d/rvm.sh
+rvm reload
+rvm requirements run
+rvm list known
+ruby --version
+rvm install 2.7
+rvm use ruby-2.7.0-preview1
+rvm use 2.7 --defaults
+gem install colorls
+
+alias ls='colorls -A'
+alias lc='colorls -lA --sd'
 ```
 
 
@@ -123,6 +139,32 @@ alias rsync=/usr/local/bin/rsync
 ```
 
 
+
+### 安装指定版本 ruby
+
+因 yum install ruby 的版本太低，需要用 rvm 安装指定版本的 ruby
+
+[How To Install Ruby on CentOS/RHEL 7/6 - TecAdmin](https://tecadmin.net/install-ruby-latest-stable-centos/)
+
+
+
+## python3.8 安装
+
+```shell
+# wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+# 下载太慢，在本机下载好之后传过去
+rsync -azvhP Python-3.8.0.tgz root@47.93.53.47:/root/
+tar zxf Python-3.8.0.tgz
+cd Python-3.8.0
+# 编译前准备
+yum install  -y gcc-c++ gcc make cmake zlib-devel bzip2-devel openssl-devel ncurse-devel libffi-devel
+# 编译安装 Python3.8
+./configure prefix=/usr/local/python3 --enable-optimizations
+make && make install
+export PATH=$PATH:/usr/local/python3/bin/
+
+pip3 install --upgrade pip
+```
 
 
 

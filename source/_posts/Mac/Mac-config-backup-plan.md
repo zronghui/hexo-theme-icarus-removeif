@@ -49,3 +49,8 @@ tags:
 pycharm 配置
 
 idea 配置
+
+
+
+[Mac 骇客指南 - 自动化配置](https://n3xtchen.github.io/n3xtchen/osx/2014/10/05/hack-mac-automatic-setting)
+[matthewmueller/dots: WIP bootstrapping library for osx & ubuntu (and maybe others!)](https://github.com/matthewmueller/dots)
