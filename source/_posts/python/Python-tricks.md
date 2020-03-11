@@ -13,6 +13,38 @@ tags:
 
 <!--more-->
 
+# 03-11
+
+### 简繁转换
+
+[简易中文简繁转换 — zhconv 1.2.1 文档](https://pythonhosted.org/zhconv/#id2)
+
+```shell
+pip install zhconv
+```
+
+```python
+from zhconv import convert
+print(convert('我幹什麼不干你事。', 'zh-cn'))
+```
+
+zh-cn 大陆简体
+zh-tw 台灣正體
+zh-hk 香港繁體
+zh-sg 马新简体
+zh-hans 简体
+zh-hant 繁體
+
+
+
+# 03-10
+
+```python
+os.path.dirname(__file__)
+```
+
+
+
 # 03-06
 
 [pip离线安装依赖包 - 曾春云 - 博客园](https://www.cnblogs.com/zengchunyun/p/9344664.html)
@@ -539,7 +571,7 @@ print(Number(10) <= Number(2))
 ？
 如果不是想优化程序对内存或 CPU 的使用率（how），而是想直接将其限制为某个确定的数字，Python 也有一个对应的库可以做到：
 
-```Python
+```python
 import signal 
 import resource 
 import os 
@@ -560,3 +592,6 @@ def set_max_memory(size):
     soft, hard = resource.getrlimit(resource.RLIMIT_AS) 
     resource.setrlimit(resource.RLIMIT_AS, (size, hard)) 
 ```
+
+
+

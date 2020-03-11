@@ -713,15 +713,15 @@ Python中可以使用多种格式配置logging，比如.conf， .ini等。
 
 在Django中，我们是把有关logging的配置写到settings里面。相应的配置及解释如下（仅供参考）。
 
-
-
 **注意**：
-
-需要建立 log/debug.log 文件
 
 发送邮件没有生效
 
 真正生效的 logging 级别配置是最后的 loggers
+
+
+
+settings.py
 
 ```python
 
@@ -803,6 +803,45 @@ LOGGING = {
     }
 }
 ```
+
+
+
+Manage.py
+
+```python
+logDir = os.path.join(os.path.dirname(__file__), 'log')
+logFile = os.path.join(logDir, 'debug.log')
+print(logFile)
+if not os.path.exists(logDir):
+  os.mkdir(logDir)
+  if not os.path.exists(logFile):
+    os.system(f'touch {logFile}')
+```
+
+
+
+## 13. swagger
+
+```shell
+pip install djangorestframework
+pip install django-rest-swagger
+```
+
+django-rest-swagger 根据 djangorestframework 自动生成 swagger 文档
+
+官方教程翻译：[主页 - Django REST framework中文站点](https://q1mi.github.io/Django-REST-framework-documentation/)
+
+手把手教程：[m-haziq/django-rest-swagger-docs: Beginners approach to Django Rest Swagger](https://github.com/m-haziq/django-rest-swagger-docs)
+
+根据 swagger 配置文件生成 Django 项目（或模块？）：[praekelt/swagger-django-generator: Convert Swagger specifications into Django or aiohttp code](https://github.com/praekelt/swagger-django-generator)
+
+根据 swagger 配置文件生成相应 swagger URL
+
+
+
+
+
+
 
 
 

@@ -11,6 +11,10 @@ tags:
 keywords:
 ---
 
+[toc]
+
+<!--more-->
+
 ## [BlockTube - Chrome 网上应用店](https://chrome.google.com/webstore/detail/blocktube/bbeaicapbccfllodepmimpkgecanonai)
 
 用很多规则屏蔽某些视频
@@ -28,4 +32,12 @@ keywords:
 设置按住 z, 同时拖拽鼠标新标签页打开
 
 c, 复制
+
+## Fatkun图片批量下载
+
+[Fatkun图片批量下载 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/fatkun-batch-download-ima/nnjjahlikiabnchcpehcpkdeckfgnohf/related?hl=zh-CN)
+
+下载 GitHub 的图片，再批量上传到图床上
+
+
 

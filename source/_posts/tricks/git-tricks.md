@@ -15,6 +15,12 @@ keywords:
 
 <!--more-->
 
+## 移动文件
+
+```shell
+git mv from to
+```
+
 
 
 ## 撤销 push 到 GitHub 的 commit
