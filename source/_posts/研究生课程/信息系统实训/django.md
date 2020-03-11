@@ -859,7 +859,7 @@ pip install elasticsearch-dsl==5.4.0
 
 
 
-## 注意
+## tricks
 
 xadmin 是对 Django admin 的美化，但是只能用于 Django 1.* ，[django-admin-bootstrap](https://github.com/douglasmiranda/django-admin-bootstrap)Support Django **1.11** and **2.1**
 
@@ -872,7 +872,126 @@ path('polls/', include('polls.urls'))
 
 python manage.py shell 命令再次打开 Python 交互式命令行
 
+**重定向类、模板类：**
 
+```python
+# project/urls.py
+from django.urls import path
+from django.views.generic.base import RedirectView
+
+from application.views import NewView
+
+class SubclassedRedirectView(RedirectView):
+    pattern_name = 'new-view'
+
+urlpatterns = [
+    path("old-path/", SubclassedRedirectView.as_view()),
+    path("old-path/", RedirectView.as_view(pattern_name='new-view')),
+    path("new-path/", NewView.as_view(), name='new-view'),
+]
+
+# application/views.py
+from django.views.generic.base import TemplateView
+
+class HomeView(TemplateView):
+    template_name = 'home.html'
+```
+
+**装饰器**
+
+```python
+1. require_POST
+
+# 有些视图可以处理多个方法，比如:
+def multi_method_view(request):
+    if request.method == 'GET':
+        return HttpResponse('Method was a GET.')
+    elif request.method == 'POST':
+        return HttpResponse('Method was a POST.')
+# 假设您只想响应一个 POST
+def guard_clause_view(request):
+    if request.method != 'POST':
+        raise Http404()
+    return HttpResponse('Method was a POST.')
+# 我们可以使用 require post decorator，并让 Django 为我们检查该方法。
+from django.view.decorators.http import require_POST
+
+@require_POST
+def the_view(request):
+    return HttpResponse('Method was a POST.')
+  
+
+@login_required # 需要登录
+@user_passes_test(lambda user: user.is_staff) # 登录的是员工
+```
+
+**mixin**
+
+```python
+# application/views.py
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic.base import TemplateView
+
+class HomeView(LoginRequiredMixin, TemplateView):
+    template_name = 'home.html'
+
+class StaffProtectedView(UserPassesTestMixin, TemplateView):
+    template_name = 'staff_eyes_only.html'
+
+    def test_func(self):
+        return self.request.user.is_staff
+# 可以看到，LoginRequiredMixin UserPassesTestMixin 功能与@login_required @user_passes_test差不多，只是使用方式的区别
+```
+
+
+
+# useful package
+
+## awesome
+
+[wsvincent/awesome-django: A curated list of awesome things related to Django](https://github.com/wsvincent/awesome-django)
+[haiiiiiyun/awesome-django-cn: Django 优秀资源大全。](https://github.com/haiiiiiyun/awesome-django-cn)
+
+### Django 调用流程图
+
+[meshy/django-schema-graph: An interactive graph of your Django model structure](https://github.com/meshy/django-schema-graph)
+
+### Django 快速生成项目代码
+
+[pydanny/cookiecutter-django: Cookiecutter Django is a framework for jumpstarting production-ready Django projects quickly.](https://github.com/pydanny/cookiecutter-django)
+
+```shell
+cookiecutter https://github.com/pydanny/cookiecutter-django
+自动克隆仓库，并让用户回答问题
+use_whitenoise [n]: n
+use_celery [n]: y
+use_mailhog [n]: n
+use_sentry [n]: y
+use_pycharm [n]: y
+windows [n]: n
+use_docker [n]: n
+use_heroku [n]: y
+use_compressor [n]: y
+Select postgresql_version:
+……
+
+```
+
+### django 模块化搜索
+
+solr es 等多个搜索引擎接口统一
+
+[django-haystack/django-haystack: Modular search for Django](https://github.com/django-haystack/django-haystack)
+[Getting Started with Haystack — Haystack 2.5.0 documentation](https://django-haystack.readthedocs.io/en/master/tutorial.html)
+
+
+
+[Getting Started with Haystack — Haystack 2.5.0 documentation 中文文档教程](https://s0django-haystack0readthedocs0io.icopy.site/en/v2.6.0/tutorial.html)
+[django-haystack全文检索详细教程_Python_越努力越幸运—liupu-CSDN博客](https://blog.csdn.net/AC_hell/article/details/52875927)
+[Haystack入门教程 - 简书](https://www.jianshu.com/p/fa1d29456d80)
+[Django：haystack全文检索详细教程 - 秋寻草 - 博客园](https://www.cnblogs.com/gcgc/p/10762416.html)
+[卧槽，简单的Django ElasticSearch Haystack我竟然调了那么久。。。 - 知乎](https://zhuanlan.zhihu.com/p/36963164)
+[Django Haystack 全文检索与关键词高亮_Django博客教程_追梦人物的博客](https://www.zmrenwu.com/courses/django-blog-tutorial/materials/27/)
 
 ## 参考链接
 

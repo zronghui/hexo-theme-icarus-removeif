@@ -15,6 +15,39 @@ tags:
 
 # 03-11
 
+[Python自动化](https://martinheinz.dev/blog/17)
+
+[Python in GitHub Actions · Homepage of Hynek Schlawack](https://hynek.me/articles/python-github-actions/)
+[github action python test - Google 搜索](https://www.google.com/search?q=github+action+python+test&oq=github+action+python+test&aqs=chrome..69i57j69i64.9173j0j7&sourceid=chrome&ie=UTF-8)
+
+
+
+### Django 调用流程图
+
+[meshy/django-schema-graph: An interactive graph of your Django model structure](https://github.com/meshy/django-schema-graph)
+
+### 死链检测
+
+检测 URL、目录、文档的死链
+
+[butuzov/deadlinks: Health checks for your documentation links. https://pypi.org/project/deadlinks](https://github.com/butuzov/deadlinks)
+
+### creating command line user interfaces创建命令行用户界面
+
+能用 py_cui 写 2048 游戏[jwlodek/py_cui_2048: A command line ascii version of the 2048 game written with the help of the py_cui library.](https://github.com/jwlodek/py_cui_2048)
+
+[jwlodek/py_cui: A python library for intuitively creating CUI/TUI interfaces with widgets, inspired by gocui.](https://github.com/jwlodek/py_cui)
+
+### 自定义快捷键的功能
+
+[dibsonthis/keyboard_listener: Keyboard Listener is a module that allows you to create custom hotkeys (combinations) or custom keywords and bind them to custom functions in Python](https://github.com/dibsonthis/keyboard_listener)
+
+### pytest-responsemock
+
+Mock response
+
+[idlesign/pytest-responsemock: Simplified requests calls mocking for pytest](https://github.com/idlesign/pytest-responsemock)
+
 ### 简繁转换
 
 [简易中文简繁转换 — zhconv 1.2.1 文档](https://pythonhosted.org/zhconv/#id2)

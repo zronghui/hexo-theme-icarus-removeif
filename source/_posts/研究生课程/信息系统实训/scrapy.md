@@ -139,8 +139,14 @@ class VolmoeSpider(scrapy.Spider):
 ### 注意
 
 1. 爬取 列表页+详情页 用 rules 更方便，但是我用了，没有生效，所以手动指定函数处理
+
 1. 直接在网页上的 xpath 可能会与爬虫请求到的结构不同，所以可以用 scrapy shell "url"， view(response), 在网页上使用 xpath finder , xpath helper 查看指定元素的 xpath
+
 1. scrapy genspider mydomain mydomain.com，最后的 mydomain.com 不用加 http 和 com 后面的/, 如 ~~http://mydomain.com/~~
+
+1. 借助 https://github.com/further-reading/scrapy-gui 测试 CSS ~~xpath~~
+
+   <img src="https://i.loli.net/2020/03/11/b5X6KtGxNMn7OCv.png" alt="b5X6KtGxNMn7OCv" style="zoom:50%;" />
 
 ## 学习
 
@@ -307,6 +313,298 @@ scrapy bench
 
 ```
 
+### items
+
+```python
+# 定义一个 item
+class Product(scrapy.Item):
+    name = scrapy.Field()
+    price = scrapy.Field()
+    stock = scrapy.Field()
+    last_updated = scrapy.Field(serializer=str)
+    
+
+# item API和 dict API 非常相似
+
+# 一、与Item配合
+# 创建item
+Product(name='PC', price=100)
+# 获取字段的值
+p.get('name')
+p.get('name', 'default')
+p['name']
+'name' in product # True  name 字段是否有填充
+'last_updated' in product.fields # False  last_updated 是否是声明的字段
+# 设置字段的值
+p['last_updated'] = 'today'
+# 获取所有获取到的值
+p.keys() # ['price', 'name']
+p.items() # [('price', 1000), ('name', 'Desktop PC')]
+
+# 其他任务
+#   复制item:
+>>> product2 = Product(product)
+>>> product3 = product2.copy()
+#   根据item创建字典(dict):
+>>> dict(product) # create a dict from all populated values
+{'price': 1000, 'name': 'Desktop PC'}
+#   根据字典(dict)创建item:
+>>> Product({'name': 'Laptop PC', 'price': 1500})
+
+# 扩展Item
+#   可以通过继承原始的Item来扩展item(添加更多的字段或者修改某些字段的元数据)
+class DiscountedProduct(Product):
+    discount_percent = scrapy.Field(serializer=str)
+    discount_expiration_date = scrapy.Field()
+# Item对象
+# 字段(Field)对象
+
+```
+
+
+
+### 选择器
+
+```python
+# 二者等价
+response.xpath('//div/a/text()').extract()
+response.css('div a::text').extract()
+# 二者等价
+response.xpath('//a/@href').extract_first()
+response.xpath('a::attr(href)').extract_first()
+
+# 复杂点的用法  href 属性包含 'image'
+response.xpath('//a[contains(@href, "iamge")]/@href').extract()
+response.css('a[href*=image]::attr(href)').extract()
+
+# xpath css 可以嵌套
+response.xpath('...').css('...')
+
+# re
+response.xpath('//a[contains(@href, "image")]/text()').re(r'Name:\s*(.*)')
+# re re_first
+
+# 相对XPaths
+
+divs = response.xpath('//div')
+
+>>> for p in divs.xpath('//p'):  # this is wrong - gets all <p> from the whole document
+# 下面是比较合适的处理方法(注意 .//p XPath的点前缀):
+
+>>> for p in divs.xpath('.//p'):  # extracts all <p> inside
+...     print p.extract()
+
+# 另一种常见的情况将是提取所有直系 <p> 的结果:
+>>> for p in divs.xpath('p'):
+```
+
+### spiders
+
+#### 传递参数
+
+```python
+scrapy crawl myspider -a category=electronics
+
+import scrapy
+
+class MySpider(Spider):
+    name = 'myspider'
+
+    def __init__(self, category=None, *args, **kwargs):
+        super(MySpider, self).__init__(*args, **kwargs)
+        self.start_urls = ['http://www.example.com/categories/%s' % category]
+        # ...
+```
+
+#### Spider 类
+
+##### name
+
+唯一标识 spider
+
+##### allowed_domains
+
+包含 spider 允许爬取的域名列表
+
+##### start_urls
+
+##### start_requests() ?
+
+必须返回可迭代对象
+
+逻辑：
+
+1. 未指定 start_urls: start_requests 生效
+2. 指定 start_urls: make_requests_from_url 生效
+
+可以使用 start_requests 在启动时以 post 登录某个网站：
+
+```python
+def start_requests(self):
+    return [scrapy.FormRequest("http://www.example.com/login",
+                               formdata={'user': 'john', 'pass': 'secret'},
+                               callback=self.logged_in)]
+
+def logged_in(self, response):
+    # here you would extract links to follow and return Requests for
+    # each of them, with another callback
+    pass
+```
+
+##### make_requests_from_url(url) ?
+
+该方法接受一个URL并返回用于爬取的 Request 对象。 该方法在初始化request时被 start_requests() 调用，也被用于转化url为request。
+
+##### log(message[, level, component])
+
+log中自动带上该spider的 name 属性。 
+
+```python
+class MySpider(scrapy.Spider):
+    name = 'example.com'
+    allowed_domains = ['example.com']
+    start_urls = [
+        'http://www.example.com/1.html',
+        'http://www.example.com/2.html',
+        'http://www.example.com/3.html',
+    ]
+
+    def parse(self, response):
+        self.log('A response from %s just arrived!' % response.url)
+```
+
+##### parse 中返回多个 request 和 item
+
+```python
+import scrapy
+from myproject.items import MyItem
+
+class MySpider(scrapy.Spider):
+    name = 'example.com'
+    allowed_domains = ['example.com']
+    start_urls = [
+        'http://www.example.com/1.html',
+        'http://www.example.com/2.html',
+        'http://www.example.com/3.html',
+    ]
+
+    def parse(self, response):
+        sel = scrapy.Selector(response)
+        for h3 in response.xpath('//h3').extract():
+            yield MyItem(title=h3)
+
+        for url in response.xpath('//a/@href').extract():
+            yield scrapy.Request(url, callback=self.parse)
+```
+
+
+
+### CrawlSpider
+
+继承自 Spider，有一个新属性 rules 和一个可复写的方法 parse_start_url
+
+Rule(link_extractor, callback=None, cb_kwargs=None, follow=None, process_links=None, process_request=None)
+
+**当编写爬虫规则时，请避免使用 parse 作为回调函数**。 由于 CrawlSpider 使用 parse 方法来实现其逻辑，如果 您覆盖了 parse 方法，crawl spider 将会运行失败。
+
+Follow 默认为 False
+
+```python
+import scrapy
+from scrapy.contrib.spiders import CrawlSpider, Rule
+from scrapy.contrib.linkextractors import LinkExtractor
+
+class MySpider(CrawlSpider):
+    name = 'example.com'
+    allowed_domains = ['example.com']
+    start_urls = ['http://www.example.com']
+
+    rules = (
+        # 提取匹配 'category.php' (但不匹配 'subsection.php') 的链接并跟进链接(没有callback意味着follow默认为True)
+        Rule(LinkExtractor(allow=('category\.php', ), deny=('subsection\.php', ))),
+
+        # 提取匹配 'item.php' 的链接并使用spider的parse_item方法进行分析
+        Rule(LinkExtractor(allow=('item\.php', )), callback='parse_item'),
+    )
+
+    def parse_item(self, response):
+        self.log('Hi, this is an item page! %s' % response.url)
+
+        item = scrapy.Item()
+        item['id'] = response.xpath('//td[@id="item_id"]/text()').re(r'ID: (\d+)')
+        item['name'] = response.xpath('//td[@id="item_name"]/text()').extract()
+        item['description'] = response.xpath('//td[@id="item_description"]/text()').extract()
+        return item
+```
+
+
+
+### XMLFeedSpider、CSVFeedSpider、SitemapSpider
+
+```Python
+XMLFeedSpider例子
+该spider十分易用。下边是其中一个例子:
+
+from scrapy import log
+from scrapy.contrib.spiders import XMLFeedSpider
+from myproject.items import TestItem
+
+class MySpider(XMLFeedSpider):
+    name = 'example.com'
+    allowed_domains = ['example.com']
+    start_urls = ['http://www.example.com/feed.xml']
+    iterator = 'iternodes' # This is actually unnecessary, since it's the default value
+    itertag = 'item'
+
+    def parse_node(self, response, node):
+        log.msg('Hi, this is a <%s> node!: %s' % (self.itertag, ''.join(node.extract())))
+
+        item = TestItem()
+        item['id'] = node.xpath('@id').extract()
+        item['name'] = node.xpath('name').extract()
+        item['description'] = node.xpath('description').extract()
+        return item
+        
+CSVFeedSpider例子
+下面的例子和之前的例子很像，但使用了 CSVFeedSpider:
+
+from scrapy import log
+from scrapy.contrib.spiders import CSVFeedSpider
+from myproject.items import TestItem
+
+class MySpider(CSVFeedSpider):
+    name = 'example.com'
+    allowed_domains = ['example.com']
+    start_urls = ['http://www.example.com/feed.csv']
+    delimiter = ';'
+    headers = ['id', 'name', 'description']
+
+    def parse_row(self, response, row):
+        log.msg('Hi, this is a row!: %r' % row)
+
+        item = TestItem()
+        item['id'] = row['id']
+        item['name'] = row['name']
+        item['description'] = row['description']
+        return item
+        
+        
+        
+SitemapSpider样例
+简单的例子: 使用 parse 处理通过sitemap发现的所有url:
+
+from scrapy.contrib.spiders import SitemapSpider
+
+class MySpider(SitemapSpider):
+    sitemap_urls = ['http://www.example.com/sitemap.xml']
+
+    def parse(self, response):
+        pass # ... scrape item here ...
+
+```
+
+
+
 
 
 ## 参考资料
@@ -314,3 +612,14 @@ scrapy bench
 [Scrapy框架的使用之Selector的用法 - 掘金](https://juejin.im/post/5aec1bb9f265da0b9526f855)
 
 介绍了 css xpath re 的用法
+
+
+
+## Useful packages
+
+[further-reading/scrapy-gui: A simple, Qt-Webengine powered web browser with built in functionality for basic scrapy webscraping support.](https://github.com/further-reading/scrapy-gui)
+
+<img src="https://i.loli.net/2020/03/11/b5X6KtGxNMn7OCv.png" alt="b5X6KtGxNMn7OCv" style="zoom:50%;" />
+
+
+
