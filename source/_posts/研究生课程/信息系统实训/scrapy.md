@@ -147,6 +147,18 @@ class VolmoeSpider(scrapy.Spider):
 1. 借助 https://github.com/further-reading/scrapy-gui 测试 CSS ~~xpath~~
 
    <img src="https://i.loli.net/2020/03/11/b5X6KtGxNMn7OCv.png" alt="b5X6KtGxNMn7OCv" style="zoom:50%;" />
+   
+   5. 获得的 URL 没有域名时：url = response.urljoin(next)  ?
+   
+   6. 可以在一个爬虫中用 custom_settings <img src="https://i.loli.net/2020/03/12/YLS5ftcphlDMTzx.png" alt="YLS5ftcphlDMTzx" style="zoom: 25%;" />
+   
+   7. scrapy对request的URL去重 通过 yield scrapy.Request(url, self.parse, dont_filter=False) 里的 dont_filter（默认False） 实现
+   
+   8. 如果命令行里不想看到那么多输出的话，可以加个 -L WARNING 参数运行爬虫，如：scrapy crawl spider1 -L WARNING
+   
+   9. scrapy shell 设置 UA
+   
+      <img src="https://i.loli.net/2020/03/12/H84sqghj3rNXpWv.jpg" alt="H84sqghj3rNXpWv" style="zoom:50%;" />
 
 ## 学习
 
@@ -270,7 +282,7 @@ scrapy genspider -d basic
 
 scrapy crawl myspider
 
-# 运行contract检查（没明白，不过好像也没用）
+# 运行contract检查, 运行没问题就好
 scrapy check [-l] <spider>
 
 scrapy list
@@ -418,17 +430,17 @@ class MySpider(Spider):
 
 #### Spider 类
 
-##### name
+**name**
 
 唯一标识 spider
 
-##### allowed_domains
+**allowed_domains**
 
 包含 spider 允许爬取的域名列表
 
-##### start_urls
+**start_urls**
 
-##### start_requests() ?
+**start_requests() ?**
 
 必须返回可迭代对象
 
@@ -451,11 +463,11 @@ def logged_in(self, response):
     pass
 ```
 
-##### make_requests_from_url(url) ?
+**make_requests_from_url(url) ?**
 
 该方法接受一个URL并返回用于爬取的 Request 对象。 该方法在初始化request时被 start_requests() 调用，也被用于转化url为request。
 
-##### log(message[, level, component])
+**log(message[, level, component])**
 
 log中自动带上该spider的 name 属性。 
 
@@ -473,7 +485,7 @@ class MySpider(scrapy.Spider):
         self.log('A response from %s just arrived!' % response.url)
 ```
 
-##### parse 中返回多个 request 和 item
+**parse 中返回多个 request 和 item**
 
 ```python
 import scrapy
@@ -499,7 +511,7 @@ class MySpider(scrapy.Spider):
 
 
 
-### CrawlSpider
+#### CrawlSpider
 
 继承自 Spider，有一个新属性 rules 和一个可复写的方法 parse_start_url
 
@@ -539,7 +551,7 @@ class MySpider(CrawlSpider):
 
 
 
-### XMLFeedSpider、CSVFeedSpider、SitemapSpider
+#### XMLFeedSpider、CSVFeedSpider、SitemapSpider
 
 ```Python
 XMLFeedSpider例子
@@ -605,6 +617,114 @@ class MySpider(SitemapSpider):
 
 
 
+### Item Pipeline
+
+当Item在Spider中被收集之后，它将会被传递到Item Pipeline，一些组件会按照一定的顺序执行对Item的处理。以下是item pipeline的一些典型应用：
+
+- 清理HTML数据
+- 验证爬取的数据(检查item包含某些字段)
+- 查重(并丢弃)
+- 将爬取结果保存到数据库中
+
+#### 编写自己的 item pipeline
+
+**process_item**
+
+返回 item 或 抛出 DropItem 异常
+
+**open_spider**
+
+当spider被开启时，这个方法被调用。
+
+**close_spider**
+当spider被关闭时，这个方法被调用
+
+#### Item pipeline 样例
+
+```python
+# 验证价格，同时丢弃没有价格的item
+from scrapy.exceptions import DropItem
+
+class PricePipeline(object):
+
+    vat_factor = 1.15
+
+    def process_item(self, item, spider):
+        if item['price']:
+            if item['price_excludes_vat']:
+                item['price'] = item['price'] * self.vat_factor
+            return item
+        else:
+            raise DropItem("Missing price in %s" % item)
+            
+# 将item写入JSON文件
+import json
+
+class JsonWriterPipeline(object):
+
+    def __init__(self):
+        self.file = open('items.jl', 'wb')
+
+    def process_item(self, item, spider):
+        line = json.dumps(dict(item)) + "\n"
+        self.file.write(line)
+        return 
+      
+# 去重
+from scrapy.exceptions import DropItem
+
+class DuplicatesPipeline(object):
+
+    def __init__(self):
+        self.ids_seen = set()
+
+    def process_item(self, item, spider):
+        if item['id'] in self.ids_seen:
+            raise DropItem("Duplicate item found: %s" % item)
+        else:
+            self.ids_seen.add(item['id'])
+            return item
+```
+
+#### 代理ip
+
+```python
+class ProxyMiddleware(object):
+    logger = logging.getLogger(__name__)
+
+    def process_exception(self, request, exception, spider):
+        self.logger.debug('Get Exception')
+        request.meta['proxy'] = get_random_proxy() # 形如 https://127.0.0.1:9743
+        return request
+
+```
+
+
+
+settings.py 启动 item pipeline 插件
+
+从小到大的顺序执行
+
+```python
+ITEM_PIPELINES = {
+    'myproject.pipelines.PricePipeline': 300,
+    'myproject.pipelines.JsonWriterPipeline': 800,
+}
+```
+
+
+
+
+
+## Jobs: 暂停，恢复爬虫
+
+```shell
+# 启用或恢复一个爬虫，都是
+scrapy crawl douban -s JOBDIR=jobs/douban-1
+```
+
+
+
 
 
 ## 参考资料
@@ -615,11 +735,49 @@ class MySpider(SitemapSpider):
 
 
 
-## Useful packages
+## 工具 -- Useful packages
 
 [further-reading/scrapy-gui: A simple, Qt-Webengine powered web browser with built in functionality for basic scrapy webscraping support.](https://github.com/further-reading/scrapy-gui)
 
+今天在豆瓣失败了，大多还是很好用的
+
+```python
+ipython
+import scrapy_gui
+scrapy_gui.open_browser()
+```
+
+
+
 <img src="https://i.loli.net/2020/03/11/b5X6KtGxNMn7OCv.png" alt="b5X6KtGxNMn7OCv" style="zoom:50%;" />
+
+
+
+### gerapy
+
+主要用来管理本地或远程主机的 scrapy 项目，替代 scrapyd 的命令行
+
+```shell
+pip3 install gerapy
+gerapy init
+gerapy init <workspace> # 留空 为 gerapy
+cd gerapy
+gerapy migrate
+gerapy createsuperuser
+gerapy runserver
+```
+
+[Gerapy/Gerapy: Distributed Crawler Management Framework Based on Scrapy, Scrapyd, Django and Vue.js](https://github.com/Gerapy/Gerapy)
+[跟繁琐的命令行说拜拜！Gerapy分布式爬虫管理框架来袭！ - 天善智能：专注于商业智能BI和数据分析、大数据领域的垂直社区平台](https://ask.hellobi.com/blog/cuiqingcai/11195#articleHeader5)
+[python爬虫之Gerapy安装部署_Python_baidu_32542573的博客-CSDN博客](https://blog.csdn.net/baidu_32542573/article/details/79722390)
+
+
+
+
+
+scrapy crawl shudan -s JOBDIR=jobs/shudan-1
+
+
 
 
 

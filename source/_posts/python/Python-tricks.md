@@ -13,6 +13,69 @@ tags:
 
 <!--more-->
 
+# 03-12
+
+### loguru 日志
+
+### supervisor
+
+### Environs 读取环境变量
+
+[Python 使用 environs 库来更好地定义环境变量 | 静觅](https://cuiqingcai.com/8947.html)
+
+[environs: 简化环境变量解析](https://python.freelycode.com/contribution/detail/168)
+[sloria/environs: simplified environment variable parsing](https://github.com/sloria/environs)
+
+可以从当前 shell 的环境变量中获取，或者 .env 文件
+
+```
+# .env 没有前缀名
+# 不用写 export
+APP_DEBUG=false
+APP_ENV=prod
+```
+
+
+
+```shell
+export GITHUB_USER=sloria
+export MAX_CONNECTIONS=100
+export SHIP_DATE='1984-06-25'
+export TTL=42
+export ENABLE_LOGIN=true
+export GITHUB_REPOS=webargs,konch,ped
+export COORDINATES=23.3,50.0
+export LOG_LEVEL=DEBUG
+```
+
+
+
+```python
+from environs import Env
+
+env = Env()
+env.read_env()  # read .env file, if it exists
+# required variables
+gh_user = env("GITHUB_USER")  # => 'sloria'
+secret = env("SECRET")  # => raises error if not set
+
+# casting
+max_connections = env.int("MAX_CONNECTIONS")  # => 100
+ship_date = env.date("SHIP_DATE")  # => datetime.date(1984, 6, 25)
+ttl = env.timedelta("TTL")  # => datetime.timedelta(0, 42)
+log_level = env.log_level("LOG_LEVEL")  # => logging.DEBUG
+
+# providing a default value
+enable_login = env.bool("ENABLE_LOGIN", False)  # => True
+enable_feature_x = env.bool("ENABLE_FEATURE_X", False)  # => False
+
+# parsing lists
+gh_repos = env.list("GITHUB_REPOS")  # => ['webargs', 'konch', 'ped']
+coords = env.list("COORDINATES", subcast=float)  # => [23.3, 50.0]
+```
+
+
+
 # 03-11
 
 [Python自动化](https://martinheinz.dev/blog/17)
