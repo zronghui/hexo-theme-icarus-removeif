@@ -12,6 +12,14 @@ tags:
 
 <!--more-->
 
+[mkepub库](https://python.freelycode.com/contribution/detail/510)
+[用Python和GooPyCharts创建图表](https://python.freelycode.com/contribution/detail/499)
+[彩色化终端文本: 让Python变得更便捷](https://python.freelycode.com/contribution/detail/486)
+
+
+
+
+
 [Better Python tracebacks with Rich](https://www.willmcgugan.com/blog/tech/post/better-python-tracebacks-with-rich/)
 
 类似于 pretty_errors

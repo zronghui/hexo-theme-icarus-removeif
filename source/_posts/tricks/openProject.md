@@ -28,6 +28,10 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[pt-query-digest - MySQL慢查询分析工具](https://www.percona.com/doc/percona-toolkit/LATEST/pt-query-digest.html)
+
+[https://fluttify.com/#/](https://fluttify.com/#/)
+
 [OXYGEN - hand drawn style diagrams generator](https://jeasonstudio.github.io/oxygen-demo/)
 
 手绘风格流程图

@@ -716,11 +716,30 @@ ITEM_PIPELINES = {
 
 
 
-## Jobs: 暂停，恢复爬虫
+### Jobs: 暂停，恢复爬虫
 
 ```shell
 # 启用或恢复一个爬虫，都是
 scrapy crawl douban -s JOBDIR=jobs/douban-1
+```
+
+
+
+### 爬虫优化
+
+```python
+# 增加并发
+CONCURRENT_REQUESTS = 100
+# 降低log级别
+# LOG_LEVEL = 'INFO'
+# 禁止cookies
+COOKIES_ENABLED = False
+# 禁止重试
+RETRY_ENABLED = False
+# 减小下载超时,有些网站就是慢
+# DOWNLOAD_TIMEOUT = 15
+# 禁止重定向
+REDIRECT_ENABLED = False
 ```
 
 

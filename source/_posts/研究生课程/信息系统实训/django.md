@@ -839,6 +839,9 @@ django-rest-swagger 根据 djangorestframework 自动生成 swagger 文档
 
 
 
+[aiohttp-swagger3 — aiohttp-swagger3 0.4.2 documentation](https://aiohttp-swagger3.readthedocs.io/en/latest/)
+[hh-h/aiohttp-swagger3: Library for swagger documentation browsing and validating aiohttp requests using swagger specification 3.0](https://github.com/hh-h/aiohttp-swagger3)
+
 
 
 
