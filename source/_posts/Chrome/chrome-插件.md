@@ -17,6 +17,10 @@ keywords:
 
 # 正在用的插件
 
+### 二维码互转
+
+[草料二维码插件，Chrome二维码生成及解析插件，在网页中解码-文章-扩展迷](https://www.extfans.com/articles/976/)
+
 ## 搜索引擎切换
 
 [Chrome搜索拐杖插件，快速切换百度/谷歌/必应搜索引擎，支持自定义-文章-扩展迷](https://www.extfans.com/articles/960)
