@@ -97,3 +97,6 @@ c, 复制
 [Take a Break for My Eyes插件，定时休息提醒Chrome插件，保护眼睛健康-文章-扩展迷](https://www.extfans.com/articles/965)
 [QueueTube for YouTube插件，使用YouTube站内搜索时不中断当前影片播放-文章-扩展迷](https://www.extfans.com/articles/963)
 
+
+
+[字体换加插件，自定义Chrome网页字体，更改字体样式，调整字体大小-文章-扩展迷](https://www.extfans.com/articles/977)

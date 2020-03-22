@@ -23,3 +23,22 @@ keywords:
 
 [Python写游戏: PyGame入门 (中)](https://python.freelycode.com/contribution/detail/52)
 [Python写游戏: PyGame入门 (下)](https://python.freelycode.com/contribution/detail/51)
+
+
+
+![DcTugKVGLJ6xBd9](https://i.loli.net/2020/03/20/DcTugKVGLJ6xBd9.png)
+
+
+
+## mac pygame 无画面的问题
+
+```shell
+brew install sdl smpeg sdl_image sdl_mixer sdl_ttf portmidi hg sdl_mixer portmidi sdl2 sdl2_image sdl2_mixer sdl2_ttf
+python3 -m pip install pygame==2.0.0.dev6 --user
+
+# 检验
+python -m pygame.examples.aliens
+```
+
+
+

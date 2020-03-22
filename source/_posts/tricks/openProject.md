@@ -28,7 +28,9 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[scrapingdance/ScrapingOutsourcing: ScrapingOutsourcing专注分享爬虫代码 尽量每周更新一个](https://github.com/scrapingdance/ScrapingOutsourcing)
 
+[hanchuanchuan/goInception: 一个集审核、执行、备份及生成回滚语句于一身的MySQL运维工具](https://github.com/hanchuanchuan/goInception)
 
 [adyliu/china_area: 2019年中国全国5级行政区划（省、市、县、镇、村）](https://github.com/adyliu/china_area)
 
