@@ -13,11 +13,24 @@ tags:
 
 <!--more-->
 
+# 03-23
+
+## vardbg
+
+一个 Python 脚本的调试工具，并可以生成脚本运行流程的可视化视频。
+
+```shell
+pip3 install vardbg
+# run file
+vardbg run insertion_sort.py -o qsort.json
+# or run a method
+# vardbg run sort.py quick_sort -o qsort.json -a 9 -a 3 -a 5 -a 1
+vardbg replay qsort.json -v sort_vis.mp4
+```
+
+
+
 # 03-12
-
-### loguru 日志
-
-### supervisor
 
 ### Environs 读取环境变量
 

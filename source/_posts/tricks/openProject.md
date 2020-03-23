@@ -28,6 +28,8 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[lensapp/lens: Lens - The Kubernetes IDE](https://github.com/lensapp/lens)
+
 [scrapingdance/ScrapingOutsourcing: ScrapingOutsourcing专注分享爬虫代码 尽量每周更新一个](https://github.com/scrapingdance/ScrapingOutsourcing)
 
 [hanchuanchuan/goInception: 一个集审核、执行、备份及生成回滚语句于一身的MySQL运维工具](https://github.com/hanchuanchuan/goInception)
