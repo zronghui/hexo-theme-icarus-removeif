@@ -375,12 +375,24 @@ class DiscountedProduct(Product):
 
 
 
-### 选择器
+### 选择器  css xpath
 
 ```python
 # 二者等价
 response.xpath('//div/a/text()').extract()
 response.css('div a::text').extract()
+
+response.xpath('//@class').extract()  # 选取所有名为 class 的属性
+response.xpath('//article/div[1]').extract()
+response.xpath('//article/div[last()]').extract()
+response.xpath('//article/div[last()-1]').extract()
+response.xpath('//article/div[@lang]').extract() # 包含 lang 属性
+response.xpath("//article/div[@lang='eng']").extract() # lang 属性为 eng
+response.xpath('/div/*').extract() # 所有子节点
+response.xpath('//*').extract() # 所有元素
+response.xpath('//title[@*]').extract() # 所有带属性的 title 元素
+response.xpath('//div/a | //div/p').extract()# 所有 div 的 a 和 p
+
 # 二者等价
 response.xpath('//a/@href').extract_first()
 response.xpath('a::attr(href)').extract_first()

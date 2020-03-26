@@ -17,6 +17,12 @@ keywords:
 
 # 正在用的插件
 
+## 查快递
+
+[快递助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E5%BF%AB%E9%80%92%E5%8A%A9%E6%89%8B/hghlokkgbicmblinhepcibacaiegldeg/related)
+
+<img src="https://i.loli.net/2020/03/26/yR12bWzmK57ONJF.png" alt="yR12bWzmK57ONJF" style="zoom:50%;" />
+
 ### 二维码互转
 
 [草料二维码插件，Chrome二维码生成及解析插件，在网页中解码-文章-扩展迷](https://www.extfans.com/articles/976/)
@@ -39,6 +45,8 @@ keywords:
 [Scroll Buddy - Chrome 网上应用店](https://chrome.google.com/webstore/detail/scroll-buddy/iijemcphocnlembodanflickfiafjnmk?hl=zh-CN)
 
 ## Minimap 网页缩略图
+
+会阻挡视线，改成点击后开启插件
 
 [Minimap插件，在任意站点添加完整网页缩略图，快速进行网站定位-文章-扩展迷](https://www.extfans.com/articles/941)
 
@@ -100,3 +108,5 @@ c, 复制
 
 
 [字体换加插件，自定义Chrome网页字体，更改字体样式，调整字体大小-文章-扩展迷](https://www.extfans.com/articles/977)
+
+[Context插件，Chrome插件管理，分组管理谷歌浏览器插件，批量禁用启用-文章-扩展迷](https://www.extfans.com/articles/991)
