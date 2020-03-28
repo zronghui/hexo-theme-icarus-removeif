@@ -13,6 +13,17 @@ tags:
 
 <!--more-->
 
+# 03-27
+
+Python string 速度优化
+
+[btwael/superstring.py: A fast and memory-optimized string library for heavy-text manipulation in Python](https://github.com/btwael/superstring.py)
+
+有意思的几个库
+
+[Python-Markdown/markdown: A Python implementation of John Gruber’s Markdown with Extension support.](https://github.com/Python-Markdown/markdown)
+[sloisel/pyptex: Python Preprocessor for LaTeX](https://github.com/sloisel/pyptex)
+
 # 03-23
 
 ## vardbg

@@ -28,6 +28,10 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[ovity/octotree: GitHub on steroids](https://github.com/ovity/octotree)
+[JeziL/caj2pdf: Convert CAJ (China Academic Journals) files to PDF. 转换中国知网 CAJ 格式文献为 PDF。佛系转换，成功与否，皆是玄学。](https://github.com/JeziL/caj2pdf)
+[zhiying8710/geetest_crack: geetest极验二代滑动、三代滑动和汉字点选破解](https://github.com/zhiying8710/geetest_crack)
+
 [lensapp/lens: Lens - The Kubernetes IDE](https://github.com/lensapp/lens)
 
 [scrapingdance/ScrapingOutsourcing: ScrapingOutsourcing专注分享爬虫代码 尽量每周更新一个](https://github.com/scrapingdance/ScrapingOutsourcing)
