@@ -16,6 +16,26 @@ tags:
 [toc]
 
 <!--more-->
+
+# 03-29
+
+### GsonFormat
+
+我们在接外部接口时，别人给了一串JSON串，我们在代码中需要将JSON中的字段封装到一个类中，一个一个输入挺麻烦的，这时GsonFormat就可以派上用场了。它可以帮助我们根据JSON中的key快速生成我们需要的类。
+
+它的使用快捷键是Option + S
+
+![img](https:////upload-images.jianshu.io/upload_images/2706762-f29945eec825a296.gif?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+
+GsonFormat
+
+
+
+作者：Jackeyzhe
+链接：https://www.jianshu.com/p/d7282aec7665
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
 # 02-17
 
 [AssertJ一分钟入门 - 简书](https://www.jianshu.com/p/e078043071ff)

@@ -28,6 +28,32 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[Waking-Up](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/wolverinn/Waking-Up)：采用追问形式的后端面试问题总结。提问然后追问是面试常见模式，更加贴近真实面试
+
+24、[fucking-algorithm](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/labuladong/fucking-algorithm)：解 LeetCode 题目集合。号称“手撕 LeetCode 题目”，虽然之前推荐过不少解题集合，但是这次我还是没忍住。该项目讲究思路指南，解题思路描述清晰，真香啊
+
+25、[browser-2020](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/luruke/browser-2020)：该项目汇集了浏览器鲜为人知的一些功能
+
+[iredis](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/laixintao/iredis)：Python 语言写的支持自动补全、语法高亮、命令提示等的 Redis 命令行客户端。超好用，真是相见很晚啊
+
+![img](https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/iredis.gif)
+
+[G2](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/antvis/G2)：一套面向常规统计图表，以数据驱动的高交互可视化图形语法，具有高度的易用性和扩展性。使用 G2，你可以无需关注图表各种繁琐的实现细节，一条语句即可使用 Canvas 或 SVG 构建出各种各样的可交互的统计图表。G2 是整个蚂蚁金服 AntV 可视化解决方案中的一个环节，主要针对在高交互、高扩展的二维统计图表
+
+<img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/G2.gif" alt="img" style="zoom:50%;" />
+
+[KafkaCenter](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/xaecbd/KafkaCenter)：Kafka 集群管理维护、生产消费监控平台
+
+<img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/KafkaCenter.png" alt="img" style="zoom:50%;" />
+
+[cssgridgenerator](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/sdras/cssgridgenerator)：在线通过点击动态生成基本的 CSS Grid 代码。[在线尝试](https://cssgrid-generator.netlify.com/)
+
+<img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/cssgridgenerator.jpeg" alt="img" style="zoom: 50%;" />
+
+[Introduction · leetcode](https://leetcode.wang/)
+
+[awesome-golang-leetcode](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/kylesliu/awesome-golang-leetcode)：Go 语言刷 LeetCode。[在线阅读](https://leetcode.gin.sh/)
+
 [ovity/octotree: GitHub on steroids](https://github.com/ovity/octotree)
 [JeziL/caj2pdf: Convert CAJ (China Academic Journals) files to PDF. 转换中国知网 CAJ 格式文献为 PDF。佛系转换，成功与否，皆是玄学。](https://github.com/JeziL/caj2pdf)
 [zhiying8710/geetest_crack: geetest极验二代滑动、三代滑动和汉字点选破解](https://github.com/zhiying8710/geetest_crack)
