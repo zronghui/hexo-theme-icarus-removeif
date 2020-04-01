@@ -612,3 +612,7 @@ print(result)
 
 [elasticsearch-analysis-ik/README.md at master · medcl/elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik/blob/master/README.md)
 
+
+
+[Elasticsearch - Mapping - Tutorialspoint](https://www.tutorialspoint.com/elasticsearch/elasticsearch_mapping.htm)
+

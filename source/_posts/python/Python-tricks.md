@@ -13,6 +13,23 @@ tags:
 
 <!--more-->
 
+## ipython 安装自动补全
+
+pip install pyreadline或pip3 install pyreadline
+
+按tab即可自动补全
+
+### Pip 升级 package
+
+```python
+pip install -U you-get
+pip install --upgrade you-get
+```
+
+
+
+
+
 [iredis](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/laixintao/iredis)：Python 语言写的支持自动补全、语法高亮、命令提示等的 Redis 命令行客户端。超好用，真是相见很晚啊
 
 ![img](https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/iredis.gif)

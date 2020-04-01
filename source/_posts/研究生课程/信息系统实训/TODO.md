@@ -16,3 +16,9 @@ tags:
 
 
 [Lookao](https://lookao.com/)
+
+[萌搜 为小众而搜](https://mengso.com/)
+
+
+
+- [ ] 用用户搜索的关键词去豆瓣搜索，再解析回来
