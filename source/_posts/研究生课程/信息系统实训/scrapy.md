@@ -158,11 +158,44 @@ class VolmoeSpider(scrapy.Spider):
    
    9. scrapy shell 设置 UA
    
+      ```shell
+      scrapy shell 'http://www.gqzzw.com/type/bjsh' -s USER_AGENT='Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'
+      ```
+      
+      
+      
       <img src="https://i.loli.net/2020/03/12/H84sqghj3rNXpWv.jpg" alt="H84sqghj3rNXpWv" style="zoom:50%;" />
 
 ## 学习
 
-### 启动所有爬虫？？
+### 启动所有爬虫 代码启动
+
+[Scrapy教程10- 动态配置爬虫 — scrapy-cookbook 0.2.2 文档](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html)
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import pretty_errors
+import scrapy
+from scrapy.crawler import CrawlerProcess
+from scrapy.utils.project import get_project_settings
+
+from helloScrapy.spiders.gqzzw import GqzzwSpider
+
+pretty_errors.activate()
+lastPage = input('lastPage: ')
+zzname = input('zzname: ')
+process = CrawlerProcess(get_project_settings())
+# 传入参数
+process.crawl(GqzzwSpider, lastPage=lastPage, zzname=zzname)
+process.start()  # the script will block here until the crawling is finished
+
+```
+
+
+
+
 
 ### 启动一个爬虫
 
@@ -421,6 +454,36 @@ divs = response.xpath('//div')
 # 另一种常见的情况将是提取所有直系 <p> 的结果:
 >>> for p in divs.xpath('p'):
 ```
+
+
+
+#### 获取HTML 注释
+
+```python
+from lxml import etree
+ 
+html_str = """
+<div id="box1">this from blog.csdn.net/lncxydjq , DO NOT COPY!
+  <div id="box2">*****
+    <!--can u get me, bitch?-->
+  </div>
+</div>
+"""
+ 
+html = etree.HTML(html_str)
+ 
+print html.xpath('//div[@id="box1"]/div/node()')[1]
+print type(html.xpath('//div[@id="box1"]/div/node()')[1])
+print html.xpath('//div[@id="box1"]/div/node()')[1].text
+ 
+"""output:
+<!--can u get me, bitch?-->
+<type 'lxml.etree._Comment'>
+can u get me, bitch?
+"""
+```
+
+
 
 ### spiders
 
@@ -756,6 +819,8 @@ REDIRECT_ENABLED = False
 
 
 
+
+
 ## 课上教的
 
 ### **1** 延迟获取
@@ -1015,11 +1080,104 @@ gerapy runserver
 
 
 
+## 防止封IP策略
+
+[yidao620c/core-scrapy: python-scrapy demo](https://github.com/yidao620c/core-scrapy#)
+
+如果抓取太频繁了，就被被封IP
+
+策略1：设置download_delay下载延迟，数字设置为5秒，越大越安全
+策略2：禁止Cookie，某些网站会通过Cookie识别用户身份，禁用后使得服务器无法识别爬虫轨迹
+策略3：使用user agent池。也就是每次发送的时候随机从池中选择不一样的浏览器头信息，防止暴露爬虫身份
+策略4：使用IP池，这个需要大量的IP资源，貌似还达不到这个要求
+策略5：分布式爬取，这个是针对大型爬虫系统的，对目前而言我们还用不到。
+
 
 
 scrapy crawl shudan -s JOBDIR=jobs/shudan-1
 
 
+
+## scrapy-cookbook
+
+Contents:
+
+- Scrapy教程01- 入门篇
+  - [安装scrapy](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-01.html#scrapy)
+  - [简单示例](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-01.html#)
+  - [Scrapy特性一览](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-01.html#scrapy)
+- Scrapy教程02- 完整示例
+  - [创建Scrapy工程](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#scrapy)
+  - [定义我们的Item](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#item)
+  - [第一个Spider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#spider)
+  - [运行爬虫](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#)
+  - [处理链接](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#)
+  - [导出抓取数据](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#)
+  - [保存数据到数据库](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#)
+  - [下一步](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-02.html#)
+- Scrapy教程03- Spider详解
+  - [CrawlSpider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-03.html#crawlspider)
+  - [XMLFeedSpider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-03.html#xmlfeedspider)
+  - [CSVFeedSpider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-03.html#csvfeedspider)
+  - [SitemapSpider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-03.html#sitemapspider)
+- Scrapy教程04- Selector详解
+  - [关于选择器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#)
+  - [使用选择器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#)
+  - [嵌套选择器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#)
+  - [使用正则表达式](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#)
+  - [XPath相对路径](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#xpath)
+  - [XPath建议](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-04.html#xpath)
+- Scrapy教程05- Item详解
+  - [定义Item](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item)
+  - [Item Fields](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item-fields)
+  - [Item使用示例](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item)
+  - [Item Loader](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item-loader)
+  - [输入/输出处理器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#)
+  - [自定义Item Loader](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item-loader)
+  - [在Field定义中声明输入/输出处理器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#field)
+  - [Item Loader上下文](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#item-loader)
+  - [内置的处理器](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-05.html#)
+- Scrapy教程06- Item Pipeline
+  - [编写自己的Pipeline](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-06.html#pipeline)
+  - [Item Pipeline示例](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-06.html#item-pipeline)
+  - [激活一个Item Pipeline组件](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-06.html#item-pipeline)
+  - [Feed exports](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-06.html#feed-exports)
+  - [请求和响应](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-06.html#)
+- Scrapy教程07- 内置服务
+  - [发送email](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-07.html#email)
+  - [同一个进程运行多个Spider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-07.html#spider)
+  - [分布式爬虫](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-07.html#)
+  - [防止被封的策略](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-07.html#)
+- Scrapy教程08- 文件与图片
+  - [使用Files Pipeline](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-08.html#files-pipeline)
+  - [使用Images Pipeline](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-08.html#images-pipeline)
+  - [使用例子](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-08.html#)
+  - [自定义媒体管道](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-08.html#)
+- Scrapy教程09- 部署
+  - [部署到Scrapyd](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-09.html#scrapyd)
+  - [部署到Scrapy Cloud](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-09.html#scrapy-cloud)
+- Scrapy教程10- 动态配置爬虫
+  - [脚本运行Scrapy](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#scrapy)
+  - [同一进程运行多个spider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#spider)
+  - [定义规则表](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#)
+  - [定义文章Item](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#item)
+  - [定义ArticleSpider](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#articlespider)
+  - [编写pipeline存储到数据库中](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#pipeline)
+  - [修改run.py启动脚本](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-10.html#run-py)
+- Scrapy教程11- 模拟登录
+  - [重写start_requests方法](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-11.html#start-requests)
+  - [使用FormRequest](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-11.html#formrequest)
+  - [重写_requests_to_follow](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-11.html#requests-to-follow)
+  - [页面处理方法](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-11.html#)
+  - [完整源码](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-11.html#)
+- Scrapy教程12- 抓取动态网站
+  - [scrapy-splash简介](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#scrapy-splash)
+  - [安装docker](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#docker)
+  - [安装Splash](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#splash)
+  - [安装scrapy-splash](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#scrapy-splash)
+  - [配置scrapy-splash](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#scrapy-splash)
+  - [使用scrapy-splash](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#scrapy-splash)
+  - [使用实例](https://scrapy-cookbook.readthedocs.io/zh_CN/latest/scrapy-12.html#)
 
 
 

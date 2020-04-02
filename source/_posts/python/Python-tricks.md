@@ -13,6 +13,19 @@ tags:
 
 <!--more-->
 
+## Wget
+
+[wget.download Python Example](https://www.programcreek.com/python/example/83386/wget.download)
+
+out 自动识别 dir 或文件
+
+```python
+import wget
+wget.download(book_url, out=self.outdir, bar=wget.bar_thermometer)
+```
+
+
+
 ## ipython 安装自动补全
 
 pip install pyreadline或pip3 install pyreadline
