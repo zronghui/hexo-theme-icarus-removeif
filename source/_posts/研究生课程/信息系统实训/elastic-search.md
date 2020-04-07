@@ -31,6 +31,63 @@ elasticsearch
 pip3 install 'elasticsearch>=6.0.0,<7.0.0'
 ```
 
+### centos 
+
+[用RPM安装Elasticsearch到Linux系统服务 - 简书](https://www.jianshu.com/p/3b0650b5c7bb)
+
+[Install Elasticsearch with RPM | Elasticsearch Reference [6.8] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/rpm.html)
+
+先安装 Java8
+
+```shell
+yum install java-1.8.0-openjdk
+java -version
+export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
+echo JAVA_HOME
+```
+
+
+
+vim /etc/yum.repos.d/elasticsearch.repo
+
+```shell
+[elasticsearch-6.x]
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+
+```shell
+yum makecache
+yum install elasticsearch
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+# 启动或停止
+sudo systemctl start elasticsearch.service
+# sudo systemctl stop elasticsearch.service
+# 检查Elasticsearch是否正在运行
+curl -XGET 'localhost:9200'
+
+export PATH=/usr/share/elasticsearch/bin:$PATH
+elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.8/elasticsearch-analysis-ik-6.8.8.zip
+pip3 install 'elasticsearch>=6.0.0,<7.0.0'
+# 重启 es，加载 ik plugin
+sudo systemctl stop elasticsearch.service
+sudo systemctl start elasticsearch.service
+
+```
+
+
+
+
+
+
+
 打开 [localhost:9200](http://localhost:9200/)
 
 <img src="https://i.loli.net/2020/03/05/Psf5OvknTA8lo1S.png" alt="Psf5OvknTA8lo1S" style="zoom: 25%;" />
@@ -407,6 +464,27 @@ print('finish~~~')
 
 ### 查询数据
 
+[ES 21 - Elasticsearch的高级检索语法 (包括term、prefix、wildcard、fuzzy、boost等) - 瘦风 - 博客园](https://www.cnblogs.com/shoufeng/p/11103913.html#3--wildcard-query---%E9%80%9A%E9%85%8D%E7%AC%A6%E6%A3%80%E7%B4%A2)
+
+详见博客，↑
+
+1 term query - 索引词检索
+1.1 term query - 不分词检索
+1.2 terms query - in检索
+2 prefix query - 前缀检索
+3 wildcard query - 通配符检索
+4 regexp query - 正则检索
+5 fuzzy query - 纠错检索
+6 boost评分权重 - 控制文档的优先级别
+7 dis_max的用法 - best fields策略
+7.1 dis_max的提出
+7.2 使用示例
+8 exist query - 存在检索, 已过期
+9 复杂检索的使用范例
+9.1 多条件过滤 - 包含
+9.2 多条件拼接 - 包含+范围+排序
+9.3 定制检索结果的排序规则
+
 
 
 ```json
@@ -534,6 +612,8 @@ print(result)
 19. 函数分值: 脚本评分
 
 ### Query with highlight
+
+[Highlighting - elasticsearch中文文档](http://doc.codingdict.com/elasticsearch/106/)
 
 ```
 {

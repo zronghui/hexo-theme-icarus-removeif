@@ -13,6 +13,42 @@ tags:
 
 <!--more-->
 
+```python
+from pykeyboard import PyKeyboardEvent
+import time
+
+class TapRecord(PyKeyboardEvent):
+  def __init__(self):
+    PyKeyboardEvent.__init__(self)
+
+  def tap(self, keycode, character, press):
+    print(time.time(), keycode, character, press)
+
+t = TapRecord()
+t.run()
+
+import chardet
+fencoding=chardet.detect(u"test string")
+print fencoding
+
+# 从URL地址提取文件名
+import os
+url = 'http://www.jb51.net/images/logo.gif'
+filename = os.path.basename(url)
+print(filename)
+
+# 去除扩展名
+print os.path.splitext(filename)[0]
+
+# 打印方法名
+import inspect
+import sys
+for  method in  inspect.getmembers(sys.path):
+    print method
+```
+
+
+
 ## Wget
 
 [wget.download Python Example](https://www.programcreek.com/python/example/83386/wget.download)

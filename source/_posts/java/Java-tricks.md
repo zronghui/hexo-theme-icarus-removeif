@@ -17,6 +17,374 @@ tags:
 
 <!--more-->
 
+### 降低 idea 的 CPU 使用率
+
+[IntelliJ IDEA 卡顿CPU 使用率超过100% – 软体工程师的踩雷笔记](https://nullpointerexception.tangblack.com/intellij-idea-%e5%8d%a1%e9%a0%93-cpu-%e4%bd%bf%e7%94%a8%e7%8e%87%e8%b6%85%e9%81%8e100/)
+
+# 04-03
+
+## Java 程序该怎么优化？工具篇
+
+原创 一猿小讲 [一猿小讲](javascript:void(0);) *1周前*
+
+> 程序员：为什么程序总是那么慢？时间都花到哪里去了？
+>
+> 面试官：若你写的 Java 程序，出现了性能问题，该怎么去排查呢？
+
+***1.*** **hprof 工具**
+
+hprof 工具是通过织入监控代码，来对 Java 程序进行监控的一款工具。可以监控 Java 程序在运行时占用的 CPU，及统计堆内存使用等。
+
+例如：每隔 10 毫秒采样 CPU 消耗信息，并把信息保存到 hprof.txt 文件中。
+
+```
+java -agentlib:hprof=cpu=times,interval=10,file=hprof.txt class
+```
+
+指令运行完，打开 hprof.txt 便很容易统计出哪些方法的运行耗时较长。
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBF0dEr4erzUxafQFWhAWDRhfCKEleiaBta4vDKVfnuAODd7PylcSCtOdA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+例如：输出 Java 应用程序中各个类所占用的内存百分比。
+
+```
+java -agentlib:hprof=heap=sites,file=hprof.txt class备注：若未指定 file=hprof.txt，则默认会生成 java.hprof.txt 文件
+```
+
+
+
+打开输出的文件，效果如下。
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFy9dlffnz5VfEiamIePAiaZCsdwWNKnN9R2AVuIOThf2l2TesD4jz0e4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+例如：将 Java 应用程序的堆快照保存在文件 core.hprof 中，然后就可以使用 VisualVM 等工具来分析这个堆文件啦。
+
+```
+java -agentlib:hprof=heap=dump,format=b,file=core.hprof class
+```
+
+
+
+
+
+采用 VisualVM 工具打开 core.hprof 文件进行分析堆快照，效果如下。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFgeCI7s2VXib2PC4QBHKTNORZbicU9L49NLllyhiafYibSlR9jHUpUY9GMg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+***2.*** **JConsole 工具**
+
+
+
+JConsole 是 Java 自带的图形化性能监控工具，可以让你摆脱命令行排查问题的痛苦。通过它，会非常容易的监测 Java 程序的运行情况。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFVNwEboHsOXeVu2M59k9RXAaw9vMhHplmvgr5MWicP8acMlByhyKPczg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+***2.1.*** **连接要监控的 Java 程序**
+
+
+
+首先进入 JDK 安装之后的 bin 目录，若是配置过 Java 的环境变量，直接运行 JConsole 就行，效果如下。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFvN5undnsvHFo8lU8EHGT0Q5SYV8R03diajgKPBr10ibnDW0F4Bia9tADA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+若是要监控本地 Java 进程，直接选择列表中的名称进行连接即可。
+
+
+
+若是要监控远程 Java 进程，需要在远程 Java 程序启动时，需要加上下面几句话。
+
+```
+# 远程服务器的ip地址-Djava.rmi.server.hostname=127.0.0.1 # 指定jmx监听的端口-Dcom.sun.management.jmxremote.port=8099 # 指定jmx监听的端口-Dcom.sun.management.jmxremote.rmi.port=8099 # 是否开启ssl-Dcom.sun.management.jmxremote.ssl=false # 是否开启认证-Dcom.sun.management.jmxremote.authenticate=false
+```
+
+
+
+若是在 IDEA 开发工具中进行验证，按照下图进行配置，跑程序就行。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFZOAulnB0HNw8v3AHdww8LUkoFl0kjjGk2TuAjOE92DsThZOeeaxGicA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+若是命令行启动时，按照下述方式配置，启动就行。
+
+```
+java -cp . -Djava.rmi.server.hostname=127.0.0.1 -Dcom.sun.management.jmxremote.port=8099 -Dcom.sun.management.jmxremote.rmi.port=8099  -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false className
+```
+
+
+
+启动远程 Java 程序，JConsole 输入远程服务 IP 和 端口，连接即可。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFCiaBKnDian8Gg6kcnAl4ibmqvM45NN5MCxUib4xwZyQmlVT4ROZcuWfSKw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+***2.2.*** **监控 Java 程序概况**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFEup0BHf0ibVssMDSD8zWmx1d1c75ibu74HsqpRYITSBBCRX05rJEIYgA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+如图所示，JConosle 连接上要监控的 Java 程序后，可以很方便的查看堆内存使用量、线程数量、加载类的数量以及 CPU 的占用率。
+
+***2.3.*** **内存监控**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBF98JfEuG7X7ypZSVKMuTUvWGL34XstZFNUsGCdnWx3yb8SxVg7jHUdw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+如图所示，在 JConsole 提供的内存监控页面，不仅能看到堆内存的使用情况，而且能查看非堆区的内存使用情况等等。另外，还提供了让 Java 应用强制进行一次 GC 的功能。
+
+***2.4.*** **线程监控**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFNM1y4BXZt5dywdXg8WrXNjC3jIFc8Lrq9icwwmicUrt61LSueWAeFEnw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+如图所示，通过 JConsole 提供的线程页面，可以方便查看系统内的线程数量，以及程序中所有的线程，并且还能看到线程的栈信息。另外，该页面还提供了检测死锁的支持，那么就可以快速的帮我们定位死锁的问题啦。
+
+
+
+***2.5.*** **类加载情况**
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFfcInWfV7XR70ibCVjibstTbzia8n21uGDfq2JGkV8u4AQnz19UcwPlTsg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+
+
+如图所示，JConsole 还能够显示类加载情况，包括已经装载的类数量，以及已经卸载的类数量。
+
+
+
+***2.6.*** **VM 摘要**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFCXkTiaR87XzRceynVNShLGMISXmadxUMaicCu6pmLiaj5WbeTgc6RL0oA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+如图所示，JConsole 提供的 VM 概要页面，能够显示当前 Java 应用程序的基本信息，包括运行环境、系统线程信息、堆信息等等。
+
+***2.7.*** **MBean 管理**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFv3zFZC1sImrKgFAOXqwstHc3dKKC5n5Qm1dqq3pszV0EK6YkbsVD9Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom: 50%;" />
+
+
+
+通过 JConsole 提供的 MBean 页面，我们可以对应用中的 MBean 进行统一管理，鉴于之前在剖析 Resin 服务器源码的时候，我们多次用到过，本次不再铺开去说。
+
+***3.*** **VisualVM 工具**
+
+Visual VM 是可以替代 jstat、jmap、jhat、jstack 命令的一款故障诊断和性能监控的可视化工具，甚至可以替代 JConsole，所以我们还是有必要进行了解一下。
+
+***3.1*** **连接要监控的 Java 程序**
+
+首先进入 JDK 安装的 bin 目录，运行 jvisualvm，启动起来后和 JConsole 一样，可以选择本地和远程进行连接，效果如下。
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFQSqZLRZcZc16sBZpM3ibJiafBGaZgOiaLbRY99icAXkwCDL2Kn3Eiace7fA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFMJic6icc2YaLhVC6Dx5wPbickE7wmON4DMdOoChbzrewbHQPkSO7DGM2Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+***3.2*** **概述**
+
+**
+**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFNLzZQVYlY8DrVnOED6v7RgcTNrxYQVMX5s8ty3so2VLo24LTyKpqbg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+如图所示，通过 VisualVM 提供的概述功能页，可以很方便的查看 Java 程序的进程 ID、JVM 参数、系统属性等等信息。
+
+
+
+***3.3*** **监视**
+
+**
+**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFuRk9KwXmicu9bRCArWVu367fXZ07LOFXvLH3kPiazJF3aNgiaAkofAUzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+
+
+这块和 JConsole 很像，VisualVM 将 CPU 使用情况、堆使用情况、类加载信息以及线程都做了图形界面展示，可以很直观的进行监测。
+
+
+
+***3.4*** **线程监控**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFxTz763dcqialZRDLLbItAO3iccFkicxoRQWibB4zdY7IR7fy6Lrtkb7aUw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+VisualVM 可以展示详细的线程信息，让线程信息一览无余，并且会自动进行死锁检测，如果在当前程序中找到死锁，则会提示“检测到死锁”。另外，通过线程 Dump可以导出当前所有线程的堆栈信息。
+
+
+
+***3.5*** **抽样器**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFYa7Jdib8qRffPYqicfQxHqw8ARxuWCTaSFjxUgqu8Rws7ia9kGgaBmMiag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+Visual VM 提供 CPU 和内存两个抽样器。通过 CPU 抽样器，可以帮助我们快速找到程序中占用 CPU 时间最长的方法；通过内存抽样器，可以帮助我们查看当前程序的堆信息。
+
+
+
+CPU抽样器效果图：
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFZicqffvcT2jFicXg79hR88ialzkvkYxtNvY6Vib4y5fArb00rWQBOmopTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+内存抽样器效果图：
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFShSDkjpXuia4b3IJU1gOjcFW1jZ1mWUwh8dnt1Z223wEI6icjNibAwwVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+***3.6*** **Profiler**
+
+Profiler 的功能和抽样器其实差不多，只不过抽样器是抽样进行检测，而 Profiler 是全面进行检测。
+
+
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFgKRfaM8hgPutSCvBTZiaZNraOmm4zXxe8R8kTbKFnQHx1Fk39BBkibrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+点击 CPU 按钮，效果如上图所示，则开启一个 CPU 性能分析会话，等 VisualVM 收集和统计完相关性能数据信息，将会显示在性能分析结果。
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFXOanMnwrY2wCicbcuqH6UCtUv0VFtOyrTYYBceEQqO25u5BmEjckUCg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+若点击内存按钮，则开启一个内存分析会话，等 VisualVM 收集和统计完相关性能数据信息，将会显示在性能分析结果，效果如上图所示。
+
+
+
+***3.7*** **快照**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFuwyhcKyTzKPajh8yicq8Sticp9yYX3ocCaL4JafS2Gf2mHqq4pvAfDicw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+VisualVM 很多地方，都提供了快照功能，可以让我们保存某一个时刻应用程序的堆信息、线程堆栈等等保存成快照，以便性能优化后进行对比、分析使用。
+
+
+
+***3.8*** **插件**
+
+![img](https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFEvo4YoDwuoibibBlravsmcMQObWfNyVwG02DYtuHsZ2oukq03LU5rHAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+
+
+VisualVM 还可以通过安装插件，来实现更多可能性。
+
+<img src="https://i.loli.net/2020/04/03/iDLq5SyVfZ1EIeb.jpg" alt="iDLq5SyVfZ1EIeb" style="zoom:67%;" />
+
+**3.5. 数学运算，搞不好会倾家荡产。**
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWNDYjkiaHumNA9zLAOHs1y9ibrdfXibq63Z6wBpGuxgQKFKwtUCxfDwkGAZ7Z6hPrcpXBM7bJr8iaH8XQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+输出结果：0.010000000000005116，一般遇到需要用到浮点数运算的地方，都可以使用 java.math.BigDecimal。
+
+建议修改为：
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWNDYjkiaHumNA9zLAOHs1y9ibvic3HEAXuEsr9CibfvDia5ksF6iaLp5bZXSo4LRxUarpFX1icO7XSkJyCYw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+注意构造 BigDecimal 的参数为 String，千万别搞错了，这也是新手易犯的问题。
+
+
+
+有些时候怎么调，都不通，就想知道 jar 包里面都写了点啥？在此，推荐一款用的最多的**反编译工具 JD-GUI**
+
+SonarQuable，它是一个用于代码质量管理的开源平台，也有助于帮你进行代码审查，提升代码质量。
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWO8hhw7iboriaQYnG4pIZJMbzVKROzYtA8SZOQyVfy6H3AiaeRuzGCGRvCPD6CBNDR0sIMb6NCs95eyg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+## Java 程序该怎么优化？技巧篇
+
+[Java 程序该怎么优化？技巧篇](https://mp.weixin.qq.com/s/jyJ1NkmU7_kOJEaR1x3rLQ)
+
+1.字符串处理优化，乃优化之源。
+1.1.字符串分割
+
+<img src="https://i.loli.net/2020/04/03/Ur9L7lmsEXTkWZC.jpg" alt="Ur9L7lmsEXTkWZC" style="zoom:50%;" />
+
+从运行效果， **StringTokenizer(?) 其效率高于 split() 方法**。
+所以，在能够使用 StringTokenizer 进行处理的地方，就尽量使用 StringTokenizer 进行字符串分割处理。
+1.2. 字符串拼接
+
+<img src="https://i.loli.net/2020/04/03/QSm4ZOjWqwRAv8l.png" alt="QSm4ZOjWqwRAv8l" style="zoom:50%;" />
+
+使用 + 号拼接字符串，其效率明显较低，采用 StringBuilder 来完成字符串连接性能相对较好，同理，如果需要考虑线程安全的情况下，可以选择 StringBuffer。
+
+2. 善用 arraycopy()，让数组复制不再难。
+    对数组的操作，如果能用 **System.arraycopy()** 这个方法实现，建议尽量去使用。
+
+  ```java
+  #                   srcPos   destPos
+  System.arraycopy(src, 0, dest, 0, size);
+  ```
+
+  Arrays.copyOf() 底层还是调用 System.arraycopy() 来实现
+
+3. 集合用的多，使用场景要注意。
+    充分的选择好数据结构进行数据存储，便是最好的程序优化
+
+  <img src="https://i.loli.net/2020/04/03/eTUpxjqoa6GCVc4.jpg" alt="eTUpxjqoa6GCVc4" style="zoom:50%;" />
+  <img src="https://i.loli.net/2020/04/03/qXCN53kAeG8BdS6.jpg" alt="qXCN53kAeG8BdS6" style="zoom:50%;" />
+  <img src="https://i.loli.net/2020/04/03/YUmnQDwNFx9ruIa.jpg" alt="YUmnQDwNFx9ruIa" style="zoom:50%;" />
+
+4. 缓冲，让子弹飞一会儿。
+
+  <img src="https://i.loli.net/2020/04/03/MaIx8jJZ2klen7E.png" alt="MaIx8jJZ2klen7E" style="zoom:50%;" />
+
+  所以，文件读写操作时尽量都使用缓冲流进行操作，有助于提升性能。
+
+5. 缓存，让坐飞机的和坐驴车的打交道。
+
+针对银行编码等一些使用频率较高的业务数据，或者来之不易的计算结果，都可以保存到缓存中，当再次使用时，直接从缓存中获取，而不需要再占用宝贵的系统资源。
+
+目前有很多基于 Java 的缓存框架，而我用的最多的是 **EhCache(?)**。
+
+2. 
+    日志记的好，线上没烦恼。
+
+3. 一个优化原则。**先实现业务功能，再考虑优化性能**，如果功能都没实现，谈其它的都白扯。
+    一个调优思路。
+
+  <img src="https://i.loli.net/2020/04/03/duRHw6hoGegFOtv.jpg" alt="duRHw6hoGegFOtv" style="zoom:50%;" />
+
 # 03-29
 
 ### GsonFormat

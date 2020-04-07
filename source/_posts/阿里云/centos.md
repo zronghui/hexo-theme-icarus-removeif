@@ -116,9 +116,18 @@ gem install colorls
 
 alias ls='colorls -A'
 alias lc='colorls -lA --sd'
+
+# Java 8
+yum install java-1.8.0-openjdk
+java -version
+export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
+echo JAVA_HOME
+
+# Find Java’s Path
+update-alternatives --config java
 ```
 
-
+[阿里云服务器端口8080开放-百度经验](https://jingyan.baidu.com/article/95c9d20d624d1eec4e756125.html)
 
 ### Rsync 报错
 

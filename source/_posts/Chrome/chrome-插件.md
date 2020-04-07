@@ -17,6 +17,15 @@ keywords:
 
 # 正在用的插件
 
+
+
+## Listly  一键爬取当前页面数据
+
+[Listly - The Best Web Scraper Ever](https://www.listly.io/)
+[Listly - Web Scraper - Chrome 网上应用店](https://chrome.google.com/webstore/detail/listly-web-scraper/ihljmnfgkkmoikgkdkjejbkpdpbmcgeh/related?utm_source=homepage)
+
+免费版：每月只能抓取 10 个网页，可建 1 项定期下载，免费。
+
 ## 查快递
 
 [Live Coronavirus Tracker - Coronastats - Chrome 网上应用店](https://chrome.google.com/webstore/detail/live-coronavirus-tracker/ohgihjjamahlilnoifoicncfnlpmbcgk/related)
@@ -120,3 +129,4 @@ s
 [Loom - Video Recorder: Screen, Webcam and Mic免费录制屏幕，网页截图 Chrome插件,Loom - Video Recorder: Screen, Webcam and Mic免费录制屏幕，网页截图 谷歌浏览器插件下载_安装_教程-扩展迷](https://www.extfans.com/productivity/liecbddmkiiihnedobmlmillhodjkdmb/)
 [Foxit PDF Tools插件，PDF文件处理工具，包括编辑、压缩、转换格式-文章-扩展迷](https://www.extfans.com/articles/1011/)
 
+[Web of Science生成参考文献助手插件，快速保存当前页面参考文献-文章-扩展迷](https://www.extfans.com/articles/1024)

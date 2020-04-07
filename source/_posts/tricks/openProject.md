@@ -28,6 +28,16 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[KafkaCenter](https://github.com/xaecbd/KafkaCenter)
+
+
+
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/84141/1585877943370-d84a2b03-ea59-496d-a251-45d3fd47a9ef.jpeg" alt="img" style="zoom:50%;" />
+
+
+
+一站式的 Kafka 集群管理和维护平台，代码开源，完善的权限设计，使用方便，无需精通 Kafka 就能管理集群。
+
 [Waking-Up](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/wolverinn/Waking-Up)：采用追问形式的后端面试问题总结。提问然后追问是面试常见模式，更加贴近真实面试
 
 24、[fucking-algorithm](https://hellogithub.com/periodical/statistics/click/?target=https://github.com/labuladong/fucking-algorithm)：解 LeetCode 题目集合。号称“手撕 LeetCode 题目”，虽然之前推荐过不少解题集合，但是这次我还是没忍住。该项目讲究思路指南，解题思路描述清晰，真香啊
@@ -378,10 +388,6 @@ Git 的版本模型对新手来说，并不是很容易理解。Gitless 试图�
 [serhii-londar/open-source-mac-os-apps: 🚀 Awesome list of open source applications for macOS.](https://github.com/serhii-londar/open-source-mac-os-apps)
 
 
-
-# [dropcss  清理样式表里面无用的 CSS](https://github.com/leeoniya/dropcss)
-
-一个清理样式表里面无用的 CSS 代码的工具
 
 # [mas  Mac 应用商店的命令行界面](https://github.com/mas-cli/mas)
 
