@@ -236,7 +236,11 @@ Hello {{ name }}
 
 
 
+[Django——模板层 - King'home - 博客园](https://www.cnblogs.com/king-home/p/11004487.html)
 
+![MFcSNw4mIZzqODC](https://i.loli.net/2020/04/09/MFcSNw4mIZzqODC.png)
+
+Chrome 自带 截图无法截取全部，更多见博客
 
 ## 3.django admin 管理后台
 
