@@ -149,7 +149,7 @@ https://ihaoming.top/archives/9a935f57.html
 
 
 
-在代码块中使用了双花括号，{{*}}，使用这个会让markdown文件出错，在花括号中间随便写了一个单词{{massage}}就解决了
+在代码块中使用了双花括号，{{blank}}，使用这个会让markdown文件出错，在花括号中间随便写了一个单词{{massage}}就解决了
 
 ## 问题
 ### search一直加载
