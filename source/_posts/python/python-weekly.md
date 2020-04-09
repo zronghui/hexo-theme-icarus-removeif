@@ -12,6 +12,15 @@ tags:
 
 <!--more-->
 
+[joblib/joblib: Computing with Python functions.](https://github.com/joblib/joblib)
+
+- [ ] [Joblib: running Python functions as pipeline jobs — joblib 0.14.1.dev0 documentation](https://joblib.readthedocs.io/en/latest/)
+
+[mstamy2/PyPDF2: A utility to read and write PDFs with Python](https://github.com/mstamy2/PyPDF2)
+[PyPDF2 Documentation — PyPDF2 1.26.0 documentation](https://pythonhosted.org/PyPDF2/)
+
+
+
 [mkepub库](https://python.freelycode.com/contribution/detail/510)
 [用Python和GooPyCharts创建图表](https://python.freelycode.com/contribution/detail/499)
 [彩色化终端文本: 让Python变得更便捷](https://python.freelycode.com/contribution/detail/486)

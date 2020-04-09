@@ -121,14 +121,21 @@ class Solution:
 
 ## 4
 
-(动态规划) O(n)O(n)
-设状态 f(i)f(i) 表示从第 ii 堆开始往后取，在最优策略下先手比后手能多赢的分数。假设下标从 0 开始到 n - 1。
-初始值，f(n)=0f(n)=0，其余待定。
-转移时，对于 f(i)f(i) 有三种决策，取第 ii 堆，取第 ii 和 i+1i+1 堆，以及取第 ii，i+1i+1 和 i+2i+2 堆，对应的转移分别为 max(s(i)−f(i+1),s(i)+s(i+1)−f(i+2),s(i)+s(i+1)+s(i+2)−f(i+3)max(s(i)−f(i+1),s(i)+s(i+1)−f(i+2),s(i)+s(i+1)+s(i+2)−f(i+3)。
-最终，如果 f(0)=0f(0)=0，则平局；如果 f(0)>0f(0)>0 则 Alice 胜，否则 Bob 胜。
+<img src="https://i.loli.net/2020/04/08/oQypV49rS5KL32k.png" alt="oQypV49rS5KL32k" style="zoom:50%;" />
 
 ```python
-
+class Solution:
+    def stoneGameIII(self, l: List[int]) -> str:
+        dp = [0 for i in range(len(l))]
+        dp[-1] = l[-1]
+        if len(l)>1:
+            dp[-2] = max(l[-2]-dp[-1], sum(l[-2:]))
+        if len(l)>2:
+            dp[-3] = max(l[-3]-dp[-2], l[-3]+l[-2]-dp[-1], sum(l[-3:]))
+        for i in range(len(l)-4, -1, -1):
+            dp[i] = max(l[i]-dp[i+1], l[i]+l[i+1]-dp[i+2], l[i]+l[i+1]+l[i+2]-dp[i+3])
+        return 'Alice' if dp[0]>0 else 'Bob' if dp[0]<0 else 'Tie'
+        
 ```
 
 

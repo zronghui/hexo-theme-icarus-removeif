@@ -28,6 +28,11 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[lxn/walk: A Windows GUI toolkit for the Go Programming Language](https://github.com/lxn/walk)
+[lensapp/lens: Lens - The Kubernetes IDE](https://github.com/lensapp/lens)
+[kubernetes-sigs/kube-batch: A batch scheduler of kubernetes for high performance workload, e.g. AI/ML, BigData, HPC](https://github.com/kubernetes-sigs/kube-batch)
+[Bindian9710/Spider-Crack_Js: 爬虫js解密、python解密 大众点评|中国移动|新浪微博|汽车之家|Steam|中华英才网|拼多多|36氪|今日头条... 欢迎Star](https://github.com/Bindian9710/Spider-Crack_Js)
+
 [KafkaCenter](https://github.com/xaecbd/KafkaCenter)
 
 

@@ -1,5 +1,5 @@
 ---
-title: tricks-2020-04
+title: tricks-2020-04-1th-week
 toc: true
 recommend: 1
 uniqueId: '2020-04-01 03:52:38/"tricks-2020-04".html'
@@ -425,4 +425,6 @@ https://www.gitbook.com/book/astaxie/build-web-application-with-golang/details
 
 
 [如何查看yum 安装的软件路径（不要再忘了）_运维_向小凯同学学习-CSDN博客](https://blog.csdn.net/wd2014610/article/details/79659073)
+
+
 

@@ -57,3 +57,5 @@ keywords:
 
 [Unsplash Wallpapers | MacMenuBar.com](https://macmenubar.com/unsplash-wallpapers/)
 [PDFpen Pro 11.2.2 破解版 for Mac 强大的PDF编辑器](https://www.macwk.com/soft/pdfpen)
+
+[展开讲 DEVONthink：Mac史上最强文件管理软件 – Mac玩儿法](https://www.waerfa.com/devonthink-deep-review-one)

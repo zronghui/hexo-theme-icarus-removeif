@@ -130,3 +130,5 @@ s
 [Foxit PDF Tools插件，PDF文件处理工具，包括编辑、压缩、转换格式-文章-扩展迷](https://www.extfans.com/articles/1011/)
 
 [Web of Science生成参考文献助手插件，快速保存当前页面参考文献-文章-扩展迷](https://www.extfans.com/articles/1024)
+
+[Bulk URL Opener - Chrome 网上应用店](https://chrome.google.com/webstore/detail/bulk-url-opener/kgnfciolbjojfdbbelbdbhhocjmhenep)
