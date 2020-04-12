@@ -13,16 +13,14 @@ keywords:
 
 [TOC]
 
-<!--more-->
-
-## 题目
+## 
 
 - [x] [Count Largest Group](https://leetcode.com/contest/biweekly-contest-23/problems/count-largest-group)**3**
 - [x] [Construct K Palindrome Strings](https://leetcode.com/contest/biweekly-contest-23/problems/construct-k-palindrome-strings)**5**
 - [ ] [Circle and Rectangle Overlapping](https://leetcode.com/contest/biweekly-contest-23/problems/circle-and-rectangle-overlapping)**5**
 - [x] [Reducing Dishes](https://leetcode.com/contest/biweekly-contest-23/problems/reducing-dishes)**6**
 
-
+<!--more-->
 
 ## 1
 

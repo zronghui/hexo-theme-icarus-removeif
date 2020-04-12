@@ -13,14 +13,14 @@ keywords:
 
 [TOC]
 
-<!--more-->
-
-
-
 - [x] [Minimum Subsequence in Non-Increasing Order](https://leetcode.com/contest/weekly-contest-183/problems/minimum-subsequence-in-non-increasing-order)**4**
 - [x] [Number of Steps to Reduce a Number in Binary Representation to One](https://leetcode.com/contest/weekly-contest-183/problems/number-of-steps-to-reduce-a-number-in-binary-representation-to-one)**4**
 - [ ] [Longest Happy String](https://leetcode.com/contest/weekly-contest-183/problems/longest-happy-string)**6**
 - [ ] [Stone Game III](https://leetcode.com/contest/weekly-contest-183/problems/stone-game-iii)**7**
+
+<!--more-->
+
+
 
 <img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200405120055077.png" alt="image-20200405120055077" style="zoom:50%;" />
 

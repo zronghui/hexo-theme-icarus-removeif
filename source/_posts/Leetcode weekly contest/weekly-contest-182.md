@@ -13,6 +13,11 @@ keywords:
 
 [TOC]
 
+- [ ] [Find Lucky Integer in an Array](https://leetcode.com/contest/weekly-contest-182/problems/find-lucky-integer-in-an-array)**3**
+- [x] [Count Number of Teams](https://leetcode.com/contest/weekly-contest-182/problems/count-number-of-teams)**4**
+- [x] [Design Underground System](https://leetcode.com/contest/weekly-contest-182/problems/design-underground-system)**5**
+- [ ] [Find All Good Strings](https://leetcode.com/contest/weekly-contest-182/problems/find-all-good-strings) **8**
+
 <!--more-->
 
 
@@ -23,13 +28,6 @@ keywords:
 ![W3V4YouLTnPEXjO](https://i.loli.net/2020/03/29/W3V4YouLTnPEXjO.png)
 
 太丢人了
-
-
-
-- [x] [Find Lucky Integer in an Array](https://leetcode.com/contest/weekly-contest-182/problems/find-lucky-integer-in-an-array)**3**
-- [x] [Count Number of Teams](https://leetcode.com/contest/weekly-contest-182/problems/count-number-of-teams)**4**
-- [x] [Design Underground System](https://leetcode.com/contest/weekly-contest-182/problems/design-underground-system)**5**
-- [ ] [Find All Good Strings](https://leetcode.com/contest/weekly-contest-182/problems/find-all-good-strings) **8**
 
 
 
