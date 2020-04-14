@@ -93,3 +93,13 @@ class Solution:
 ## 小盒精灵（TVRemoteIME）TV APP 语音输入
 
 [高手玩盒子的极佳应用----小盒精灵（TVRemoteIME）v1.4.0 - 『精品软件区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|破解软件|www.52pojie.cn](https://www.52pojie.cn/thread-725509-1-1.html)
+
+
+
+## 《鬼灭之刃》剧场版《无限列车篇》
+
+[《鬼灭之刃》剧场版《无限列车篇》第1弹预告公开，10月16号日本上映](http://acg17.com/56301.html)
+
+
+
+[Zenkit To Do - 简洁的跨平台任务管理工具，一个奇妙清单的替代品 - 小众软件](https://www.appinn.com/zenkit-to-do/)

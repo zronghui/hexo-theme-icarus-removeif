@@ -16,3 +16,4 @@ keywords:
 <!--more-->
 
 - [ ] 自建 RSS 服务器 （RSS2.0 RSS1.0 ATOM1.0 的区别？ ）
+- [ ] Cli 将 md 的图片调整统一的缩放比例
