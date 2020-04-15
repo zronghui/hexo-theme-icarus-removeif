@@ -103,3 +103,9 @@ class Solution:
 
 
 [Zenkit To Do - 简洁的跨平台任务管理工具，一个奇妙清单的替代品 - 小众软件](https://www.appinn.com/zenkit-to-do/)
+
+
+
+支持部署到服务器
+
+[live-torrent：一个支持磁力链和种子的在线搜索云播Web客户端 - Rat's Blog](https://www.moerats.com/archives/1027/?hao.su)
