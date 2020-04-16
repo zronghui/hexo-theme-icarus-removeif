@@ -13,6 +13,23 @@ tags:
 
 <!--more-->
 
+
+
+最大 int float
+
+```python
+import sys
+
+self.m = sys.maxsize
+float('inf')
+```
+
+
+
+
+
+
+
 ```python
 from pykeyboard import PyKeyboardEvent
 import time

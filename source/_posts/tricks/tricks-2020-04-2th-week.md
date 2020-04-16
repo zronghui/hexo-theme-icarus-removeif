@@ -109,3 +109,20 @@ class Solution:
 支持部署到服务器
 
 [live-torrent：一个支持磁力链和种子的在线搜索云播Web客户端 - Rat's Blog](https://www.moerats.com/archives/1027/?hao.su)
+
+
+
+
+
+猎狐
+会员每天22点更新2集
+
+
+
+## mac  挂游戏脚本
+
+让电脑变得特别卡，还是用没用的手机吧
+
+[(17 封私信 / 27 条消息) Mac 系统上有什么好用的 Android 模拟器？ - 知乎](https://www.zhihu.com/question/24404260)
+[天天安卓模拟器_安卓模拟器电脑版下载_天天模拟器官网](http://www.ttmnq.com/)
+[游戏蜂窝电脑版辅助_安卓模拟器辅助_电脑版手游辅助_蜂窝助手-游戏蜂窝电脑版官网](http://pc.ifengwoo.com/?qudao=market15)
