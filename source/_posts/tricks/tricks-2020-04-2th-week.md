@@ -119,10 +119,25 @@ class Solution:
 
 
 
-## mac  挂游戏脚本
+## mac 挂游戏脚本
 
 让电脑变得特别卡，还是用没用的手机吧
 
 [(17 封私信 / 27 条消息) Mac 系统上有什么好用的 Android 模拟器？ - 知乎](https://www.zhihu.com/question/24404260)
 [天天安卓模拟器_安卓模拟器电脑版下载_天天模拟器官网](http://www.ttmnq.com/)
 [游戏蜂窝电脑版辅助_安卓模拟器辅助_电脑版手游辅助_蜂窝助手-游戏蜂窝电脑版官网](http://pc.ifengwoo.com/?qudao=market15)
+
+[狂野飙车 辅助](https://www.lanzous.com/b0nbq8tc)
+
+## 论文免费搜索下载网站
+
+[《计算机应用》官方网站](http://www.joca.cn/CN/volumn/home.shtml)
+
+[爱学术_参考文献资料_毕业论文范文免费下载](https://www.ixueshu.com/)
+
+
+
+## 力扣
+
+[✅ 2020-04月 每日一题 - 力扣（LeetCode）](https://leetcode-cn.com/problemset/2020-04/)
+[每日一题打卡](http://group.ojeveryday.com/#/check)
