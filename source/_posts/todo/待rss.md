@@ -19,4 +19,10 @@ keywords:
 
 [windliang](https://windliang.cc/)
 
-[高清杂志网【官网】](http://www.gqzzw.com/)
+~~[高清杂志网【官网】](http://www.gqzzw.com/)~~
+
+[Chrome插件(谷歌浏览器插件) - 提供Chrome商店中优秀的Chrome插件推荐与下载服务](https://chromecj.com/)
+
+
+
+[博客文章 | BEWINDOWEB](http://www.bewindoweb.com/index.php)

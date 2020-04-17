@@ -17,8 +17,20 @@ keywords:
 
 # 正在用的插件
 
+## 语音输入
+
+[VoiceIn - Chrome 网上应用店](https://chrome.google.com/webstore/detail/voice-in-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko/related)
+
+## 守候购物小助手
+
+NB！
+
+[守候购物小助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E5%AE%88%E5%80%99%E8%B4%AD%E7%89%A9%E5%B0%8F%E5%8A%A9%E6%89%8B/eafefjbddnbamfophdiiiemfkfocaahm/related)
+
 [守候购物小助手插件，京东比价插件、多电商平台库存查询-文章-扩展迷](https://www.extfans.com/articles/1038/)
 [chrome.google.com](https://chrome.google.com/webstore/detail/%E5%AE%88%E5%80%99%E8%B4%AD%E7%89%A9%E5%B0%8F%E5%8A%A9%E6%89%8B/eafefjbddnbamfophdiiiemfkfocaahm)
+
+
 
 [[User Script/用户脚本]Google Hit Hider by Domain - 能过滤搜索引擎搜索结果的脚本（版本：2.1.0，日期：20191021） - 24点半](https://24dian30.com/life/pem/3058.html)
 

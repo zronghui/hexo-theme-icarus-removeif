@@ -61,3 +61,5 @@ keywords:
 [展开讲 DEVONthink：Mac史上最强文件管理软件 – Mac玩儿法](https://www.waerfa.com/devonthink-deep-review-one)
 
 [Weather mini：精美的迷你天气预报小工具 – Mac玩儿法](https://www.waerfa.com/weather-mini-review)
+
+[Live Home 3D Pro 3.7.3 中文破解版 for Mac Mac高级家居设计软件](https://www.macwk.com/soft/live-home-3d)

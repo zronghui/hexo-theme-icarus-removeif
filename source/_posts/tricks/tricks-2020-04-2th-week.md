@@ -141,3 +141,31 @@ class Solution:
 
 [✅ 2020-04月 每日一题 - 力扣（LeetCode）](https://leetcode-cn.com/problemset/2020-04/)
 [每日一题打卡](http://group.ojeveryday.com/#/check)
+
+
+
+## PPT 模板网站
+
+[HiPPTER | PPT资源导航 | PPT模板图表等设计素材免费下载](http://www.hippter.com/)
+
+
+
+[Chrome插件(谷歌浏览器插件) - 提供Chrome商店中优秀的Chrome插件推荐与下载服务](https://chromecj.com/)
+
+
+
+[地图搜租房](https://house-map.cn/#/)
+
+将各大租房平台的信息和通勤时间计算相结合，不仅可以在地图上直观的看到全市的租房信息，而且可以计算出到达单位的通勤范围。
+
+
+
+## 程序员导航页
+
+[嗖嗖搜 | BEWINDOWEB](http://www.bewindoweb.com/dwg.php)
+
+
+
+## U5影视
+
+[U5影视](http://u5.com/pc/#/main/1)
