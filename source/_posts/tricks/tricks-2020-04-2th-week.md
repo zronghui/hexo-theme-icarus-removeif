@@ -169,3 +169,42 @@ class Solution:
 ## U5影视
 
 [U5影视](http://u5.com/pc/#/main/1)
+
+
+
+## 机场
+
+[注册 — 跑路云](https://paoluz.club/auth/register)
+
+
+
+## python vs java
+
+```python
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        return ' '.join(reversed(s.split()))
+```
+
+
+
+```java
+class Solution {
+    public String reverseWords(String s) {
+        // 除去开头和末尾的空白字符
+        s = s.trim();
+        // 正则匹配连续的空白字符作为分隔符分割
+        List<String> wordList = Arrays.asList(s.split("\\s+"));
+        Collections.reverse(wordList);
+        return String.join(" ", wordList);
+    }
+}
+```
+
+
+
+
+
+[WPS智能PPT](https://aippt.wps.cn/welcome/)
+[Remove Video Background – Unscreen](https://www.unscreen.com/)
+[2020年最新《离婚协议范本》](https://mp.weixin.qq.com/s?__biz=MzU4MzgwMjIzMg==&mid=2247485854&idx=1&sn=a9f6b8420bded8b2b839caada7846224&chksm=fda2c589cad54c9f73ee7be502854fd948a1f5044b7b168dcc60df10549eea47045b2a4f7c9e&scene=0&xtrack=1#rd)
