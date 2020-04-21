@@ -16,7 +16,24 @@ keywords:
 
 <!--more-->
 
+## Hungrymark-书签化文件/网页/软件的macOS应用
 
+[Hungrymark-书签化文件/网页/软件的macOS应用 - Newlearnerの小站](https://www.newlearner.site/2019/10/20/hungrymark.html)
+[Hungrymark | hungrymark](https://zhengying.github.io/hungrymark/)
+
+## OpenInTerminal-Lite - 在当前访达路径/文件打开终端、编辑器
+
+[OpenInTerminal-Lite - 在当前访达路径/文件打开终端、编辑器[macOS] - 小众软件](https://www.appinn.com/openinterminal-lite/)
+[OpenInTerminal/README-zh.md at master · Ji4n1ng/OpenInTerminal](https://github.com/Ji4n1ng/OpenInTerminal/blob/master/Resources/README-zh.md)
+
+## Krisp – 降低网络语音背景噪声
+
+[Krisp – 降低网络语音背景噪声[macOS]](http://www.apprcn.com/krisp.html)
+[Krisp | Noise Cancelling App](https://krisp.ai/)
+
+
+
+## 看起来不错的软件
 
 [Cisdem AppCrypt 4.6.0 破解版 for Mac 应用软件加密及网站黑名单](https://www.macwk.com/soft/cisdem-appcrypt)
 
@@ -63,3 +80,6 @@ keywords:
 [Weather mini：精美的迷你天气预报小工具 – Mac玩儿法](https://www.waerfa.com/weather-mini-review)
 
 [Live Home 3D Pro 3.7.3 中文破解版 for Mac Mac高级家居设计软件](https://www.macwk.com/soft/live-home-3d)
+
+[Service Station：打造你自己的右键菜单 – Mac玩儿法](https://www.waerfa.com/service-station-review)
+

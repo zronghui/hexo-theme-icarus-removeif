@@ -17,6 +17,13 @@ keywords:
 
 # 正在用的插件
 
+
+
+[豆瓣电影放映厅插件，影音资源在线播放、影视下载、磁力链接-文章-扩展迷](https://www.extfans.com/articles/1055/)
+[豆瓣电影放映厅 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%94%BE%E6%98%A0%E5%8E%85/fdpginkdbfpppjeoncmgejpmgdnlimpe/related)
+[豆瓣影视图书小助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E8%B1%86%E7%93%A3%E5%BD%B1%E8%A7%86%E5%9B%BE%E4%B9%A6%E5%B0%8F%E5%8A%A9%E6%89%8B/ioacifoopoldngldmbknimhhophmfbgh/related)
+[Btools插件，检测哔哩哔哩收藏夹失效视频、评论增强、下载封面-文章-扩展迷](https://www.extfans.com/articles/1044)
+
 ## 语音输入
 
 [VoiceIn - Chrome 网上应用店](https://chrome.google.com/webstore/detail/voice-in-voice-typing/pjnefijmagpdjfhhkpljicbbpicelgko/related)

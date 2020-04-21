@@ -208,3 +208,53 @@ class Solution {
 [WPS智能PPT](https://aippt.wps.cn/welcome/)
 [Remove Video Background – Unscreen](https://www.unscreen.com/)
 [2020年最新《离婚协议范本》](https://mp.weixin.qq.com/s?__biz=MzU4MzgwMjIzMg==&mid=2247485854&idx=1&sn=a9f6b8420bded8b2b839caada7846224&chksm=fda2c589cad54c9f73ee7be502854fd948a1f5044b7b168dcc60df10549eea47045b2a4f7c9e&scene=0&xtrack=1#rd)
+
+
+
+## 重定向服务器打开 Pandownload
+
+[zronghui/pandownload-fake-server: 重定向服务器打开 Pandownload](https://github.com/zronghui/pandownload-fake-server)
+
+hosts 添加
+64.52.84.68 pandownload.com
+
+
+
+## 原油
+
+[账户原油－金融市场专区－中国工商银行中国网站](http://www.icbc.com.cn/icbc/%E9%87%91%E8%9E%8D%E5%B8%82%E5%9C%BA%E4%B8%93%E5%8C%BA/%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/%E6%8A%95%E8%B5%84%E4%BA%A4%E6%98%93%E7%B1%BB%E4%BA%A7%E5%93%81/%E8%B4%A6%E6%88%B7%E5%8E%9F%E6%B2%B9/default.htm)
+
+
+
+[UnApp – 批量卸载 App[Android]](http://www.apprcn.com/unapp.html)
+
+[Touchpad Blocker – 在键盘输入时禁用触控板[Windows]](http://www.apprcn.com/touchpad-blocker.html)
+
+[Pixel Pulse – 重复显示特定应用通知内容[Android]](http://www.apprcn.com/pixel-pulse.html)
+
+[如何解决“弹出 USB 大容量存储设备 时出问题” - 小众软件](https://www.appinn.com/hotswap-for-windows/)
+
+[AutoDeleteFileOnPCWechat 1.2 绿色版 - 微信客户端数据自动删除工具 - 精品绿色便携软件](https://www.portablesoft.org/autodeletefileonpcwechat/)
+
+
+
+[逗比拯救世界--专业的表情包搜索网站](http://www.dbbqb.com/)
+
+[免费获得天翼云盘一年VIP+6T空间-福利吧](https://fulibus.net/cloud189.html)
+
+## 两个好用的网盘
+
+[文叔叔 - 传文件，找文叔叔（大文件、永不限速）](https://www.wenshushu.cn/f/2c3c6ouaeg8)
+[quqi](https://quqi.com/s/3989488/mifmD0GIc8UIQbpn)
+
+[私人云](https://quqi.com/1257304/0)
+
+
+
+## ASMR
+
+[zhangronghui97: Audiomack](https://audiomack.com/artist/zhangronghui97/favorites)
+
+[Asmr | Audiomack](https://audiomack.com/search?q=Asmr&show=playlists&sort=popular)
+
+[asmr a playlist by ASMR | Stream New Music on Audiomack](https://audiomack.com/playlist/asmr-32/asmr)
