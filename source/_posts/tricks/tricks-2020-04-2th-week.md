@@ -258,3 +258,59 @@ hosts 添加
 [Asmr | Audiomack](https://audiomack.com/search?q=Asmr&show=playlists&sort=popular)
 
 [asmr a playlist by ASMR | Stream New Music on Audiomack](https://audiomack.com/playlist/asmr-32/asmr)
+
+
+
+
+
+[视频解析](https://www.nni5.com/vip.html?hao.su)
+
+QQ 靓号
+
+[QQ注册](https://ssl.zc.qq.com/v3/index-chs.html?type=3)
+
+[claudiodangelis/qrcp: Transfer files over wifi from your computer to your mobile device by scanning a QR code without leaving the terminal.](https://github.com/claudiodangelis/qrcp?utm_campaign=explore-email&utm_medium=email&utm_source=newsletter&utm_term=daily)
+
+
+
+## 复活 Pandownload 继续高速下载百度网盘
+
+未测试
+
+ (https://tmioe.com/2020/pandownload-resurrection)* pandownload-fake-server
+GitHub 地址：https://github.com/TkzcM/pandownload-fake-server
+食用方法：解压至Pandownload文件夹中的PanData目录下，重启软件。
+
+* Pandownload 重定向 openwrt ipk 插件
+GitHub 地址：https://github.com/wenzijishu/pandownload-fs
+食用方法：
+1. 安装 IPK
+2. DHCP/DNS 中，指定 pandownload.com 为路由器 lan ip，
+3. 刷新本机 dns 缓存， 重启定制版客户端
+
+
+
+## i-Book.in
+
+i-Book.in是一个索引 IPFS 链接的搜索引擎，其中 i 代表 IPFS 网络。网站在 GitHub 开源了索引数据。可用来搜索电子书，目前容量为 15w，预计本月末突破 20w。
+访问网站 (https://i-book.in/)
+
+
+
+## 获取网站 favicon.ico 图标
+
+[获取网站 favicon.ico 图标 - 𝓚𝓲𝓵𝓲𝓰's Blog](https://kiligwyu.com/favicon/)
+[Get free favicon - get favicon from site free](http://www.getfavicon.org/)
+[图标下载，ICON(SVG/PNG/ICO/ICNS)图标搜索下载 - Easyicon](https://www.easyicon.net/)
+[base64转图片 - 爱资料工具](https://www.toolnb.com/tools/base64ToImages.html)
+
+
+
+## test-automation
+
+[cypress-io/cypress: Fast, easy and reliable testing for anything that runs in a browser.](https://github.com/cypress-io/cypress)
+[test-automation · GitHub Topics](https://github.com/topics/test-automation)
+[atinfo/awesome-test-automation: A curated list of awesome test automation frameworks, tools, libraries, and software for different programming languages. Sponsored by http://sdclabs.com](https://github.com/atinfo/awesome-test-automation)
+
+
+

@@ -676,6 +676,12 @@ print(result)
 
 
 
+
+
+### Elastic 6.x 版只允许每个Index 包含一个Type，7.x 版将会彻底 ... 
+
+干！
+
 ## 相关社区、教程
 
 [Python Elasticsearch Client — Elasticsearch 7.5.1 documentation](https://elasticsearch-py.readthedocs.io/en/master/index.html)
@@ -696,3 +702,7 @@ print(result)
 
 [Elasticsearch - Mapping - Tutorialspoint](https://www.tutorialspoint.com/elasticsearch/elasticsearch_mapping.htm)
 
+
+
+[Python Elasticsearch DSL 查询、过滤、聚合操作实例 - 掘金](https://juejin.im/post/5d346f9551882549a70ad729)
+[Python3 操作 elasticsearch - 简书](https://www.jianshu.com/p/462007422e65)

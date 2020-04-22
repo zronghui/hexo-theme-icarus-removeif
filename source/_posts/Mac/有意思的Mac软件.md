@@ -16,7 +16,14 @@ keywords:
 
 <!--more-->
 
+## MFiles-局域网跨平台文件传输
+
+[MFiles - 不死鸟 - 分享为王](https://hao.su/3449/)
+[MFiles](http://mfiles.maokebing.com/)
+
 ## Hungrymark-书签化文件/网页/软件的macOS应用
+
+花了 1 块钱，挺值的
 
 [Hungrymark-书签化文件/网页/软件的macOS应用 - Newlearnerの小站](https://www.newlearner.site/2019/10/20/hungrymark.html)
 [Hungrymark | hungrymark](https://zhengying.github.io/hungrymark/)
