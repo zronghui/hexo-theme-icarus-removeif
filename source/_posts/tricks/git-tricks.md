@@ -141,3 +141,69 @@ git push -u origin master
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 [Import code](https://github.com/zronghui/hexo/import)
+
+
+
+## Git 多远程仓库设置
+
+vim .git/config
+
+```shell
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = git@codehub.devcloud.cn-north-4.huaweicloud.com:zrhz-xxxtsx-UI00001/zronghui_xxxt.git
+	url = git@github.com:zronghui/zronghui_xxxt.git
+	url = root@47.93.53.47:/root/code/xxxtbare.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
+
+```
+
+
+
+## 用 git hooks 进行自动部署
+
+将本地 cat ~/.ssh/id_rsa.pub 复制到 服务器 ~/.ssh/authorized_keys 中
+
+### 服务器
+
+服务器两个仓库 xxxtbare.git 和 zronghui_xxxt
+
+```shell
+# 建立 bare 仓库
+git init --bare xxxtbare.git
+vim xxxtbare.git/hooks/post-receive
+
+#!/bin/sh
+echo '======上传代码到服务器======'
+cd /root/code/zronghui_xxxt || exit
+unset GIT_DIR #还原环境变量
+git pull origin master
+echo $(date) >> hook.log
+echo '======代码更新完成======'
+
+chmod u+x hooks/post-receive
+```
+
+### 本地
+
+```shell
+在仓库中
+url = root@47.93.53.47:/root/code/xxxtbare.git
+```
+
+### 参考：
+
+学习之前：好难懂；学会之后：都一堆废话
+
+[用 git hooks 进行自动部署，从此不需要登录服务器 | Pure White](https://purewhite.io/2017/04/27/git-hooks-auto-deploy/)
+[如何使用Git实现自动化部署你的项目 - 知乎](https://zhuanlan.zhihu.com/p/127355490)
+[git hooks 实现自动部署 - 简书](https://www.jianshu.com/p/f9312b51e011)

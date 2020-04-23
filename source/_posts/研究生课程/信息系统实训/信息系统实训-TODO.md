@@ -14,8 +14,6 @@ keywords:
 
 [TOC]
 
-
-
 <!--more-->
 
 
@@ -33,10 +31,11 @@ keywords:
 - [x] and or
 - [x] 一键更换搜索引擎  百度 谷歌 豆瓣 其他书籍搜索引擎
 - [x] 诛 仙  搜索结果太少的话，添加空格；或者第一个字符中间加空格
-- [ ] 来源网站 多选搜索 网站悬浮提示信息
+- [x] ~~来源网站 多选搜索 网站悬浮提示信息~~
 - [x] 电影搜索引擎  爬虫
+- [ ] 音乐搜索引擎  爬虫
 - [ ] 博客爬虫 文章搜索
+- [x] 网站自适应问题
 
 
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200411204017531.png" alt="image-20200411204017531" style="zoom:50%;" />

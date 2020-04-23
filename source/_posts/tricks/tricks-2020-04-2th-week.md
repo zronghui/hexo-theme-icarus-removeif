@@ -314,3 +314,6 @@ i-Book.in是一个索引 IPFS 链接的搜索引擎，其中 i 代表 IPFS 网�
 
 
 
+
+
+[shell死循环脚本示例 - snale1989 - 博客园](https://www.cnblogs.com/chenjiahe/p/5756556.html)
