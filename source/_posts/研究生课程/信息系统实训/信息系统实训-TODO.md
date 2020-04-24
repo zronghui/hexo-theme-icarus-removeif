@@ -18,13 +18,9 @@ keywords:
 
 
 
-[superRaytin/paginationjs: A jQuery plugin to provide simple yet fully customisable pagination.](https://github.com/superRaytin/paginationjs)
+## TODO
 
-[Lookao](https://lookao.com/)
-
-[萌搜 为小众而搜](https://mengso.com/)
-
-
+删除表示放弃
 
 - [x] ~~用用户搜索的关键词去豆瓣搜索，再解析回来~~
 - [x] 多少 ms 查询到多少条数据
@@ -33,9 +29,28 @@ keywords:
 - [x] 诛 仙  搜索结果太少的话，添加空格；或者第一个字符中间加空格
 - [x] ~~来源网站 多选搜索 网站悬浮提示信息~~
 - [x] 电影搜索引擎  爬虫
+- [x] crontab 每天自动更新
 - [ ] 音乐搜索引擎  爬虫
 - [ ] 博客爬虫 文章搜索
+- [ ] IP 访问限制？
 - [x] 网站自适应问题
 
 
+
+## 参考网页：
+
+[Lookao](https://lookao.com/)
+
+
+
+## 可能有用的网页
+
+[superRaytin/paginationjs: A jQuery plugin to provide simple yet fully customisable pagination.](https://github.com/superRaytin/paginationjs)
+
+[萌搜 为小众而搜](https://mengso.com/)
+
+
+
+[区块链_区块链技术_区块链应用-InfoQ](https://www.infoq.cn/topic/Blockchain)
+[极客搜索](https://s.geekbang.org/search/c=1/k=idea/t=)
 

@@ -317,3 +317,89 @@ i-Book.in是一个索引 IPFS 链接的搜索引擎，其中 i 代表 IPFS 网�
 
 
 [shell死循环脚本示例 - snale1989 - 博客园](https://www.cnblogs.com/chenjiahe/p/5756556.html)
+
+
+
+## Android 应用市场
+
+[| F-Droid - Free and Open Source Android App Repository](https://f-droid.org/zh_Hans/packages/)
+
+
+
+## PC Mac 与移动端互联
+
+### 连 IOS
+
+未测试
+
+https://cherpake.com/remote-for-mac/
+
+### 连 Android
+
+共享剪贴板，Android 通知提醒
+
+[KDE Connect macOS Release | Inoki in KDE](https://kde.inoki.cc/2019/09/01/KDE-Connect-macOS-GSoC-Final-Release/)
+[Releases · Inokinoki/kde-blog](https://github.com/Inokinoki/kde-blog/releases)
+
+官方发行Mac 版本
+
+[kdeconnect-kde_Release_macos [Jenkins]](https://binary-factory.kde.org/view/MacOS/job/kdeconnect-kde_Release_macos/)
+
+
+
+[KDE/kdeconnect-kde: KDE Connect adds communication between KDE and your smartphone.](https://github.com/KDE/kdeconnect-kde)
+
+
+
+
+
+## 视频自动加字幕
+
+网易见外 https://jianwai.netease.com
+
+灵云语音 https://speech.aicloud.com
+
+语音自动生成字幕 https://aismartvip.com
+
+arctime pro http://arctime.cn
+
+牛片网 https://www.6pian.cn/
+
+
+
+## Shell tricks
+
+**监控文件内容**
+
+```shell
+tail -f crontab.log
+watch -d -n 1 cat crontab.log （好像并不行）
+-d表示高亮不同的地方，-n表示多少秒刷新一次。
+```
+
+**实时监控文件修改**
+
+纯shell的话调用inotifywait -e modify $filename(未测试)
+
+**Shell 输入/输出重定向**
+
+一般情况下，每个 Unix/Linux 命令运行时都会打开三个文件：
+
+标准**输入**文件(stdin)：stdin的文件描述符为**0**，Unix程序默认从stdin读取数据。
+标准**输出**文件(stdout)：stdout 的文件描述符为**1**，Unix程序默认向stdout输出数据。
+标准**错误**文件(stderr)：stderr的文件描述符为**2**，Unix程序会向stderr流中写入错误信息。
+
+```shell
+# 如果希望 stderr 重定向到 file
+command 2 > file
+# 如果希望 stderr 追加到 file 文件末尾
+command 2 >> file
+
+# 如果希望将 stdout 和 stderr 合并后重定向到 file
+command > file 2>&1
+command >> file 2>&1
+
+```
+
+
+
