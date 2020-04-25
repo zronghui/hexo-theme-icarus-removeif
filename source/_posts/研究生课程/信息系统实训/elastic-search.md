@@ -682,6 +682,16 @@ print(result)
 
 干！
 
+
+
+## elasticsearch-dump
+
+[taskrabbit/elasticsearch-dump: Import and export tools for elasticsearch](https://github.com/taskrabbit/elasticsearch-dump)
+
+use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
+
+导出为 json，或把一个节点的数据复制到另外一个节点
+
 ## 相关社区、教程
 
 [Python Elasticsearch Client — Elasticsearch 7.5.1 documentation](https://elasticsearch-py.readthedocs.io/en/master/index.html)

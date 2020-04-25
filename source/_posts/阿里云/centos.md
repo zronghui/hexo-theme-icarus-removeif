@@ -47,7 +47,7 @@ keywords:
 
 ## 从零配置服务器
 
-### oh my zsh 安装
+### oh my zsh 安装及美化
 
 ```shell
 yum update
@@ -116,8 +116,11 @@ gem install colorls
 
 alias ls='colorls -A'
 alias lc='colorls -lA --sd'
+```
 
-# Java 8
+### Java 8
+
+```shell
 yum install java-1.8.0-openjdk
 java -version
 export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
@@ -126,6 +129,18 @@ echo JAVA_HOME
 # Find Java’s Path
 update-alternatives --config java
 ```
+
+### nodejs cnpm
+
+```shell
+yum install -y gcc-c++ make
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo -E bash -
+sudo yum install nodejs
+node -v
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+```
+
+
 
 [阿里云服务器端口8080开放-百度经验](https://jingyan.baidu.com/article/95c9d20d624d1eec4e756125.html)
 

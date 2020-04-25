@@ -403,3 +403,31 @@ command >> file 2>&1
 
 
 
+
+
+### MrDoc：一个基于 Python 开发的在线文档系统
+
+一次没看懂怎么用的
+
+GitHub (https://github.com/zmister2016/MrDoc) | Demo (http://mrdoc.zmister.com/) | Wiki (http://mrdoc.zmister.com/project-7/)
+
+👉 Features：
+
+- 支持用户注册、用户登录、用户管理、管理员等基础用户功能
+- 支持注册邀请码配置、广告代码配置、统计代码配置、邮箱找回密码、全站关闭注册
+- 基于文集进行文档撰写和阅读，拥有文集、文档、文档模板、图片和附件5大模块
+- 使用基于 Editormd 的 Markdown 编辑器并扩展，以 Markdown 语法进行文档写作
+- 优化图片上传和表格写入
+- 支持思维导图、流程图、时序图的绘制
+- 两栏式文档阅读页面、三级目录层级显示，文档阅读字体缩放，字体类型切换，页面社交分享，移动端阅读优化
+- 支持文集协作、文档历史版本功能等
+
+该项目和 Gitbook、Showdoc、语雀类似，适合作为个人和小型团队的文档和笔记管理工具
+
+
+
+[医学笔记库 Ver1.0](https://mp.weixin.qq.com/s/KDRH9jWXbcZC1vd7tKqbJA)
+[分享家-精选软件合集](https://www.lanzous.com/b700413)
+
+
+

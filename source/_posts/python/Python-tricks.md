@@ -13,6 +13,21 @@ tags:
 
 <!--more-->
 
+
+
+```python
+# 文件的访问时间 access
+os.path.getatime(filePath)
+# 文件的创建时间 create
+os.path.getctime(filePath)
+# 文件的修改时间 modify
+os.path.getmtime(filePath)
+```
+
+
+
+
+
 <img src="https://i.loli.net/2020/04/17/DfVAPvJNTylq3nh.png" alt="DfVAPvJNTylq3nh" style="zoom:50%;" />
 
 
