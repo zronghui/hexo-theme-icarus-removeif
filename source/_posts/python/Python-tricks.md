@@ -13,7 +13,38 @@ tags:
 
 <!--more-->
 
+## 生成requirements.txt
 
+[查找python项目依赖并生成requirements.txt_Python_orangleliu 笔记本-CSDN博客](https://blog.csdn.net/lzz957748332/article/details/60958525)
+
+### 使用pip freeze
+
+pip freeze > requirements.txt
+这种方式配合virtualenv 才好使，否则把整个环境中的包都列出来了。
+
+### 使用 pipreqs
+
+这个工具的好处是可以通过对项目目录的扫描，自动发现使用了那些类库，自动生成依赖清单。
+
+缺点是可能会有些偏差，需要检查并自己调整下。
+
+```shell
+pip3 install pipreqs
+pipreqs ./
+cat requirements.txt
+```
+
+
+
+有意思
+
+f-strings can also be simulated with 'Hello {name}. You are {age} years old'.format(**locals())`
+
+## imgmaker-把文字转成高清图片
+
+[minimaxir/imgmaker: Create high-quality images programmatically with easily-hackable templates.](https://github.com/minimaxir/imgmaker)
+
+![Downloads](https://pepy.tech/badge/icecream)
 
 ```python
 # 文件的访问时间 access

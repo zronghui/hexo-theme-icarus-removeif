@@ -16,6 +16,8 @@ keywords:
 
 <!--more-->
 
+
+
 ## MFiles-局域网跨平台文件传输
 
 [MFiles - 不死鸟 - 分享为王](https://hao.su/3449/)
@@ -90,3 +92,8 @@ keywords:
 
 [Service Station：打造你自己的右键菜单 – Mac玩儿法](https://www.waerfa.com/service-station-review)
 
+[Instashare for Mac](http://instashareapp.com/mac.html)
+
+
+
+[2ndalpha/gasmask: Hosts file manager for OS X](https://github.com/2ndalpha/gasmask)

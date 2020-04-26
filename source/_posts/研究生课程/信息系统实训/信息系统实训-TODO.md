@@ -32,10 +32,13 @@ keywords:
 - [x] crontab 每天自动更新
 - [ ] 音乐搜索引擎  爬虫
 - [ ] 显示最近更新功能及修改的 bug
-- [ ] 按分数降序-长度升序排序
+- [x] 按分数降序-长度升序排序
 - [ ] 博客爬虫 文章搜索
 - [ ] IP 访问限制？
 - [x] 网站自适应问题
+- [ ] [宝鉴_打眼_宝鉴最新章节列表_宝鉴txt阅读_棉花糖小说网(mianhuatang.cc)](http://www.mianhuatang.cc/)
+- [ ] [偶书 - 偶遇小驻，发现好书](https://obook.cc/index-1.htm)
+- [ ] [布克书屋--您的图书分享之家](https://www.bukebook.cn/)
 
 
 
@@ -51,8 +54,20 @@ keywords:
 
 [萌搜 为小众而搜](https://mengso.com/)
 
+[免费txt小说下载 - 不死鸟 - 分享为王](https://hao.su/2574/)
+
 
 
 [区块链_区块链技术_区块链应用-InfoQ](https://www.infoq.cn/topic/Blockchain)
 [极客搜索](https://s.geekbang.org/search/c=1/k=idea/t=)
 
+
+
+### shudan 网爬取的站点
+
+[书单网 - pdf - epub - mobi - azw3 让搜书变得简单](https://www.shudan.vip/)
+[每日书单- 精品电子书下载 - azw3 - epub - mobi - kindle电子书](https://shudan.vip/)
+
+避免重复爬取
+
+<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200426141848017.png" alt="image-20200426141848017" style="zoom:50%;" />

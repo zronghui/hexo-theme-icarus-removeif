@@ -28,6 +28,8 @@ abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看�
 
 
 
+[keel-hq/keel: Kubernetes Operator to automate Helm, DaemonSet, StatefulSet & Deployment updates](https://github.com/keel-hq/keel)
+
 [lxn/walk: A Windows GUI toolkit for the Go Programming Language](https://github.com/lxn/walk)
 [lensapp/lens: Lens - The Kubernetes IDE](https://github.com/lensapp/lens)
 [kubernetes-sigs/kube-batch: A batch scheduler of kubernetes for high performance workload, e.g. AI/ML, BigData, HPC](https://github.com/kubernetes-sigs/kube-batch)

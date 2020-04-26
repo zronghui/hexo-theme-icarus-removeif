@@ -398,7 +398,6 @@ command 2 >> file
 # 如果希望将 stdout 和 stderr 合并后重定向到 file
 command > file 2>&1
 command >> file 2>&1
-
 ```
 
 
@@ -431,3 +430,239 @@ GitHub (https://github.com/zmister2016/MrDoc) | Demo (http://mrdoc.zmister.com/)
 
 
 
+## ssh登陆小工具 ssh-auto-login-for-macos
+
+[[Macos] ssh登陆小工具 ssh-auto-login-for-macos_运维_orangleliu 笔记本-CSDN博客](https://blog.csdn.net/lzz957748332/article/details/81197458)
+
+
+
+[Python 使用office365邮箱自动发送邮件_Python_orangleliu 笔记本-CSDN博客](https://blog.csdn.net/lzz957748332/article/details/84065548)
+
+
+
+[乌云高清壁纸站|每日分享美丽壁纸。](http://www.obzhi.com)
+
+
+
+## ffmpeg 图形界面 GUI
+
+想用它剪辑 asmr 视频
+
+[lossless-cut](https://github.com/mifi/lossless-cut)
+
+
+
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/84141/1586485202816-ab4a4ec8-7a91-4631-8638-00775ef19e61.jpeg" alt="img" style="zoom:50%;" />
+
+
+
+一个开源项目，为视频工具库 ffmpeg 开发一个图形界面 GUI。
+
+
+
+[DeepL翻译器](https://www.deepl.com/translator)
+
+
+
+[网盘搜索，就用大圣盘 - 最好用的百度网盘搜索引擎](https://www.dashengpan.com/)
+[美剧一起看](http://www.meiju17.com/?from=dashengpan)
+[最新连续剧-推荐连续剧 - 韩剧一起看](http://hanju17.com/index.php/vod/show/id/2.html)
+
+
+
+[JSON Generator – tool for generating random JSON data](https://next.json-generator.com/)
+
+[【豆瓣读书】2019年度榜单（下载03/11更新 ）-书单荐读-偶书 - 偶遇小驻，发现好书](https://obook.cc/thread-10446.htm)
+
+
+
+## SQL 可视化
+
+[plotly/falcon: Free, open-source SQL client for Windows and Mac 🦅](https://github.com/plotly/falcon)
+
+
+
+## Automate your iTerm layouts
+
+[kamranahmedse/itomate: Automate your iTerm layouts and session setup](https://github.com/kamranahmedse/itomate)
+
+
+
+```
+.------------------.------------------.
+| 1/1              | 2/1              |
+|                  |                  |
+|                  |                  |
+|                  |                  |
+|------------------|                  |
+| 1/2              |                  |
+|                  |                  |
+|                  |                  |
+|------------------|                  |
+| 1/3              |                  |
+|                  |                  |
+|                  |                  |
+'------------------'------------------'
+```
+
+
+
+Col/row
+
+执行 itomate ,自动寻找 itomate.yml
+
+itomate.yml 内容：
+
+```yaml
+version: "1.0"
+tabs:
+  zronghui-xxxt:
+    title: "zronghui-xxxt"
+    panes:
+        #  左上：启动 es
+      - position: "1/1" 
+        commands:
+          - "elasticsearch"
+        # 左中：启动 web 项目
+      - position: "1/2" 
+        commands:
+          - "cd ~/01Code/zronghui_xxxt/SearchWeb"
+          - "python manage.py runserver"
+        # 左下：ssh 服务器
+      - position: "1/3"
+        commands:
+          - '"/Applications/SSH Config Editor.app/Contents/Resources/connect.sh" "aliyun" 45FB8DC9-87FC-4C6B-AC20-F5377924CC66'
+          - "source ~/.zshrc"
+          - "j xxxt"
+          - "clear"
+        # 右上：xxxt
+      - position: "2/1"
+        commands:
+          - "source ~/.zshrc"
+          - "cd ~/01Code/zronghui_xxxt"
+          - "clear"
+        # 右下
+      - position: "2/2"
+        commands:
+          - "source ~/.zshrc"
+          - "cd ~/01Code/hello/helloScrapy"
+          - "clear"
+```
+
+
+
+H5 播放器，支持 mp4、m3u8、flv 等多种格式，由奇舞团视频云前端组研发：https://github.com/Chimeejs/chimee
+
+[Bash 脚本教程 - 网道](https://wangdoc.com/bash/)
+
+## tabulate 表格化打印文本
+
+[astanin / python-tabulate — Bitbucket](https://bitbucket.org/astanin/python-tabulate/src/master/)
+
+支持中文对齐
+
+```python
+In [1]: from tabulate import tabulate
+
+In [2]: table = [["Sun",696000,1989100000],["Earth",6371,5973.6],["Moon",1737,73.5],["中文测试",3390,641.85]]
+
+In [3]: print(tabulate(table))
+--------  ------  -------------
+Sun       696000     1.9891e+09
+Earth       6371  5973.6
+Moon        1737    73.5
+中文测试    3390   641.85
+--------  ------  -------------
+```
+
+
+
+颜色打印日志，支持 crontab 自动发送邮件给自己
+
+[coloredlogs · PyPI](https://pypi.org/project/coloredlogs/)
+
+
+
+## 自律
+
+### 早起
+
+1.5h 是一个睡眠周期，5 个最佳
+
+10:00pm - 5:30am
+
+10:30pm - 6:00am
+
+11:00pm - 6:30am
+
+11:30pm - 7:00am
+
+12:00pm - 6:00am (4 个睡眠周期)
+
+00:30am - 6:30am (4 个睡眠周期)
+
+01:00am - 7:00am (4 个睡眠周期)
+
+<img src="https://i.loli.net/2020/04/26/Z49aXAzMcxhPIUl.jpg" alt="Z49aXAzMcxhPIUl" style="zoom:33%;" />
+
+### 习惯养成
+
+### 远离诱惑
+
+### 建立身份认同，行为也随之改变
+
+### 不断提醒自己目标和计划
+
+### 主动拥抱不适感
+
+### 管理自己的身体：健身、饮食、睡觉
+
+### 冥想-直接改变大脑结构，提升注意力、情绪稳定性和抗压性
+
+
+
+## GitHub Action
+
+[你知道什么是 GitHub Action 么？ - 掘金](https://juejin.im/post/5ea39401f265da480836cef0)
+
+
+
+[2ndalpha/gasmask: Hosts file manager for OS X](https://github.com/2ndalpha/gasmask)
+
+### Paw API 请求测试，支持导出 API 文档为 swagger 等配置文件
+
+[Paw – The most advanced API tool for Mac](https://paw.cloud/)
+
+
+
+## find kill 的替代
+
+[chinanf-boy/fd-zh: 🇨🇳翻译: <fd> 一种简单,快速和用户友好的 >find< 替代方案 ❤️ 校对 ✅](https://github.com/chinanf-boy/fd-zh)
+[sindresorhus/fkill-cli: Fabulously kill processes. Cross-platform.](https://github.com/sindresorhus/fkill-cli)
+[SamVerschueren/alfred-fkill: Alfred 3 workflow to fabulously search and kill processes](https://github.com/SamVerschueren/alfred-fkill)
+
+
+
+
+
+[Markdown 在线编辑器 - 黑客派](https://hacpai.com/guide/markdown)
+
+
+
+## transfer: 🍭 集合多个API的大文件传输工具
+
+[Mikubill/transfer: 🍭 集合多个API的大文件传输工具.](https://github.com/Mikubill/transfer)
+
+包括奶牛的多个文件传输网站 cli 工具
+
+
+
+## awesome-python-cn
+
+[jobbole/awesome-python-cn: Python资源大全中文版，包括：Web框架、网络爬虫、模板引擎、数据库、数据可视化、图片处理等，由伯乐在线持续更新。](https://github.com/jobbole/awesome-python-cn)
+
+
+
+
+
+[huiwang/hexo-baidu-url-submit: 主动推送Hexo博客新链接至百度搜索引擎，解决百度爬虫被禁止访问的问题，提升网站收录质量和速度。](https://github.com/huiwang/hexo-baidu-url-submit)
