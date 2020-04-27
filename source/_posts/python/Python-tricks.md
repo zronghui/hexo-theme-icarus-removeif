@@ -13,6 +13,41 @@ tags:
 
 <!--more-->
 
+## tabulate 表格化打印文本
+
+[astanin / python-tabulate — Bitbucket](https://bitbucket.org/astanin/python-tabulate/src/master/)
+
+支持中文对齐
+
+```python
+In [1]: from tabulate import tabulate
+
+In [2]: table = [["Sun",696000,1989100000],["Earth",6371,5973.6],["Moon",1737,73.5],["中文测试",3390,641.85]]
+
+In [3]: print(tabulate(table))
+--------  ------  -------------
+Sun       696000     1.9891e+09
+Earth       6371  5973.6
+Moon        1737    73.5
+中文测试    3390   641.85
+--------  ------  -------------
+```
+
+
+
+颜色打印日志，支持 crontab 自动发送邮件给自己
+
+[coloredlogs · PyPI](https://pypi.org/project/coloredlogs/)
+
+## xpath
+
+```python
+from lxml import etree
+
+xml = etree.HTML(r.text)
+currentPrice = float(xml.xpath("//span[@id='last_last']/text()")[0])
+```
+
 ## 生成requirements.txt
 
 [查找python项目依赖并生成requirements.txt_Python_orangleliu 笔记本-CSDN博客](https://blog.csdn.net/lzz957748332/article/details/60958525)
