@@ -483,6 +483,17 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 ## 9.自定义Error页面
 
+### debug=False引发的问题
+
+debug=False 后，Django 不再接管静态文件, 运行时添加 --insecure 参数（临时解决方案）
+
+[为什么DEBUG =假的设置让我的Django的静态文件访问失败？](https://stackoverrun.com/cn/q/1444834)
+[Why does DEBUG=False setting make my django Static Files Access fail? - Stack Overflow](https://stackoverflow.com/questions/5836674/why-does-debug-false-setting-make-my-django-static-files-access-fail/49889262#49889262)
+
+```shell
+python3 manage.py runserver --insecure
+```
+
 
 
 [django系列六：自定义Error页面 - 知乎](https://zhuanlan.zhihu.com/p/31433527)

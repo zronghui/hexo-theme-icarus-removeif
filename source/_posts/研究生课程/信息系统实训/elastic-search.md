@@ -682,6 +682,12 @@ print(result)
 
 干！
 
+## ‘黎明前的黑暗’ 分词报错 
+
+干！
+
+[6.7.2，”黎明前的黑暗“ 分词报错 startOffset must be non-negative, and endOffset must be >= startOffset · Issue #680 · medcl/elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik/issues/680)
+
 
 
 ## elasticsearch-dump
@@ -720,3 +726,4 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 
 [干货 | Elasticsearch、Kibana数据导出实战 - 掘金](https://juejin.im/post/5d5a9583e51d456206115a06)
+

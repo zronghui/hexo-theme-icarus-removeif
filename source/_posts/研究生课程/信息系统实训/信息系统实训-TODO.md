@@ -22,7 +22,7 @@ keywords:
 
 删除表示放弃
 
-- [x] ~~用用户搜索的关键词去豆瓣搜索，再解析回来~~
+- [x] 用用户搜索的关键词去豆瓣搜索，再解析回来
 - [x] 多少 ms 查询到多少条数据
 - [x] and or
 - [x] 一键更换搜索引擎  百度 谷歌 豆瓣 其他书籍搜索引擎
@@ -36,13 +36,13 @@ keywords:
 - [ ] 博客爬虫 文章搜索
 - [ ] IP 访问限制？
 - [x] 网站自适应问题
-- [ ] [宝鉴_打眼_宝鉴最新章节列表_宝鉴txt阅读_棉花糖小说网(mianhuatang.cc)](http://www.mianhuatang.cc/)
-- [ ] [偶书 - 偶遇小驻，发现好书](https://obook.cc/index-1.htm)
-- [ ] [布克书屋--您的图书分享之家](https://www.bukebook.cn/)
-- [ ] [最新更新-SooPian/搜片网 _ 最好用的电影电视剧资源搜索引擎](https://www.soopian.com/index.php?mode=cxlist&fl=cx)
-  [西部世界相关视频资源大全_影视分享](http://www.ysfenxiang.com/search/%E8%A5%BF%E9%83%A8%E4%B8%96%E7%95%8C)
-  [完美看看电影频道-海量电影免费在线观看](https://www.wanmeikk.me/category/1.html)
-  [茶杯狐 Cupfox](https://www.cupfox.com/search?key=%E6%88%91%E6%98%AF%E4%BD%99%E6%AC%A2)
+- [x] [宝鉴_打眼_宝鉴最新章节列表_宝鉴txt阅读_棉花糖小说网(mianhuatang.cc)](http://www.mianhuatang.cc/)
+- [x] [偶书 - 偶遇小驻，发现好书](https://obook.cc/index-1.htm)
+- [ ] ~~[布克书屋--您的图书分享之家](https://www.bukebook.cn/)~~ 乱码
+- [x] [最新更新-SooPian/搜片网 _ 最好用的电影电视剧资源搜索引擎](https://www.soopian.com/index.php?mode=cxlist&fl=cx)
+- [ ] ~~[西部世界相关视频资源大全_影视分享](http://www.ysfenxiang.com/search/%E8%A5%BF%E9%83%A8%E4%B8%96%E7%95%8C)~~
+- [x] [完美看看电影频道-海量电影免费在线观看](https://www.wanmeikk.me/category/1.html)
+- [x] [茶杯狐 Cupfox](https://www.cupfox.com/search?key=%E6%88%91%E6%98%AF%E4%BD%99%E6%AC%A2)
 - [ ] [老 Y 工作室 影的相关微信公众号文章 – 搜狗微信搜索](https://weixin.sogou.com/weixin?query=%E8%80%81+Y+%E5%B7%A5%E4%BD%9C%E5%AE%A4+%E5%BD%B1&_sug_type_=&s_from=input&_sug_=n&type=2&page=5&ie=utf8)
 
 ## 参考网页：
