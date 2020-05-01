@@ -32,18 +32,20 @@ keywords:
 - [x] crontab 每天自动更新
 - [ ] 音乐搜索引擎  爬虫
 - [ ] 显示最近更新功能及修改的 bug
+- [x]  对网站来源排序
 - [x] 按分数降序-长度升序排序
 - [ ] 博客爬虫 文章搜索
 - [ ] IP 访问限制？
 - [x] 网站自适应问题
-- [x] [宝鉴_打眼_宝鉴最新章节列表_宝鉴txt阅读_棉花糖小说网(mianhuatang.cc)](http://www.mianhuatang.cc/)
-- [x] [偶书 - 偶遇小驻，发现好书](https://obook.cc/index-1.htm)
-- [ ] ~~[布克书屋--您的图书分享之家](https://www.bukebook.cn/)~~ 乱码
-- [x] [最新更新-SooPian/搜片网 _ 最好用的电影电视剧资源搜索引擎](https://www.soopian.com/index.php?mode=cxlist&fl=cx)
-- [ ] ~~[西部世界相关视频资源大全_影视分享](http://www.ysfenxiang.com/search/%E8%A5%BF%E9%83%A8%E4%B8%96%E7%95%8C)~~
-- [x] [完美看看电影频道-海量电影免费在线观看](https://www.wanmeikk.me/category/1.html)
-- [x] [茶杯狐 Cupfox](https://www.cupfox.com/search?key=%E6%88%91%E6%98%AF%E4%BD%99%E6%AC%A2)
-- [ ] [老 Y 工作室 影的相关微信公众号文章 – 搜狗微信搜索](https://weixin.sogou.com/weixin?query=%E8%80%81+Y+%E5%B7%A5%E4%BD%9C%E5%AE%A4+%E5%BD%B1&_sug_type_=&s_from=input&_sug_=n&type=2&page=5&ie=utf8)
+- [ ] cookie 保存历史搜索记录
+- [ ] [海外剧 - 吾爱看影视-在线免费高清电视电影天堂](http://www.5aikp.com/type/26.html?btwaf=59010016)
+- [ ] [免费VIP视频](http://xzzxz.cn/)
+- [x] [看片狂人](https://www.kpkuang.com/)
+- [ ] [日本动漫推荐,好看的动漫排行 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/20/page/11.html)
+- [ ] [国产动漫推荐,最新最好看的动漫推荐 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/21.html)
+- [ ] [免费的在线影视网站汇总 - 不死鸟 - 分享为王](https://hao.su/531/#menu_index_5)
+- [ ] [SBKKO导航 | 轻松浏览，便捷上网，效率生活从这里开始！](https://nav.sbkko.com/#term-327)
+- [ ] [2020最近好看的国产剧|国产剧推荐排行榜_第1页 -影视看看](https://www.yingshikk.com/Lmob/1.html)
 
 ## 参考网页：
 
