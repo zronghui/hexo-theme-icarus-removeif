@@ -40,23 +40,37 @@ keywords:
 - [ ] IP 访问限制？
 - [x] 网站自适应问题
 - [ ] cookie 保存历史搜索记录
-- [ ] 添加搜索引擎 、添加豆瓣书籍解析[亲爱的|TheFuture书籍搜索](https://bks.thefuture.top/result.php?q=%E4%BA%B2%E7%88%B1%E7%9A%84&from=fromsearchbox)
+- [ ] 添加豆瓣书籍解析
+- [ ] 音乐搜索引擎 
 
+## 输入提示
 
+[免费VIP视频](http://xzzxz.cn/)
+[https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie](https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie)
 
 ## 爬虫
 
-- [ ] [海外剧 - 吾爱看影视-在线免费高清电视电影天堂](http://www.5aikp.com/type/26.html?btwaf=59010016)
-- [ ] [免费VIP视频](http://xzzxz.cn/)
+- [x] ~~[海外剧 - 吾爱看影视-在线免费高清电视电影天堂](http://www.5aikp.com/type/26.html?btwaf=59010016)~~
+- [x] ~~[免费VIP视频](http://xzzxz.cn/)~~
 - [x] [看片狂人](https://www.kpkuang.com/)
-- [ ] [日本动漫推荐,好看的动漫排行 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/20/page/11.html)
-- [ ] [国产动漫推荐,最新最好看的动漫推荐 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/21.html)
+- [x] [日本动漫推荐,好看的动漫排行 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/20/page/11.html)
+- [x] [国产动漫推荐,最新最好看的动漫推荐 - 哆咪动漫网-有生之年都在补番中](http://www.duomimh.com/dongmantype/21.html)
 - [ ] [免费的在线影视网站汇总 - 不死鸟 - 分享为王](https://hao.su/531/#menu_index_5)
 - [ ] [SBKKO导航 | 轻松浏览，便捷上网，效率生活从这里开始！](https://nav.sbkko.com/#term-327)
-- [ ] [2020最近好看的国产剧|国产剧推荐排行榜_第1页 -影视看看](https://www.yingshikk.com/Lmob/1.html)
-- [ ] [麦葱音乐搜索器_多站合一音乐搜索,音乐在线试听](https://kehu56.com/musics/)
-- [ ] [M站_哔咪哔咪,这里是兴趣使然的无名小站_bimibimi](http://www.bimibimi.me/?btwaf=34600358)
+- [x] ~~[2020最近好看的国产剧|国产剧推荐排行榜_第1页 -影视看看](https://www.yingshikk.com/Lmob/1.html)~~
+- [x] [麦葱音乐搜索器_多站合一音乐搜索,音乐在线试听](https://kehu56.com/musics/)
+- [x] [M站_哔咪哔咪,这里是兴趣使然的无名小站_bimibimi](http://www.bimibimi.me/?btwaf=34600358)
 - [ ] [动漫影音- 派导航](https://www.pi001.com/category/acgtv/)
+
+## 音乐
+
+可以实现搜索引擎跳转 | 自己部署到服务器上 | 复现他的逻辑
+
+[全网免费音乐搜索汇总 - 不死鸟 - 分享为王](https://hao.su/2217/)
+
+[铜钟 - 在一处聆听所有音乐](http://tongzhong.xyz/search?keyword=%E7%BA%A2%E8%89%B2%E9%AB%98%E8%B7%9F%E9%9E%8B&type=song)
+[Tongzhong Mini](http://mini.tongzhong.xyz/search?keyword=%E7%BA%A2%E8%89%B2%E9%AB%98%E8%B7%9F%E9%9E%8B)
+[enzeberg/tongzhong-music: 将QQ音乐、网易云音乐和虾米音乐上的歌添加到一个列表来播放！](https://github.com/enzeberg/tongzhong-music)
 
 ## 参考网页：
 
@@ -90,3 +104,13 @@ keywords:
 
 
 
+
+
+一个搜索引擎
+
+没有 favicon 不添加了
+
+[【新上线】书籍搜索引擎 - TheFuture阅读 - The Future - The Future!](https://tfuture.azurewebsites.net/forum.php?mod=viewthread&tid=131&extra=page%3D1)
+[TheFuture书籍搜索-免费电子书搜索引擎](https://bks.thefuture.top/)
+[TheFuture书籍搜索](https://cocg.azurewebsites.net/book/)
+[TheFuture书籍搜索](https://book.200091.xyz/)
