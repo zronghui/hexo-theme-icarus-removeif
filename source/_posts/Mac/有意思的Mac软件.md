@@ -101,3 +101,6 @@ keywords:
 [Stay 1.3 破解版 for Mac 窗口位置一键还原](https://www.macwk.com/soft/stay)
 
 [Mic Drop | MacMenuBar.com](https://macmenubar.com/mic-drop/)
+
+[NTFSTool - 让 Mac 读写 NTFS 硬盘，免费开源的 NTFS 磁盘管理工具 - 小众软件](https://www.appinn.com/ntfstool-for-macos/)
+

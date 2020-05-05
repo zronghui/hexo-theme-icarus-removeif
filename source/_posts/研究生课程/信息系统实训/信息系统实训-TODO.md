@@ -36,10 +36,16 @@ keywords:
 - [x] 显示 网站名，如miao101.com-->  旋风视频
 - [x]  对网站来源排序
 - [x] 按分数降序-长度升序排序
-- [ ] 博客爬虫 文章搜索
+- [ ] 博客爬虫 文章搜索 [文章列表](https://python.freelycode.com/contribution/list/0?page_no=102) 
 - [ ] IP 访问限制？
 - [x] 网站自适应问题
 - [ ] cookie 保存历史搜索记录
+- [ ] 添加搜索引擎 、添加豆瓣书籍解析[亲爱的|TheFuture书籍搜索](https://bks.thefuture.top/result.php?q=%E4%BA%B2%E7%88%B1%E7%9A%84&from=fromsearchbox)
+
+
+
+## 爬虫
+
 - [ ] [海外剧 - 吾爱看影视-在线免费高清电视电影天堂](http://www.5aikp.com/type/26.html?btwaf=59010016)
 - [ ] [免费VIP视频](http://xzzxz.cn/)
 - [x] [看片狂人](https://www.kpkuang.com/)
