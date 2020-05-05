@@ -97,3 +97,7 @@ keywords:
 
 
 [2ndalpha/gasmask: Hosts file manager for OS X](https://github.com/2ndalpha/gasmask)
+
+[Stay 1.3 破解版 for Mac 窗口位置一键还原](https://www.macwk.com/soft/stay)
+
+[Mic Drop | MacMenuBar.com](https://macmenubar.com/mic-drop/)

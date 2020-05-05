@@ -104,6 +104,8 @@ ElasticSearch: ->Indices->Types->Documents->Fields
 
 ## 使用
 
+[Field datatypes | Elasticsearch Reference [7.6] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html#_core_datatypes)
+
 ```python
 from elasticsearch import Elasticsearch
 es = Elasticsearch()
@@ -727,3 +729,4 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 [干货 | Elasticsearch、Kibana数据导出实战 - 掘金](https://juejin.im/post/5d5a9583e51d456206115a06)
 
+[Field datatypes | Elasticsearch Reference [7.6] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html#_core_datatypes)

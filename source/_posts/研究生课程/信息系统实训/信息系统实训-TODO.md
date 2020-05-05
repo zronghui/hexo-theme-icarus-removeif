@@ -32,6 +32,8 @@ keywords:
 - [x] crontab 每天自动更新
 - [ ] 音乐搜索引擎  爬虫
 - [ ] 显示最近更新功能及修改的 bug
+- [ ] mac 应用爬虫
+- [x] 显示 网站名，如miao101.com-->  旋风视频
 - [x]  对网站来源排序
 - [x] 按分数降序-长度升序排序
 - [ ] 博客爬虫 文章搜索
@@ -46,6 +48,9 @@ keywords:
 - [ ] [免费的在线影视网站汇总 - 不死鸟 - 分享为王](https://hao.su/531/#menu_index_5)
 - [ ] [SBKKO导航 | 轻松浏览，便捷上网，效率生活从这里开始！](https://nav.sbkko.com/#term-327)
 - [ ] [2020最近好看的国产剧|国产剧推荐排行榜_第1页 -影视看看](https://www.yingshikk.com/Lmob/1.html)
+- [ ] [麦葱音乐搜索器_多站合一音乐搜索,音乐在线试听](https://kehu56.com/musics/)
+- [ ] [M站_哔咪哔咪,这里是兴趣使然的无名小站_bimibimi](http://www.bimibimi.me/?btwaf=34600358)
+- [ ] [动漫影音- 派导航](https://www.pi001.com/category/acgtv/)
 
 ## 参考网页：
 
@@ -76,3 +81,6 @@ keywords:
 避免重复爬取
 
 <img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200426141848017.png" alt="image-20200426141848017" style="zoom:50%;" />
+
+
+
