@@ -48,7 +48,7 @@ keywords:
 [免费VIP视频](http://xzzxz.cn/)
 [https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie](https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie)
 
-## 爬虫
+## 影视爬虫
 
 - [x] ~~[海外剧 - 吾爱看影视-在线免费高清电视电影天堂](http://www.5aikp.com/type/26.html?btwaf=59010016)~~
 - [x] ~~[免费VIP视频](http://xzzxz.cn/)~~
@@ -61,6 +61,13 @@ keywords:
 - [x] [麦葱音乐搜索器_多站合一音乐搜索,音乐在线试听](https://kehu56.com/musics/)
 - [x] [M站_哔咪哔咪,这里是兴趣使然的无名小站_bimibimi](http://www.bimibimi.me/?btwaf=34600358)
 - [ ] [动漫影音- 派导航](https://www.pi001.com/category/acgtv/)
+
+## 书籍爬虫
+
+- [ ] [资源帝电子书导航_在这里发现更多好书...](http://shu.ziyuandi.cn/)
+- [ ] [FreeMbook 免费下载电子书 epub azw3 mobi](https://freembook.com/)
+- [ ] [计算机免费书籍,电子书,pdf电子书,电子书籍,网络书籍,电脑书籍下载,编程书籍,编程电子书下载 - 脚本之家](https://www.jb51.net/books/)
+- [ ] [码农电子书！ – 开源电子书下载平台](https://book.mzh.ren/)
 
 ## 音乐
 
