@@ -1,9 +1,9 @@
 ---
-title: 信息系统实训 TODO
+qtitle: 信息系统实训 TODO
 toc: true
 recommend: 1
 uniqueId: '2020-03-11 08:16:25/"信息系统实训 TODO".html'
-date: 2020-03-11 16:16:25
+date: 2020-03-11 16:16:2
 thumbnail:
 categories:
 - 研究生课程
@@ -42,8 +42,13 @@ keywords:
 - [ ] cookie 保存历史搜索记录
 - [ ] 添加豆瓣书籍解析
 - [ ] 音乐搜索引擎 
+- [ ] 迁移到 docker
+- [ ] 点击 Google 等搜索引擎，自动从输入框中获取搜索词，并跳转页面，在 index 页面加上搜索引擎
+- [x] 输入提示
 
-## 输入提示
+
+
+**输入提示 参考**
 
 [免费VIP视频](http://xzzxz.cn/)
 [https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie](https://s.video.qq.com/smartbox?callback=fn&plat=2&ver=0&num=5&otype=json&query=lie)

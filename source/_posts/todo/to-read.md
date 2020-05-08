@@ -54,3 +54,35 @@ keywords:
 [2020 年为什么要选择 Go 并放弃 Python](https://mp.weixin.qq.com/s/rDypsB9yAua9uX2aC9_y1A)
 [10分钟教你手写8个常用的自定义hooks - 掘金](https://juejin.im/post/5e57d0dfe51d4526ce6147f2)
 [0voice/from_coder_to_expert: 2019年最新总结，从程序员到CTO，从专业走向卓越，分享大牛企业内部pdf与PPT](https://github.com/0voice/from_coder_to_expert)
+
+
+
+## 05-05
+
+[30 Days of Python - Day 13 - Using a REST API Service - Python TUTORIAL - YouTube](https://www.youtube.com/watch?v=Sg5VTTBIhqo)
+[30 Days of Python - Day 14 - Web App with Flask, FastAPI, ngrok, and Invictify - Python TUTORIAL - YouTube](https://www.youtube.com/watch?v=5rWGWetiBHo)
+[30 Days of Python - Day 15 - Automated Video Processing with Moviepy - Python TUTORIAL - YouTube](https://www.youtube.com/watch?v=m6chqKlhpPo)
+[Docker Tutorial and Introduction. Simple and Easy. - YouTube](https://www.youtube.com/watch?v=7S73WERRqO4)
+[Django on Docker Tutorial - Deploy Django on Heroku with OpenCV - YouTube](https://www.youtube.com/watch?v=1pZbuvbvYY8)
+
+[Django-Docker容器化部署：Django-Docker本地部署 - 掘金](https://juejin.im/post/5d9c7b285188253f5447bcfa)
+[使用 Docker 容器化 Django Web 应用 - DockOne.io](http://www.dockone.io/article/3656)
+[erroneousboat/docker-django: A project to get you started with Docker and Django.](https://github.com/erroneousboat/docker-django)
+[testdrivenio/django-on-docker](https://github.com/testdrivenio/django-on-docker)
+[使用 Docker 部署 Python/Django 项目 (单机/swarm集群)](https://breakwire.me/deploy-django-with-docker.html)
+
+[实战 Django - Docker —— 从入门到实践 - 极客学院Wiki](https://wiki.jikexueyuan.com/project/docker-technology-and-combat/django.html)
+[twtrubiks/docker-tutorial: Docker 基本教學 - 從無到有 Docker-Beginners-Guide 教你用 Docker 建立 Django + PostgreSQL 📝](https://github.com/twtrubiks/docker-tutorial)
+[twtrubiks/docker-django-nginx-uwsgi-postgres-tutorial: Docker + Django + Nginx + uWSGI + Postgres 基本教學 - 從無到有 ( Docker + Django + Nginx + uWSGI + Postgres Tutorial )](https://github.com/twtrubiks/docker-django-nginx-uwsgi-postgres-tutorial)
+[容器与云|如何 Docker 化 Python Django 应用程序](https://linux.cn/article-10006-1.html)
+[如何 Docker 化 Python Django 应用程序 - 知乎](https://zhuanlan.zhihu.com/p/44423066)
+[Docker 實戰系列（一）：一步一步帶你 dockerize 你的應用 - Larry・Blog](https://larrylu.blog/step-by-step-dockerize-your-app-ecd8940696f4)
+[Django, Docker and Elasticsearch - Sergey Lyapustin - Medium](https://medium.com/@s.lyapustin/django-polls-app-with-elasticsearch-ffc02b9e79d9)
+[使用Docker和Elasticsearch搭建全文本搜索引擎应用(上) - 每日头条](https://kknews.cc/code/ox4l5n6.html)
+[Django的haystack對接elasticsearch伺服器完成全文檢索詳解 - IT閱讀](https://www.itread01.com/content/1545386616.html)
+[es-django-example,使用Elasticsearch的示例 Django 项目,下载es-django-example的源码_GitHub_酷徒](https://www.kutu66.com/GitHub/article_127110)
+
+
+
+
+
