@@ -192,5 +192,58 @@ pip3 install --upgrade pip
 
 
 
+## docker 安装
 
+[Install Docker Engine on CentOS | Docker Documentation](https://docs.docker.com/engine/install/centos/#install-docker-engine)
+
+```shell
+# 卸载旧版本
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+                  
+# 用存储库进行安装
+# 安装 yum-utils 包(它提供 yum-config-manager 实用工具)并设置稳定存储库
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# 安装 DOCKER 引擎
+sudo yum install docker-ce docker-ce-cli containerd.io
+# 验证指纹是否与060A 61c51b558a7f 742B 77AA C52F EB6B 621E 9F35匹配，如果是，接受它
+
+# 启动 Docker
+sudo systemctl start docker
+sudo docker run hello-world
+# 开机自启
+sudo systemctl enable docker
+```
+
+镜像加速
+
+配置文件: /etc/docker/daemon.json
+
+阿里云 ID 见：https://cr.console.aliyun.com/undefined/instances/mirrors
+
+```json
+{
+  "registry-mirrors": ["https://my-id.mirror.aliyuncs.com", "http://hub-mirror.c.163.com"]
+}
+```
+
+
+
+```shell
+sudo systemctl restart docker
+# 或者
+sudo systemctl stop docker
+sudo systemctl start docker
+```
+
+
+
+docker info 查看是否生效
 

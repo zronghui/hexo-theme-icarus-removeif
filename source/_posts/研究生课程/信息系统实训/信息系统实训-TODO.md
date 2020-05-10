@@ -45,6 +45,26 @@ keywords:
 - [ ] 迁移到 docker
 - [ ] 点击 Google 等搜索引擎，自动从输入框中获取搜索词，并跳转页面，在 index 页面加上搜索引擎
 - [x] 输入提示
+- [ ] nginx
+- [ ] 配置 Nginx 转发静态文件请求
+- [ ] nginx 缓存静态文件
+
+**NGINX 缓存静态文件 参考**
+
+[Dynamically Cache Static Files using Django and Nginx](http://blog.thehumangeo.com/2013/05/01/dynamically-cache-static-files-using-django-and-nginx/)
+
+[Conditional View Processing | Django documentation | Django](https://docs.djangoproject.com/en/3.0/topics/conditional-view-processing/)
+[Django’s cache framework | Django documentation | Django](https://docs.djangoproject.com/en/3.0/topics/cache/)
+
+[Django 静态文件处理 - 陈少文的博客](https://www.chenshaowen.com/blog/django-static-file-processing.html#3-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE)
+
+[Django 调试工具 django-debug-toolbar - 陈少文的博客](https://www.chenshaowen.com/blog/django-debug-toolbar.html)
+
+[Django 中对静态文件版本的控制 - 陈少文的博客](https://www.chenshaowen.com/blog/control-of-static-file-version-in-django.html)
+
+[Django Nginx+uwsgi 安装配置 | 菜鸟教程](https://www.runoob.com/django/django-nginx-uwsgi.html)
+
+[使用uWSGI和nginx来设置Django和你的web服务器 — uWSGI 2.0 文档](https://uwsgi-docs-zh.readthedocs.io/zh_CN/latest/tutorials/Django_and_nginx.html)
 
 
 
@@ -73,6 +93,11 @@ keywords:
 - [ ] [FreeMbook 免费下载电子书 epub azw3 mobi](https://freembook.com/)
 - [ ] [计算机免费书籍,电子书,pdf电子书,电子书籍,网络书籍,电脑书籍下载,编程书籍,编程电子书下载 - 脚本之家](https://www.jb51.net/books/)
 - [ ] [码农电子书！ – 开源电子书下载平台](https://book.mzh.ren/)
+
+## 搜索引擎
+
+- [ ] [熊猫搜书](https://ebook.huzerui.com/#/)
+- [ ] [东京不够热 | TNH Subtitle](https://www.tokyonothot.com/?hao.su)
 
 ## 音乐
 

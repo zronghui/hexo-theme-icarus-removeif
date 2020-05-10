@@ -86,3 +86,52 @@ keywords:
 
 
 
+## 05-09
+
+[Mac息屏后如何保持网络连接，方便远程访问 - Questions张 - 博客园](https://www.cnblogs.com/QuestionsZhang/p/11606815.html)
+[Mac下使用Charles抓包https接口 - Questions张 - 博客园](https://www.cnblogs.com/QuestionsZhang/p/11708897.html)
+[MacOs上的Intellij idea高频快捷键总结（2018.1版本） - Questions张 - 博客园](https://www.cnblogs.com/QuestionsZhang/p/11110537.html)
+[彻底解决MacOS上应用程序快捷键冲突的问题，自定义快捷键设置 - Questions张 - 博客园](https://www.cnblogs.com/QuestionsZhang/p/10693838.html)
+[ZOC7在Mac下发送命令到多个窗口设置 - Questions张 - 博客园](https://www.cnblogs.com/QuestionsZhang/p/10596146.html)
+
+[倒计时提醒 · 雪之梦技术驿站](https://snowdreams1006.tech/other/reminder.html)
+[java8新特性 · 雪之梦技术驿站](https://snowdreams1006.github.io/learn-java/)
+[webhook · 雪之梦技术驿站](https://snowdreams1006.tech/zero2devops/webhook.html)
+[从零开始搭建服务器 · 雪之梦技术驿站](https://snowdreams1006.tech/zero2devops/)
+
+
+
+[docker/kitematic: Visual Docker Container Management on Mac & Windows](https://github.com/docker/kitematic)
+[moby/moby: Moby Project - a collaborative project for the container ecosystem to assemble container-based systems](https://github.com/moby/moby)
+[netdata/netdata: Real-time performance monitoring, done right! https://www.netdata.cloud](https://github.com/netdata/netdata)
+[containous/traefik: The Cloud Native Edge Router](https://github.com/containous/traefik)
+[Kong/kong: 🦍 The Cloud-Native API Gateway](https://github.com/Kong/kong)
+[drone/drone: Drone is a Container-Native, Continuous Delivery Platform](https://github.com/drone/drone)
+[tootsuite/mastodon: Your self-hosted, globally interconnected microblogging community](https://github.com/tootsuite/mastodon)
+[wagoodman/dive: A tool for exploring each layer in a docker image](https://github.com/wagoodman/dive)
+[docker/compose: Define and run multi-container applications with Docker](https://github.com/docker/compose)
+[wsargent/docker-cheat-sheet: Docker Cheat Sheet](https://github.com/wsargent/docker-cheat-sheet)
+[veggiemonk/awesome-docker: A curated list of Docker resources and projects](https://github.com/veggiemonk/awesome-docker)
+[yeasy/docker_practice: Learn and understand Docker technologies, with real DevOps practice!](https://github.com/yeasy/docker_practice)
+
+[如何使用 Charles 抓包 | Xuan's blog](https://blog.cugxuan.cn/2019/12/03/Software/use-charles-to-sniffer-packet/)
+[使用 webhook 自动更新博客 | Xuan's blog](https://blog.cugxuan.cn/2019/03/23/Git/Use-Webhook-To-Update-Blog/)
+
+
+
+## 05-10
+
+[pandownload还能用的旧版本 百度网盘资源不限速下载神器 - 无二辅助网](https://www.52fzg.com/pcrj/7354.html)
+[《鬼吹灯》作者天下霸唱为你讲述盗墓故事-福利吧](https://fulibus.net/tianxiabachang.html)
+[西瓜导航-收藏你喜欢的网站！](https://nav.hzwdd.cn/?hao.su)
+
+[pandownload不能用了？Docker容器推荐第一期:Linux版本百度云_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/av882799501)
+[搭建内网DNS解析过滤广告。Docker容器推荐第四期:ADGUARDHOME_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/av285538978)
+
+[宝塔面板Docker安装UnblockNeteaseMusic – 解锁网易云音乐变灰歌曲 - 大鸟博客](https://www.daniao.org/4962.html)
+[宝塔linux面板使用教程，以及一些宝塔技术分享！](https://www.daniao.org/btpanel/)
+[Android手机/Docker使用UnblockNeteaseMusic播放网易云音乐客户端无版权歌曲 Mac/Win/Linux/iOS/Android | MAC萌新网](https://www.macxin.com/archives/16150.html)
+
+[航歌-Docker / K8s-第1页](https://www.hangge.com/blog/cache/category_81_1.html)
+[K8s - Kubernetes集群的安装部署教程（CentOS系统）](https://www.hangge.com/blog/cache/detail_2414.html)
+
