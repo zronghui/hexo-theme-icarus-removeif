@@ -143,6 +143,20 @@ docker-compose --version
 |                          |                                                              |
 |                          |                                                              |
 
+### 容器资源限制：内存、CPU、带宽
+
+[Docker - 常用命令汇总2（容器资源限制：内存、CPU、带宽）](https://www.hangge.com/blog/cache/detail_2413.html)
+
+一、内存限额
+1，参数说明
+2，使用样例
+二、CPU 限额
+1，参数说明
+2，使用样例
+三、Block IO 宽带限额
+1，block io 权重
+2，限制 bps 和 iops 
+
 
 
 ### docker django es

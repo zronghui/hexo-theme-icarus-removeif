@@ -700,6 +700,65 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 导出为 json，或把一个节点的数据复制到另外一个节点
 
+## 问题
+
+#### 1.网页端搜索引擎请求失败，elasticsearch Failed to establish a new connection
+
+curl 127.0.0.1:9200
+
+无法连接
+
+
+
+systemctl restart elasticsearch.service 后 systemctl status elasticsearch.service -l 可以看到服务启动失败
+
+解决艰辛过程：
+
+systemctl 命令使用
+
+```shell
+1.启动、关闭、重启 nfs服务
+systemctl start/stop/restart nfs-server.service
+
+2.设置开机自启动
+systemctl enable nfs-server.service
+
+3.停止开机自启动
+systemctl disable nfs-server.service
+
+4.查看服务当前状态
+systemctl status nfs-server.service
+systemctl status nfs-server.service -l # 查看全部
+
+5.查看所有已启动的服务
+systemctl list-units --type=service
+```
+
+
+
+systemctl status elasticsearch.service -l 可以看到 There is insufficient memory for the Java Runtime Environment to continue Solution
+
+vim /etc/elasticsearch/jvm.options
+
+```shell
+# -Xms1g
+# -Xmx1g
+-Xms500m
+-Xmx500m
+```
+
+设小了可以启动，但是一搜索就又崩了，最后又改成默认的 1g
+
+去 阿里云控制台 查看 mem 使用情况，一直挺高的，但是在服务器内部，使用 ps -aux | sort -k4nr | head 查看内存占用，并没有内存占用特别高的进程
+
+
+
+最后，没辙了，**重启服务器**，问题解决，去 阿里云控制台 查看 mem 使用情况，内存占用正常
+
+
+
+
+
 ## 相关社区、教程
 
 [Python Elasticsearch Client — Elasticsearch 7.5.1 documentation](https://elasticsearch-py.readthedocs.io/en/master/index.html)

@@ -15,6 +15,10 @@ keywords:
 
 <!--more-->
 
+[云服务器管理控制台](https://ecs.console.aliyun.com/?spm=5176.13329450.home-res.list-id.6baf4df5QGfirl#/server/region/cn-beijing)
+
+
+
 ## 【阿里云】高校学生“在家实践”计划
 
 [【阿里云】高校学生“在家实践”计划](https://developer.aliyun.com/adc/student/?spm=a2c6h.13788096.J_7970846300.1.75da7638uOFYrv&accounttraceid=45ab3d56815a4be6ab3feac336a73784hxcl#ecscolleges-collocation-stu)
