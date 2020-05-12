@@ -24,6 +24,13 @@ keywords:
 [豆瓣影视图书小助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E8%B1%86%E7%93%A3%E5%BD%B1%E8%A7%86%E5%9B%BE%E4%B9%A6%E5%B0%8F%E5%8A%A9%E6%89%8B/ioacifoopoldngldmbknimhhophmfbgh/related)
 [Btools插件，检测哔哩哔哩收藏夹失效视频、评论增强、下载封面-文章-扩展迷](https://www.extfans.com/articles/1044)
 
+
+
+
+
+[Little Star - Chrome 网上应用店](https://chrome.google.com/webstore/detail/little-star/kmjfdonmflchjdlmeoecbmebfpnafpec/related)
+[Little Star：管理 Github Star 项目小扩展「Chrome」 – Mac玩儿法](https://www.waerfa.com/little-star)
+
 ## 守候购物小助手
 
 NB！

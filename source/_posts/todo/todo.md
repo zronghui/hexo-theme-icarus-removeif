@@ -39,6 +39,15 @@ keywords:
   --------  ------  -------------
 
 - [ ] [lio-mengxiang 的个人主页 - 专栏 - 掘金](https://juejin.im/user/5a17ea7f51882575d42f1211/posts)
+
 - [ ] 数据插入、显示图表、均值
+
 - [ ] 锻炼动作、添加、卡路里、数据统计
+
 - [ ] 自建 gitlab
+
+- [ ] [mamoe/mirai: 全开源 高效率 QQ机器人/Android QQ协议支持库 for JVM / Android](https://github.com/mamoe/mirai)
+
+- [ ] [sindresorhus/awesome-lint: Linter for Awesome lists](https://github.com/sindresorhus/awesome-lint)
+
+- [ ] 
