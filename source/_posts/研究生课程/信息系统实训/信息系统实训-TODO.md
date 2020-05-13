@@ -50,6 +50,7 @@ books: 305070
 - [ ] nginx
 - [ ] 配置 Nginx 转发静态文件请求
 - [ ] nginx 缓存静态文件
+- [ ] 缓存 Redis[Caching in Django | TestDriven.io](https://testdriven.io/blog/django-caching/#objectives)
 
 **NGINX 缓存静态文件 参考**
 

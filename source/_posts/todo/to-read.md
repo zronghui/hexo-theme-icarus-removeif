@@ -169,3 +169,61 @@ keywords:
 
 
 
+[Web Development Tutorials | TestDriven.io](https://testdriven.io/blog/)
+
+[How To: Redis Enterprise Products and Code Samples | Redis Labs](https://redislabs.com/resources/how-to-redis-enterprise/#using-redis-with-python)
+
+[RSS for Hackers](https://rss.pipedream.com/)
+[Copy of Generate an RSS feed from HTTP POST requests, retrieve via GET request | Edit - Pipedream](https://pipedream.com/@zronghui/copy-of-generate-an-rss-feed-from-http-post-requests-retrieve-via-get-request-p_QPCeD2/edit)
+[Triggers | Docs](https://docs.pipedream.com/workflows/steps/triggers/#app-based-triggers)
+
+[Domesticating Kubernetes | Practical kubernetes as a home server | Quickbird](https://blog.quickbird.uk/domesticating-kubernetes-d49c178ebc41)
+[Shrinking this sites docker image](https://hampton.pw/posts/shrinking-this-sites-docker-image/)
+[Fast Autocomplete Search for Your Website ◆ 24 ways](https://24ways.org/2018/fast-autocomplete-search-for-your-website/)
+[Insomnia | API Design Platform and REST Client](https://insomnia.rest/)
+
+[leeoniya/uPlot: 📈 A small, fast chart for time series, lines, areas, ohlc & bars](https://github.com/leeoniya/uPlot)
+
+[Tara](https://tara.ai/)
+
+
+
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/84141/1588895319908-26b6100c-df5e-45c1-88b9-3304dee42ce8.jpeg" alt="img" style="zoom: 50%;" />
+
+
+
+项目管理软件 Jira 的一个免费仿制品。
+
+
+
+2、[Insomnia](https://insomnia.rest/)
+
+
+
+<img src="https://cdn.nlark.com/yuque/0/2020/jpeg/84141/1588895319893-edd924c5-a734-4f4f-9c65-0a8abbd08468.jpeg" alt="img" style="zoom:50%;" />
+
+
+
+一个开源的桌面软件，用于简化 API 的设计和开发。
+
+
+
+[Help the World by Healing Your NGINX Configuration - NGINX](https://www.nginx.com/blog/help-the-world-by-healing-your-nginx-configuration/)
+[How a 2 person startup already uses 28 other tools](https://blog.acrossapp.com/how-a-2-person-startup-already-uses-28-other-tools/)
+
+
+
+[Effortless Concurrency with Python’s concurrent.futures | Red’s Digressions](https://rednafi.github.io/digressions/python/2020/04/21/python-concurrent-futures.html)
+
+[Improve Your Tests With the Python Mock Object Library – Real Python](https://realpython.com/courses/python-mock-object-library/)
+
+
+
+[Exploring an Alternative to Jupyter Notebooks for Python Development - Practical Business Python](https://pbpython.com/notebook-alternative.html)
+[Creating Interactive Dashboards from Jupyter Notebooks - Practical Business Python](https://pbpython.com/interactive-dashboards.html)
+[Using WSL to Build a Python Development Environment on Windows - Practical Business Python](https://pbpython.com/wsl-python.html)
+
+
+
+
+

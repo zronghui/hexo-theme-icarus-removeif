@@ -19,17 +19,18 @@ keywords:
 
 
 
+
+
+[YouTube™双字幕 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/youtube%E5%8F%8C%E5%AD%97%E5%B9%95/pinbfcanggagdlikncmljamikccpkkon)
+
+
+
 [豆瓣电影放映厅插件，影音资源在线播放、影视下载、磁力链接-文章-扩展迷](https://www.extfans.com/articles/1055/)
 [豆瓣电影放映厅 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E6%94%BE%E6%98%A0%E5%8E%85/fdpginkdbfpppjeoncmgejpmgdnlimpe/related)
 [豆瓣影视图书小助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E8%B1%86%E7%93%A3%E5%BD%B1%E8%A7%86%E5%9B%BE%E4%B9%A6%E5%B0%8F%E5%8A%A9%E6%89%8B/ioacifoopoldngldmbknimhhophmfbgh/related)
 [Btools插件，检测哔哩哔哩收藏夹失效视频、评论增强、下载封面-文章-扩展迷](https://www.extfans.com/articles/1044)
 
 
-
-
-
-[Little Star - Chrome 网上应用店](https://chrome.google.com/webstore/detail/little-star/kmjfdonmflchjdlmeoecbmebfpnafpec/related)
-[Little Star：管理 Github Star 项目小扩展「Chrome」 – Mac玩儿法](https://www.waerfa.com/little-star)
 
 ## 守候购物小助手
 
@@ -82,9 +83,9 @@ NB！
 [Simple Auto Scroll - Chrome 网上应用店](https://chrome.google.com/webstore/detail/simple-auto-scroll/dccjkemhmffnljlnnoffljpkhkfpldff?hl=zh-CN)
 [Scroll Buddy - Chrome 网上应用店](https://chrome.google.com/webstore/detail/scroll-buddy/iijemcphocnlembodanflickfiafjnmk?hl=zh-CN)
 
-## Minimap 网页缩略图
+**Minimap 网页缩略图**
 
-会阻挡视线，改成点击后开启插件
+**会阻挡视线，改成点击后开启插件**
 
 [Minimap插件，在任意站点添加完整网页缩略图，快速进行网站定位-文章-扩展迷](https://www.extfans.com/articles/941)
 
