@@ -56,7 +56,11 @@ by 张荣辉-2019140740
 
 # 搜索页
 
-<img src="https://i.loli.net/2020/04/20/AoV5KxGqwUO1CWl.png" alt="AoV5KxGqwUO1CWl" style="zoom:33%;" />
+---
+
+
+
+![123](https://i.loli.net/2020/04/20/AoV5KxGqwUO1CWl.png)
 
 
 
@@ -67,6 +71,10 @@ by 张荣辉-2019140740
 
 
 # 详情页
+
+---
+
+
 
 ![kUVtjuwmRXqS8xs](https://i.loli.net/2020/04/20/kUVtjuwmRXqS8xs.png)
 
