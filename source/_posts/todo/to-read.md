@@ -227,3 +227,74 @@ keywords:
 
 
 
+[GoDjango - YouTube](https://www.youtube.com/channel/UCGFnqWaBEHVzPD40PuH7vbg/videos)
+
+
+
+## 05-16
+
+
+
+[Kubernetes - 陈少文的博客](https://www.chenshaowen.com/blog/tag/Kubernetes/)
+[Homebrew 使用 - 陈少文的博客](https://www.chenshaowen.com/blog/the-use-of-homebrew.html)
+[工具 - 陈少文的博客](https://www.chenshaowen.com/blog/tag/%E5%B7%A5%E5%85%B7/page/3/)
+[PPT制作攻略之呈现篇课程笔记 - 陈少文的博客](https://www.chenshaowen.com/blog/notes-on-making-strategy-of-the-presentation.html)
+[Python 下各种环境隔离工具简介 - 陈少文的博客](https://www.chenshaowen.com/blog/introduction-of-various-environmental-isolating-tools-under-python.html)
+[Vim 必备插件 - 陈少文的博客](https://www.chenshaowen.com/blog/vim-necessary-plugin.html)
+[ELK 日志搜索实践 - 陈少文的博客](https://www.chenshaowen.com/blog/elk-log-search-practice.html)
+[我的工具箱 - 陈少文的博客](https://www.chenshaowen.com/blog/toolbox.html)
+[交互式笔记本-Jupyter - 陈少文的博客](https://www.chenshaowen.com/blog/interactive-notebook-jupyter.html)
+[常用 Git 命令 - 陈少文的博客](https://www.chenshaowen.com/blog/common-git-commands.html)
+[Vagrant 搭建 Django 开发环境 - 陈少文的博客](https://www.chenshaowen.com/blog/build-django-development-environment-using-vagrant.html)
+[Django 调试工具 django-debug-toolbar - 陈少文的博客](https://www.chenshaowen.com/blog/django-debug-toolbar.html)
+
+
+
+[小技巧 - 陈少文的博客](https://www.chenshaowen.com/blog/tag/%E5%B0%8F%E6%8A%80%E5%B7%A7/)
+[开发 Tips（1） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-1.html)
+[开发 Tips（2） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-2.html)
+[开发 Tips（3） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-3.html)
+[开发 Tips（4） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-4.html)
+[开发 Tips（5） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-5.html)
+[开发 Tips（6） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-6.html)
+[开发 Tips（7） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-7.html)
+[开发 Tips（8） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-8.html)
+[开发 Tips（9） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-9.html)
+[开发 Tips（10） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-10.html)
+[开发 Tips（11） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-11.html)
+[开发 Tips（12） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-12.html)
+[开发 Tips（13） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-13.html)
+[开发 Tips（14） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-14.html)
+[开发 Tips（15） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-15.html)
+[开发 Tips（16） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-16.html)
+[开发 Tips（17） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-17.html)
+[开发 Tips（18） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-18.html)
+[开发 Tips（19） - 陈少文的博客](https://www.chenshaowen.com/blog/developing-tips-19.html)
+
+
+
+[fzf · macOS Setup Guide](https://sourabhbajaj.com/mac-setup/iTerm/fzf.html)
+
+[YouTube](https://www.youtube.com/watch?v=tG6O8YF91HE&list=PLEsfXFp6DpzSUvTvnKaN8xmu4bRZIaawC&index=11)
+[Docker Tutorials - YouTube](https://www.youtube.com/playlist?list=PLEsfXFp6DpzTHpw-kUzOd9WWY0zVdzl6q)
+[(1) Dockerize your Django App for Production (nginx + gunicorn) - Part 1 - YouTube](https://www.youtube.com/watch?v=3cRT1RmCyKg)
+[New Frontend](https://nextfe.com/)
+[优秀的命令行工具（三）](https://nextfe.com/command-line-tools-3/)
+[优秀的命令行工具（一）](https://nextfe.com/command-line-tools-1/)
+[A Blog by Darren Burns](https://darrenburns.net/)
+[优秀的命令行工具（二）](https://nextfe.com/command-line-tools-2/)
+
+
+
+## 05-17
+
+通知滤盒
+
+[App+1 | 解决 Android 通知管理难题，用正则表达式过滤无关推送：通知滤盒 - 少数派](https://sspai.com/post/59502)
+[微信群聊不是法外之地：用通知滤盒降低敏感词「炸群」风险 - 少数派](https://sspai.com/post/60536)
+
+
+
+[2020年程序猿必读10本好书推荐 - ABC实验室](https://www.abcxlab.com/topic/it/202004060147144915.html)
+[刚才面试官问我你会Mysql吗，我一聊一个多小时！ - 掘金](https://juejin.im/post/5ebe6cf0f265da7bac22587d#heading-0)
+[[译]让Web应用更安全的13个小技巧 - 掘金](https://juejin.im/post/5ebe9bcee51d454d945368b2#heading-1)

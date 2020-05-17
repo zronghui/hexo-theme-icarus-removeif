@@ -1055,12 +1055,117 @@ solr es 等多个搜索引擎接口统一
 
 
 [Getting Started with Haystack — Haystack 2.5.0 documentation 中文文档教程](https://s0django-haystack0readthedocs0io.icopy.site/en/v2.6.0/tutorial.html)
-[django-haystack全文检索详细教程_Python_越努力越幸运—liupu-CSDN博客](https://blog.csdn.net/AC_hell/article/details/52875927)
+[django-haystack全文检索详细教程_Python_越努力越幸运—liupu-CSDN博客
 [Haystack入门教程 - 简书](https://www.jianshu.com/p/fa1d29456d80)
 [Django：haystack全文检索详细教程 - 秋寻草 - 博客园](https://www.cnblogs.com/gcgc/p/10762416.html)
 [卧槽，简单的Django ElasticSearch Haystack我竟然调了那么久。。。 - 知乎](https://zhuanlan.zhihu.com/p/36963164)
 [Django Haystack 全文检索与关键词高亮_Django博客教程_追梦人物的博客](https://www.zmrenwu.com/courses/django-blog-tutorial/materials/27/)
 
+
+
+### django-extensions
+
+[django-extensions/django-extensions: This is a repository for collecting global custom management extensions for the Django Framework.](https://github.com/django-extensions/django-extensions)
+
+```shell
+pip install django-extensions werkzeug
+# 在 INSTALLED_APPS 里添加 django_extensions
+```
+
+用途1：
+
+方便查看报错信息，界面美化，网页还带个 terminal，方便查错
+
+python manage.py runserver_plus 9000
+
+<img src="/Users/zhangronghui/Downloads/images/youtu.be-1F6G3ONhr4k (3).jpg" alt="youtu.be-1F6G3ONhr4k (https://i.loli.net/2020/05/16/IemLlUCExTY9bqd.jpg)" style="zoom:50%;" />
+
+用途 2：
+
+查看所有 urls
+
+python manage.py show_urls
+
+<img src="https://i.loli.net/2020/05/16/FuBiWXZdHqMUVmK.jpg" alt="youtu.be-1F6G3ONhr4k" style="zoom:50%;" />
+
+shell_plus
+
+./manage.py shell_plus --ipython
+
+运行Django shell的同时自动加载所有app的models,并选择使用Python shell的版本
+
+
+
+### Django Packages
+
+[Django Packages : Welcome](https://djangopackages.org/categories/apps/?sort=usage_count&dir=desc)
+[ubernostrum/django-registration: An extensible user-registration app for Django.](https://github.com/ubernostrum/django-registration)
+[pydanny/dj-pagination: Django + Pagination Made Easy](https://github.com/pydanny/dj-pagination)
+
+
+
+### Django-Chart.js
+
+可用来学习
+
+[(1) Django + Chart.js // Learn to intergrate Chart.js with Django - YouTube](https://www.youtube.com/watch?v=B4Vmm3yZPgc)
+
+项目代码：
+
+[codingforentrepreneurs/Django-Chart.js: Learn how to integrate Chart.js with Django](https://github.com/codingforentrepreneurs/Django-Chart.js)
+
+integrate: Chart.js (http://www.chartjs.org/) with *Django* ([http://*django*.project.com/](http://django.project.com/)) and the *Django* Rest Framework ([http://www.*django*-rest-framework.org/](http://www.django-rest-framework.org/))
+
+
+
+更简单的做法：
+
+[peopledoc/django-chartjs: Django Class Based Views to generate Ajax charts js parameters.](https://github.com/peopledoc/django-chartjs)
+
+更全面：
+
+[IridiumIO/pyChart.js: Objective Chart.js implementation for Python and Django](https://github.com/IridiumIO/pyChart.js)
+
+1. Chart Element in HTML and JS
+
+
+```html
+<canvas id="myChart"></canvas>
+
+<script>
+    var data = {{ chartJSON | safe }}
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, data);
+</script>
+```
+
+2. Python Code
+
+```python
+Create Chart
+from pychartjs import BaseChart, ChartType, Color                                     
+
+class MyBarGraph(BaseChart):
+  type = ChartType.Bar
+
+  class data:
+      label = "Numbers"
+      data = [12, 19, 3, 17, 10]
+      backgroundColor = Color.Green
+```
+Update data label and use it in a Django View
+
+```python
+def homepage(request):
+  NewChart = MyBarGraph()
+  NewChart.data.label = "My Favourite Numbers"      # can change data after creation
+
+  ChartJSON = NewChart.get()
+
+  return render(request=request,
+                template_name='main/home.html',
+                context={"chartJSON": ChartJSON})
+```
 ## 参考链接
 
 [Django 官方中文文档](https://docs.djangoproject.com/zh-hans/3.0/topics/)

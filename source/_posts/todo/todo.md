@@ -42,12 +42,14 @@ keywords:
 
 - [ ] 数据插入、显示图表、均值 [leeoniya/uPlot: 📈 A small, fast chart for time series, lines, areas, ohlc & bars](https://github.com/leeoniya/uPlot)
 
-- [ ] 锻炼动作、添加、卡路里、数据统计
-
 - [x] 自建 gitlab
 
 - [ ] [mamoe/mirai: 全开源 高效率 QQ机器人/Android QQ协议支持库 for JVM / Android](https://github.com/mamoe/mirai)
 
 - [ ] [sindresorhus/awesome-lint: Linter for Awesome lists](https://github.com/sindresorhus/awesome-lint)
 
-- [ ] 
+- [ ] [概念 - Kubernetes](https://kubernetes.io/zh/docs/concepts/)
+  [任务 - Kubernetes](https://kubernetes.io/zh/docs/tasks/)
+  [教程 - Kubernetes](https://kubernetes.io/zh/docs/tutorials/)
+
+- [ ] django chart js 在一个页面显示所有图表：体重(斤)、日运动时间(min)、睡眠时长(h)、

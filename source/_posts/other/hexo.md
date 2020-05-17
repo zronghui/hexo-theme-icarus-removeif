@@ -402,3 +402,9 @@ gittalk 好看，livere 加载快
 
 
 [ico图标制作,在线Favicon.ico制作转换工具,实时预览ico生成效果,ico图标下载](http://cn.faviconico.org/favicon)
+
+
+
+
+
+[将Hexo博客部署到云主机](https://blog.fundebug.com/2017/05/18/deploy-hexo-on-cloud/)

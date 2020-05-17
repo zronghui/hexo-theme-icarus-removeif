@@ -6,8 +6,7 @@ uniqueId: '2020-05-08 09:30:20/"docker".html'
 date: 2020-05-08 17:30:20
 thumbnail:
 categories:
-- 研究生课程
-- 信息系统实训
+- docker k8s
 tags:
 keywords:
 ---
@@ -96,12 +95,13 @@ docker info 查看是否生效
 
 Linux 需要安装 docker-compose ；Mac win 自带
 
-未执行成功
+
 
 ```shell
-sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
+sudo yum install epel-release
+#sudo pip install docker-compose # 此时 alias 失效
+pip3 install docker-compose
+docker-compose version
 
 ```
 
@@ -171,6 +171,7 @@ docker run -itd --name ubuntu-test ubuntu /bin/bash
 
 ```bash
 docker stop <容器 ID>
+docker kill <容器 ID> # 强制停止
 ```
 
 - 重启容器
@@ -370,6 +371,73 @@ sudo docker logs -f -t --tail 10 s12
 
 
 
+### Dockerize
+
+[Better Docker experience with Dockerize](https://rock-it.pl/better-docker-containers-with-dockerize-wrapper/)
+
+假设有docker-compose.yml内容如下：
+
+```yaml
+version: '2'
+services:
+  database:
+    image: postgres
+
+  application:
+    image: registry.example.com/our-application
+    command: node
+    ports:
+      - 80:80
+```
+
+文件没问题，但是逻辑有问题，node 应用依赖于 database，有一定几率 node 启动失败
+
+解决办法，使用 dockerize
+
+在 dockerfile 里添加：
+
+```shell
+ENV DOCKERIZE_VERSION v0.4.0
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+```
+
+修改 docker-compose.yml
+
+```yaml
+services:
+  ...
+  application:
+    image: registry.example.com/our-application
+    command: dockerize -wait tcp://database:5432 node
+  ...
+```
+
+更多用法、参数
+
+```yaml
+# redirect files to stdout and stderr
+dockerize \
+  -stdout info.log \
+  -stdout perf.log \
+  ...
+
+# wait for 2 services with 10s timeout
+dockerize \
+  -wait tcp://db:5432 \
+  -wait http://web:80 \
+  -timeout 10s \
+  ...
+
+# template option
+dockerize \
+  -template nginx.tmpl:nginx.conf \
+  ...
+```
+
+
+
 ### docker django es
 
 [elasticsearch - Docker Hub](https://hub.docker.com/_/elasticsearch?tab=description)
@@ -547,6 +615,8 @@ ctop：容器的类顶层接口
 
 [docker 操作 · 雪之梦技术驿站](https://snowdreams1006.tech/devops/docker-ops.html)
 [docker compose · 雪之梦技术驿站](https://snowdreams1006.tech/devops/docker-compose.html)
+
+[Docker Compose | 菜鸟教程](https://www.runoob.com/docker/docker-compose.html)
 
 
 
