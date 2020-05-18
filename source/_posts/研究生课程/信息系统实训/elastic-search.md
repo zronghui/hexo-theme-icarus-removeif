@@ -702,7 +702,7 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 ## 问题
 
-#### 1.网页端搜索引擎请求失败，elasticsearch Failed to establish a new connection
+### 1.网页端搜索引擎请求失败，elasticsearch Failed to establish a new connection
 
 curl 127.0.0.1:9200
 
@@ -755,6 +755,23 @@ vim /etc/elasticsearch/jvm.options
 
 
 
+### 2.外网访问
+
+首先, 阿里云安全组里开启 9200 端口
+
+
+
+**主要解决办法：**
+
+[阿里云安装elastcsearch后外网访问配置 - 半山无极 - 博客园](https://www.cnblogs.com/xdao/p/elasticsearch_config.html)
+
+外网访问
+vim /etc/elasticsearch/elasticsearch.yml 
+
+找到 network.host，改为
+
+network.host: 0.0.0.0
+
 
 
 ## 相关社区、教程
@@ -787,3 +804,8 @@ vim /etc/elasticsearch/jvm.options
 [干货 | Elasticsearch、Kibana数据导出实战 - 掘金](https://juejin.im/post/5d5a9583e51d456206115a06)
 
 [Field datatypes | Elasticsearch Reference [7.6] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html#_core_datatypes)
+
+
+
+[elasticsearch.yml 配置详解（转） - 简书](https://www.jianshu.com/p/c6f3368c13a3)
+[配置Elasticsearch - Elastic 中文问答社区](https://www.benderfly.com/index.php?article-3.html)

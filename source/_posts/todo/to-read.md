@@ -37,7 +37,7 @@ keywords:
 [[译]编写更快、更好的JavaScript的13个技巧 - 掘金](https://juejin.im/post/5eabffc7f265da7bed6b235c)
 [Redis基础知识总结（面试必备）](https://mp.weixin.qq.com/s/WEizNquzbZC8_yBWBHYL-A)
 [MySQL 数据库的提速器-写缓存（Change Buffer）](https://mp.weixin.qq.com/s/VAIVp2LrxPNil77-YUvjcg)
-[K8s 资源全汇总 | K8s 大咖带你 31 堂课从零入门 K8s - 掘金](https://juejin.im/post/5ea7f9ef5188256d9c25988e)
+~~[K8s 资源全汇总 | K8s 大咖带你 31 堂课从零入门 K8s - 掘金](https://juejin.im/post/5ea7f9ef5188256d9c25988e)~~
 [K8S ? K3S ! - 掘金](https://juejin.im/post/5e555bf56fb9a07ce01a2941)
 [Java8的Stream流真香，没体验过的永远不知道](https://mp.weixin.qq.com/s/v2uZnkWhGKXvTJu87iUWLg)
 [Git 分支设计规范](https://mp.weixin.qq.com/s/mlWuigUL2dQYwIHisec_7w)
@@ -298,3 +298,21 @@ keywords:
 [2020年程序猿必读10本好书推荐 - ABC实验室](https://www.abcxlab.com/topic/it/202004060147144915.html)
 [刚才面试官问我你会Mysql吗，我一聊一个多小时！ - 掘金](https://juejin.im/post/5ebe6cf0f265da7bac22587d#heading-0)
 [[译]让Web应用更安全的13个小技巧 - 掘金](https://juejin.im/post/5ebe9bcee51d454d945368b2#heading-1)
+
+[Caching in Django | TestDriven.io](https://testdriven.io/blog/django-caching/?utm_campaign=Django%2BNewsletter&utm_medium=web&utm_source=Django_Newsletter_22)
+
+
+
+
+
+[Docker 基本使用技巧 | 奔哲明的博客](https://benzblog.site/2020-04-25-docker_basic_skills/)
+[汇总一下我常用的Docker镜像以及说明 - 矿渣社区 - 其他系统 - 软件专区](http://bbs.nas66.com/thread-8409-1-1.html)
+[VPS菜鸟园](https://vpsman.net/page/554/)
+[本站提供免费 RSS 和 RSSHub 服务 - 思有云 - IOIOX](https://www.ioiox.com/archives/94.html)
+[思有云 - IOIOX - 个人博客 生活记录 原创文章 技术分享 资源分享 群晖技巧 群晖教程 免费FRP 免费内网穿透](https://www.ioiox.com/)
+[Hi, DIYgod](https://diygod.me/)
+[Tiny Tiny RSS : Login](https://rss.ioiox.com/)
+
+[GitHub 文件加速](https://g.ioiox.com/)
+[分享优质工具 - gh-proxy 代理下载或 git clone Github 仓库 - 思有云 - IOIOX](https://www.ioiox.com/archives/102.html)
+[iptables 常用命令,选项,参数及实例整理收集 - 思有云 - IOIOX](https://www.ioiox.com/archives/95.html)

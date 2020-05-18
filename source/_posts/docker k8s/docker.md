@@ -444,7 +444,7 @@ dockerize \
 
 [Install Elasticsearch with Docker | Elasticsearch Reference [7.5] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/7.5/docker.html)
 
-## 3.docker gitlab
+## 3.docker gitlab :8001
 
 主要看 gitlab 官方文档
 
@@ -550,7 +550,7 @@ url = http://47.93.53.47:8001/group1/zronghui_xxxt
 
 
 
-## 4. 解锁网易云灰色歌曲
+## 4. 解锁网易云灰色歌曲 :8002
 
 [nondanee/UnblockNeteaseMusic: Revive unavailable songs for Netease Cloud Music](https://github.com/nondanee/UnblockNeteaseMusic)
 
@@ -563,6 +563,32 @@ docker run --name yunmusic -p 8002:8080 nondanee/unblockneteasemusic
 ```
 
 
+
+## 5. rsshub :1200
+
+[DIYgod/RSSHub: 🍰 Everything is RSSible](https://github.com/DIYgod/RSSHub)
+[介绍 | RSSHub](https://docs.rsshub.app/)
+
+
+
+[部署 | RSSHub](https://docs.rsshub.app/install/#docker-compose-bu-shu)
+
+部分RSS需要单独配置后方可生成，如 pixiv、disqus、twitter、youtube、telegram、github
+
+```shell
+mcd rsshub
+wget https://raw.githubusercontent.com/DIYgod/RSSHub/master/docker-compose.yml
+docker-compose up -d
+
+# 启动成功，但是外网无法访问
+git clone https://github.com/DIYgod/RSSHub.git
+# 或者只下载项目下的 lib/middleware/header.js
+vim lib/middleware/header.js
+# 将 allow-origin 改为 0.0.0.0
+# 'Access-Control-Allow-Origin': '0.0.0.0',
+docker cp lib/middleware/header.js 8c144637ddef:/app/lib/middleware/
+docker restart 8c144637ddef
+```
 
 
 
@@ -598,6 +624,236 @@ rocker ：突破 Dockerfile 的限制
 ctop：容器的类顶层接口
 
 
+
+## **常用的Docker
+
+[汇总一下我常用的Docker镜像以及说明 - 矿渣社区 - 其他系统 - 软件专区](http://bbs.nas66.com/thread-8409-1-1.html)
+
+google 更多
+
+1. CentOS6
+
+```C
+镜像：treasureboat/ssh
+用户名：root
+密码：123456
+建站的，配合这个脚本超好用：
+yum install -y wget && wget -O install.sh http://download.bt.cn/install/install.sh && sh install.sh
+#
+#该镜像安装aria的步骤为：
+wget http://ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm 
+rpm -ivh rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm 
+yum -y install aria2
+```
+
+2. Ubuntu18
+
+```C
+镜像：rastasheep/ubuntu-sshd
+用户名：root
+密码：root
+```
+
+3. 宝塔面板
+
+```C
+镜像：tangniyuqi/baota
+用户名：admin
+密码：admin123
+```
+
+4. Debian
+
+```C
+镜像：hklcf/debian-ssh-docker
+用户名: root
+密码：password
+```
+
+5. Centos
+
+```C
+tutum/centos:latest .
+tutum/centos:centos5 centos5
+tutum/centos:centos6 centos6
+tutum/centos:centos7 centos7
+用户名：root
+密码随机，在docker日志中查看密码
+```
+
+6. OwnCloud
+
+```C
+镜像：imdjh/owncloud-with-ocdownloader
+端口：80
+就是owncloud
+```
+
+7. peerflix-server（磁力下载工具）
+
+```C
+镜像：fish/peerflix-server
+端口：9000
+```
+
+8. Owncloud（可以启用外部存储并具有下载功能）
+
+```C
+镜像：limaofeng/owncloud-with-ocdownloader
+端口：80
+```
+
+9. chrome浏览器
+
+```C
+镜像：
+consol/centos-xfce-vnc #（支持中文）
+consol/ubuntu-xfce-vnc #（不支持中文）
+密码：vncpassword
+端口：5901
+```
+
+10. xware-kodexplorer
+
+```C
+镜像：mrlyc/xware-kodexplorer
+端口：80
+初始账号密码：admin
+```
+
+宝塔面板
+
+```C
+镜像：tangniyuqi/baota
+用户名：admin
+密码：admin123
+```
+
+### tomcat
+
+网址：[https://hub.docker.com/_/tomcat/](https://hub.docker.com/_/tomcat/)
+
+```
+# 拉取
+docker pull tomcat
+# 运行
+docker run -di --name tomcat -p 8081:8080 tomcat
+```
+
+### Nginx
+
+网址：[https://hub.docker.com/_/nginx/](https://hub.docker.com/_/nginx/)
+
+```
+# 拉取
+docker pull nginx
+# 运行
+docker run -di --name nginx -p 80:80 nginx
+# 静态资源放入 nginx 中 /usr/share/nginx/html 目录下
+```
+
+### _MySQL_
+
+网址：[https://hub.docker.com/_/_mysql_/](https://hub.docker.com/_/mysql/)
+
+```
+#拉取
+docker pull mysql
+# 运行
+docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=ROOT_Password -d mysql
+```
+
+#### _MySQL_ 连接问题
+
+![](https://i.loli.net/2020/05/18/lzPnNQmOyBsW5kr.png)
+
+```
+问题：Client does not support authentication protocol requested by server; consider upgrading MySQL client
+
+解决方案：进入容器内，登录容器内的MySQL，在SQL中执行以下命令即可：
+alter user 'root'@'%' identified with mysql_native_password by '19491001';
+FLUSH PRIVILEGES;
+```
+
+### Oracle
+
+网址：[https://hub.docker.com/r/wnameless/oracle-xe-11g/](https://hub.docker.com/r/wnameless/oracle-xe-11g/)
+
+```
+# 拉取
+docker pull wnameless/oracle-xe-11g
+# 运行，默认账号 system，默认密码 oracle，-e 允许远程连接
+docker run -d --name oracle -p 49161:1521 -e ORACLE_ALLOW_REMOTE=true wnameless/oracle-xe-11g
+```
+
+### _Redis_
+
+网址：[https://hub.docker.com/_/_redis_/](https://hub.docker.com/_/redis/)
+
+```
+# 拉取
+docker pull redis
+# 运行
+## 无密码运行
+docker run -d --name redis -p 6379:6379  redis
+## 有密码运行
+docker run -d --name redis10 -p 6379:6379 redis --requirepass 19491001
+```
+
+### MongoDB
+
+网址：[https://hub.docker.com/_/mongo/](https://hub.docker.com/_/mongo/)
+
+```
+# 拉取
+docker pull mongo
+# 运行
+## 无账号密码运行
+docker run -d --name mongo -p 27017:27017 mongo
+## 账号密码运行
+docker run -d --name mongo  -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongo -e MONGO_INITDB_ROOT_PASSWORD=19491001 mongo
+```
+
+### Gitlab
+
+网址：[https://hub.docker.com/r/gitlab/gitlab-ce/](https://hub.docker.com/r/gitlab/gitlab-ce/)
+
+```
+# 使用 docker 拉取 gitlab 镜像
+docker pull gitlab/gitlab-ce
+# 运行 giltab 镜像
+docker run -di --name=gitlab-ce -p 7000:80 gitlab/gitlab-ce
+# 进入 gitlab 容器中
+docker exec -it gitlab-ce /bin/bash
+# 执行 giltab 配置,访问 http://IP:7000 即可，首次访问需要配置 root 密码
+gitlab-ctl reconfigure
+```
+
+### Jenkins
+
+DockerHub 官网：[https://hub.docker.com/_/jenkins/](https://hub.docker.com/_/jenkins/)
+
+使用：
+
+```
+# 拉取
+docker pull jenkins
+# 运行
+docker run -di --name simbajenkins -p 7000:8080 -p 50000:50000 jenkins
+```
+
+### Rancher
+
+DockerHub 官网：[https://hub.docker.com/r/rancher/server/](https://hub.docker.com/r/rancher/server/)
+
+使用：
+
+```
+# 拉取
+docker pull rancher/server
+# 运行
+docker run -di --name simbarancher -p 7001:8080 rancher/server
+```
 
 
 

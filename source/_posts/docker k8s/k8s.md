@@ -129,3 +129,8 @@ kube-prompt
 ## Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？
 
 简单来说就是几个工具的使用场景不一样，Minikube 通过虚拟机方式快速安装单节点 Kubernetes 集群，可用于个人电脑快速体验Kubernetes；Kubeadm 是官方推荐的Kubernetes 分发工具，该工具有助于在现有基础架构上引导最佳 Kubernetes 集群实践，优点是能够在任何地方发布最小的可行 Kubernetes 集群；但 Kubeadm 不提供基础架构配置（例如：网络、负载均衡、存储等都需要额外配置）；Kops适合于在阿里云、AWS、GCE、Azure、OpenStack等云平台上部署Kubernetes群集，目前不支持裸机部署。Kubespray是产线部署常用工具，依赖Ansible，支持AWS，GCE，Azure，OpenStack等云平台，以及物理服务器的IaaS平台。
+
+
+
+[Kubernetes 部署 Dashboard](https://liqiang.io/post/9f5d6241)
+[网页界面 (Dashboard) - Kubernetes](https://kubernetes.io/zh/docs/tasks/access-application-cluster/web-ui-dashboard/)
