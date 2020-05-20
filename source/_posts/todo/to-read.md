@@ -316,3 +316,24 @@ keywords:
 [GitHub 文件加速](https://g.ioiox.com/)
 [分享优质工具 - gh-proxy 代理下载或 git clone Github 仓库 - 思有云 - IOIOX](https://www.ioiox.com/archives/102.html)
 [iptables 常用命令,选项,参数及实例整理收集 - 思有云 - IOIOX](https://www.ioiox.com/archives/95.html)
+
+
+
+[「实战篇」从docker走向k8s进阶 – IT人故事会](https://idig8.com/category/docker/shizhanpiancongdockerzouxiangk8sjinjie/)
+
+[交互式Kubernetes客户端，搭建高效Kubernetes命令行终端_Linux命令_云网牛站](https://ywnz.com/linuxml/3094.html)
+
+[LinuxTechi: Linux How-Tos, commands and Tutorials](https://www.linuxtechi.com/)
+
+
+
+[应用控制(手机远程控制手机) - 发现频道 - 小众软件官方论坛](https://meta.appinn.net/t/topic/16381)
+[最牛X的时间管理软件【KINGTIME】免费版！！！ - 『精品软件区』 - 吾爱破解 - LCG - LSG |安卓破解|病毒分析|www.52pojie.cn](https://www.52pojie.cn/thread-1181937-1-1.html)
+[【自荐】点书-记录美好生活：一款自动记录人生的app - 发现频道 - 小众软件官方论坛](https://meta.appinn.net/t/app/16385)
+[Telegram 公众索引系统](https://tgtw.cc/?hao.su)
+[ZhiMap - 在线思维导图、电脑与手机微信里都能作图](https://zhimap.com/?hao.su)
+
+[inancgumus/learngo: 1000+ Hand-Crafted Go Examples, Exercises, and Quizzes](https://github.com/inancgumus/learngo)
+
+[IDEA 中 30 秒生成 Spring Cloud Alibaba 工程 - 掘金](https://juejin.im/post/5ea8f1c95188256d8f691ee9)
+[Kubernetes笔记（三）：Gitlab+Jenkins Pipeline+Docker+k8s+Helm自动化部署实践（干货分享！） - 掘金](https://juejin.im/post/5ebc97ee5188256d95626895)

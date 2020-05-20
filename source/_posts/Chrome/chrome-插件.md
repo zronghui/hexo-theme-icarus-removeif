@@ -76,6 +76,8 @@ NB！
 
 [Read Aloud: 文本语音朗读助理 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/read-aloud-a-text-to-spee/hdhinadidafjejdhmfkjgnolgimiaplp/related?hl=zh-CN)
 
+![image-20200520161207302](https://i.loli.net/2020/05/20/iD3KGpdkgqbNjEy.png)
+
 ## 自动滚动
 
 快速浏览网页 或 快速请求动态网页

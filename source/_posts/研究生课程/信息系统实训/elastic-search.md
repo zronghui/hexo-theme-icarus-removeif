@@ -700,6 +700,15 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 导出为 json，或把一个节点的数据复制到另外一个节点
 
+
+
+## elasticsearch-jieba-plugin
+
+需要 es 的版本与之对应，更改 es 版本太麻烦了，下次重新安装的时候再注意吧
+
+[Elasticsearch 中文分词 - 结巴分词 - Elasticsearch 基础教程 - 简单教程，简单编程](https://www.twle.cn/l/yufei/elasticsearch/es-basic-segmentation.html)
+[sing1ee/elasticsearch-jieba-plugin: jieba analysis plugin for elasticsearch 7.0.0, 6.4.0, 6.0.0, 5.4.0，5.3.0, 5.2.2, 5.2.1, 5.2, 5.1.2, 5.1.1](https://github.com/sing1ee/elasticsearch-jieba-plugin)
+
 ## 问题
 
 ### 1.网页端搜索引擎请求失败，elasticsearch Failed to establish a new connection
