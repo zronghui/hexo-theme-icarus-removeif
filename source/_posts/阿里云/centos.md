@@ -251,3 +251,44 @@ sudo systemctl start docker
 
 docker info 查看是否生效
 
+
+
+## go
+
+[CentOS 7 安装Golang - 简书](https://www.jianshu.com/p/8f0646e3858c)
+[Go下载 - Go语言中文网 - Golang中文社区](https://studygolang.com/dl)
+
+```shell
+wget 上面 Linux 的链接
+sudo tar -C /usr/local/ -xzvf go1.10.2.linux-amd64.tar.gz
+vim ~/.zshrc
+
+export GOROOT=/usr/local/go
+export GOPATH=~/goProject 
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+
+export GOBIN=$GOPATH/bin
+
+go version
+-> go version go1.14.3 linux/amd64
+
+
+```
+
+```shell
+mkdir -p ~/goProject/src/test
+cd ~/goProject/src/test
+vim test.go
+
+package main
+
+import "fmt"
+func main() {
+    fmt.Println("Hello Golang")
+}
+
+./test
+```
+
+
+
