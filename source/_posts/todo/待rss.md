@@ -23,8 +23,9 @@ keywords:
 
 [Chrome插件(谷歌浏览器插件) - 提供Chrome商店中优秀的Chrome插件推荐与下载服务](https://chromecj.com/)
 
-
-
 [博客文章 | BEWINDOWEB](http://www.bewindoweb.com/index.php)
 
-[前端 - 掘金 - juejin.im - 一个帮助开发者成长的社区](https://juejin.im/welcome/frontend)
+~~[前端 - 掘金 - juejin.im - 一个帮助开发者成长的社区](https://juejin.im/welcome/frontend)~~
+
+[创造者日报 - 每天发现有趣的产品](https://creatorsdaily.com/)
+

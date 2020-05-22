@@ -337,3 +337,28 @@ keywords:
 
 [IDEA 中 30 秒生成 Spring Cloud Alibaba 工程 - 掘金](https://juejin.im/post/5ea8f1c95188256d8f691ee9)
 [Kubernetes笔记（三）：Gitlab+Jenkins Pipeline+Docker+k8s+Helm自动化部署实践（干货分享！） - 掘金](https://juejin.im/post/5ebc97ee5188256d95626895)
+
+
+
+## 05-22
+
+[十个超级实用的git命令 - 技术小黑屋](https://droidyue.com/blog/2020/05/19/cool-git-skills/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+
+[交互式学习编程网站 - 创造者日报](https://creatorsdaily.com/0f2660bc-3379-40a8-a1a8-035dbd870653)
+[Markdown Image - 创造者日报](https://creatorsdaily.com/8c8b8f72-d2d6-41f9-aaa2-22ee9878dbfb)
+[看批 - 创造者日报](https://creatorsdaily.com/d1461be8-ea64-46df-9efd-600c67926a7a?hao.su)
+
+[从开题报告到毕业论文，这 16 个工具帮你顺利毕业 - 少数派](https://sspai.com/post/59906)
+
+[MySQL常见6个考题在实际工作中的运用](https://mp.weixin.qq.com/s?__biz=MzUzNjAxODg4MQ==&mid=2247485279&idx=1&sn=49ce5a8c586979388a1828686a6cbd21&chksm=fafdedf1cd8a64e7d95b948cd60135db1618e71c3307d405e9b3c27c5fddedeaf1b1b5f00c4b&token=310697819&lang=zh_CN#rd)
+
+[10个 解放双手的 IDEA 插件，少些冤枉代码](https://mp.weixin.qq.com/s/aWQDlujb-j1ufdraA-bC6g)
+
+[app_spider/Red_Wars.py at master · xingag/app_spider](https://github.com/xingag/app_spider/blob/master/%E6%8A%A2%E7%BA%A2%E5%8C%85/Red_Wars.py)
+
+[Python-Functools 11个函数讲解 - 掘金](https://juejin.im/post/5ec72a11f265da770b40bf54)
+
+[Centos 搭建 Java Web 开发环境-云栖社区-阿里云](https://yq.aliyun.com/articles/458739?spm=a2c4e.11155435.0.0.5c801a27fq7Dbw)
+
+[AWS 云服务-专业的大数据和云计算服务以及云解决方案提供商](https://aws.amazon.com/cn/)
+

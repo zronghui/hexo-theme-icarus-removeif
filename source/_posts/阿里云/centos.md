@@ -292,3 +292,31 @@ func main() {
 
 
 
+## php 安装
+
+```shell
+rpm -qa|grep php
+# 逐个卸载
+yum -y remove php*
+
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+
+yum -y install php72w php72w-cli php72w-common php72w-devel php72w-embedded php72w-fpm php72w-gd php72w-mbstring php72w-mysqlnd php72w-opcache php72w-pdo php72w-xml
+yum install php72w-bcmath
+```
+
+
+
+php 安装后配置需要 pdo_sqlite.so ，用 grep 找到需要的配置文件，将其注释
+
+```shell
+grep -Hrv ";" /etc/php.d | grep -E "extension(\s+)?=pdo_sqlite.so"
+vim /etc/php.d/pdo_sqlite.ini
+# 用; 注释需要 sqlite 的那行
+# ; Enable pdo_sqlite extension module
+# ;extension=pdo_sqlite.so
+```
+
+
+

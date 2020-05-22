@@ -16,7 +16,15 @@ keywords:
 
 <!--more-->
 
+## MuteMyMic -- 强制静音 Mac 的麦
 
+[‎MuteMyMic on the Mac App Store](https://apps.apple.com/us/app/mutemymic/id456362093?mt=12)
+
+<img src="https://i.loli.net/2020/05/22/hgWAUd8i6Vnq4No.png" alt="image-20200522104750399" style="zoom:50%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/22/JPxD3Nezt97a1Lc.png" alt="image-20200522104807086" style="zoom:50%;" />
 
 ## MFiles-局域网跨平台文件传输
 
