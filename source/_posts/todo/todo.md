@@ -59,3 +59,4 @@ keywords:
 - [ ] centos 使用 v2ray 代理
 
 - [ ] CPU 温度 ubersicht
+

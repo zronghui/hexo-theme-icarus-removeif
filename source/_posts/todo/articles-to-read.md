@@ -1,8 +1,8 @@
 ---
-title: to-read
+title: articles-to-read
 toc: true
 recommend: 1
-uniqueId: '2020-05-05 13:41:11/"to-read".html'
+uniqueId: '2020-05-05 13:41:11/"articles-to-read".html'
 date: 2020-05-05 21:41:11
 thumbnail:
 categories:
@@ -361,4 +361,10 @@ keywords:
 [Centos 搭建 Java Web 开发环境-云栖社区-阿里云](https://yq.aliyun.com/articles/458739?spm=a2c4e.11155435.0.0.5c801a27fq7Dbw)
 
 [AWS 云服务-专业的大数据和云计算服务以及云解决方案提供商](https://aws.amazon.com/cn/)
+
+[这一团糟的代码，真的是我写的？！](https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&mid=2247491245&idx=1&sn=9dec846db0bf0cfce50bbbd6f06a4acf&chksm=e92923a2de5eaab4fdf96fe095f020a39ab3e370af76a5196aa39eff8e944c0387fce0e478c9&scene=21#wechat_redirect)
+
+[SQL 进阶技巧（上）](https://mp.weixin.qq.com/s/BOIqnOdPrsFacQX7GeG3-g)
+
+[使用 archlinux-java 实现多 Java 版本共存|OhYee博客](https://www.oyohyee.com/post/note_archlinux_multi_java_version)
 

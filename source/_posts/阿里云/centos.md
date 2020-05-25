@@ -320,3 +320,24 @@ vim /etc/php.d/pdo_sqlite.ini
 
 
 
+## tmux 安装
+
+https://github.com/tmux/tmux
+
+```shell
+brew install tmux
+
+# centos
+j test
+git clone https://github.com/tmux/tmux
+git clone https://github.com/tmux/tmux.git
+cd tmux
+sh autogen.sh && ./configure && make
+which tmux
+./tmux -V
+mv ./tmux /usr/bin/
+tmux
+```
+
+
+

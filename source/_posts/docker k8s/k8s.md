@@ -168,19 +168,282 @@ Pod 里面的容器是“超亲密关系”
 
 在 Pod 里面，可以定义一些专门的容器，来执行主业务容器所需要的一些辅助工作，比如我们前面举的例子，其实就干了一个事儿，这个 Init Container，它就是一个 Sidecar，它只负责把镜像里的 WAR 包拷贝到共享目录里面，以便被 Tomcat 能够用起来。
 
+- Sidecar：应用与日志收集
+- 业务容器将日志写在一个 Volume 里面,Sidecar 容器一定可以通过共享该 Volume，直接把日志文件读出来，然后存到远程存储里面，或者转发到另外一个例子
+- Sidecar：代理容器
+- 单独写一个小的 Proxy，用来处理对接外部的服务集群，它对外暴露出来只有一个 IP 地址就可以了。所以接下来，业务容器主要访问 Proxy，然后由 Proxy 去连接这些服务集群
+- Sidecar：适配器容器
+- 有个例子：现在业务容器暴露出来的监控接口是 /metrics，访问这个容器的 metrics 的 URL 就可以拿到了。可是现在，这个监控系统升级了，它访问的 URL 是 /health，我只认得暴露出 health 健康检查的 URL，才能去做监控，metrics 不认识。那这个怎么办？那就需要改代码了，但可以不去改代码，额外写一个 Adapter，用来把所有对 health 的这个请求转发给 metrics 就可以了，所以这个 Adapter 对外暴露的是 health 这样一个监控的 URL，这就可以了，你的业务就又可以工作了。
+
+### 课时5. 应用编排与管理(一)：核心原理
+
+#### 资源元信息
+
+元数据 包括 labels annotations owereference, 常用命令：
+
+```shell
+  # 查看所有 pods
+  kubectl get pods
+  kubectl apply -f pod1.yaml
+  kubectl apply -f pod2.yaml
+  # 查看所有 pods, 并且显示 labels
+  kubectl get pods —show-labels
+  kubectl get pods nginx1 -o yaml | less
+  # 增 label
+  kubectl label pods nginx1 env=test
+  # 改 label
+  kubectl label pods nginx1 env=test —overwrite
+  kubectl get pods —show-labels
+  # 删 label
+  kubectl label pods nginx tie-
+  kubectl get pods —show-labels
+  # 查 label
+  kubectl get pods —show-labels -l env=test
+  kubectl get pods —show-labels -l env=test,env=dev # , 与 的关系
+  kubectl get pods —show-labels -l env=dev,tie=front
+  kubectl get pods —show-labels -l ’env in (dev,test)’
+  
+  # 增加 annotation
+  kubectl annotate pods nginx1 my-annotate=‘my annotate,ok’
+  kubectl get pods nging1 -o yaml | less
+  kubectl apply -f rs.yaml
+  kubectl get replicasets  nginx-replicasets -o yaml |less
+  kubectl get pods
+  kubectl get pods nginx-replicasets-rhd68 -o yaml | less
+```
+#### 控制器模式
+
+1. 控制循环
+2. Sensor
+3. 控制循环例子-扩容
+
+没看懂
+
+总结：
+
+1. 两种 API 设计方法
+
+   **Kubernetes 控制器模式依赖声明式的 API**。另外一种常见的 API 类型是命令式 API。为什么 Kubernetes 采用声明式 API，而不是命令式 API 来设计整个控制器呢？
 
 
-### 课时5. 应用编排与管理(一)
+   首先，比较两种 API 在交互行为上的差别。在生活中，常见的**命令式**的交互方式是家长和孩子交流方式，因为孩子欠缺目标意识，无法理解家长期望，家长往往通过**一些命令**，教孩子一些**明确的动作**，比如说：吃饭、睡觉类似的命令。我们在容器编排体系中，命令式 API 就是通过向系统发出明确的操作来执行的。
+
+
+   而常见的**声明式**交互方式，就是老板对自己员工的交流方式。老板一般不会给自己的员工下很明确的决定，实际上可能老板对于要操作的事情本身，还不如员工清楚。因此，老板通过给员工**设置可量化的业务目标**的方式，来发挥员工自身的主观能动性。比如说，老板会要求某个产品的市场占有率达到 80%，而不会指出要达到这个市场占有率，要做的具体操作细节。
+
+
+   类似的，在容器编排体系中，我们可以执行一个应用实例副本数保持在 3 个，而不用明确的去扩容 Pod 或是删除已有的 Pod，来保证副本数在三个。
+
+2. 命令式 API 的问题
+
+   <img src="https://i.loli.net/2020/05/24/c2WNj5UPGnXBVYk.jpg" alt="img" style="zoom:50%;" />
+
+3. 控制器模式总结
+
+   控制型模式中最核心的就是控制循环的概念；
+
+   两种 API 设计方法：声明式 API 和命令式 API ；Kubernetes 所采用的控制器模式，是由声明式 API 驱动的。
+
+### 课时6. 应用编排与管理(二)：Deployment
+
+#### 一、需求来源
+
+**Deployment：管理部署发布的控制器**
+
+Deployment 能帮我们做什么事情呢？
+
+首先，**Deployment 定义了一种 Pod 期望数量**，比如说应用 A，我们期望 Pod 数量是四个，那么这样的话，controller 就会持续维持 Pod 数量为期望的数量。当我们与 Pod 出现了网络问题或者宿主机问题的话，controller 能帮我们恢复，也就是新扩出来对应的 Pod，来保证可用的 Pod 数量与期望数量一致；
+配置 Pod 发布方式，也就是说 controller 会**按照用户给定的策略来更新 Pod**，而且更新过程中，也可以设定不可用 Pod 数量在多少范围内；
+如果更新过程中发生问题的话，即所谓**“一键”回滚**，也就是说你通过一条命令或者一行修改能够将 Deployment 下面所有 Pod 更新为某一个旧版本 。
+
+#### 二、用例解读
+
+**Deployment 语法**
+
+![c3](https://i.loli.net/2020/05/25/U86LwdBntlyrhsM.png)
+
+“apiVersion：apps/v1”，也就是说 Deployment 当前所属的组是 apps，版本是 v1
+
+Deployment.spec 中首先要有一个核心的字段，即 replicas，这里定义期望的 Pod 数量为三个；selector 其实是 Pod 选择器，那么所有扩容出来的 Pod，它的 Labels 必须匹配 selector 层上的 image.labels，也就是 app.nginx
+
+- MinReadySeconds：Deployment 会根据 Pod ready 来看 Pod 是否可用，ready 的 Pod 不一定是 available 的，它一定要超过 MinReadySeconds 之后，才会判断为 available；
+- revisionHistoryLimit：保留历史 revision，即保留历史 ReplicaSet 的数量，默认值为 10 个。这里可以设置为一个或两个，如果回滚可能性比较大的话，可以设置数量超过 10；
+- paused：paused 是标识，Deployment 只做数量维持，不做新的发布，这里在 Debug 场景可能会用到；
+- progressDeadlineSeconds：前面提到当 Deployment 处于扩容或者发布状态时，它的 condition 会处于一个 processing 的状态，processing 可以设置一个超时时间。如果超过超时时间还处于 processing，那么 controller 将认为这个 Pod 会进入 *failed* 的状态。
+
+
+![c29](https://i.loli.net/2020/05/25/P3HKm8ZdVowSxiq.png)
 
 
 
-### 课时6. 应用编排与管理(二)
+**升级策略字段解析**
+
+Deployment 在 RollingUpdate 中主要提供了两个策略，一个是 MaxUnavailable，另一个是 MaxSurge。这两个字段解析的意思，可以看下图中详细的 comment，或者简单解释一下：
+
+- MaxUnavailable：滚动过程中最多有多少个 Pod 不可用；
+- MaxSurge：滚动过程中最多存在多少个 Pod 超过预期 replicas 数量。
+
+
+ MaxSurge 和 MaxUnavailable 不能同时为 0。
+
+**查看 Deployment 状态**
+
+kubectl get deployment
+
+![c4](https://i.loli.net/2020/05/25/SbPa2fpuKtLQRyo.png)
+
+**查看 Pod**
+
+![c5](https://i.loli.net/2020/05/25/dJ6wFpXaNSfCuMV.png)
+
+Pod 名字格式我们不难看到。
+
+最前面一段：nginx-deployment，其实是 Pod 所属 Deployment.name；中间一段：template-hash，这里三个 Pod 是一样的，因为这三个 Pod 其实都是同一个 template 中创建出来的。最后一段，是一个 random 的字符串
+
+
+
+**更新镜像**
+
+kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1
+
+![c6](https://i.loli.net/2020/05/25/ZO9FANjJDqmHpxP.png)
+
+首先 kubectl 后面有一个 set image 固定写法，这里指的是设定镜像；
+其次是一个 deployment.v1.apps，这里也是一个固定写法，写的是我们要操作的资源类型，deployment 是资源名、v1 是资源版本、apps 是资源组，这里也可以简写为 deployment 或者 deployment.apps，比如说写为 deployment 的时候，默认将使用 apps 组 v1 版本。
+第三部分是要更新的 deployment 的 name，也就是我们的 nginx-deployment；再往后的 nginx 其实指的是 template，也就是 Pod 中的 container.name；这里我们可以注意到：一个 Pod 中，其实可能存在多个 container，而我们指定想要更新的镜像的 container.name，就是 nginx。
+最后，指定我们这个容器期望更新的镜像版本，这里指的是 nginx: 1.9.1。如下图所示：当执行完这条命令之后，可以看到 deployment 中的 template.spec 已经更新为 nginx: 1.9.1。
+
+**快速回滚**
+
+![c7](https://i.loli.net/2020/05/25/CtnsmlSfHrdEqG8.png)
+
+**DeploymentStatus**
+
+![c8](https://i.loli.net/2020/05/25/WB1saQiNyUSx3Gv.png)
+
+Processing 指的是 Deployment 正在处于扩容和发布中。比如说 Processing 状态的 deployment，它所有的 replicas 及 Pod 副本全部达到最新版本，而且是 available，这样的话，就可以进入 complete 状态。而 complete 状态如果发生了一些扩缩容的话，也会进入 processing 这个处理工作状态。
+
+
+如果在处理过程中遇到一些问题：比如说拉镜像失败了，或者说 readiness probe 检查失败了，就会进入 failed 状态；如果在运行过程中即 complete 状态，中间运行时发生了一些 pod readiness probe 检查失败，这个时候 deployment 也会进入 failed 状态。进入 failed 状态之后，除非所有点 replicas 均变成 available，而且是 updated 最新版本，deployment 才会重新进入 complete 状态。
+
+#### 三、操作演示
+
+略
+
+#### 四、架构设计
+
+管理模式
+
+![c23](https://i.loli.net/2020/05/25/Vt9fZGaIzbNkLeO.png)
 
 
 
 ### 课时7. 应用编排与管理(三)：Job & DaemonSet
 
+#### Job
 
+Job 为我们**提供的功能**
+
+- 它可以创建一个或多个 Pod 来指定 Pod 的数量，并可以监控它是否成功地运行或终止；
+- 我们可以根据 Pod 的状态来给 Job 设置重置的方式及重试的次数；
+- 我们还可以根据依赖关系，保证上一个任务运行完成之后再运行下一个任务；
+- 同时还可以控制任务的并行度，根据并行度来确保 Pod 运行过程中的并行次数和总体完成大小。
+
+
+
+**Job 语法**
+
+<img src="https://i.loli.net/2020/05/25/C149GlHXgQrxFvj.png" alt="image-20200525164348534" style="zoom:33%;" />
+
+上图是 Job 最简单的一个 yaml 格式，这里主要新引入了一个 kind 叫 Job，这个 Job 其实就是 job-controller 里面的一种类型。 然后 metadata 里面的 name 来指定这个 Job 的名称，下面 spec.template 里面其实就是 pod 的 spec。
+
+所以在 Job 里面，我们主要重点关注的是 **restartPolicy 重启策略**和 **backoffLimit 重试次数限制**。
+
+Never、OnFailure、Always
+
+**Job 状态**
+
+<img src="https://i.loli.net/2020/05/25/eOglzMFTWyAZ1xq.png" alt="image-20200525164532590" style="zoom:33%;" />
+
+Job 创建完成之后，我们就可以通过 kubectl get jobs 这个命令，来查看当前 job 的运行状态。得到的值里面，基本就有 Job 的名称、当前完成了多少个 Pod 以及运行了多长时间。
+
+**查看 Pod**
+
+kubectl get pods 
+
+kubectl get pods pi-4cids -o yaml
+
+
+
+Pod 的名称会以“${job-name}-${random-suffix}”
+
+**并行运行 Job**
+
+主要看两个参数：一个是 completions，一个是 parallelism
+
+分别含义为： Job 指定的可以运行的总次数 、 并行执行的个数
+
+比如说 Job 一定要执行 8 次（completions），每次并行 2 个 Pod（parallelism），这样的话，一共会执行 4 个批次。
+
+**查看并行 Job 运行**
+
+#### cronjob
+
+<img src="https://i.loli.net/2020/05/25/qv7UAIsGMFxNYVj.png" alt="image-20200525164906142" style="zoom:50%;" />
+
+startingDeadlineSeconds：如果等待时间超过startingDeadlineSeconds的话，CronJob 就会停止这个 Job；
+
+concurrencyPolicy：就是说是否允许并行运行。所谓的并行运行就是，当第二个 Job 要到时间需要去运行的时候，上一个 Job 还没完成。如果这个 policy 设置为 **true** 的话，那么不管你前面的 Job 是否运行完成，每分钟都会去执行；如果是 false，它就会等上一个 Job 运行完成之后才会运行下一个；
+
+JobsHistoryLimit：这个就是每一次 CronJob 运行完之后，它都会遗留上一个 Job 的运行历史、查看时间。当然这个额不能是无限的，所以需要设置一下历史存留数，一般可以设置默认 10 个或 100 个都可以
+
+#### 操作演示
+
+**略**
+
+Job 的编排文件
+Job 的创建及运行验证
+并行 Job 的编排文件
+并行 Job 的创建及运行验证
+Cronjob 的编排文件
+Cronjob 的创建及运行验证
+
+#### 架构设计
+
+**略**
+
+Job 管理模式
+Job 控制器
+
+#### DaemonSet
+
+DaemonSet：守护进程控制器
+
+<img src="https://i.loli.net/2020/05/25/hylNU3JPtaWoDO1.png" alt="image-20200525165437046" style="zoom: 50%;" />
+
+**查看 DaemonSet 状态**
+
+kubectl get ds
+
+<img src="https://i.loli.net/2020/05/25/ArkPTVvJClXh79H.png" alt="image-20200525165535852" style="zoom:50%;" />
+
+有几个参数，分别是：需要的 pod 个数、当前已经创建的 pod 个数、就绪的个数，以及所有可用的、通过健康检查的 pod；还有 **NODE SELECTOR**，因为 NODE SELECTOR 在 DaemonSet 里面非常有用。
+
+有时候我们可能**希望只有部分节点去运行这个 pod 而不是所有的节点**，所以有些节点上被打了标的话，DaemonSet 就只运行在这些节点上。比如，我只希望 master 节点运行某些 pod，或者只希望 Worker 节点运行某些 pod，就可以使用这个 NODE SELECTOR。
+
+**更新 DaemonSet**
+
+<img src="https://i.loli.net/2020/05/25/LN4gjsvqcA1Cbxn.jpg" alt="img" style="zoom:50%;" />
+
+#### 操作演示
+
+**略**
+
+DaemonSet 的编排
+DaemonSet 的创建与运行验证
+DaemonSet 的更新
+DaemonSet 管理模式
+DaemonSet 控制器
 
 ### 课时8. 应用配置管理
 
