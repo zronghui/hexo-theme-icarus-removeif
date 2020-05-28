@@ -19,6 +19,8 @@ keywords:
 
 ## **从零开始入门 K8s
 
+[任务 - Kubernetes](https://kubernetes.io/zh/docs/tasks/#%e4%bd%bf%e7%94%a8-kubectl-%e5%91%bd%e4%bb%a4%e8%a1%8c)
+
 [K8s 资源全汇总 | K8s 大咖带你 31 堂课从零入门 K8s - 掘金](https://juejin.im/post/5ea7f9ef5188256d9c25988e)
 
 ### 课时3. k8s 核心概念
@@ -441,21 +443,69 @@ kubectl get ds
 
 DaemonSet 的编排
 DaemonSet 的创建与运行验证
-DaemonSet 的更新
+DaemonSet 的更
 DaemonSet 管理模式
 DaemonSet 控制器
 
-### 课时8. 应用配置管理
+### 课时8. 应用配置管理：ConfigMap Secret
+
+[从零开始入门 K8s | 如何实现应用配置管理？](https://mp.weixin.qq.com/s/8r-_Ekje__GVHsKLfJ-66A)
+
+#### ConfigMap 和 Secret
+
+首先介绍了 ConfigMap 和 Secret 的创建方法和使用场景，然后对 ConfigMap 和 Secret 的常见使用注意点进行了分类和整理。最后介绍了私有仓库镜像的使用和配置；
+
+**使用场景**：一些可变的配置。因为我们不可能把一些可变的配置写到镜像里面，当这个配置需要变化的时候，可能需要我们重新编译一次镜像，这个肯定是不能接受的，所以有了 **ConfigMap**; 一些敏感信息的存储和使用。比如说应用需要使用一些密码，或者用一些 token， 所以有了 Secret。
+
+**创建方法**：
+
+![640](https://i.imgur.com/0LzM8Gh.jpg)
+
+主要用 --from-file 和 --from-literal 引入配置
+
+![下载](https://i.imgur.com/QEyF03B.jpg)
+
+一二联合使用，首先引入配置为环境变量，再用 $x。三是挂载配置文件到容器内
+
+![下载](https://i.imgur.com/A8vWl2L.jpg)
 
 
+
+
+
+**Pod 身份认证**: 首先介绍了 ServiceAccount 和 Secret 的关联关系，然后从源码角度对 Pod 身份认证流程和实现细节进行剖析，同时引出了 Pod 的权限管理 (即 RBAC 的配置管理)；
+
+![下载](https://i.imgur.com/qBoFE5t.jpg)
+
+
+
+![下载](https://i.imgur.com/beMXTne.jpg)
+
+
+
+容器资源和安全：首先介绍了容器常见资源类型 (CPU/Memory) 的配置，然后对 Pod 服务质量分类进行详细的介绍。同时对 SecurityContext 有效层级和权限配置项进行简要说明；
+InitContainer: 首先介绍了 InitContainer 和普通 container 的区别以及 InitContainer 的用途。然后基于实际用例对InitContainer 的用途进行了说明。
+
+略
 
 ### 课时9. 应用存储和持久化数据卷：核心知识
 
+首先来看一下 Pod Volumes 的使用场景：
+
+- 场景一：如果 pod 中的某一个容器在运行时异常退出，被 kubelet 重新拉起之后，如何保证之前容器产生的重要数据没有丢失？
+- 场景二：如果同一个 pod 中的多个容器想要共享数据，应该如何去做？
+
+以上两个场景，其实都可以借助 Volumes 来很好地解决，接下来首先看一下 Pod Volumes 的常见类型：
+
+1. 本地存储，常用的有 emptydir/hostpath；
+2. 网络存储：网络存储当前的实现方式有两种，一种是 in-tree，它的实现代码是放在 K8s 代码仓库中的，随着 K8s 对存储类型支持的增多，这种方式会给 K8s 本身的维护和发展带来很大的负担；而第二种实现方式是 out-of-tree，它的实现其实是给 K8s 本身解耦的，通过抽象接口将不同存储的 driver 实现从 K8s 代码仓库中剥离，因此 **out-of-tree 是后面社区主推的一种实现网络存储插件的方式**；
+3. Persistent Volumes：它其实是将一些配置信息，如 secret/configmap 用卷的形式挂载在容器中，让容器中的程序可以通过 POSIX 接口来访问配置数据；
 
 
-### 课时10. 应用存储和持久化数据卷：存储快照与拓扑调度
 
-### 
+课时 9 后面的暂时就不看了
+
+
 
 # 实践
 

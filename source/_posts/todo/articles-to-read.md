@@ -368,3 +368,60 @@ keywords:
 
 [使用 archlinux-java 实现多 Java 版本共存|OhYee博客](https://www.oyohyee.com/post/note_archlinux_multi_java_version)
 
+
+
+## 05-26
+
+[Base64编码详解](https://mp.weixin.qq.com/s/HxQz7SphVvm4GM4ADXSdNw)
+[别再暴力匹配字符串了，高效的KMP才是真的香！](https://mp.weixin.qq.com/s/QcUoArAHIF8SeOkTzmtPHA)
+[干货 | 数万实例数百TB数据量，携程Redis治理演进之路](https://mp.weixin.qq.com/s/L7EQzthCoWuJw8TzY-KAMw)
+[探寻繁杂定时任务的解决方案：分布式任务调度系统](https://mp.weixin.qq.com/s/KEAZ0w11pxKoGKP468X_HQ)
+[重磅 | eBay提出强大的轻量级推荐算法——洛伦兹因子分解机](https://mp.weixin.qq.com/s/vtiI7q6k50cy7LuZEo7Pqw)
+[云原生时代消息中间件的演进路线](https://mp.weixin.qq.com/s/1e-ceBDrNinttYt6HmeMXw)
+[思考结构，决定一个人能看多远](https://mp.weixin.qq.com/s/B5FDIwbaJ7_vQJEcxOR1eQ)
+[2020前端性能优化清单（一）](https://mp.weixin.qq.com/s/d9J-_aF9K8QTUtemol-EfQ)
+[2020前端性能优化清单（二）](https://mp.weixin.qq.com/s/7NJv21Dz7eGFFt-c3qitWw)
+[2020前端性能优化清单（三）](https://mp.weixin.qq.com/s/J1hMFK9LfzvTNvEtyOwE-Q)
+[2020前端性能优化清单（四）](https://mp.weixin.qq.com/s/MJNaI6HmClodAsGgI26EMA)
+[2020前端性能优化清单（五）](https://mp.weixin.qq.com/s/jcDuMrj8lKugAvSlKqERfQ)
+
+[Elasticsearch能检索出来，但不能正确高亮怎么办？](https://mp.weixin.qq.com/s/9FA4ohishDdV3qN6a5iUAA)
+[微前端在企业级应用中的实践(上) - 掘金](https://juejin.im/post/5e8b094a6fb9a03c300f8b25)
+[关于零拷贝的一点认识 - 掘金](https://juejin.im/post/5cad6f1ef265da039f0ef5df)
+[看了《余欢水》，我学到了一个PPT技巧！](https://mp.weixin.qq.com/s/3aVa9zfzZEfWooZCct7zBw)
+[第02期：MySQL 数据类型的艺术 - 大对象字段](https://mp.weixin.qq.com/s/ycuHpgF5lViEn6JSGCflnw)
+[数据库连接配置策略和实践](https://mp.weixin.qq.com/s/n4vf9NSMZo1ac0WRqkypfQ)
+[阿里终于重罚蒋凡，这对我们又有什么警示？](https://mp.weixin.qq.com/s/l282fxLcw3mY0lPRiQJ_iA)
+[PPT文字看不清？只会放大字号你就out了！](https://mp.weixin.qq.com/s/Klm1TnqhgyJ07u6dycQ5XA)
+[看了2000页PPT案例，总结大神常用的5个技巧~](https://mp.weixin.qq.com/s/hdZygFjYI49eTMLj_js7uQ)
+[定时和延时问题在业务场景中的常见处理](https://mp.weixin.qq.com/s/UjYOCIoXTTbYAiV0V7mm0g)
+[提问清单 | 1招快速提高大脑思考能力](https://mp.weixin.qq.com/s/SmIXNfmkAS_S9B80q8i0tg)
+[纯干货 | 一篇讲透如何理解数据库并发控制](https://mp.weixin.qq.com/s/CrmpDVdzCXzhKispv54bzg)
+
+[倒排索引/全文搜索基本原理 - 郭大侠1 - 博客园](https://www.cnblogs.com/gered/p/9561710.html)
+[如何监控网页崩溃？ - 知乎](https://zhuanlan.zhihu.com/p/40273861)
+[终端下的常用操作](https://mp.weixin.qq.com/s/4DRWRPaOizGEClmAIwgB2Q)
+[干货 | Elasticsearch开发人员最佳实战指南](https://mp.weixin.qq.com/s/4exhftt-9Xqb8EZIujJaLA)
+[Git commit message 规范 - 掘金](https://juejin.im/post/5d0b3f8c6fb9a07ec07fc5d0)
+[编写可靠 bash 脚本的一些技巧](https://mp.weixin.qq.com/s/VmM_U4RefRBHwIw8NegC8Q)
+
+
+
+[担心歌单变灰？试试这个拥有 10 万曲库的免费音乐云盘：YouTube Music - 少数派](https://sspai.com/post/60675)
+
+[https://mp.weixin.qq.com/s/g7wvEIBa0mK3XbJZ_4ZvRA](https://mp.weixin.qq.com/s/g7wvEIBa0mK3XbJZ_4ZvRA)
+[业务异常只能看着数据库崩溃？看看应急处理利器——自动SQL限流](https://mp.weixin.qq.com/s/z-U2tt7E90EvkQMrkvL-BA)
+[一天有24个小时？别开玩笑了！](https://mp.weixin.qq.com/s/Bas9G-7jowNSB3jHGn_EMQ)
+[如何快速定位 Redis 热 key?](https://mp.weixin.qq.com/s/rZs-oWBGGYtNKLMpI0-tXw)
+[人生苦短，何苦2B ！](https://mp.weixin.qq.com/s/30rAXEhO4hUXFs97DAZHHA)
+[隐私设置错误](https://onclick360.com/docker-remove-image-by-tag/)
+[天天强调做PPT要会对齐，问题是到底该怎么对齐？](https://mp.weixin.qq.com/s/mHCHrcCGPt2y9mifYTJKhw)
+[越简单重复的事情越要自动化做](https://mp.weixin.qq.com/s/8tBBg55Exd8NICciEdVkcw)
+[blog/jsr107.zh.md at master · c-rainstorm/blog](https://github.com/c-rainstorm/blog/blob/master/java/cache/jsr107.zh.md)
+
+[KMP算法教程 - 在线工具](https://tool.lu/article/1VL/detail)
+
+## 05-28
+
+[一千行 MySQL 学习笔记 - 格物](https://shockerli.net/post/1000-line-mysql-note/)
+
