@@ -150,7 +150,9 @@ module.exports = class extends Component {
                     <div style="post-calendar-pre">
                         <div id="post-calendar"></div>
                     </div>
-                    <script type="text/javascript" src={url_for("/js/echarts.min.js")}></script>
+                    
+                    <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/echarts/4.3.0/echarts.min.js'></script>
+                    {/* <script type="text/javascript" src={url_for("/js/echarts.min.js")}></script> */}
                     <script type="text/javascript" dangerouslySetInnerHTML={{ __html: js }}></script>
                     {articleList}
                 </div>
