@@ -425,3 +425,7 @@ keywords:
 
 [一千行 MySQL 学习笔记 - 格物](https://shockerli.net/post/1000-line-mysql-note/)
 
+### redis nginx 学习笔记
+
+[归档 - Shui's Blog](https://shui4444.github.io/archives/page/3/#board)
+[归档 - Shui's Blog](https://shui4444.github.io/archives/#board)

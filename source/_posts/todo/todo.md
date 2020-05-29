@@ -25,19 +25,6 @@ keywords:
 
 - [ ] 自定义一键配置 Mac 的脚本，可能下次换电脑才有机会修改了 [zronghui/dotfiles-1: 🖥️ Automated Configuration, Preferences and Software Installation for macOS](https://github.com/zronghui/dotfiles-1)
 
-- [ ] In [1]: from tabulate import tabulate
-
-  In [2]: table = [["Sun",696000,1989100000],["Earth",6371,5973.6],["Moon",1737,73.5],["中文测试",3390,641.85]]
-
-  In [3]: print(tabulate(table))
-  --------  ------  -------------
-  Sun       696000     1.9891e+09
-  Earth       6371  5973.6
-  Moon        1737    73.5
-  中文测试    3390   641.85
-
-  --------  ------  -------------
-
 - [ ] [lio-mengxiang 的个人主页 - 专栏 - 掘金](https://juejin.im/user/5a17ea7f51882575d42f1211/posts)
 
 - [ ] 数据插入、显示图表、均值 [leeoniya/uPlot: 📈 A small, fast chart for time series, lines, areas, ohlc & bars](https://github.com/leeoniya/uPlot)
@@ -56,7 +43,7 @@ keywords:
 
 - [ ] 加密、解密文件gui，里面放置密码，网站的 token，[阿里云容器镜像服务](https://cr.console.aliyun.com/undefined/instances/mirrors?accounttraceid=df8df73447e24aa69696513c30ab5a05bjkk)
 
-- [ ] centos 使用 v2ray 代理
+- [x] centos 使用 ~~v2ray~~ ssr 代理
 
 - [ ] CPU 温度 ubersicht
 

@@ -321,18 +321,31 @@ providers:
 
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
+# comment:
+#     type: gitalk
+#     owner: zronghui         # (required) GitHub user name
+#     repo: blog_comment          # (required) GitHub repository name
+#     client_id: f1c7f9da01111d2e7163     # (required) OAuth application client id
+#     client_secret: 3aaaf709bd8edda1f4c57484cceba5fad5218978 # (required) OAuth application client secret
+#     admin: ['removeif']
+#     create_issue_manually: true
+#     distraction_free_mode: false
+#     has_hot_recommend: false # 是否有热门推荐
+#     has_latest_comment: false #是否有最新评论
 comment:
     type: gitalk
-    # Disqus shortname
-    #    shortname: ''
-    owner: zronghui         # (required) GitHub user name
-    repo: blog_comment          # (required) GitHub repository name
-    client_id: f1c7f9da01111d2e7163     # (required) OAuth application client id
-    client_secret: 3aaaf709bd8edda1f4c57484cceba5fad5218978 # (required) OAuth application client secret
-    admin: ['removeif']
-    create_issue_manually: true
-    distraction_free_mode: false
-    has_hot_recommend: false # 是否有热门推荐
-    has_latest_comment: false #是否有最新评论
+    client_id: f1c7f9da01111d2e7163
+    client_secret: 3aaaf709bd8edda1f4c57484cceba5fad5218978
+    repo: blog_comment
+    owner: zronghui
+    admin:
+        - zronghui
+    per_page: 20                    # 可选填
+    distraction_free_mode: false    # 可选填
+    pager_direction: last           # 可选填
+    create_issue_manually: false    # 可选填
+    proxy:                          # 可选填
+    flip_move_options:              # 可选填
+    enable_hotkey: true             # 可选填
 
 live2Dswitch: off #live2D开关 on 为打开
