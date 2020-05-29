@@ -429,3 +429,43 @@ keywords:
 
 [归档 - Shui's Blog](https://shui4444.github.io/archives/page/3/#board)
 [归档 - Shui's Blog](https://shui4444.github.io/archives/#board)
+
+[iswbm/GolangCodingTime: Go编程时光，一个零基础入门 Golang 的教程](https://github.com/iswbm/GolangCodingTime)
+
+[10个 解放双手的 IDEA 插件，少些冤枉代码](https://mp.weixin.qq.com/s/aWQDlujb-j1ufdraA-bC6g)
+[值得收藏！介绍15个Linux下 CPU 监控工具 - 推酷](https://www.tuicool.com/articles/aU7bMzn)
+[(17) 值得收藏！介绍15个Linux下 CPU 监控工具 - 民工哥技术之路 - SegmentFault 思否](https://segmentfault.com/a/1190000022770031?utm_source=tuicool&utm_medium=referral)
+[Docker知识点的系统化梳理 - 推酷](https://www.tuicool.com/articles/nEVZje3)
+[https://mp.weixin.qq.com/s/Jw1Bp6zdIO7aGbMdTNgZyw](https://mp.weixin.qq.com/s/Jw1Bp6zdIO7aGbMdTNgZyw)
+[不懂Redis Cluster原理，我被同事diss了！](https://mp.weixin.qq.com/s/bDg3Y1hBnK0ac9_uquu9Yw)
+[(2)你真的会用Chrome devtool吗?](https://mp.weixin.qq.com/s?__biz=MzI0MjA2MjE5Ng==&mid=2247483694&idx=1&sn=3031d591f834c33f1a27a580821f07ad&chksm=e9034735de74ce23fbd6861a12bd4b472b25ef98221e3c7772db7ab7921ca120b0da488a6a5a&token=1910516074&lang=zh_CN#rd)
+[有了这款低代码开发工具，Java 开发者可以告别 996 啦！](https://mp.weixin.qq.com/s/dTG2UzPyI9SNoE-cKMo1xA)
+[面试官：不会看 Explain执行计划，简历敢写 SQL 优化？](https://mp.weixin.qq.com/s/AaCbTVRk0OZ00nQgJ8wqRQ)
+[MySQL 数据库生成 10000 条测试数据 | Laravel China 社区](https://learnku.com/articles/45050)
+[进程间的五种通信方式介绍-详解 | Laravel China 社区](https://learnku.com/articles/44477)
+[如何让自己看起来不像编程菜鸟？别犯这9个编程错误 - CocoaChina_一站式开发者成长社区](http://www.cocoachina.com/articles/898471?filter=rec)
+[10款主流的软件测试工具，你用过吗 - CocoaChina_一站式开发者成长社区](http://www.cocoachina.com/articles/898462?filter=rec)
+
+[https://mp.weixin.qq.com/s/toPt7ebEmM8wMa0UZqeUsg](https://mp.weixin.qq.com/s/toPt7ebEmM8wMa0UZqeUsg)
+[你以为只要努力就够了吗？2020 最新技术趋势你知道吗？ | VIP 上新](https://mp.weixin.qq.com/s/sBHnKqtwen6B0PlUgvMeSA)
+[K8S 生态周报| Helm v3.2.1 发布 - 掘金](https://juejin.im/post/5ecbe68f51882542ef4f7fa7)
+[我在工作中是这样使用Git - 掘金](https://juejin.im/post/5ec7859ae51d45788f0d6cd1)
+[从原理上理解MySQL的优化建议 - 掘金](https://juejin.im/post/5ec9224f518825432b5dcf11)
+[Mac 前端开发环境从零配置 - 掘金](https://juejin.im/post/5ecb3dd2e51d4578a12e23ba)
+[为什么要使用 Redis？ | Laravel China 社区](https://learnku.com/articles/44438)
+
+[[译] 看我如何把网站性能提升 422% - 掘金](https://juejin.im/post/5ec793346fb9a0480659d6ef)
+[震惊！生产力提效 300% 的秘诀全公开 - 掘金](https://juejin.im/post/5ec0d6b4f265da7b950569a9)
+[API 越来越多，没个接口管理工具哪行？试试这款吧！](https://mp.weixin.qq.com/s/VcM15QPdV-Ow4D4vWrQSuA)
+[为什么 IPv6 难以取代 IPv4 - 面向信仰编程](https://draveness.me/whys-the-design-ipv6-replacing-ipv4/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+[架构设计 | 分布式系统调度，Zookeeper集群化管理](https://mp.weixin.qq.com/s/Yr4A95poVjlFsQ-Q0dF7hA)
+[找不到页面 - 掘金](https://juejin.im/post/5ec3fbb4518825433b13215c)
+[给我一分钟，让你彻底明白MySQL聚簇索引和非聚簇索引 - 掘金](https://juejin.im/post/5ec3d3c56fb9a047ff1a99bc)
+[同样都是开发，为什么你不如别人？ - 掘金](https://juejin.im/post/5ec17556e51d4525602d47bf)
+[有哪些算法惊艳到了你？ - 知乎](https://www.zhihu.com/question/26934313)
+[Chrome DevTools中的这些骚操作，你都知道吗？ - 掘金](https://juejin.im/post/5ec338436fb9a0432d76e0c4)
+
+[开发者头条 - 程序员分享平台 | 程序员必装的App | 技术极客的头条新闻](https://toutiao.io/)
+[cdk8s](https://cdk8s.io/)
+[人人都能看懂的 6 种限流实现方案！(纯干货) - 掘金](https://juejin.im/post/5ec1dd5f5188256d77633faf)
+
