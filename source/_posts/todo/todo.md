@@ -31,6 +31,7 @@ keywords:
 - [ ] django chart js 在一个页面显示所有图表：体重(斤)、日运动时间(min)、睡眠时长(h)、
 - [ ] 加密、解密文件gui，里面放置密码，网站的 token，[阿里云容器镜像服务](https://cr.console.aliyun.com/undefined/instances/mirrors?accounttraceid=df8df73447e24aa69696513c30ab5a05bjkk)
 - [ ] CPU 温度 ubersicht
-- [ ] 启动GTDweb，更改 UI，添加习惯，怎么备份？
-- [ ] 修改 hexod 为 shell 方法
+- [ ] 启动GTDweb，更改 UI，添加习惯，怎么备份
+- [ ] [OHTTPS - 免费HTTPS证书](https://ohttps.com/?hao.su)
+- [ ] [521xueweihan/git-tips: Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
 

@@ -487,3 +487,7 @@ keywords:
 [docker | Jecyu's Notebook](https://jecyu.github.io/Notebook/devops/docker.html#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8)
 [2020 | Jecyu's Notebook](https://jecyu.github.io/Notebook/dailyRecord/)
 
+读书笔记系列
+
+[异类-读书简记 | 冰蓝记录思考的地方](http://lanbing510.info/2020/05/14/Outlers.html)
+

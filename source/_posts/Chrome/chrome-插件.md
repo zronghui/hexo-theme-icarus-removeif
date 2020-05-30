@@ -162,3 +162,11 @@ s
 [Bulk URL Opener - Chrome 网上应用店](https://chrome.google.com/webstore/detail/bulk-url-opener/kgnfciolbjojfdbbelbdbhhocjmhenep)
 
 [Sync Sofa - 异地情侣同步看片，可同步播放、暂停、快进在线视频[Chrome] - 小众软件](https://www.appinn.com/sync-sofa-for-chrome/)
+
+### SessionBox
+
+同时使用多个帐户浏览网站变容易了。点击一下按钮即可创建一个独立标签。 运营人员利器，能同时开多个窗口登录各大平台。不会被挤下来 1.session box把会话隔离开了，这样在登录多个账户的时候就不会有冲突了。
+插件地址：SessionBoxhttps://chrome.google.com/webstore/detail/sessionbox-free-multi-log/megbklhjamjbcafknkgmokldgolkdfig
+
+
+

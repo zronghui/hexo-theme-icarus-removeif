@@ -1013,6 +1013,52 @@ class StaffProtectedView(UserPassesTestMixin, TemplateView):
 
 
 
+### Django 升级到 3
+
+views.py 中
+
+render_to_response 改为 render
+
+```python
+-from django.shortcuts import render, render_to_response
++from django.shortcuts import render
+
+-return render_to_response('diary.html', {'request_get_from': 1, 'date': date})
++return render(request, 'diary.html', {'request_get_from': 1, 'date': date})
+
+```
+
+settings.py 中
+
+```python
+-MIDDLEWARE_CLASSES = (...)
++MIDDLEWARE = (...)
+
+ TEMPLATES = [
+     {
+         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+-        'DIRS': ['D:/gtdweb/diary/templates/'],
++        'DIRS': [os.path.join(BASE_DIR, 'diary/templates')],
+       ...
+-STATICFILES_DIRS = ('D:/gtdweb/static/',)
++STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+```
+
+urls.py 中
+
+```python
+-from django.conf.urls import include, url
++from django.conf.urls import url
++from django.urls import path
+
+urlpatterns = [
+-    url(r'^admin/', include(admin.site.urls)),
++    path('admin/', admin.site.urls),
+
+```
+
+
+
 # useful package
 
 ## awesome
