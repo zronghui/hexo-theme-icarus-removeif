@@ -83,8 +83,6 @@ https://www.bilibili.com/video/BV1Ae411x7fa/?p=1
 
 LeetCode 考的是智商吧
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200405151432618.png" alt="image-20200405151432618" style="zoom:50%;" />
-
 
 
 求距离时不要用 根号，反之把半径平方即可比较，否则会很慢

@@ -56,7 +56,7 @@ NB！
 
 [Live Coronavirus Tracker - Coronastats - Chrome 网上应用店](https://chrome.google.com/webstore/detail/live-coronavirus-tracker/ohgihjjamahlilnoifoicncfnlpmbcgk/related)
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200401172205711.png" alt="image-20200401172205711" style="zoom:50%;" />
+
 
 [快递助手 - Chrome 网上应用店](https://chrome.google.com/webstore/detail/%E5%BF%AB%E9%80%92%E5%8A%A9%E6%89%8B/hghlokkgbicmblinhepcibacaiegldeg/related)
 

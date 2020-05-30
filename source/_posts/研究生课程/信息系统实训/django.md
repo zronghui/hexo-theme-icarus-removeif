@@ -1078,7 +1078,7 @@ pip install django-extensions werkzeug
 
 python manage.py runserver_plus 9000
 
-<img src="/Users/zhangronghui/Downloads/images/youtu.be-1F6G3ONhr4k (3).jpg" alt="youtu.be-1F6G3ONhr4k (https://i.loli.net/2020/05/16/IemLlUCExTY9bqd.jpg)" style="zoom:50%;" />
+<img src="https://i.loli.net/2020/05/16/IemLlUCExTY9bqd.jpg" style="zoom:50%;" />
 
 用途 2：
 

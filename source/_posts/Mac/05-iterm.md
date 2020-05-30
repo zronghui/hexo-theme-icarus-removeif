@@ -44,8 +44,6 @@ gem install colorls
 
 
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200303184052699.png" alt="image-20200303184052699" style="zoom:33%;" />
-
 
 
 ## colorls 安装

@@ -469,3 +469,21 @@ keywords:
 [cdk8s](https://cdk8s.io/)
 [人人都能看懂的 6 种限流实现方案！(纯干货) - 掘金](https://juejin.im/post/5ec1dd5f5188256d77633faf)
 
+
+
+[(7 封私信 / 1 条消息) 程序员有哪些平时自己开发的小工具来简便工作？ - 知乎](https://www.zhihu.com/question/28485416)
+[作为程序员的你，常用的工具软件有哪些？ - 知乎](https://www.zhihu.com/question/22867411)
+[(7 封私信 / 1 条消息) 程序员如何一个人干几个人的活？ - 知乎](https://www.zhihu.com/question/61005512)
+
+## 05-30
+
+[高效工作—优雅的阅读微信公众号 | 冰蓝记录思考的地方](http://lanbing510.info/2017/12/14/Wechat-RSS-Huginn.html)
+[高效工作—快捷键整理 | 冰蓝记录思考的地方](http://lanbing510.info/2016/08/18/Keyboard-Shortcut.html)
+[Ubuntu下常用软件的安装使用及常见问题汇总 | 冰蓝记录思考的地方](http://lanbing510.info/2015/11/28/Ubuntu-Softwares.html)
+[Windows系统下的一些经验技巧 | 冰蓝记录思考的地方](http://lanbing510.info/2015/04/01/Windows-Tips.html)
+[Git常用命令总结 | 冰蓝记录思考的地方](http://lanbing510.info/2014/11/05/Git-Commands.html)
+
+[前端 | Jecyu's Notebook](https://jecyu.github.io/Notebook/bookmark/#%E6%9E%B6%E6%9E%84)
+[docker | Jecyu's Notebook](https://jecyu.github.io/Notebook/devops/docker.html#%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8)
+[2020 | Jecyu's Notebook](https://jecyu.github.io/Notebook/dailyRecord/)
+

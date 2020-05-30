@@ -141,9 +141,7 @@ books: 305070
 [书单网 - pdf - epub - mobi - azw3 让搜书变得简单](https://www.shudan.vip/)
 [每日书单- 精品电子书下载 - azw3 - epub - mobi - kindle电子书](https://shudan.vip/)
 
-避免重复爬取
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200426141848017.png" alt="image-20200426141848017" style="zoom:50%;" />
 
 
 

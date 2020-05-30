@@ -78,7 +78,8 @@ module.exports = cacheComponent(Gitalk, 'comment.gitalk', props => {
         flipMoveOptions: comment.flip_move_options,
         enableHotKey: comment.enable_hotkey,
         cssUrl: helper.cdn('gitalk', '1.5.0', 'dist/gitalk.css'),
-        jsUrl: helper.url_for('/js/gitalk.min.js'),
+        jsUrl: 'https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js',
+        // jsUrl: helper.url_for('/js/gitalk.min.js'),
         isLocked: !canComments,
     };
 });

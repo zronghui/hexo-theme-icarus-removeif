@@ -22,10 +22,6 @@ keywords:
 
 
 
-<img src="/Users/zhangronghui/Library/Application Support/typora-user-images/image-20200405120055077.png" alt="image-20200405120055077" style="zoom:50%;" />
-
-
-
 ## 1
 
 ```python
