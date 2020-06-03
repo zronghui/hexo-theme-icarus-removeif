@@ -141,6 +141,19 @@ peer chaincode query -C mychannel -n fabcar -c '{"Args":["queryAllCars"]}'
 
 ![image-20200528204924722](https://i.imgur.com/KWkBjMD.png)
 
+### Fabcar ：用 fabric 的 SDK 调用智能合约
+
+[编写你的第一个应用 — hyperledger-fabricdocs master 文档](https://hyperledger-fabric.readthedocs.io/zh_CN/latest/write_first_app.html)
+
+```shell
+cd fabric/fabric-samples/first-network
+./byfn.sh down
+# docker rm -f $(docker ps -aq) # 删除所有 images，不可调用
+docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
+
+```
+
+
 
 # 工具
 
