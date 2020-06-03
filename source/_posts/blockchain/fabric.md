@@ -147,12 +147,15 @@ peer chaincode query -C mychannel -n fabcar -c '{"Args":["queryAllCars"]}'
 
 ```shell
 cd fabric/fabric-samples/first-network
+# 删除旧网络
 ./byfn.sh down
 # docker rm -f $(docker ps -aq) # 删除所有 images，不可调用
 docker rmi -f $(docker images | grep fabcar | awk '{print $3}')
 
+# 启动网络
 cd ../fabcar
-
+./startFabric.sh javascript
+# 最后出现下面的 doc
 ```
 
 ```shell
@@ -220,6 +223,52 @@ Java:
     - Submit a transaction to change the owner of this car
     - Evaluate a transaction (query) to return the updated details of this car
 ```
+
+```shell
+# 安装应用程序
+cd javascript
+npm install
+ls
+# 你会看到下边的文件：
+# enrollAdmin.js  node_modules       package.json  registerUser.js
+# invoke.js       package-lock.json  query.js      wallet
+
+# 登记管理员用户
+node enrollAdmin.js
+# 注册和登记 user1
+node registerUser.js
+
+# 查询账本
+node query.js # 使用 user1 查询账本
+# query.js 里面有一句是
+# const result = await contract.evaluateTransaction('queryAllCars');
+vim query.js # 把它调成 queryCar
+# const result = await contract.evaluateTransaction('queryCar', 'CAR4');
+node query.js
+
+# 更新账本
+node invoke.js
+# 构建和提交交易到网络的代码段：
+# await contract.submitTransaction('createCar', 'CAR12', 'Honda', 'Accord', 'Black', 'Tom');
+# 注意是 submitTransaction 而不是 evaluateTransaction
+
+# 为了查看这个被写入账本的交易，返回到 query.js 并将参数 CAR4 更改为 CAR12
+node query.js
+
+# 假设 Tom 很大方，想把他的 Honda Accord 送给一个叫 Dave 的人。
+# 为了完成这个，返回到 invoke.js 然后利用输入的参数，将智能合约的交易从 createCar 改为 changeCarOwner ：
+# await contract.submitTransaction('changeCarOwner', 'CAR12', 'Dave');
+node invoke.js
+node query.js
+```
+
+
+
+
+
+### todo
+
+centos aliyun 搭建 Java 环境，再测试代码
 
 
 
