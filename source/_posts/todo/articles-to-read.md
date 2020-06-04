@@ -491,3 +491,9 @@ keywords:
 
 [异类-读书简记 | 冰蓝记录思考的地方](http://lanbing510.info/2020/05/14/Outlers.html)
 
+## 06
+
+[学Spring Boot不能装! 🤣不装Maven、Database、Tomcat 才是正常开发模式 - 知乎](https://zhuanlan.zhihu.com/p/59663308)
+
+[maven 最全教程](https://juejin.im/post/5cb967cbe51d456e403772b5)
+
