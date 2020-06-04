@@ -38,3 +38,5 @@ keywords:
 
 [FinalShell SSH工具,服务器管理,远程桌面加速软件,支持Windows,macOS,Linux,版本3.5.1,更新时间2020.05.29 - SSH工具 客户端](http://www.hostbuf.com/t/988.html)
 
+[phuoc-ng/csslayout: A collection of popular layouts and patterns made with CSS. Now it has 90+ patterns and continues growing!](https://github.com/phuoc-ng/csslayout?utm_campaign=Django%2BNewsletter&utm_medium=web&utm_source=Django_Newsletter_25)
+
