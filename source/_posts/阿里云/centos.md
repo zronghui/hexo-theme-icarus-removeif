@@ -49,9 +49,9 @@ keywords:
 
 
 
-## 从零配置服务器
 
-### oh my zsh 安装及美化
+
+## oh my zsh 安装及美化
 
 ```shell
 yum update
@@ -122,7 +122,7 @@ alias ls='colorls -A'
 alias lc='colorls -lA --sd'
 ```
 
-### Java 8
+## Java 8
 
 ```shell
 yum install java-1.8.0-openjdk
@@ -134,7 +134,52 @@ echo JAVA_HOME
 update-alternatives --config java
 ```
 
-### nodejs cnpm
+## maven
+
+[在 CentOS 8 上安装 Maven - GoBeta](https://www.gobeta.net/linux/how-to-install-apache-maven-on-centos-8/)
+
+[Maven – Maven Documentation](https://maven.apache.org/guides/index.html)
+
+```shell
+# 首先使用以下 wget 命令在 /tmp 目录中下载 Apache Maven
+# wget https://www-us.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -P /tmp
+# 下载速度慢，command 点击链接下载后，用 rsync 拷贝
+rsync -azvhP ~/Downloads/Compressed/apache-maven-3.6.3-bin.tar.gz root@47.93.53.47:/tmp
+
+sudo tar xf /tmp/apache-maven-3.6.3-bin.tar.gz -C /opt
+# 为了更好地控制 Maven 版本和更新，我们将 创建一个符号链接   maven ，该链接指向 Maven 安装目录
+sudo ln -s /opt/apache-maven-3.6.3 /opt/maven
+# 要升级您的 Maven 安装，只需解压缩较新的版本并更改符号链接以指向它即可
+
+# 设置环境变量
+vim /etc/profile.d/maven.sh
+
+export JAVA_HOME=/usr/lib/jvm/jre-openjdk # 不要变
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=${M2_HOME}/bin:${PATH}
+
+chmod u+x /etc/profile.d/maven.sh
+source /etc/profile.d/maven.sh
+
+mvn --version
+
+# 代理设置
+vim /opt/maven/conf/settings.xml
+# 找到 mirrors，添加：
+<mirror>
+  <id>nexus-aliyun</id>
+  <mirrorOf>central</mirrorOf>
+  <name>Nexus aliyun</name>
+  <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+</mirror>
+```
+
+
+
+**到时候注意 /etc/profile.d 这个目录也需要备份**
+
+## nodejs cnpm
 
 ```shell
 yum install -y gcc-c++ make
@@ -148,7 +193,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 [阿里云服务器端口8080开放-百度经验](https://jingyan.baidu.com/article/95c9d20d624d1eec4e756125.html)
 
-### Rsync 报错
+## Rsync 报错
 
 ```shell
 rsync: on remote machine: -vlogDtpXre.iLsfxC: unknown option
@@ -168,7 +213,7 @@ alias rsync=/usr/local/bin/rsync
 
 
 
-### 安装指定版本 ruby
+## 安装指定版本 ruby
 
 因 yum install ruby 的版本太低，需要用 rvm 安装指定版本的 ruby
 

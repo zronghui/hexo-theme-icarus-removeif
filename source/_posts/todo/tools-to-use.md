@@ -40,3 +40,5 @@ keywords:
 
 [phuoc-ng/csslayout: A collection of popular layouts and patterns made with CSS. Now it has 90+ patterns and continues growing!](https://github.com/phuoc-ng/csslayout?utm_campaign=Django%2BNewsletter&utm_medium=web&utm_source=Django_Newsletter_25)
 
+[Diving into Go by building a CLI application](https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
+
