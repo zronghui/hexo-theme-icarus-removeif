@@ -124,10 +124,24 @@ alias lc='colorls -lA --sd'
 
 ## Java 8
 
+[Java SE Development Kit 8 - Downloads](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
+[国内借助阿里云快速下载Oracle JDK-鹞之神乐](https://www.kagura.me/dev/20200424112618.html)
+
+下载 jdk-8u251-linux-x64.tar.gz
+
 ```shell
-yum install java-1.8.0-openjdk
-java -version
-export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
+# yum 安装好像有问题
+# yum install java-1.8.0-openjdk
+# java -version
+# export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
+
+rsync -azvhP ~/Downloads/Compressed/jdk-8u251-linux-x64.tar.gz root@47.93.53.47:/tmp
+sudo tar xf /tmp/jdk-8u251-linux-x64.tar.gz -C /usr/java
+
+export JAVA_HOME=/usr/java/jdk1.8.0_251
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
 echo JAVA_HOME
 
 # Find Java’s Path
@@ -154,7 +168,7 @@ sudo ln -s /opt/apache-maven-3.6.3 /opt/maven
 # 设置环境变量
 vim /etc/profile.d/maven.sh
 
-export JAVA_HOME=/usr/lib/jvm/jre-openjdk # 不要变
+export JAVA_HOME=/usr/java/jdk1.8.0_251
 export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
 export PATH=${M2_HOME}/bin:${PATH}
