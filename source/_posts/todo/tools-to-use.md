@@ -42,3 +42,9 @@ keywords:
 
 [Diving into Go by building a CLI application](https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
 
+[zyedidia/micro: A modern and intuitive terminal-based text editor](https://github.com/zyedidia/micro)
+[</> htmx - high power tools for html](https://htmx.org/)
+[kylelobo/The-Documentation-Compendium: 📢 Various README templates & tips on writing high-quality documentation that people want to read.](https://github.com/kylelobo/The-Documentation-Compendium/)
+[K9s - Manage Your Kubernetes Clusters In Style](https://k9scli.io/)
+[Smocker](https://smocker.dev/)
+
