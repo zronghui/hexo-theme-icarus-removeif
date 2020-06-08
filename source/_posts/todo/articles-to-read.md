@@ -497,3 +497,5 @@ keywords:
 
 [maven 最全教程](https://juejin.im/post/5cb967cbe51d456e403772b5)
 
+[Centos中安装MySQL5.7 - 掘金](https://juejin.im/post/5ebbb5a1f265da7c0750afe7)
+

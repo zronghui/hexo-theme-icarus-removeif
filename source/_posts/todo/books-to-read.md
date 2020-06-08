@@ -25,6 +25,9 @@ TXT、EPUB、UMD
 
 ## 放松
 
+- [ ] [外婆的道歉信 (豆瓣)](https://book.douban.com/subject/27029890/)
+- [ ] [清单人生 (豆瓣)](https://book.douban.com/subject/30140436/)
+
 ### 小说
 
 - [ ] 放学后  东野圭吾

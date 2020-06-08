@@ -783,6 +783,25 @@ network.host: 0.0.0.0
 
 
 
+### 3.elasticsearch[3787]: could not find java; set JAVA_HOME
+
+```shell
+java -version # 正常
+echo $JAVA_HOME # 正常
+vim /etc/sysconfig/elasticsearch
+# 设置JAVA_HOME环境变量
+
+# 再次尝试启动
+sudo systemctl start elasticsearch.service
+# 检查状态
+systemctl status elasticsearch.service -l
+curl -XGET 'localhost:9200'
+```
+
+
+
+
+
 ## 相关社区、教程
 
 [Python Elasticsearch Client — Elasticsearch 7.5.1 documentation](https://elasticsearch-py.readthedocs.io/en/master/index.html)

@@ -400,3 +400,36 @@ tmux
 
 
 
+## redis
+
+[centos安装redis - 掘金](https://juejin.im/post/5ecc754bf265da770f51f373)
+
+```shell
+# wget http://download.redis.io/releases/redis-5.0.7.tar.gz
+rsync -azvhP ~/Downloads/Compressed/redis-5.0.7.tar.gz  root@47.93.53.47:/tmp
+cd /tmp
+tar xf /tmp/redis-5.0.7.tar.gz
+cd redis-5.0.7
+make
+make PREFIX=/usr/local/redis install
+
+mkdir /usr/local/redis/etc
+cp redis.conf /usr/local/redis/etc
+vim /usr/local/redis/etc/redis.conf
+
+1）配置redis为后台启动：daemonize no  修改为 daemonize yes
+2）开启外网访问：bind 127.0.01  注释掉
+3）配置密码：requirepass 设置密码
+
+pip install iredis
+iredis --raw
+
+vim ~/.zshrc
+export PATH=/usr/local/redis/bin:$PATH
+
+# 启动
+redis-server /usr/local/redis/etc/redis.conf
+
+iredis --raw
+```
+
