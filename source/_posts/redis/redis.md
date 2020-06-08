@@ -19,12 +19,6 @@ keywords:
 
 # 学习
 
-启动 redis-cli 或者更好的替代品 iredis ( pip install iredis )
-
-```shell
-iredis -a redispassword --raw # --raw 为了可以查看中文
-```
-
 
 
 # 实践
@@ -103,7 +97,12 @@ iredis --raw
 
 ```
 pip install iredis
+```
 
+启动 redis-cli 或者更好的替代品 iredis ( pip install iredis )
+
+```shell
+iredis -a redispassword --raw # --raw 为了可以查看中文
 ```
 
 
