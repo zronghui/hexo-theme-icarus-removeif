@@ -48,3 +48,4 @@ keywords:
 [K9s - Manage Your Kubernetes Clusters In Style](https://k9scli.io/)
 [Smocker](https://smocker.dev/)
 
+[IITII/Useless: Some unnecessary but useful shell script](https://github.com/IITII/Useless#FFmpegsh)
