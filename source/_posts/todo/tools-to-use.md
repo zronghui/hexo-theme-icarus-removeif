@@ -49,3 +49,10 @@ keywords:
 [Smocker](https://smocker.dev/)
 
 [IITII/Useless: Some unnecessary but useful shell script](https://github.com/IITII/Useless#FFmpegsh)
+
+[laurent22/joplin: Joplin - an open source note taking and to-do application with synchronization capabilities for Windows, macOS, Linux, Android and iOS. Forum: https://discourse.joplinapp.org/](https://github.com/laurent22/joplin)
+
+[wistbean/wechatGroupRobot: 微信群机器人，在微信群上每天早晨根据天气提醒大家穿衣或带伞， 每隔一段时间提醒喝水，结合百度ai的API做一点geek的事](https://github.com/wistbean/wechatGroupRobot)
+
+[Focus——不只是RSS订阅器 - 友人C](https://www.ihewro.com/archives/948/)
+

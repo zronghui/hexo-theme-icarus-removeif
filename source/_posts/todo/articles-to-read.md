@@ -499,3 +499,7 @@ keywords:
 
 [Centos中安装MySQL5.7 - 掘金](https://juejin.im/post/5ebbb5a1f265da7c0750afe7)
 
+[像素标签简单用法-对方是否查阅你的邮件 - 友人C](https://www.ihewro.com/archives/1083/)
+
+[当你在浏览器中输入了本站网址并回车后，产生了哪些技术步骤？-小伟博客](https://www.xiaoweigod.com/network/1737.html)
+
