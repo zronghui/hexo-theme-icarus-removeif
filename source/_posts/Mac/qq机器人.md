@@ -49,9 +49,9 @@ docker run -ti -d --rm --name cqhttp-test  -v ~/data/coolq:/home/user/coolq  -p 
 pip install cqhttp
 ```
 
+服务端口是 4991，向 5700 发送请求
 
-
-
+注意，在后头运行会无法成功调用 5700 的 api
 
 
 
