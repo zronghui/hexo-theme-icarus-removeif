@@ -55,7 +55,7 @@ keywords:
 
 ```shell
 yum update
-yum install git
+yum install git lsof -y
 yum -y install zsh # yum -y reinstall zsh # 覆盖安装
 cat /etc/shells
 chsh -s /bin/zsh
@@ -487,5 +487,105 @@ It will be installed at these locations:
    - log files      in /var/log/netdata
    - pid file       at /var/run/netdata.pid
    - logrotate file at /etc/logrotate.d/netdata
+```
+
+
+
+## **Centos7 安装部署 jiacrontab web
+
+**简介**：
+
+提供可视化界面的定时任务管理工具。
+
+允许设置每个脚本的超时时间，超时操作可选择邮件通知管理者，或强杀脚本进程。
+允许设置脚本的最大并发数。
+一台server管理多个client。
+每个脚本都可在server端灵活配置，如测试脚本运行，查看日志，强杀进程，停止定时
+
+。。。
+
+```shell
+gcl https://github.com/iwannay/jiacrontab.git
+cd jiacrontab
+make build
+cd build/jiacrontab/jiacrontab_admin/
+nohup ./jiacrontab_admin &> jiacrontab_admin.log &
+- # 返回上级目录
+cd build/jiacrontab/jiacrontabd
+nohup ./jiacrontabd &> jiacrontabd.log &
+```
+
+去 47.93.53.47:20000 填写管理员账号密码
+
+配置定时任务的地方：
+
+<img src="https://i.loli.net/2020/06/14/wuZJikAQpNDS9Yd.png" alt="image-20200614202318387" style="zoom:50%;" />
+
+
+
+
+
+
+
+## Centos 7系统优化脚本
+
+[Centos 7系统优化脚本 - 掘金](https://juejin.im/post/5d80da83e51d4561fd6cb591)
+
+
+
+## supervisor
+
+[Supervisor: A Process Control System — Supervisor 4.2.0 documentation](http://supervisord.org/)
+
+[supervisor用法 - 掘金](https://juejin.im/post/5d80da83e51d45620c1c5471)
+
+用途：
+
+**提供了一种统一的方式来start、stop、monitor你的进程**
+
+**可以在本地或者远程命令行或者web接口来配置Supervisor**
+
+在linux下的很多程序通常都是一直运行着的，一般来说都需要自己编写一个能够实现进程start/stop/restart/reload功能的脚本，然后放到**/etc/init.d/**下面。但这样做也有很多弊端，第一我们要为每个程序编写一个类似脚本，第二，当这个进程挂掉的时候，linux不会自动重启它的，想要自动重启的话，我们还要自己写一个监控重启脚本。
+
+ 而supervisor则可以完美的解决这些问题。supervisor管理进程，就是通过fork/exec的方式把这些被管理的进程，当作supervisor的子进程来启动。这样的话，我们**只要在supervisor的配置文件中，把要管理的进程的可执行文件的路径写进去就OK了**（**优点一：配置方便**）。第二，被管理进程作为supervisor的子进程，**当子进程挂掉的时候，父进程可以准确获取子进程挂掉的信息的，所以当然也就可以对挂掉的子进程进行自动重启**，当然重启还是不重启，也要看你的配置文件里面有木有设置autostart=true了。 supervisor通过INI格式配置文件进行配置，很容易掌握，它为每个进程提供了很多配置选项，可以使你很容易的重启进程或者自动的轮转日志。
+supervisor**可以对进程组统一管理**，也就是说咱们**可以把需要管理的进程写到一个组里面**，然后我们把这个组作为一个对象进行管理，如**启动，停止，重启**等等操作。而linux系统则是没有这种功能的，我们想要停止一个进程，只能一个一个的去停止，要么就自己写个脚本去批量停止。
+
+```shell
+pip install supervisor
+echo_supervisord_conf > /etc/supervisord.conf
+mkdir /etc/supervisord.d/
+vim /etc/supervisord.conf
+用 / 搜索 9001
+
+[include]
+files = /etc/supervisord.d/*.conf
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=*:9001        ; ip_address:port specifier, *:port for all iface
+username=zronghui              ; default is no username (open server)
+password=a123456               ; default is no password (open server)
+
+
+supervisord -c /etc/supervisord.conf
+curl 127.0.0.1:9001
+
+# 若想 kill 已有的 supervisor 进程：
+ps -ef|grep super
+kill 'pid'
+
+```
+
+### supervisor管理
+
+```shell
+用 supervisorctl
+
+update 更新新的配置到supervisord（不会重启原来已运行的程序）
+reload，载入所有配置文件，并按新的配置启动、管理所有进程（会重启原来已运行的程序）
+start xxx: 启动某个进程
+restart xxx: 重启某个进程
+stop xxx: 停止某一个进程(xxx)，xxx为[program:theprogramname]里配置的值
+stop groupworker: 重启所有属于名为groupworker这个分组的进程(start,restart同理)
+stop all，停止全部进程，注：start、restart、stop都不会载入最新的配置文
+reread，当一个服务由自动启动修改为手动启动时执行一下就ok
 ```
 
