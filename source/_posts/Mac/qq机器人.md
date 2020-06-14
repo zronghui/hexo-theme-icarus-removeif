@@ -64,3 +64,14 @@ pip install cqhttp
 登录时要是一路顺风就没什么好说的，但会出现一个坑，就是异地登录，如果遇到异地登录会让你用chrome插件来验证
 
 解决方法就是，在提示你用chrome的时候，你选择否，再登录一次就会使用到旧版的VNC。后面会让你开启设备锁发短信来验证登录（来自论坛管理回复，亲测有效）
+
+
+
+
+
+## qq robot 的其他相关项目
+
+[mamoe/mirai: 全开源 高效率 QQ机器人/Android QQ协议支持库 for JVM / Android](https://github.com/mamoe/mirai)
+[NatriumLab/python-mirai: 以 OICQ(QQ) 协议驱动的高性能机器人开发框架 Mirai 的 Python 接口, 通过其提供的 `HTTP API` 与无头客户端(Mirai)交互.](https://github.com/NatriumLab/python-mirai)
+[mamoe/mirai-console: mirai 的高效率 QQ 机器人控制台](https://github.com/mamoe/mirai-console)
+[Mirai Framework for Python](https://mirai-py.originpages.com/)

@@ -433,3 +433,59 @@ redis-server /usr/local/redis/etc/redis.conf
 iredis --raw
 ```
 
+
+
+## netdata 监控
+
+装上发现好像也没什么用处
+
+
+
+官网说可以一行命令安装，然而需要翻墙，centos 翻墙很不方便
+
+[All your monitoring education in one place. Learn | Learn](https://learn.netdata.cloud/)
+
+[Centos安装Netdata - 掘金](https://juejin.im/post/5d005db06fb9a07ec75513a0)
+
+[记一次Centos7安装NetData_一花一世界-CSDN博客](https://blog.csdn.net/llwy1428/article/details/98726043)
+
+端口 19999
+
+```shell
+# 准备
+yum install autoconf automake curl gcc git libmnl-devel libuuid-devel lm_sensors make MySQL-python nc pkgconfig python python-psycopg2 PyYAML zlib-devel -y
+yum install zlib-devel gcc make git autoconf autogen guile-devel automake pkgconfig uuid-dev libuuid-devel vim lrzsz -y
+# 安装
+git clone https://github.com/firehol/netdata.git --depth=1
+cd netdata
+# 安装较慢，但是可以成功，需要等待
+./netdata-installer.sh
+# 检验
+curl 127.0.0.1:19999
+# 开机自启
+systemctl enable netdata
+
+# 过程中执行了以下命令，若安装失败可以试试
+wget https://github.com/libuv/libuv/archive/v1.34.0.tar.gz
+tar -zxvf v1.34.0.tar.gz
+cd libuv-1.34.0
+sh autogen.sh
+./configure
+make
+make check
+make install
+ldconfig -v
+
+
+It will be installed at these locations:
+   - the daemon     at /usr/sbin/netdata
+   - config files   in /etc/netdata
+   - web files      in /usr/share/netdata
+   - plugins        in /usr/libexec/netdata
+   - cache files    in /var/cache/netdata
+   - db files       in /var/lib/netdata
+   - log files      in /var/log/netdata
+   - pid file       at /var/run/netdata.pid
+   - logrotate file at /etc/logrotate.d/netdata
+```
+

@@ -56,3 +56,75 @@ keywords:
 
 [Focus——不只是RSS订阅器 - 友人C](https://www.ihewro.com/archives/948/)
 
+[Fmstrat/gam: GitHub Application Manager](https://github.com/Fmstrat/gam)
+[Welcome to DevDash Documentation! :: DevDash Documentation](https://thedevdash.com/)
+[bigH/git-fuzzy: interactive `git` with the help of `fzf`](https://github.com/bigH/git-fuzzy)
+[vvksh/simple-blogger: Blog generator based on github projects with mathjax support](https://github.com/vvksh/simple-blogger)
+[bdryanovski/logchanges: Generate changelog based on Git commits](https://github.com/bdryanovski/logchanges)
+
+[bigH/git-fuzzy: interactive `git` with the help of `fzf`](https://github.com/bigH/git-fuzzy)
+
+[huyuanzhi2/password_brute_dictionary: 口令爆破字典，有键盘组合字典、拼音字典、字母与数字混合这三种类型](https://github.com/huyuanzhi2/password_brute_dictionary)
+
+​	[使用k9s来加速Kubernetes集群的管理 - 推酷](https://www.tuicool.com/articles/mYVBvyI)
+
+[基于阿里云OSS的图床教程-小游网](https://xiaoyou66.com/archives/774)
+[网盘被限速？不怕，我有私有云-小游网](https://xiaoyou66.com/archives/769)
+[搭建自己的个人书库-小游网](https://xiaoyou66.com/archives/1016)
+[jupyter notebook安装-小游网](https://xiaoyou66.com/archives/1095)
+[本站主题正式开源！-小游网](https://xiaoyou66.com/archives/1276)
+
+现在的公有云盘市场，*付费*了才是爸爸，不*付费*就只能被限速下载。
+
+挺难受的，还是自己搞一个ownCloud吧，这玩意儿还支持离线下载。
+
+> *docker* run -p 8081:80 -d imdjh/owncloud-with-ocdownloader
+
+![img](https://i.loli.net/2020/06/13/ZUNgGLi536y7vns.jpg)
+
+![img](https://i.loli.net/2020/06/13/RieAxPmv7HuWk5f.jpg)
+
+自己有时间的时候，会去写一些简单的爬虫。拿到数据怎么分析呢？
+
+用MetaBase，上*Docker*呀：
+
+> *docker* run -d -p 3000:3000 --name metabase metabase/metabase
+
+
+
+又是一款类似 gitlab 可以搭建在自己服务器上的 Git 服务 
+
+[go-gitea/gitea: Git with a cup of tea, painless self-hosted git service](https://github.com/go-gitea/gitea)
+
+体验：[https://git.xinac.cn](https://git.xinac.cn/)
+
+
+
+GitHub 文件 cdn 加速
+
+[jsDelivr - A free, fast, and reliable CDN for open source](https://www.jsdelivr.com/?docs=gh)
+[https://cdn.jsdelivr.net/gh/lisonge/lisonge.gitHub.io/favicon.svg](https://cdn.jsdelivr.net/gh/lisonge/lisonge.gitHub.io/favicon.svg)
+
+### Cloudreve个人网盘
+
+[Cloudreve](https://pan.cary.tech/)
+
+这个网盘是个开源项目，安装简单，功能强大。
+
+
+
+[yb/uptime-status: A uptime status dashboard based on UptimeRobot API](https://github.com/yb/uptime-status)
+[本站使用UptimeRobot监控网站状态 - 新逸Cary](https://blog.xinac.cn/archives/uptimerobot)
+[Dashboard | Uptime Robot](https://uptimerobot.com/dashboard#mainDashboard)
+
+
+
+[记一次Centos7安装部署jiacrontabweb服务_一花一世界-CSDN博客](https://blog.csdn.net/llwy1428/article/details/102899282)
+
+### **通过json快速生成后端页面
+
+[baidu/amis: 前端低代码框架，通过 JSON 配置就能生成各种后台页面。](https://github.com/baidu/amis)
+[AMis Renderer](https://baidu.github.io/amis/docs/intro?page=1)
+
+
+

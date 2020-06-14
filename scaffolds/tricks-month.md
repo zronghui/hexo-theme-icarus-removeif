@@ -28,9 +28,13 @@ wrong_hash_message: 不好意思，信息无法验证！
 
 ## Python
 
+## Java
+
 ## go
 
 ## cli
+
+## git
 
 ## shell
 

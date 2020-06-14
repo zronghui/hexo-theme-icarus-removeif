@@ -503,3 +503,44 @@ keywords:
 
 [当你在浏览器中输入了本站网址并回车后，产生了哪些技术步骤？-小伟博客](https://www.xiaoweigod.com/network/1737.html)
 
+[如何选择分布式事务解决方案？](https://mp.weixin.qq.com/s/2AL3uJ5BG2X3Y2Vxg0XqnQ)
+
+[面试三轮我倒在了一道sql题上——sql性能优化](https://mp.weixin.qq.com/s/j1Ed9uekRX6MlgB_VFW01A)
+[3万字总结，Mysql优化之精髓 - 掘金](https://juejin.im/post/5edeedae518825432e25d2e0)
+[我以为我对Mysql事务很熟，直到我遇到了阿里面试官 - 掘金](https://juejin.im/post/5ede6436518825430c3acaf4)
+
+[面试官：说说你对 options 请求的理解 - 掘金](https://juejin.im/post/5edef7b2e51d45784213ca24)
+[什么？终止一个容器竟然用了 10 秒钟，这不能忍！](https://mp.weixin.qq.com/s/vaIBGHmdUT0bHP2O722AQQ)
+[项目中如何实现 SQL 耗时监控？（实现篇）](https://mp.weixin.qq.com/s/z0XzIVJndodHS19YOLl9Eg)
+[ElasticSearch在数十亿级别数据下，如何提高查询效率？ - 知乎](https://zhuanlan.zhihu.com/p/60458049)
+
+[AobingJava/JavaFamily: 【Java面试+Java学习指南】 一份涵盖大部分Java程序员所需要掌握的核心知识。](https://github.com/AobingJava/JavaFamily)
+
+[https://mp.weixin.qq.com/s/FW-Oc5JtedX0mdmjN6evzg](https://mp.weixin.qq.com/s/FW-Oc5JtedX0mdmjN6evzg)
+[玩转redis-延时消息队列 - li-peng - 博客园](https://www.cnblogs.com/li-peng/p/12697110.html)
+[(20) Java8新特性之日期处理 - WayfreemBlog - SegmentFault 思否](https://segmentfault.com/a/1190000012922933)
+[美团为啥要用Word汇报工作？](https://mp.weixin.qq.com/s/JVxEiMQFRXZwTCfMwIVfDQ)
+[Android字节码优化工具redex初探](https://mp.weixin.qq.com/s/Og2TkGrZR490h9-KO23lmw)
+[如何存储 Git 大文件？](https://mp.weixin.qq.com/s/yoSeUTy13LoKyS1UFKaUbA)
+[预览速度提升30倍，这是什么黑科技？（天猫618之3D渲染篇）](https://mp.weixin.qq.com/s/rW5m2A9yZbrIDvScEptedw)
+[记一次Redis连接池问题引发的RST | 火丁笔记](https://blog.huoding.com/2020/05/04/816)
+[掌门前端破茧成蝶之：低代码开发工具——魔方](https://mp.weixin.qq.com/s/57qkjMbHHe_06THZ1xQW9A)
+[小公司招聘和管理 95 后的 10 个技巧。](https://mp.weixin.qq.com/s/CtX0jJAQeijPSz-fa1-ZTA)
+[MySQL关于日期为零值的处理 - 掘金](https://juejin.im/post/5ee31f7cf265da76e97d5317)
+[深知｜电商薅羊毛研究报告](https://mp.weixin.qq.com/s/Wj2AsNMRAmOPFZmnEsYT_g)
+
+[https://mp.weixin.qq.com/s/bWlQVGekhxW3IOFKswBgRw](https://mp.weixin.qq.com/s/bWlQVGekhxW3IOFKswBgRw)
+[驳《阿里「Java开发手册」中的1个bug》？](https://mp.weixin.qq.com/s/4SNMI2cXOc_mSI5qJsulWQ)
+[PPT怎么画立方体? | 100个PPT技巧专栏·44期](https://mp.weixin.qq.com/s/L2z2s3XEAtX8xb-5V3Wy_g)
+[开发一个大型后台管理系统，应该用前后端分离的技术方案吗？](https://mp.weixin.qq.com/s/PI_8k28VNJNXIylo6aVFZw)
+[微博和头条的Py交易！](https://mp.weixin.qq.com/s/auqOUkjTvFy-0nYdrzWTMQ)
+[如何做好Code Review? 分享一份我们团队的 Checklist](https://mp.weixin.qq.com/s/rjv-kSQOwEBv2tUFMznsxQ)
+[Lombok是让你代码处于“亚健康”状态的真正元凶](https://www.toutiao.com/i6820517160964588044/)
+[京东腾讯拼多多 618其实是内部玩过家家？](https://mp.weixin.qq.com/s/dlNx7aQ-uhLFe4Jwf7_zuA)
+[假如让你从0到1实现一个直播弹幕系统 - 王亚普的博客 | Wyp Blog](http://www.wangyapu.com/2020/05/27/barrage_arch/)
+[你永远别想吃垮一家自助餐厅](https://mp.weixin.qq.com/s/L9wQwOyvHKLy9EWlFs1RXg)
+[这11个问题解决工具，管理者必知！（建议收藏）](https://mp.weixin.qq.com/s/wuiKeVsKcjIjuYmQDZDa7A)
+[如何不焦虑的活着](https://mp.weixin.qq.com/s/GGv16gx5xtjScCY9AE9uZQ)
+[Java锁的那些事儿](https://mp.weixin.qq.com/s/dwpTgeVXyH9F7-dklk7Iag)
+[https://mp.weixin.qq.com/s/GFPMIJGT4x6Q_86ZZfOOpg](https://mp.weixin.qq.com/s/GFPMIJGT4x6Q_86ZZfOOpg)
+

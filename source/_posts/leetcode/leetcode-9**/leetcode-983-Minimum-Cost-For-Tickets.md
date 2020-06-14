@@ -3,6 +3,8 @@ thumbnail:
 title: leetcode 983. Minimum Cost For Tickets
 date: 2020-06-10 21:35:32
 categories:
+- leetcode
+- leetcode-9**
 toc: true
 tags:
 - Dynamic Programming
