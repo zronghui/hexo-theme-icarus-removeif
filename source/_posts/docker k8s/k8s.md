@@ -775,7 +775,13 @@ Kubens 使用效果图：
 
 
 
+### lens
 
+[最华丽的 Kubernetes 桌面客户端：Lens](https://mp.weixin.qq.com/s/6O_9wEppjaB8GiqoSDIdWQ)
+
+### python: Official Python client library for kubernetes
+
+[kubernetes-client/python: Official Python client library for kubernetes](https://github.com/kubernetes-client/python)
 
 # 其他
 

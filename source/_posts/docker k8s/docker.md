@@ -444,6 +444,22 @@ dockerize \
 
 [Install Elasticsearch with Docker | Elasticsearch Reference [7.5] | Elastic](https://www.elastic.co/guide/en/elasticsearch/reference/7.5/docker.html)
 
+
+
+### springboot  docker todo
+
+[bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用](https://github.com/bingoHuang/spring-boot-docker)
+
+
+
+### *docker save和docker export的区别
+
+总结一下docker save和docker export的区别：
+
+docker save保存的是镜像（image），docker export保存的是容器（container）；
+docker load用来载入镜像包，docker import用来载入容器包，但两者都会恢复为镜像；
+docker load不能对载入的镜像重命名，而docker import可以为镜像指定新名称。
+
 ## 3.docker gitlab :8001
 
 主要看 gitlab 官方文档
@@ -592,6 +608,93 @@ docker restart 8c144637ddef
 
 
 
+## 6. gogs
+
+[Gogs: A painless self-hosted Git service](https://gogs.io/)
+[gogs/gogs: Gogs is a painless self-hosted Git service](https://github.com/gogs/gogs)
+[阿里云Linux CentOS 7 Docker部署使用gogs搭建自己的git服务器 - DonaldTDZ - 博客园](https://www.cnblogs.com/donaldtdz/p/8443516.html)
+
+```shell
+docker pull gogs/gogs
+mkdir -p /var/gogs
+docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
+# 阿里云需要在安全组规则配置入站规则，即服务器端口10080， ssh端口10022
+```
+
+
+
+![image-20200601194558982](https://i.loli.net/2020/06/14/M2KE8og3ne9CRBJ.png)
+
+
+
+#### 更多类似项目：
+
+**cgit**: “A hyperfast web frontend for *git* repositories written in C.”
+
+- GPLv2
+- [Homepage](https://git.zx2c4.com/cgit/about/)
+- [Source](https://git.zx2c4.com/cgit/tree/)
+- `C`
+
+**Gitea**: “Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.”
+
+- MIT
+- [Homepage](https://gitea.io/en-US/)
+- [Source](https://github.com/go-gitea/gitea)
+- `*Go*`, `SQLite3`
+
+**GitLab**: “Open source software to collaborate on code.”
+
+- GitLab license
+- [Homepage](https://gitlab.com/gitlab-org)
+- [Source](https://gitlab.com/gitlab-org/gitlab-ce/)
+- `Ruby`, `*Javascript*`
+
+**gitolite**: “Gitolite allows you to setup git hosting on a central server, with very fine-grained access control and many (many!) more powerful features.”
+
+- GPLv2
+- [Homepage](http://gitolite.com/gitolite/)
+- [Source](https://github.com/sitaramc/gitolite)
+- `Perl`, `Shell`
+
+**Gogs**: “A painless self-hosted *Git* service.”
+
+- MIT
+- [Homepage](https://gogs.io/)
+- [Source](https://github.com/gogits/gogs)
+- `*Go*`, `SQLite3`
+
+**Phabricator**: “Phabricator is a collection of web applications which help software companies build better software.”
+
+- Apache 2.0
+- [Homepage](http://phacility.com/phabricator/)
+- [Source](https://github.com/phacility/phabricator)
+- `PHP`, supports *Git*, Mercurial, and Subversion
+
+
+
+
+
+
+
+[bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用](https://github.com/bingohuang/spring-boot-docker)
+
+## nginx todo
+
+<img src="https://i.loli.net/2020/06/15/C7smHfT5PcnoFAj.png" alt="image-20200615071435022" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2020/06/15/4KvhPCrjSGyBQZo.png" alt="image-20200615071458630" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2020/06/15/fvojS2PxhpHwKtz.png" alt="image-20200615071511818" style="zoom:50%;" />
+
+## 8.可以部署在 docker 里的工具
+
+### 记账 budget
+
+[range-of-motion/budget: Get a grip on your finances.](https://github.com/range-of-motion/budget)
+
+[Dashboard - Budget](https://app.budget.pixely.me/dashboard)
+
 ## 9.Django 工具
 
 ### kitematic -- Mac管理 docker
@@ -623,7 +726,9 @@ docker-slim ：面向容器的神奇减肥药
 rocker ：突破 Dockerfile 的限制
 ctop：容器的类顶层接口
 
+### docker-squash
 
+[jwilder/docker-squash: Squash docker images to make them smaller](https://github.com/jwilder/docker-squash)
 
 ## **常用的Docker
 

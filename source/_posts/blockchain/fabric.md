@@ -304,3 +304,19 @@ node --version
 
 
 一个链上不同节点能不能存入不同的数据
+
+
+
+
+
+## 问题
+
+ImportError: cannot import name ImageNotFound
+
+[docker_service - Unable to load docker-compose. Try `pip install docker-compose`. Error: cannot import name ImageNotFound · Issue #37958 · ansible/ansible](https://github.com/ansible/ansible/issues/37958)
+
+After  pip uninstall -y docker docker-py && pip install docker  the above command completes successfully.
+
+
+
+![image-20200619125851480](https://i.loli.net/2020/06/19/LAyjHtMlI3qhd1o.png)

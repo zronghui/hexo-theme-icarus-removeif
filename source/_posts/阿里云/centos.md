@@ -493,6 +493,8 @@ It will be installed at these locations:
 
 ## **Centos7 安装部署 jiacrontab web
 
+[iwannay/jiacrontab: 简单可信赖的任务管理工具](https://github.com/iwannay/jiacrontab)
+
 **简介**：
 
 提供可视化界面的定时任务管理工具。
@@ -589,3 +591,8 @@ stop all，停止全部进程，注：start、restart、stop都不会载入最�
 reread，当一个服务由自动启动修改为手动启动时执行一下就ok
 ```
 
+
+
+
+
+![image-20200614212200846](https://i.loli.net/2020/06/14/gj3lNsewnGkHKVP.png)

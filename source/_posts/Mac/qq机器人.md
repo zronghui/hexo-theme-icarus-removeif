@@ -33,8 +33,19 @@ keywords:
 ```shell
 docker pull richardchien/cqhttp:latest
 mkdir -p ~/data/coolq
-docker run -ti -d --rm --name cqhttp-test  -v ~/data/coolq:/home/user/coolq  -p 4990:9000  -p 5700:5700 -e VNC_PASSWD=12345678 -e COOLQ_ACCOUNT=1326053532 -e CQHTTP_POST_URL=http://host.docker.internal:4991  -e CQHTTP_SERVE_DATA_FILES=yes  richardchien/cqhttp:latest
+# for mac
+docker run -ti -d --restart always --name cqhttp-test  -v ~/data/coolq:/home/user/coolq  -p 4990:9000  -p 5700:5700 -e VNC_PASSWD=12345678 -e COOLQ_ACCOUNT=1326053532 -e CQHTTP_POST_URL=http://host.docker.internal:4991  -e CQHTTP_SERVE_DATA_FILES=yes  richardchien/cqhttp:latest
+
+# for aliyun
+docker run -ti -d --restart always --name cqhttp-test  -v ~/data/coolq:/home/user/coolq  -p 4990:9000  -p 5700:5700 -e VNC_PASSWD=12345678 -e COOLQ_ACCOUNT=1326053532 -e CQHTTP_POST_URL=http://47.93.53.47:4991  -e CQHTTP_SERVE_DATA_FILES=yes richardchien/cqhttp:latest
+
 ```
+
+若写错了 CQHTTP_POST_URL：
+
+vim data/app/io.github.richardchien.coolqhttpapi/config/1326053532.ini
+
+
 
 登录地址 http://127.0.0.1:4990
 

@@ -126,10 +126,38 @@ class Solution:
 
 ```
 
-
 # 4
 
-```python
 
+
+```python
+class TreeAncestor:
+
+    def __init__(self, n: int, parent: List[int]):
+        # 2**16 = 65536
+        self.dp = [[-1]*16 for i in range(n)]
+        for i in range(n):
+            self.dp[i][0] = parent[i]
+        for i in range(n):
+            for j in range(1, 16):
+                if self.dp[i][j-1]==-1:
+                    break
+                self.dp[i][j] = self.dp[self.dp[i][j-1]][j-1]
+
+
+    def getKthAncestor(self, node: int, k: int) -> int:
+        # 10 : 8+2 1010 将 10 分解，找到 1 所在的位置
+        for i in reversed(range(16)):
+            if k & (1<<i):# k 在 第 i 位是 1
+                node = self.dp[node][i]
+            if node==-1:
+                break
+        return node
+
+
+
+# Your TreeAncestor object will be instantiated and called as such:
+# obj = TreeAncestor(n, parent)
+# param_1 = obj.getKthAncestor(node,k)
 ```
 
