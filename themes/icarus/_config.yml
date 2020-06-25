@@ -198,7 +198,7 @@ widgets:
         # Email address for the Gravatar
         gravatar:
         # URL or path for the follow button
-        follow_link: # 'https://weibo.com/u/3050419984'
+        follow_link: 'https://github.com/zronghui' # 'https://weibo.com/u/3050419984'
         # Links to be shown on the bottom of the profile widget
         social_links:
             Github:
@@ -317,7 +317,8 @@ providers:
     # Name or URL of the fontawesome icon font CDN provider
     iconcdn: fontawesome
     # https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v1.0.6/json_data/record.json
-    my_cdn_pre: https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v1.0.6
+    # my_cdn_pre: https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@v1.0.6
+    my_cdn_pre: https://cdn.jsdelivr.net/gh/zronghui/zronghui.github.io
 
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/

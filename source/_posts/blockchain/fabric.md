@@ -264,6 +264,40 @@ node query.js
 
 
 
+### 商业票据
+
+```shell
+# 路径定义
+export FabricSamples=/root/fabric/fabric-samples
+# 启动网络
+cd $FabricSamples/basic-network
+./start.sh
+
+# 查看各个 container 的日志
+# cd $FabricSamples/commercial-paper/organization/magnetocorp/configuration/cli/
+# ./monitordocker.sh net_basic
+# ./monitordocker.sh net_basic <port_number> # 或者指定一个端口
+
+# 启动一个 MagnetoCorp
+cd $FabricSamples/commercial-paper/organization/magnetocorp/configuration/cli/
+docker-compose -f docker-compose.yml up -d cliMagnetoCorp
+
+# 智能合约
+cd $FabricSamples/commercial-paper/organization/magnetocorp/contract
+docker exec cliMagnetoCorp peer chaincode install -n papercontract -v 0 -p /opt/gopath/src/github.com/contract -l node
+docker exec cliMagnetoCorp peer chaincode instantiate -n papercontract -v 0 -l node -c '{"Args":["org.papernet.commercialpaper:instantiate"]}' -C mychannel -P "AND ('Org1MSP.member')"
+
+# 应用程序依赖项
+cd $FabricSamples/commercial-paper/organization/magnetocorp/application/
+npm install
+# 钱包
+node addToWallet.js
+# 发行
+node issue.js
+
+
+```
+
 
 
 ### todo
@@ -320,3 +354,11 @@ After  pip uninstall -y docker docker-py && pip install docker  the above comman
 
 
 ![image-20200619125851480](https://i.loli.net/2020/06/19/LAyjHtMlI3qhd1o.png)
+
+
+
+[Issue with chaincode instantiate in hyperledger fabric? - Stack Overflow](https://stackoverflow.com/questions/54321201/issue-with-chaincode-instantiate-in-hyperledger-fabric)
+
+
+Please check with this variable CORE_PEER_GOSSIP_USELEADERELECTION=true
+

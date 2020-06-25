@@ -981,3 +981,9 @@ docker run -di --name simbarancher -p 7001:8080 rancher/server
 
 
 
+
+
+### How to set an environment variable in a running docker container
+
+[how to set env while running - Google 搜索](https://www.google.com/search?newwindow=1&sxsrf=ALeKk03ajdVC-dF3XMBQwvG9ttnckF34VQ%3A1593075189507&ei=9WX0XvytHuCIk74P2KahyAE&q=how+to+set+env+while+running&oq=how+to+set+env+while+running&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BwgjEOoCECc6BggAEAUQHjoECCMQJ1Ccpx5YorofYK28H2gHcAB4AoABpwWIAfMQkgEFNC0xLjOYAQKgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwi8_JTGy5zqAhVgxMQBHVhTCBkQ4dUDCAw&uact=5)
+[How to set an environment variable in a running docker container - Stack Overflow](https://stackoverflow.com/questions/27812548/how-to-set-an-environment-variable-in-a-running-docker-container)
