@@ -650,3 +650,5 @@ keywords:
 [技术|使用 at 命令在 Linux 上安排任务](https://linux.cn/article-12092-1.html?utm_source=rss&utm_medium=rss)
 [容器与云|值得关注的 9 个开源云原生项目](https://linux.cn/article-12135-1.html?utm_source=rss&utm_medium=rss)
 
+[Diving into Go by building a CLI application | Eryb's Space](https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
+

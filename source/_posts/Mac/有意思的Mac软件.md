@@ -16,6 +16,11 @@ keywords:
 
 <!--more-->
 
+## Record Lectures  -- 好用的mac录音软件
+
+[Umbra 1.1.0 for Mac 为浅色深色模式指定壁纸](https://www.macwk.com/soft/umbra)
+[Record Lectures 3.1.4 中文破解版 for Mac 好用的mac录音软件](https://www.macwk.com/soft/record-lectures)
+
 ## MuteMyMic -- 强制静音 Mac 的麦
 
 [‎MuteMyMic on the Mac App Store](https://apps.apple.com/us/app/mutemymic/id456362093?mt=12)

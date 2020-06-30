@@ -446,12 +446,6 @@ dockerize \
 
 
 
-### springboot  docker todo
-
-[bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用](https://github.com/bingoHuang/spring-boot-docker)
-
-
-
 ### *docker save和docker export的区别
 
 总结一下docker save和docker export的区别：
@@ -675,11 +669,143 @@ docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
 
 
 
+## Docker + Spring Boot: 快速搭建和部署Java Web应用
+
+[bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用](https://github.com/bingoHuang/spring-boot-docker)
+
+**0、你需要：**
+
+* JDK 1.8 : java -version
+* Maven 3.0+ : mvn -v
+* Git : git --version
+* Source Code : https://github.com/bingoHuang/spring-boot-docker
+* Docker : docker version
+    * docker-machine ls
+    * docker-machine start
+    * docker-machine env
+    * eval $(docker-machine env)
+
+**1、Maven编译工程**
+
+下载源码到本地，进入工程目录，执行maven编译
+
+    git clone https://github.com/bingoHuang/spring-boot-docker.git
+    cd spring-boot-docker
+    tree
+
+```
+项目结构：
+├── README.md
+├── pom.xml
+└── src
+    ├── main
+    │   ├── docker
+    │   │   ├── Dockerfile
+    │   │   └── gs-spring-boot-docker-0.1.0.jar
+    │   ├── java
+    │   │   └── hello
+    │   │       └── Application.java
+    │   └── resources
+    │       └── application.yml
+    └── test
+        └── java
+            └── hello
+                └── HelloWorldConfigurationTests.java
+```
+
+    mvn package
+
+**2、测试Jar包执行**
+
+执行生成的jar包，运行spring boot应用
+
+    java -jar target/gs-spring-boot-docker-0.1.0.jar
+
+**3、验证本地运行是否可以访问成功**
+
+* 命令行下访问：curl http://127.0.0.1:8080/
+* 浏览器中访问：http://127.0.0.1:8080/
+
+---
+
+**4、编写Dockerfile文件**
+
+进入到源码的docker目录下，编写Dockerfile文件
+
+    mkdir spring-boot-docker
+    cd spring-boot-docker
+    拷贝编译好的gs-spring-boot-docker-0.1.0.jar到当前目录，和Dockerfile放在同一目录
+    
+    # 编写Dockerfile文件
+    FROM hub.c.163.com/xbingo/jdk8:latest
+    ADD gs-spring-boot-docker-0.1.0.jar app.jar
+    CMD ["java","-jar","/app.jar"]
+
+**5、构建Dockerfile**
+
+    docker build -t cloudcomb/springbootdocker:1.0 .
+
+**6、查看构建的镜像**
+
+    docker images
+    
+    REPOSITORY                       TAG                 IMAGE ID            CREATED              SIZE
+    cloudcomb/springbootdocker       1.0                 c5a57ce057e7        About a minute ago   180.8 MB
+
+**7、运行docker容器**
+
+    docker run -p 8081:8080 -t cloudcomb/springbootdocker:1.0
+    docker ps
+
+**8、验证Docker容器运行是否可以访问成功**
+
+* 新建一个命令行tag：command+T
+* 命令行下访问：curl http://192.168.99.100:8081
+* 浏览器中访问：http://192.168.99.100:8081
+
+## Nginx
+
+网址：[https://hub.docker.com/_/nginx/](https://hub.docker.com/_/nginx/)
+
+[nginx - Docker Hub](https://hub.docker.com/_/nginx)
+
+```
+# 拉取
+docker pull nginx
+# 运行
+docker run -di --name nginx -p 80:80 nginx
+# 静态资源放入 nginx 中 /usr/share/nginx/html 目录下
+
+# Hosting some simple static content
+# 1.
+-v /some/content:/usr/share/nginx/html:ro
+# 2.
+FROM nginx
+COPY static-html-directory /usr/share/nginx/html
+
+# Complex configuration
+# 1.
+-v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro
+# 2.
+docker run --name tmp-nginx-container -d nginx
+docker cp tmp-nginx-container:/etc/nginx/nginx.conf /host/path/nginx.conf
+# 3.
+FROM nginx
+COPY nginx.conf /etc/nginx/nginx.conf
+```
 
 
-[bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用](https://github.com/bingohuang/spring-boot-docker)
 
-## nginx todo
+其他 NGINX image
+
+[nginxdemos/nginx-hello - Docker Hub](https://hub.docker.com/r/nginxdemos/nginx-hello)
+[jwilder/nginx-proxy - Docker Hub](https://hub.docker.com/r/jwilder/nginx-proxy)
+
+```shell
+
+```
+
+
 
 <img src="https://i.loli.net/2020/06/15/C7smHfT5PcnoFAj.png" alt="image-20200615071435022" style="zoom:50%;" />
 
