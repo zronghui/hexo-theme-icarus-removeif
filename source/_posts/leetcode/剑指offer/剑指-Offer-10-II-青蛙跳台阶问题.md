@@ -15,3 +15,16 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+class Solution:
+    def numWays(self, n: int) -> int:
+        if n<2:
+            return 1
+        a = b = 1
+        for _ in range(1, n):
+            a, b = a+b, a
+        return a%1000000007
+
+```
+

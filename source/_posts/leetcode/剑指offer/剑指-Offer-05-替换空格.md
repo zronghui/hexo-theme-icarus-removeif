@@ -15,3 +15,19 @@ keywords:
 [TOC]
 
 <!--more-->
+
+[剑指 Offer 05. 替换空格 - 力扣（LeetCode）](https://leetcode-cn.com/problems/ti-huan-kong-ge-lcof/)
+
+```python
+class Solution:
+    def replaceSpace(self, s: str) -> str:
+        # return s.replace(' ', '%20')
+        l = []
+        for i in s:
+            if i==' ':
+                l.append('%20')
+            else:
+                l.append(i)
+        return ''.join(l)
+```
+

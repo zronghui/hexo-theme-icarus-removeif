@@ -30,7 +30,7 @@ distinct element.
     k = 8,
     
     return 13.
-    
+
 
 **Note:**  
 You may assume k is always valid, 1 ≤ k ≤ n2.
@@ -60,3 +60,30 @@ class Solution {
     }
 }
 ```
+
+```python
+class Solution:
+    def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
+        n = len(matrix)
+        pq = [(matrix[i][0], i, 0) for i in range(n)]
+        heapq.heapify(pq)
+        for i in range(k-1):
+            _, x, y = heapq.heappop(pq)
+            if y+1!=n:
+                heapq.heappush(pq, (matrix[x][y+1], x, y+1))
+        return heapq.heappop(pq)[0]
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

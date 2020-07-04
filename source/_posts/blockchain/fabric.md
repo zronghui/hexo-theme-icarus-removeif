@@ -300,6 +300,72 @@ node issue.js
 
 
 
+准备工作
+
+```shell
+sudo ./bootstrap.sh 1.2.0
+export PATH=<path to download location>/bin:$PATH
+
+```
+
+
+
+start.sh
+
+```shell
+# 路径定义
+export FabricSamples=/root/fabric/fabric-samples
+
+# 3.1生成组织身份
+cd $FabricSamples/first-network/
+sudo ../bin/cryptogen generate --config=./crypto-config.yaml
+# 证书和密钥（即MSP材料）将被输出到当前一个名为 crypto-config 的目录中
+
+# 3.2.2 Orderer服务启动初始区块的创建
+sudo ../bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+# 3.2.3 生成应用通道交易配置文件
+export CHANNEL_NAME=mychannel
+sudo ../bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID $CHANNEL_NAME
+# 3.2.4 生成锚节点更新配置文件
+sudo ../bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org1MSP
+sudo ../bin/configtxgen -profile TwoOrgsChannel -outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -channelID $CHANNEL_NAME -asOrg Org2MSP
+
+# 3.3 启动网络
+cd $FabricSamples/first-network
+docker-compose -f docker-compose-cli.yaml up -d
+# 创建通道
+docker exec -it cli bash
+
+export CHANNEL_NAME=mychannel
+peer channel create -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+# 3.4.2 节点怎么加入应用通道
+peer channel join -b mychannel.block
+# 更新锚节点
+peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/Org1MSPanchors.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+export CORE_PEER_LOCALMSPID="Org2MSP"
+export CORE_PEER_ADDRESS=peer0.org2.example.com:7051 
+export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt 
+peer channel update -o orderer.example.com:7050 -c $CHANNEL_NAME -f ./channel-artifacts/Org1MSPanchors.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem
+
+
+```
+
+
+
+stop.sh
+
+```shell
+# 路径定义
+export FabricSamples=/root/fabric/fabric-samples
+# 关闭网络
+cd $FabricSamples/first-network
+docker-compose -f docker-compose-cli.yaml down
+```
+
+
+
 ### todo
 
 centos aliyun 搭建 Java 环境，再测试代码

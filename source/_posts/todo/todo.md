@@ -26,4 +26,5 @@ keywords:
 - [ ] 加密、解密文件gui，里面放置密码，网站的 token，[阿里云容器镜像服务](https://cr.console.aliyun.com/undefined/instances/mirrors?accounttraceid=df8df73447e24aa69696513c30ab5a05bjkk)
 - [ ] [OHTTPS - 免费HTTPS证书](https://ohttps.com/?hao.su)
 - [ ] [521xueweihan/git-tips: Git的奇技淫巧](https://github.com/521xueweihan/git-tips)
+- [ ] springboot 制作 daily plan + schedule 
 

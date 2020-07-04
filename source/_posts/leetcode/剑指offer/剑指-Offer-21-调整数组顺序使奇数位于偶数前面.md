@@ -15,3 +15,16 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+class Solution:
+    def exchange(self, nums: List[int]) -> List[int]:
+        i = j = 0
+        while j<len(nums):
+            if nums[j]%2:
+                nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+            j += 1
+        return nums
+```
+

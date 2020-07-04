@@ -52,6 +52,7 @@ If there is no common subsequence, return 0.
 ## 答案
 [超详细，动态规划解法](https://leetcode-cn.com/problems/longest-common-subsequence/solution/chao-xiang-xi-dong-tai-gui-hua-jie-fa-by-shi-wei-h/)
 <!--more-->
+
 ```java
 class Solution {
     public int longestCommonSubsequence(String s1, String s2) {
@@ -80,3 +81,24 @@ class Solution {
     }
 }
 ```
+
+
+
+```python
+class Solution:
+    def longestCommonSubsequence(self, text1: str, text2: str) -> int:
+        m, n = len(text1), len(text2)
+        dp = [0]*(m+1)
+        for i in range(1, n+1):
+            pre = 0 # pre dp[j-1]
+            for j in range(1, m+1):
+                nextpre = dp[j]
+                if text2[i-1]==text1[j-1]:
+                    dp[j] = pre + 1
+                else:
+                    dp[j] = max(dp[j], dp[j-1])
+                pre = nextpre
+        return dp[-1]
+
+```
+

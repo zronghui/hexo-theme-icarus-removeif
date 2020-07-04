@@ -32,7 +32,7 @@ which the depth of the two subtrees of _every_ node never differ by more than
        -3   9
        /   /
      -10  5
-    
+
 
 
 **Tags:** Tree, Depth-first Search
@@ -56,3 +56,27 @@ class Solution {
     }
 }
 ```
+
+
+
+```python
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        def dfs(start, end):
+            if end<start:
+                return None
+            mid = (start+end)//2
+            root = TreeNode(nums[mid])
+            root.left = dfs(start, mid-1)
+            root.right = dfs(mid+1, end)
+            return root
+
+        return dfs(0, len(nums)-1)
+```
+
+
+
+
+
+
+
