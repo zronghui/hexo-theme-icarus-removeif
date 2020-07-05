@@ -652,3 +652,8 @@ keywords:
 
 [Diving into Go by building a CLI application | Eryb's Space](https://eryb.space/2020/05/27/diving-into-go-by-building-a-cli-application.html)
 
+
+
+## 07
+
+[SQLite Python Placeholder – Four Methods for SQL Statements | Finxter](https://blog.finxter.com/sqlite-python-placeholder-four-methods-for-sql-statements/)

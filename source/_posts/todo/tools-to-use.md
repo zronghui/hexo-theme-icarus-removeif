@@ -218,3 +218,14 @@ GitHub 文件 cdn 加速
 [typeshed Alternatives - Python awesome-python-typing | LibHunt](https://python.libhunt.com/typeshed-alternatives)
 [apache-libcloud Alternatives - Python Third-party APIs | LibHunt](https://python.libhunt.com/libcloud-alternatives)
 
+
+
+宝塔面板、glitch 免费托管 API、网易云自动签到
+
+[ZainCheung/netease-cloud-api: 网易云音乐升级API](https://github.com/ZainCheung/netease-cloud-api)
+[Home · ZainCheung/netease-cloud-api Wiki](https://github.com/ZainCheung/netease-cloud-api/wiki)
+[ZainCheung/netease-cloud: 网易云音乐全自动每日打卡300首歌升级账号等级，支持微信提醒，支持无服务器云函数部署](https://github.com/ZainCheung/netease-cloud)
+
+
+
+[将VSCode打造成latex写作利器进阶篇-善用VSCode自带的Snippets - 知乎](https://zhuanlan.zhihu.com/p/150871057)
