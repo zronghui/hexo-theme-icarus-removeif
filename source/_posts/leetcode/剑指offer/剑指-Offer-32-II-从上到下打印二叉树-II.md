@@ -15,3 +15,30 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        l, stack, res = [], collections.deque(), []
+        if not root:
+            return res
+        stack.append(root)
+        while stack:
+            t = []
+            slen = len(stack)
+            for _ in range(slen):
+                node = stack.popleft()
+                t.append(node.val)
+                if node.left: stack.append(node.left)
+                if node.right: stack.append(node.right)
+            res.append(t)
+        return res
+```
+
