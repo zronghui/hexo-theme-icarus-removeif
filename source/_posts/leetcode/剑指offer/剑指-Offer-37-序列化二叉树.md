@@ -15,3 +15,34 @@ keywords:
 [TOC]
 
 <!--more-->
+
+
+
+```python
+class Codec:
+    def serialize(self, root):
+        l = []
+        def helper(node):
+            if node:
+                l.append(str(node.val))
+                helper(node.left)
+                helper(node.right)
+            else:
+                l.append('X')
+        helper(root)
+        return ','.join(l)
+
+    def deserialize(self, data):
+        l = collections.deque(data.split(','))
+        def helper():
+            val = l.popleft()
+            if val=='X':
+                return None
+            node = TreeNode(val)
+            node.left = helper()
+            node.right = helper()
+            return node
+        return helper()
+
+```
+

@@ -30,7 +30,7 @@ Given the below binary tree and `sum = 22`,
       **11**  13  4
      /  **\**      \
     7    **2**      1
-    
+
 
 return true, as there exist a root-to-leaf path `5->4->11->2` which sum is 22.
 
@@ -40,6 +40,9 @@ return true, as there exist a root-to-leaf path `5->4->11->2` which sum is 22.
 **Difficulty:** Easy
 ## 答案
 <!--more-->
+
+正确代码：
+
 ```java
 class Solution {
     public boolean hasPathSum(TreeNode root, int sum) {
@@ -50,3 +53,31 @@ class Solution {
     }
 }
 ```
+
+
+
+烂代码：
+
+```python
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution:
+    def hasPathSum(self, root: TreeNode, target: int) -> bool:
+        if not root:
+            return False
+        def helper(root, cursum):
+            cursum += root.val
+            if not root.left and not root.right:
+                print(cursum)
+                return cursum==target
+            # if else 需要用括号括起来否则不生效
+            return (helper(root.left, cursum) if root.left else False) \
+              or (helper(root.right, cursum) if root.right else False)
+        return helper(root, 0)
+```
+
