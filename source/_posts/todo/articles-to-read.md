@@ -657,3 +657,6 @@ keywords:
 ## 07
 
 [SQLite Python Placeholder – Four Methods for SQL Statements | Finxter](https://blog.finxter.com/sqlite-python-placeholder-four-methods-for-sql-statements/)
+
+[技术|通过重定向在 Linux 终端任意读写数据](https://linux.cn/article-12385-1.html?utm_source=rss&utm_medium=rss)
+

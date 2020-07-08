@@ -15,3 +15,23 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+class MedianFinder:
+
+    def __init__(self):
+        self.l = []
+
+
+    def addNum(self, num: int) -> None:
+        bisect.insort(self.l, num)
+
+
+    def findMedian(self) -> float:
+        n = len(self.l)
+        if n&1:
+            return self.l[n//2]
+        return (self.l[n//2]+self.l[n//2-1])/2
+
+```
+
