@@ -6,6 +6,7 @@ uniqueId: '2020-07-08 12:29:59/"weekly-contest-196".html'
 date: 2020-07-08 20:29:59
 thumbnail:
 categories:
+- Leetcode weekly contest
 tags:
 keywords:
 ---
@@ -33,7 +34,14 @@ class Solution:
 # 2
 
 ```python
-
+class Solution:
+    def getLastMoment(self, n: int, left: List[int], right: List[int]) -> int:
+        if left and right:
+            return max(max(left), n-min(right))
+        if left:
+            return max(left)
+        if right:
+            return n-min(right)
 ```
 
 

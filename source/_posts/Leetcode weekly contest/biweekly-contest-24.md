@@ -6,6 +6,7 @@ uniqueId: '2020-04-19 01:56:34/"biweekly-contest-24".html'
 date: 2020-04-19 09:56:34
 thumbnail:
 categories:
+- Leetcode weekly contest
 tags:
 keywords:
 ---
@@ -92,8 +93,30 @@ class Solution:
 
 [动态规划，逐字符解析判断有多少种可能 - 恢复数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/restore-the-array/solution/dong-tai-gui-hua-zhu-zi-fu-jie-xi-pan-duan-you-duo/)
 
-```python
+[恢复数组 - 恢复数组 - 力扣（LeetCode）](https://leetcode-cn.com/problems/restore-the-array/solution/hui-fu-shu-zu-by-leetcode-solution/)
 
+```python
+class Solution:
+    def numberOfArrays(self, s: str, k: int) -> int:
+        n = len(s)
+        dp = [0] * (n + 1) # numberOfArrays(s[:i])
+        #    1 3 1 7 : s
+        #  1 1 2 4 8 : dp  
+        # 解释:  8 = numberOfArrays(131)+numberOfArrays(13)+numberOfArrays(1)+numberOfArrays('')
+        dp[0] = 1
+        mod = 10 ** 9 + 7
+        for i in range(1, n+1):
+            # 优化，k <= 10^9，故最后一个空格最多隔开 10 个数字
+            # for j in reversed(range(i)):
+            for j in reversed(range(max(0, i-10), i)):
+                # print(i, j, s[j:i])
+                if s[j]=='0':
+                    continue
+                if int(s[j:i])>k:
+                    break
+                dp[i] += dp[j]
+        # print(dp)
+        return dp[-1] % mod
 ```
 
 

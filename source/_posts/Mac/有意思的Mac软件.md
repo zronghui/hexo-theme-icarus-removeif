@@ -125,3 +125,6 @@ Service Station: 定制 Mac 右键菜单
 
 [Timey | MacMenuBar.com](https://macmenubar.com/timey/)
 
+[MonitorControl | MacMenuBar.com](https://macmenubar.com/monitorcontrol/)
+
+menubar 控制外接显示器亮度
