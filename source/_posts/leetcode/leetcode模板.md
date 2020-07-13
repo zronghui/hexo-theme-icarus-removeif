@@ -1,13 +1,12 @@
 ---
-title: 剑指 Offer 53 - I 在排序数组中查找数字 I
+title: leetcode模板
 toc: true
 recommend: 1
-uniqueId: '2020-06-30 13:56:09/"剑指 Offer 53 - I 在排序数组中查找数字 I".html'
-date: 2020-06-30 21:56:09
+uniqueId: '2020-07-13 01:33:11/"leetcode模板".html'
+date: 2020-07-13 09:33:11
 thumbnail:
 categories:
 - leetcode
-- 剑指offer
 tags:
 keywords:
 ---
@@ -16,9 +15,13 @@ keywords:
 
 <!--more-->
 
-[面试题53 - I. 在排序数组中查找数字 I（二分法，清晰图解） - 在排序数组中查找数字 I - 力扣（LeetCode）](https://leetcode-cn.com/problems/zai-pai-xu-shu-zu-zhong-cha-zhao-shu-zi-lcof/solution/mian-shi-ti-53-i-zai-pai-xu-shu-zu-zhong-cha-zha-5/)
+## 二分
 
+helper 函数
 
+l<=r  l=mid+1 r=mid-1 
+
+根据求左边界还是右边界，l r 的更新不同
 
 ```python
 class Solution:

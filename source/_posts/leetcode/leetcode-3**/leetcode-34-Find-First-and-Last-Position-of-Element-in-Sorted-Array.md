@@ -37,6 +37,29 @@ If the target is not found in the array, return `[-1, -1]`.
 **Difficulty:** Medium
 ## 答案
 <!--more-->
+
+```python
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        def helper(n):
+            l, r = 0, len(nums)-1
+            while l<=r:
+                mid = (l+r)//2
+                if nums[mid]<=n: l = mid+1
+                else: r = mid-1
+            return l
+        if not nums:
+            return [-1, -1]
+        # print(helper(target), helper(target-1))
+        start = helper(target-1)
+        end = helper(target)-1
+        return [start, end] if start<=end else [-1, -1]
+
+            
+```
+
+
+
 ```java
 class Solution {
     public int[] searchRange(int[] nums, int target) {

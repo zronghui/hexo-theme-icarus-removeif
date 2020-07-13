@@ -15,3 +15,17 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+class Solution:
+    def isBalanced(self, root: TreeNode) -> bool:
+        def helper(node):
+            if not node:
+                return 0
+            ldepth = helper(node.left)
+            rdepth = helper(node.right)
+            if -1 in [ldepth, rdepth] or abs(rdepth-ldepth)>1: return -1
+            return max(ldepth, rdepth)+1
+        return helper(root)!=-1
+```
+

@@ -22,7 +22,7 @@ Given two arrays, write a function to compute their intersection.
         
     Input: nums1 = [1,2,2,1], nums2 = [2,2]
     Output: [2,2]
-    
+
 
 **Example 2:**
         
@@ -46,6 +46,21 @@ Given two arrays, write a function to compute their intersection.
 **Difficulty:** Easy
 ## 答案
 <!--more-->
+
+```python
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        m = collections.Counter(nums1)
+        res = []
+        for i in nums2:
+            if m.get(i, 0)>0:
+                m[i] -= 1
+                res.append(i)
+        return res
+```
+
+
+
 ```java
 class Solution {
     public int[] intersect(int[] nums1, int[] nums2) {
