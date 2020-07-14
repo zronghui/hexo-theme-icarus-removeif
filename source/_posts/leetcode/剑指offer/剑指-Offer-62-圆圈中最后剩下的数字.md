@@ -15,3 +15,16 @@ keywords:
 [TOC]
 
 <!--more-->
+
+[Java解决约瑟夫环问题](https://leetcode-cn.com/problems/yuan-quan-zhong-zui-hou-sheng-xia-de-shu-zi-lcof/solution/javajie-jue-yue-se-fu-huan-wen-ti-gao-su-ni-wei-sh/)
+
+```python
+class Solution:
+    def lastRemaining(self, n: int, m: int) -> int:
+        # 数学公式，倒推
+        res = 0
+        for i in range(2, n+1):
+            res = (res+m)%i
+        return res
+```
+

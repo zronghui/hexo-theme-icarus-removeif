@@ -15,3 +15,27 @@ keywords:
 [TOC]
 
 <!--more-->
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        cost, profit = float("+inf"), 0
+        for price in prices:
+            cost = min(cost, price)
+            profit = max(profit, price - cost)
+        return profit
+```
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        n = len(prices)
+        if n<2: return 0
+        res = 0
+        m = prices[0]
+        for i in prices[1:]:
+            res = max(res, i-m)
+            m = min(m, i)
+        return res
+```
+

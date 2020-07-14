@@ -15,3 +15,21 @@ keywords:
 [TOC]
 
 <!--more-->
+
+
+
+```python
+class Solution:
+    def constructArr(self, a: List[int]) -> List[int]:
+        # a [1,2,3,4,5]
+        # l [1,1,2,6,24]
+        # r [120,60,20,5,1]
+        n = len(a)
+        l, r = [1]*n, [1]*n
+        for i in range(1, n):
+            l[i] = l[i-1]*a[i-1]
+        for i in reversed(range(n-1)):
+            r[i] = r[i+1]*a[i+1]
+        return [l[i]*r[i] for i in range(n)]
+```
+
