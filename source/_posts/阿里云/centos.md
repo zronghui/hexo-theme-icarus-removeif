@@ -435,6 +435,20 @@ iredis --raw
 
 
 
+### 解决redis远程连接不上的问题
+
+```shell
+
+```
+
+
+
+redis现在的版本开启redis-server后，redis-cli只能访问到127.0.0.1，因为在配置文件中固定了ip，因此需要修改redis.conf（有的版本不是这个文件名，只要找到相对应的conf后缀的文件即可）文件以下几个地方。
+
+1.bind 127.0.0.1改为 #bind 127.0.0.1 (注释掉)
+
+2.protected-mode yes 改为 protected-mode no
+
 ## netdata 监控
 
 装上发现好像也没什么用处

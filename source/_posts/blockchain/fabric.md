@@ -446,6 +446,21 @@ peer chaincode invoke -o localhost:7050 --ordererTLSHostnameOverride orderer.exa
 
 
 
+### 在多台主机上搭建 Fabric集群
+
+[30分钟快速在多台主机上搭建开发/测试Hyperledger Fabric集群（不适用于正式部署） | by Jasmine Yang | Medium](https://medium.com/@yshanxiu/30%E5%88%86%E9%92%9F%E5%BF%AB%E9%80%9F%E5%9C%A8%E5%A4%9A%E5%8F%B0%E4%B8%BB%E6%9C%BA%E4%B8%8A%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91-%E6%B5%8B%E8%AF%95hyperledger-fabric%E9%9B%86%E7%BE%A4-%E4%B8%8D%E6%98%AF%E9%83%A8%E7%BD%B2-8f9f175a1f21)
+
+
+
+```shell
+git clone -b extra_hosts https://github.com/eugeneyl/one-org-kafka.git
+
+```
+
+
+
+
+
 ### todo
 
 centos aliyun 搭建 Java 环境，再测试代码
