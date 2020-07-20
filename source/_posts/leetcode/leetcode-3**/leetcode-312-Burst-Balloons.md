@@ -3,6 +3,8 @@ thumbnail:
 title: leetcode 312. Burst Balloons
 date: 2020-07-19 21:13:39
 categories:
+- leetcode
+- leetcode-3**
 toc: true
 tags:
 - Divide and Conquer

@@ -3,6 +3,8 @@ thumbnail:
 title: leetcode 120. Triangle
 date: 2020-07-14 08:04:19
 categories:
+- leetcode
+- leetcode-1**
 toc: true
 tags:
 - Array
