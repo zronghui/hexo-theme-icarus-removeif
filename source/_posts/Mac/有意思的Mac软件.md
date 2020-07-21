@@ -128,3 +128,7 @@ Service Station: 定制 Mac 右键菜单
 [MonitorControl | MacMenuBar.com](https://macmenubar.com/monitorcontrol/)
 
 menubar 控制外接显示器亮度
+
+[AirServer 7.2.6 破解版 for Mac 将iOS/Android设备镜像到mac上](https://www.macwk.com/soft/airserver)
+
+投屏
