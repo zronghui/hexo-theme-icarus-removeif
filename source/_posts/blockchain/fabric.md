@@ -500,7 +500,32 @@ node --version
 
 一个链上不同节点能不能存入不同的数据
 
+### docker swarm 遇到的一些问题
 
+主要参考教程[超级账本Fabric Raft多机集群部署教程 - 区块链教程的个人空间 - OSCHINA](https://my.oschina.net/u/3843525/blog/3146795)
+
+host1 
+
+**1.以 manager 加入失败**
+
+先以 worker 加入，再 docker node promote <id> 提升为 manager
+
+每个Docker engine实例称为一个Node，既可以是物理机，也可以是虚拟机。分为manager和worker。worker只负责接收并执行任务，manager在此基础上还要接收用户指令，服务调度，服务发现...
+
+**2.docker 版本不一致出现问题**
+
+**3./etc/systemd/sstem/docker.service.d/http-proxy.conf 中设置 noproxy**
+
+```shell
+[Service]
+Environment="NO_PROXY=localhost,127.0.0.1,123.56.42.224,47.93.53.47,39.105.73.181"
+```
+
+**4.创建 first-network 失败**
+
+教程 缺少步骤，去 官网 [Networking with overlay networks | Docker Documentation](https://docs.docker.com/network/network-tutorial-overlay/)
+
+docker run -dit --name alpine2 --network first-network alpine
 
 
 

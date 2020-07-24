@@ -132,3 +132,12 @@ menubar 控制外接显示器亮度
 [AirServer 7.2.6 破解版 for Mac 将iOS/Android设备镜像到mac上](https://www.macwk.com/soft/airserver)
 
 投屏
+
+[cDock 3.1.2 破解版 for Mac 优秀的Dock栏美化工具](https://www.macwk.com/soft/cdock)
+[start 4.2 破解版 for Mac 文件/应用快速启动工具](https://www.macwk.com/soft/start)
+
+
+
+[MultiDock 1.3 破解版 for Mac 创建多个 Dock 栏](https://www.macwk.com/soft/multidock)
+
+多屏时可能有点用
