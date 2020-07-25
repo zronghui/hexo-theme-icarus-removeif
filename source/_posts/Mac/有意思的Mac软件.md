@@ -141,3 +141,5 @@ menubar 控制外接显示器亮度
 [MultiDock 1.3 破解版 for Mac 创建多个 Dock 栏](https://www.macwk.com/soft/multidock)
 
 多屏时可能有点用
+
+[Mountain Duck 4.0.1 (16800) 中文破解版 for Mac 将云存储挂载为本地磁盘](https://www.macwk.com/soft/mountain-duck)
