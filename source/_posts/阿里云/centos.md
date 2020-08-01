@@ -49,7 +49,11 @@ keywords:
 
 
 
+## 时间同步
 
+[[Centos 7 telnet 安装与配置 - 简书](https://www.jianshu.com/p/42f6443fa717)]([https://www.jianshu.com/p/42f6443fa717](ticktick://ttMarkdownLink))
+
+[[CentOS 7同步时间的2种方法 - 小z博客](https://www.xiaoz.me/archives/12989)]([https://www.xiaoz.me/archives/12989](ticktick://ttMarkdownLink))
 
 ## oh my zsh 安装及美化
 
