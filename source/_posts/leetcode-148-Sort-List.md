@@ -162,12 +162,106 @@ class Solution:
 
 
 ```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
+        # 归并排序
+        def split(h):
+            slow = h
+            fast = h.next
+            while fast and fast.next:
+                fast = fast.next.next
+                slow = slow.next
+            t = slow.next
+            slow.next = None
+            # print(h, t)
+            return h, t
+
+        def merge(h1, h2):
+            dummy = ListNode(0)
+            cur = dummy
+            while h1 or h2:
+                v1 = h1.val if h1 else float('inf')
+                v2 = h2.val if h2 else float('inf')
+                if v1<=v2:
+                    cur.next = h1
+                    cur = cur.next
+                    h1 = h1.next
+                else:
+                    cur.next = h2
+                    cur = cur.next
+                    h2 = h2.next
+            return dummy.next
+
+        if not head or not head.next: return head
+        # 把链划分 2 半，递归排序
+        h1, h2 = map(self.sortList, split(head))
+        # merge 2 条链
+        return merge(h1, h2)
+
+```
+
+优化合并
+
+```python
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def sortList(self, head: ListNode) -> ListNode:
+        # 归并排序
+        def split(h):
+            slow = h
+            fast = h.next
+            while fast and fast.next:
+                fast = fast.next.next
+                slow = slow.next
+            t = slow.next
+            slow.next = None
+            # print(h, t)
+            return h, t
+
+        def merge(h1, h2):
+            dummy = ListNode(0)
+            cur = dummy
+            while h1 and h2:
+                if h1.val<h2.val:
+                    cur.next = h1
+                    cur = cur.next
+                    h1 = h1.next
+                else:
+                    cur.next = h2
+                    cur = cur.next
+                    h2 = h2.next
+            if h1: cur.next = h1
+            if h2: cur.next = h2
+            return dummy.next
+
+        if not head or not head.next: return head
+        # 把链划分 2 半，递归排序
+        h1, h2 = map(self.sortList, split(head))
+        # merge 2 条链
+        return merge(h1, h2)
 
 ```
 
 
 
 
+
+## 速度对比
+
+归并慢些
+
+![image-20200802095356739](https://i.loli.net/2020/08/02/jsFn69BiDbMo87c.png)
 
 
 

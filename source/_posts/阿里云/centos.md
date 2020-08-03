@@ -255,6 +255,7 @@ make && make install
 export PATH=$PATH:/usr/local/python3/bin/
 
 pip3 install --upgrade pip
+pip3 install ipython
 ```
 
 
