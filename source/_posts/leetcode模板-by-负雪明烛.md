@@ -31,7 +31,7 @@ keywords:
 
 其中 f(m) 函数代表找到了满足条件的情况，有这个条件的判断就返回对应的位置，如果没有这个条件的判断就是 lowwer_bound 和 higher_bound.
 
-```
+```python
 def binary_search(l, r):
     while l < r:
         m = l + (r - l) // 2
@@ -46,7 +46,7 @@ def binary_search(l, r):
 
 **lower bound**: find index of i, such that `A[i] >= x`
 
-```
+```python
 def lowwer_bound(self, nums, target):
     # find in range [left, right)
     left, right = 0, len(nums)
@@ -61,7 +61,7 @@ def lowwer_bound(self, nums, target):
 
 **upper bound**: find index of i, such that `A[i] > x`
 
-```
+```python
 def higher_bound(self, nums, target):
     # find in range [left, right)
     left, right = 0, len(nums)
@@ -76,7 +76,7 @@ def higher_bound(self, nums, target):
 
 比如，题目 [69. Sqrt(x)](https://blog.csdn.net/fuxuemingzhu/article/details/79254648)。
 
-```
+```python
 class Solution(object):
     def mySqrt(self, x):
         """
@@ -124,7 +124,7 @@ BFS 的写法
 
 来自文章：[【LeetCode】863. All Nodes Distance K in Binary Tree 解题报告（Python）](https://blog.csdn.net/fuxuemingzhu/article/details/82709619)
 
-```
+```python
 # BFS
 bfs = [target.val]
 visited = set([target.val])
@@ -138,7 +138,7 @@ return bfs
 
 在 BFS 中保存已走过的步，并把已经走的合法路径删除掉。
 
-```
+```python
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
         """
@@ -167,7 +167,7 @@ class Solution(object):
 
 使用优先级队列来优先走比较矮的路，最后保存最高的那个格子的高度。
 
-```
+```python
 class Solution(object):
     def swimInWater(self, grid):
         """
@@ -196,7 +196,7 @@ class Solution(object):
 
 需要找出某顶点到其他顶点的最短路径。出发顶点不是确定的，每个顶点有可能访问多次。使用 N 位 bit 代表访问过的顶点的状态。如果到达了最终状态，那么现在步数就是所求。这个题把所有的节点都放入了起始队列中，相当于每次都是所有的顶点向前走一步。
 
-```
+```python
 class Solution(object):
     def shortestPathLength(self, graph):
         """
@@ -227,7 +227,7 @@ class Solution(object):
 
 [429. N-ary Tree Level Order Traversal](https://blog.csdn.net/fuxuemingzhu/article/details/81022170) 多叉树的层次遍历，这个 BFS 写法我觉得很经典。适合记忆。
 
-```
+```python
 """
 # Definition for a Node.
 class Node(object):
@@ -270,7 +270,7 @@ DFS 的写法
 
 二分查找 + DFS
 
-```
+```python
 class Solution(object):
     def swimInWater(self, grid):
         """
@@ -310,7 +310,7 @@ class Solution(object):
 
 [753. Cracking the Safe](https://blog.csdn.net/fuxuemingzhu/article/details/82945477)
 
-```
+```python
 class Solution(object):
     def crackSafe(self, n, k):
         """
@@ -435,7 +435,7 @@ private:
 
 [617. Merge Two Binary Trees](https://blog.csdn.net/fuxuemingzhu/article/details/79052953) 把两个树重叠，重叠部分求和，不重叠部分是两个树不空的节点。
 
-```
+```python
 class Solution:
     def mergeTrees(self, t1, t2):
         if not t2:
@@ -453,7 +453,7 @@ class Solution:
 
 [226. Invert Binary Tree](https://blog.csdn.net/fuxuemingzhu/article/details/51284488)
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -486,7 +486,7 @@ class Solution(object):
 
 迭代写法：
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -521,7 +521,7 @@ class Solution(object):
 
 迭代写法：
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -593,7 +593,7 @@ public:
 
 [919. Complete Binary Tree Inserter](https://blog.csdn.net/fuxuemingzhu/article/details/82958284)
 
-```
+```python
 # Definition for a binary tree node.
 # class TreeNode(object):
 #     def __init__(self, x):
@@ -656,7 +656,7 @@ class CBTInserter(object):
 
     https://leetcode.com/articles/accounts-merge/
 
-```
+```python
 class DSU:
     def __init__(self):
         self.par = range(10001)
@@ -695,7 +695,7 @@ void u(int a, int b) {
 
 [684. Redundant Connection](https://leetcode.com/articles/redundant-connection/)
 
-```
+```python
 class DSU(object):
     def __init__(self):
         self.par = range(1001)
@@ -724,7 +724,7 @@ class DSU(object):
 
 [547. Friend Circles](https://blog.csdn.net/fuxuemingzhu/article/details/70258103)，代码如下：
 
-```
+```python
 class Solution(object):
     def findCircleNum(self, M):
         """
@@ -895,7 +895,7 @@ Dijkstra 算法
 
 时间复杂度是 O(N ^ 2 + E)，空间复杂度是 O(N+E).
 
-```
+```python
 class Solution:
     def networkDelayTime(self, times, N, K):
         """
@@ -925,7 +925,7 @@ Floyd-Warshall 算法
 
 时间复杂度 O(n^3)， 空间复杂度 O(n^2)。
 
-```
+```python
 class Solution:
     def networkDelayTime(self, times, N, K):
         """
@@ -952,7 +952,7 @@ Bellman-Ford 算法
 
 时间复杂度 O(ne)， 空间复杂度 O(n)
 
-```
+```python
 class Solution:
     def networkDelayTime(self, times, N, K):
         """
@@ -980,7 +980,7 @@ class Solution:
 Kruskal 算法
 ----------
 
-```
+```python
 class Solution {
 public:
     static bool cmp(vector<int> & a,vector<int> & b){
@@ -1031,7 +1031,7 @@ public:
 Prim 算法
 -------
 
-```
+```python
 struct cmp {
     bool operator () (const vector<int> &a, const vector<int> &b) {
         return a[2] > b[2];
@@ -1091,7 +1091,7 @@ public:
 
 BFS 方式：
 
-```
+```python
 class Solution(object):
     def canFinish(self, N, prerequisites):
         """
@@ -1119,7 +1119,7 @@ class Solution(object):
 
 DFS 方式：
 
-```
+```python
 class Solution(object):
     def canFinish(self, N, prerequisites):
         """
@@ -1153,7 +1153,7 @@ class Solution(object):
 
 BFS 方式：
 
-```
+```python
 class Solution(object):
     def findOrder(self, numCourses, prerequisites):
         """
@@ -1184,7 +1184,7 @@ class Solution(object):
 
 DFS 方式：
 
-```
+```python
 class Solution(object):
     def findOrder(self, numCourses, prerequisites):
         """
@@ -1226,7 +1226,7 @@ class Solution(object):
 
 这是一个[模板](https://leetcode.com/problems/minimum-window-substring/discuss/26808/Here-is-a-10-line-template-that-can-solve-most-' rel=)，里面的 map 如果是双指针范围内的字符串字频的话，增加和减少的方式如下。
 
-```
+```python
 int findSubstring(string s){
         vector<int> map(128,0);
         int counter; // check whether the substring is valid
@@ -1258,7 +1258,7 @@ int findSubstring(string s){
 
 这个题的 map 是 t 的字频，所以使用 map 更方式和上是相反的。
 
-```
+```python
 class Solution(object):
     def minWindow(self, s, t):
         """
@@ -1300,7 +1300,7 @@ class Solution(object):
 
 [576. Out of Boundary Paths](https://blog.csdn.net/fuxuemingzhu/article/details/83447155)
 
-```
+```python
 class Solution(object):
     def findPaths(self, m, n, N, i, j):
         """
