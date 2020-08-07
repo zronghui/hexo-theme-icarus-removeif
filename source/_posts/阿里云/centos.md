@@ -434,6 +434,9 @@ export PATH=/usr/local/redis/bin:$PATH
 
 # 启动
 redis-server /usr/local/redis/etc/redis.conf
+# 开机自启
+crontab -e
+@reboot redis-server /usr/local/redis/etc/redis.conf
 
 iredis --raw
 ```
