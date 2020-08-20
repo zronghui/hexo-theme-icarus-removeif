@@ -660,3 +660,9 @@ keywords:
 
 [技术|通过重定向在 Linux 终端任意读写数据](https://linux.cn/article-12385-1.html?utm_source=rss&utm_medium=rss)
 
+
+
+## 08
+
+[抖音、腾讯、阿里、美团春招服务端开发岗位硬核面试（完结） - 掘金](https://juejin.im/post/6844904199575044103)
+
