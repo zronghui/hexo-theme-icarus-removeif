@@ -17,7 +17,9 @@ keywords:
 
 # 正在用的插件
 
+## **NimoTab
 
+[NimoTab - Chrome 网上应用店](https://chrome.google.com/webstore/detail/nimotab/mhhkfkjgnfddpodoepjigdeaaookhfln/related)
 
 
 

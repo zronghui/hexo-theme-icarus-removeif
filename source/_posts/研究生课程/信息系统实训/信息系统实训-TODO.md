@@ -90,6 +90,7 @@ books: 305070
 - [x] [M站_哔咪哔咪,这里是兴趣使然的无名小站_bimibimi](http://www.bimibimi.me/?btwaf=34600358)
 - [ ] [动漫影音- 派导航](https://www.pi001.com/category/acgtv/)
 - [ ] [影视搜索-无心法师-电影狗](http://www.dianyinggou.com/so/%E6%97%A0%E5%BF%83%E6%B3%95%E5%B8%88)
+- [ ] [新奇遇电影网-在线电影-最新电影-免费电影-在线观看](https://www.newqiyu.com/) 高清
 
 ## 书籍爬虫
 

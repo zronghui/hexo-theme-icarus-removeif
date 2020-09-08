@@ -11,7 +11,21 @@ tags:
 
 <!--more-->
 
-## [Port Manager](https://macmenubar.com/port-manager/)
+## SyncSettings 一键备份应用配置文件
+
+[SyncSettings 1.2.4 中文破解版 for Mac 一键备份应用配置文件](https://www.macwk.com/soft/syncsettings)
+
+## Hookshot 超强窗口管理工具
+
+[Hookshot 1.6.3 破解版 for Mac 超强窗口管理工具](https://www.macwk.com/soft/hookshot)
+
+## ScreenFocus 1.0.1 破解版 for Mac 多显示器工作必备工具
+
+[ScreenFocus 1.0.1 破解版 for Mac 多显示器工作必备工具](https://www.macwk.com/soft/screenfocus)
+
+## 待破解 Port Manager
+
+[Port Manager](https://macmenubar.com/port-manager/)
 
 [Port Manager for Mac — Manage ports from your menu bar](https://portmanager.app/)
 
@@ -23,7 +37,9 @@ tags:
 
 Use your menu bar to find, open and kill ports in a couple of clicks. View all of your ports in one place, so you can go back to writing code.
 
-## [Mouseless](https://macmenubar.com/mouseless/)
+## 待破解 Mouseless 
+
+[Mouseless](https://macmenubar.com/mouseless/)
 
 **Collection: [Productivity Apps](https://macmenubar.com/productivity-apps/)**
 
@@ -32,8 +48,6 @@ Use your menu bar to find, open and kill ports in a couple of clicks. View all o
 Mouseless combines a searchable database of thousands of shortcuts (conveniently detecting what app you are currently using) and a training feature that helps you learn and remember those shortcuts.
 
 [VISIT](https://mouseless.app/)
-
-待破解
 
 ## [@home](https://macmenubar.com/home/)
 

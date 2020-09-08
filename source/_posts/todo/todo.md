@@ -18,6 +18,8 @@ keywords:
 
 - [x] 自建 RSS 服务器 （RSS2.0 RSS1.0 ATOM1.0 的区别？ ）[高效工作—优雅的阅读微信公众号 | 冰蓝记录思考的地方](http://lanbing510.info/2017/12/14/Wechat-RSS-Huginn.html)
 
+- [ ] rss 二次筛选 [给你的静态博客带来 RSS 订阅 - 少数派](https://sspai.com/post/62332)
+
 - [ ] Cli 将 md 的图片调整统一的缩放比例
 
 - [ ] 根据 requirements.txt 找到相应的 package 简介[PePy - icecream Download Stats](https://pepy.tech/project/icecream)

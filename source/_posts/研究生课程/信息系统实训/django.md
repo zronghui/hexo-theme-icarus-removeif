@@ -44,6 +44,19 @@ INSTALLED_APPS = [
 ]
 ```
 
+
+
+```python
+settings.py
+
+## 其它配置代码...
+
+# 把英文改为中文
+LANGUAGE_CODE = 'zh-hans'
+# 把国际时区改为中国时区（东八区）
+TIME_ZONE = 'Asia/Shanghai'
+```
+
 helloDjango/urls.py
 
 ```python

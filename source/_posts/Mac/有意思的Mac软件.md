@@ -143,3 +143,11 @@ menubar 控制外接显示器亮度
 多屏时可能有点用
 
 [Mountain Duck 4.0.1 (16800) 中文破解版 for Mac 将云存储挂载为本地磁盘](https://www.macwk.com/soft/mountain-duck)
+
+[Batteries for Mac | Track all your devices' batteries from your Mac. Get notified when they need recharging.](https://www.fadel.io/batteries)
+
+[Captin 1.1.0 for Mac 大小写切换悬浮窗提示](https://www.macwk.com/soft/captin)
+[Boop 1.2.1 for Mac 编程开发辅助神器](https://www.macwk.com/soft/boop)
+[LogTail 3.13 破解版 for Mac 服务器日志查看工具](https://www.macwk.com/soft/logtail)
+
+[【自荐】Mac状态栏、通知中心工具合集，支持自定义程序与界面 - 发现频道 - 小众软件官方论坛](https://meta.appinn.net/t/mac/18760)

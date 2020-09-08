@@ -569,10 +569,18 @@ url = http://47.93.53.47:8001/group1/zronghui_xxxt
 [全端通用方案搭建教程 · Issue #527 · nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic/issues/527)
 
 ```shell
-docker run --name yunmusic -p 8002:8080 nondanee/unblockneteasemusic
+docker run -d --restart always --name yunmusic -p 8002:8080 nondanee/unblockneteasemusic
 ```
 
 
+
+小爱 淘宝 不经过代理设置：
+
+cnbj1.fds.api.xiaomi.com,file.ai.xiaomi.com,resolver.mi.xiaomi.com,access.speech.ai.xiaomi.com,data.mistat.xiaomi.com,tracker.ai.xiaomi.com,account.ai.xiaomi.com,query-suggestion.ai.xiaomi.com,trade-acs.m.taobao.com,guide-acs.m.taobao.com
+
+想设置更多网址，可以查看日志文件，然后请求资源，记录转发的域名
+
+不知为何，直接设置 xiaomi.com 没有生效
 
 ## 5. rsshub :1200
 

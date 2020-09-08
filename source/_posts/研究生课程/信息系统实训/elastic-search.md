@@ -18,6 +18,8 @@ keywords:
 
 ## 安装
 
+mac
+
 ```shell
 brew install elasticsearch
 # 修改 PATH
@@ -31,7 +33,7 @@ elasticsearch
 pip3 install 'elasticsearch>=6.0.0,<7.0.0'
 ```
 
-### centos 
+
 
 [用RPM安装Elasticsearch到Linux系统服务 - 简书](https://www.jianshu.com/p/3b0650b5c7bb)
 
@@ -39,50 +41,7 @@ pip3 install 'elasticsearch>=6.0.0,<7.0.0'
 
 先安装 Java8
 
-```shell
-yum install java-1.8.0-openjdk
-java -version
-export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
-echo JAVA_HOME
-```
-
-
-
-vim /etc/yum.repos.d/elasticsearch.repo
-
-```shell
-[elasticsearch-6.x]
-name=Elasticsearch repository for 6.x packages
-baseurl=https://artifacts.elastic.co/packages/6.x/yum
-gpgcheck=1
-gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
-enabled=1
-autorefresh=1
-type=rpm-md
-```
-
-```shell
-yum makecache
-yum install elasticsearch
-
-sudo /bin/systemctl daemon-reload
-sudo /bin/systemctl enable elasticsearch.service
-# 启动或停止
-sudo systemctl start elasticsearch.service
-# sudo systemctl stop elasticsearch.service
-# 检查Elasticsearch是否正在运行
-curl -XGET 'localhost:9200'
-
-export PATH=/usr/share/elasticsearch/bin:$PATH
-elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.8/elasticsearch-analysis-ik-6.8.8.zip
-pip3 install 'elasticsearch>=6.0.0,<7.0.0'
-# 重启 es，加载 ik plugin
-sudo systemctl stop elasticsearch.service
-sudo systemctl start elasticsearch.service
-
-```
-
-
+linux 见博客文章 阿里云/centosUbuntu
 
 
 
@@ -700,6 +659,18 @@ use a supported version of node. v8 or higher: 要求 npm 版本 >= 8
 
 导出为 json，或把一个节点的数据复制到另外一个节点
 
+```shell
+elasticdump \
+  --input=http://47.93.53.47:9200/movies \
+  --output=http://101.200.240.225:9200/movies \
+  --type=mapping
+  
+elasticdump \
+  --input=http://47.93.53.47:9200/books \
+  --output=http://101.200.240.225:9200/books \
+  --type=mapping
+```
+
 
 
 ## elasticsearch-jieba-plugin
@@ -796,6 +767,19 @@ sudo systemctl start elasticsearch.service
 # 检查状态
 systemctl status elasticsearch.service -l
 curl -XGET 'localhost:9200'
+```
+
+
+
+4.elasticsearch.service: Failed at step USER spawning /usr/share/elas....
+
+```shell
+vim /usr/lib/systemd/system/elasticsearch.service
+# 然后注释掉 user 和 group
+
+systemctl daemon-reload
+systemctl restart elasticsearch.service
+systemctl status elasticsearch.service -l
 ```
 
 

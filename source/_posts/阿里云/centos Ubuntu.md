@@ -2,6 +2,12 @@
 title: 阿里云
 toc: true
 uniqueId: '2020-03-02 00:11:19/"阿里云".html'
+encrypt: true
+password: 1
+abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看呢！
+message: 嗨，请准确无误地输入密码查看哟
+wrong_pass_message: 不好意思，密码没对哦，在检查检查呢！
+wrong_hash_message: 不好意思，信息无法验证！
 date: 2020-03-02 08:11:19
 thumbnail:
 categories:
@@ -15,7 +21,17 @@ keywords:
 
 <!--more-->
 
-[云服务器管理控制台](https://ecs.console.aliyun.com/?spm=5176.13329450.home-res.list-id.6baf4df5QGfirl#/server/region/cn-beijing)
+centos ubuntu 各种软件安装教程汇总：
+
+[Linux Tips, Tricks and Tutorials | Linuxize](https://linuxize.com/)
+
+
+
+阿里云 114 一年
+
+[阿里云学生机-云服务器学生机优惠-学生机推荐-云翼计划-阿里云](https://promotion.aliyun.com/ntms/act/campus2018.html?spm=5176.14145661.J_3598540520.ace-channel-latest-activity-card.48b51875YXgkTo)
+
+[阿里云云服务器管理控制台](https://ecs.console.aliyun.com/?spm=5176.13329450.home-res.list-id.6baf4df5QGfirl#/server/region/cn-beijing)
 
 
 
@@ -23,7 +39,7 @@ keywords:
 
 [【阿里云】高校学生“在家实践”计划](https://developer.aliyun.com/adc/student/?spm=a2c6h.13788096.J_7970846300.1.75da7638uOFYrv&accounttraceid=45ab3d56815a4be6ab3feac336a73784hxcl#ecscolleges-collocation-stu)
 
-<img src="https://i.loli.net/2020/03/02/WxfQkdBtVR56gYa.png" alt="WxfQkdBtVR56gYa" style="zoom:50%;" />
+<img src="https://i.loli.net/2020/03/02/WxfQkdBtVR56gYa.png" alt="WxfQkdBtVR56gYa" style="zoom: 25%;" />
 
 ## 登录问题
 
@@ -47,20 +63,33 @@ keywords:
 
 利用 ssh config editor
 
-
-
 ## 时间同步
 
 [[Centos 7 telnet 安装与配置 - 简书](https://www.jianshu.com/p/42f6443fa717)]([https://www.jianshu.com/p/42f6443fa717](ticktick://ttMarkdownLink))
 
 [[CentOS 7同步时间的2种方法 - 小z博客](https://www.xiaoz.me/archives/12989)]([https://www.xiaoz.me/archives/12989](ticktick://ttMarkdownLink))
 
-## oh my zsh 安装及美化
+## centos ubuntu
+
+centos yum
+
+ubuntu apt-get
+
+基本用法一致，可以在 Ubuntu 中 alias yum=apt-get 然后用法就一致了
+
+## *oh my zsh 安装及美化
+
+### 基础安装
 
 ```shell
+# centos
 yum update
 yum install git lsof -y
 yum -y install zsh # yum -y reinstall zsh # 覆盖安装
+# ubuntu
+apt-get install zsh
+
+
 cat /etc/shells
 chsh -s /bin/zsh
 # git wget curl 任选其一，wget 没有成功过
@@ -73,9 +102,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone git://github.com/zsh-users/zsh-syntax-highlighting $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-git clone git://github.com/wting/autojump.git
-cd autojump/
-python ./install.py
+# git clone git://github.com/wting/autojump.git
+# cd autojump/
+# python ./install.py
+
 # Please manually add the following line(s) to ~/.zshrc:
 #[[ -s /root/.autojump/etc/profile.d/autojump.sh ]] && source /root/.autojump/etc/profile.d/autojump.sh
 #autoload -U compinit && compinit -u
@@ -84,11 +114,18 @@ vim ~/.zshrc
 
 plugins=(
   git
-  autojump
+  # autojump
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
 
+```
+
+### 美化
+
+没时间可以不弄
+
+```shell
 # rsync 免密传输
 #  本机：
 /usr/local/bin/rsync -azvhP ~/.ssh/id_rsa.pub root@47.93.53.47:/root/.ssh
@@ -97,7 +134,9 @@ cd .ssh;cat id_rsa.pub > authorized_keys
 
 # nerd-fonts 下载
 mkdir -p ~/.local/share/fonts
-cd ~/.local/share/fonts && curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
+cd ~/.local/share/fonts 
+cp ~/zronghui/Droid\ Sans\ Mono\ for\ Powerline\ Nerd\ Font\ Complete.otf .
+# curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf
 
 # powerlevel9k 主题下载
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/themes/powerlevel9k
@@ -108,7 +147,15 @@ rsync -azvhP ~/.vimrc root@47.93.53.47:/root/
 rsync -azvhP ~/.dotfiles/.powerlevel9k root@47.93.53.47:/root/
 
 # colosls 安装
-yum install gcc-c++ patch readline readline-devel zlib zlib-devel ibffi-devel openssl-devel make bzip2 autoconf automake libtool bison sqlite-devel
+
+# gem 安装
+# centos
+yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel ibffi-devel openssl-devel make bzip2 autoconf automake libtool bison sqlite-devel
+
+# ubuntu 
+apt-get install -y git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs mysql-client libmysqlclient-dev git htop
+
+
 curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
 curl -L get.rvm.io | bash -s stable
@@ -116,17 +163,172 @@ source /etc/profile.d/rvm.sh
 rvm reload
 rvm requirements run
 rvm list known
-ruby --version
-rvm install 2.7
-rvm use ruby-2.7.0-preview1
-rvm use 2.7 --defaults
+rvm install 2.7  # 可能需要重试许多次，可以弄个失败自动重试的脚本。不要尝试直接从文件安装, 我失败了
+# rvm use ruby-2.7.0-preview
+rvm use 2.7 --default
+# ruby --version
 gem install colorls
 
 alias ls='colorls -A'
 alias lc='colorls -lA --sd'
 ```
 
-## Java 8
+## *ssh/rsync 免密码
+
+```shell
+# 本地：
+ssh-keygen
+ssh-copy-id -i ~/.ssh/id_rsa.pub root@101.200.240.225
+# 然后 ssh rsync 就不需要烦人的密码了
+ssh 'root@101.200.240.225'
+rsync -azvhP ...  root@101.200.240.225:~/zronghui
+```
+
+## *python3.8 安装
+
+```shell
+# wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+# 下载太慢，在本机下载好之后传过去
+rsync -azvhP Python-3.8.0.tgz root@47.93.53.47:/root/
+tar zxf Python-3.8.0.tgz
+cd Python-3.8.0
+
+# 编译前准备
+# centos
+yum install  -y gcc-c++ gcc make cmake zlib-devel bzip2-devel openssl-devel ncurse-devel libffi-devel
+# ubuntu
+apt install software-properties-common
+apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+
+# 编译安装 Python3.8
+./configure prefix=/usr/local/python3 --enable-optimizations
+make && make install
+export PATH=$PATH:/usr/local/python3/bin/
+
+pip3 install --upgrade pip
+pip3 install ipython
+```
+
+常用Python库安装
+
+```shell
+yum update
+yum install python3-pip
+
+# alias pip='pip3.8'
+alias pip='/usr/local/python3/bin/pip3.8'
+#alias python=python3.8
+alias python='/usr/local/python3/bin/python3.8'
+pip install --upgrade pip
+pip install -U six
+pip install matplotlib numpy pretty_errors icecream wget environs ipython pandas xlrd pylightxl jupyter
+# pip3 install iredis
+/usr/local/python3/bin/pip3.8 install -r /root/code/zronghui_xxxtrequirements.txt
+```
+
+
+
+### aliyun centos jupyter 安装
+
+参考：
+
+[阿里云Centos7下搭建Jupyter Notebook服务（亦可自建外网访问） - ❤····随手 - 我家Ai智障](http://www.mclover.cn/blog/index.php/archives/157.html)
+
+```shell
+pip3 install jupyter
+jupyter notebook --generate-config
+开头输入以下内容：
+c.NotebookApp.allow_root = True
+c.NotebookApp.ip = '*'
+c.NotebookApp.open_browser = False
+c.NotebookApp.port = 20006
+
+jupyter notebook
+```
+
+注:  输出配置文件的非注释行
+
+```shell
+grep -E  -v "^#|^$" jupyter_notebook_config.py 
+```
+
+
+
+## *docker 安装
+
+### centos
+
+[Install Docker Engine on CentOS | Docker Documentation](https://docs.docker.com/engine/install/centos/#install-docker-engine)
+
+```shell
+# 卸载旧版本
+sudo yum remove docker \
+                  docker-client \
+                  docker-client-latest \
+                  docker-common \
+                  docker-latest \
+                  docker-latest-logrotate \
+                  docker-logrotate \
+                  docker-engine
+                  
+# 用存储库进行安装
+# 安装 yum-utils 包(它提供 yum-config-manager 实用工具)并设置稳定存储库
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+# 安装 DOCKER 引擎
+sudo yum install docker-ce docker-ce-cli containerd.io
+# 验证指纹是否与060A 61c51b558a7f 742B 77AA C52F EB6B 621E 9F35匹配，如果是，接受它
+
+# 启动 Docker
+sudo systemctl start docker
+sudo docker run hello-world
+# 开机自启
+sudo systemctl enable docker
+```
+
+### ubuntu
+
+[How to Install Docker on Ubuntu 20.04 | Linuxize](https://linuxize.com/post/how-to-install-and-use-docker-on-ubuntu-20-04/)
+
+```shell
+apt update
+apt install docker-ce docker-ce-cli containerd.io
+apt update
+apt list -a docker-ce
+systemctl status docker
+docker container run hello-world
+
+# 启动 Docker
+sudo systemctl start docker
+sudo docker run hello-world
+# 开机自启
+sudo systemctl enable docker
+```
+
+镜像加速
+
+配置文件: /etc/docker/daemon.json
+
+阿里云 ID 见：https://cr.console.aliyun.com/undefined/instances/mirrors
+
+```json
+{
+  "registry-mirrors": ["https://my-id.mirror.aliyuncs.com", "http://hub-mirror.c.163.com"]
+}
+```
+
+
+
+```shell
+sudo systemctl restart docker
+# 或者
+sudo systemctl stop docker
+sudo systemctl start docker
+```
+
+docker info 查看是否生效
+
+## *Java 8
 
 [Java SE Development Kit 8 - Downloads](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html)
 [国内借助阿里云快速下载Oracle JDK-鹞之神乐](https://www.kagura.me/dev/20200424112618.html)
@@ -140,17 +342,197 @@ alias lc='colorls -lA --sd'
 # export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.242.b08-0.el7_7.x86_64/jre/bin/java'
 
 rsync -azvhP ~/Downloads/Compressed/jdk-8u251-linux-x64.tar.gz root@47.93.53.47:/tmp
-sudo tar xf /tmp/jdk-8u251-linux-x64.tar.gz -C /usr/java
+mkdir /usr/java
+sudo tar -xf /tmp/jdk-8u251-linux-x64.tar.gz -C /usr/java
 
 export JAVA_HOME=/usr/java/jdk1.8.0_251
 export PATH=$JAVA_HOME/bin:$PATH
 export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-echo JAVA_HOME
+echo $JAVA_HOME
 
 # Find Java’s Path
 update-alternatives --config java
 ```
+
+
+
+## *redis
+
+[centos安装redis - 掘金](https://juejin.im/post/5ecc754bf265da770f51f373)
+
+```shell
+# wget http://download.redis.io/releases/redis-5.0.7.tar.gz
+rsync -azvhP ~/Downloads/Compressed/redis-5.0.7.tar.gz  root@47.93.53.47:/tmp
+cd /tmp
+tar xf /tmp/redis-5.0.7.tar.gz
+cd redis-5.0.7
+make
+make PREFIX=/usr/local/redis install
+
+mkdir /usr/local/redis/etc
+cp redis.conf /usr/local/redis/etc
+vim /usr/local/redis/etc/redis.conf
+
+1）配置redis为后台启动：daemonize no  修改为 daemonize yes
+2）开启外网访问：bind 127.0.01  注释掉
+3）配置密码：requirepass 设置密码
+
+pip install iredis
+iredis --raw
+
+vim ~/.zshrc
+export PATH=/usr/local/redis/bin:$PATH
+
+# 启动
+redis-server /usr/local/redis/etc/redis.conf
+# 开机自启
+crontab -e
+@reboot redis-server /usr/local/redis/etc/redis.conf
+
+iredis --raw
+```
+
+
+
+redis-cli -h 47.93.53.47 -p 6379 slaveof 101.200.240.225 -p 6379
+
+### 解决redis远程连接不上的问题
+
+```shell
+
+```
+
+
+
+redis现在的版本开启redis-server后，redis-cli只能访问到127.0.0.1，因为在配置文件中固定了ip，因此需要修改redis.conf（有的版本不是这个文件名，只要找到相对应的conf后缀的文件即可）文件以下几个地方。
+
+1.bind 127.0.0.1改为 #bind 127.0.0.1 (注释掉)
+
+2.protected-mode yes 改为 protected-mode no
+
+
+
+
+
+### *redis 迁移
+
+[redis-utils-cli - npm](https://www.npmjs.com/package/redis-utils-cli)
+
+```shell
+# 在 47.93.53.47 中
+npm install redis-utils-cli -g
+redis-utils copy 47.93.53.47 101.200.240.225
+
+# 在此之前，需要在 2  个服务器的redis 执行以下操作
+iredis --raw
+CONFIG SET protected-mode no
+```
+
+
+
+## elasticsearch
+
+安装贼麻烦，还是用 docker 吧
+
+### docker
+
+```shell
+docker pull elasticsearch:6.8.6
+
+docker run -d --name es686 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:6.8.6
+# docker run -d --name es686 --net dnw_es_680 -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:6.8.6
+
+
+# ./bin/elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.6/elasticsearch-analysis-ik-6.8.6.zip
+./bin/elasticsearch-plugin install https://shrill-pond-3e81.hunsh.workers.dev/github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.6/elasticsearch-analysis-ik-6.8.6.zip
+# docker cp elasticsearch-analysis-ik-6.8.6.zip es686:/usr/share/elasticsearch
+# ./bin/elasticsearch-plugin install elasticsearch-analysis-ik-6.8.6.zip
+
+```
+
+**elasticSearch Docker启动报错：max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]**
+
+在宿主主机中：
+
+```shell
+echo "vm.max_map_count=262144">>/etc/sysctl.conf
+/sbin/sysctl -p
+```
+
+**Failed to clear cache for realms [[]]** 可以忽略
+
+### centos
+
+```shell
+rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch
+ # 文件从本地 rsync 过去
+sudo apt-get install alien
+sudo alien -i elasticsearch-6.8.6.rpm
+# sudo rpm -ivh elasticsearch-6.8.6.rpm --nodeps
+
+```
+
+mkdir -p /etc/yum.repos.d
+
+vim /etc/yum.repos.d/elasticsearch.repo
+
+```shell
+[elasticsearch-6.x]
+name=Elasticsearch repository for 6.x packages
+baseurl=https://artifacts.elastic.co/packages/6.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+
+```shell
+# yum install 特别慢
+yum makecache
+yum install elasticsearch
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service
+# 启动或停止
+sudo systemctl start elasticsearch.service
+# sudo systemctl stop elasticsearch.service
+# 检查Elasticsearch是否正在运行
+curl -XGET 'localhost:9200'
+
+export PATH=/usr/share/elasticsearch/bin:$PATH
+elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.8.8/elasticsearch-analysis-ik-6.8.8.zip
+pip3 install 'elasticsearch>=6.0.0,<7.0.0'
+# 重启 es，加载 ik plugin
+sudo systemctl stop elasticsearch.service
+sudo systemctl start elasticsearch.service
+
+```
+
+### utuntu
+
+```shell
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add - 
+echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-6.x.list
+apt update
+apt install elasticsearch
+
+
+```
+
+外网访问
+vim /etc/elasticsearch/elasticsearch.yml 
+
+找到 network.host，改为
+
+network.host: 0.0.0.0
+
+
+
+vim /etc/sysconfig/elasticsearch
+
+设置JAVA_HOME环境变量
 
 ## maven
 
@@ -239,84 +621,6 @@ alias rsync=/usr/local/bin/rsync
 
 
 
-## python3.8 安装
-
-```shell
-# wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
-# 下载太慢，在本机下载好之后传过去
-rsync -azvhP Python-3.8.0.tgz root@47.93.53.47:/root/
-tar zxf Python-3.8.0.tgz
-cd Python-3.8.0
-# 编译前准备
-yum install  -y gcc-c++ gcc make cmake zlib-devel bzip2-devel openssl-devel ncurse-devel libffi-devel
-# 编译安装 Python3.8
-./configure prefix=/usr/local/python3 --enable-optimizations
-make && make install
-export PATH=$PATH:/usr/local/python3/bin/
-
-pip3 install --upgrade pip
-pip3 install ipython
-```
-
-
-
-## docker 安装
-
-[Install Docker Engine on CentOS | Docker Documentation](https://docs.docker.com/engine/install/centos/#install-docker-engine)
-
-```shell
-# 卸载旧版本
-sudo yum remove docker \
-                  docker-client \
-                  docker-client-latest \
-                  docker-common \
-                  docker-latest \
-                  docker-latest-logrotate \
-                  docker-logrotate \
-                  docker-engine
-                  
-# 用存储库进行安装
-# 安装 yum-utils 包(它提供 yum-config-manager 实用工具)并设置稳定存储库
-sudo yum install -y yum-utils
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-# 安装 DOCKER 引擎
-sudo yum install docker-ce docker-ce-cli containerd.io
-# 验证指纹是否与060A 61c51b558a7f 742B 77AA C52F EB6B 621E 9F35匹配，如果是，接受它
-
-# 启动 Docker
-sudo systemctl start docker
-sudo docker run hello-world
-# 开机自启
-sudo systemctl enable docker
-```
-
-镜像加速
-
-配置文件: /etc/docker/daemon.json
-
-阿里云 ID 见：https://cr.console.aliyun.com/undefined/instances/mirrors
-
-```json
-{
-  "registry-mirrors": ["https://my-id.mirror.aliyuncs.com", "http://hub-mirror.c.163.com"]
-}
-```
-
-
-
-```shell
-sudo systemctl restart docker
-# 或者
-sudo systemctl stop docker
-sudo systemctl start docker
-```
-
-
-
-docker info 查看是否生效
-
-
-
 ## go
 
 [CentOS 7 安装Golang - 简书](https://www.jianshu.com/p/8f0646e3858c)
@@ -384,18 +688,23 @@ vim /etc/php.d/pdo_sqlite.ini
 
 
 
-## tmux 安装
+## *tmux 安装
 
 https://github.com/tmux/tmux
 
 ```shell
 brew install tmux
 
-# centos
+# 简单安装 2.1版本
+yum/apt install tmux
+
+# 最新版本(ubuntu 老是安装失败)
 j test
-git clone https://github.com/tmux/tmux
-git clone https://github.com/tmux/tmux.git
+# git clone https://github.com/tmux/tmux
+# 加速镜像
+git clone https://github.com.cnpmjs.org/tmux/tmux.git
 cd tmux
+yum/apt install automake
 sh autogen.sh && ./configure && make
 which tmux
 ./tmux -V
@@ -404,58 +713,6 @@ tmux
 ```
 
 
-
-## redis
-
-[centos安装redis - 掘金](https://juejin.im/post/5ecc754bf265da770f51f373)
-
-```shell
-# wget http://download.redis.io/releases/redis-5.0.7.tar.gz
-rsync -azvhP ~/Downloads/Compressed/redis-5.0.7.tar.gz  root@47.93.53.47:/tmp
-cd /tmp
-tar xf /tmp/redis-5.0.7.tar.gz
-cd redis-5.0.7
-make
-make PREFIX=/usr/local/redis install
-
-mkdir /usr/local/redis/etc
-cp redis.conf /usr/local/redis/etc
-vim /usr/local/redis/etc/redis.conf
-
-1）配置redis为后台启动：daemonize no  修改为 daemonize yes
-2）开启外网访问：bind 127.0.01  注释掉
-3）配置密码：requirepass 设置密码
-
-pip install iredis
-iredis --raw
-
-vim ~/.zshrc
-export PATH=/usr/local/redis/bin:$PATH
-
-# 启动
-redis-server /usr/local/redis/etc/redis.conf
-# 开机自启
-crontab -e
-@reboot redis-server /usr/local/redis/etc/redis.conf
-
-iredis --raw
-```
-
-
-
-### 解决redis远程连接不上的问题
-
-```shell
-
-```
-
-
-
-redis现在的版本开启redis-server后，redis-cli只能访问到127.0.0.1，因为在配置文件中固定了ip，因此需要修改redis.conf（有的版本不是这个文件名，只要找到相对应的conf后缀的文件即可）文件以下几个地方。
-
-1.bind 127.0.0.1改为 #bind 127.0.0.1 (注释掉)
-
-2.protected-mode yes 改为 protected-mode no
 
 ## netdata 监控
 
