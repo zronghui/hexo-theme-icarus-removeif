@@ -67,3 +67,15 @@ keywords:
     --compressed \
     --insecure
 
+
+
+多个 RSS:
+
+{name: url, }
+
+每分钟查询一次，看是否有变化
+
+RSS 怎么解析？
+
+判断系统，是 Mac 的话弹窗提醒，在 Linux 上邮箱提醒
+

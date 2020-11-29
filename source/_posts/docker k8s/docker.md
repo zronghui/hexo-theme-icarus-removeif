@@ -821,6 +821,51 @@ COPY nginx.conf /etc/nginx/nginx.conf
 
 <img src="https://i.loli.net/2020/06/15/fvojS2PxhpHwKtz.png" alt="image-20200615071511818" style="zoom:50%;" />
 
+### minio
+
+```shell
+docker run -it -d --restart always -p 9000:9000 --name minio \
+  -e "MINIO_ACCESS_KEY=minio" \
+  -e "MINIO_SECRET_KEY=miniosecret" \
+  -v /home/zhang/minio/data:/data:z \
+  -v /home/zhang/minio/config:/root/.minio:z \
+  --restart=always \
+  minio/minio server /data
+```
+
+http://10.103.242.60:9000/
+
+http://10.103.242.76:9000/
+
+
+
+
+
+[Can't mount host data directory to minio server docker container · Issue #6237 · minio/minio](https://github.com/minio/minio/issues/6237)
+
+报错
+
+```
+Created minio configuration file successfully at /root/.minio                                                                                                                                                 
+ERROR Unable to initialize backend: Unable to write to the backend.                                                                                                                                           
+      > Please ensure Minio binary has write permissions for the backend.
+```
+
+解决
+
+For Project Atomic you can also set append :z or :Z to the have SElinux allow writing to the container:
+
+docker run -p 9000:9000 --name minio1
+-v /mnt/data:/data:z
+minio/minio server /data
+
+More info at:
+https://www.projectatomic.io/blog/2016/03/dwalsh_selinux_containers/
+
+
+
+
+
 ## 8.可以部署在 docker 里的工具
 
 ### 记账 budget
@@ -1038,6 +1083,28 @@ docker run -d --name redis -p 6379:6379  redis
 ## 有密码运行
 docker run -d --name redis10 -p 6379:6379 redis --requirepass 19491001
 ```
+
+[docker 安装 redis 以及配置连接](https://juejin.im/post/6844903813162205192)
+[Redis - Docker —— 从入门到实践](https://yeasy.gitbook.io/docker_practice/appendix/repo/redis)
+
+
+
+```shell
+docker run -d \
+--restart always \
+-p 6379:6379 \
+-v /home/wang/redis/redis.conf:/etc/redis/redis.conf \
+-v /home/wang/redis/data:/data \
+--privileged=true \
+--name redis \
+redis \
+redis-server /etc/redis/redis.conf
+
+```
+
+
+
+
 
 ### MongoDB
 

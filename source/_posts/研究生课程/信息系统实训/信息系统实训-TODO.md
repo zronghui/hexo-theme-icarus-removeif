@@ -105,6 +105,7 @@ books: 305070
 - [ ] [东京不够热 | TNH Subtitle](https://www.tokyonothot.com/?hao.su)
 - [ ] [search_word - 百度云网盘资源合集 - 大力盘搜索](https://dalipan.com/search?keyword=search_word&searchtype=1)
 - [ ] [elastic search - Goobe](https://goobe.io/search.aspx?k=elastic+search)
+- [ ] [搜索 | A4k字幕网](https://www.a4k.net/search?term=%E5%BC%82%E6%98%9F%E7%81%BE%E5%8F%98)
 
 ## 音乐
 
