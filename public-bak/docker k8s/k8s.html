@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>k8s - zronghui的博客</title><meta description="[TOC]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[TOC]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-05-16T06:59:37.000Z"><meta property="article:modified_time" content="2020-06-24T13:36:14.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-05-16T06:59:37.000Z","dateModified":"2020-06-24T13:36:14.000Z","author":{"@type":"Person","name":"removeif"},"description":"[TOC]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-05-16T06:59:37.000Z">2020-05-16</time><a class="commentCountImg" href="/docker%20k8s/k8s.html#comment-container"><span class="display-none-class">137ab3eb9d39fcda113477d761e48a81</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="137ab3eb9d39fcda113477d761e48a81"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/docker-k8s/">docker k8s</a></span><span class="level-item">an hour 读完 (大约 8195 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">k8s</h1><div class="content"><p>[TOC]</p>
+<a id="more"></a>
+
+<h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1><h2 id="从零开始入门-K8s"><a href="#从零开始入门-K8s" class="headerlink" title="**从零开始入门 K8s"></a>**从零开始入门 K8s</h2><p><a href="https://kubernetes.io/zh/docs/tasks/#%e4%bd%bf%e7%94%a8-kubectl-%e5%91%bd%e4%bb%a4%e8%a1%8c">任务 - Kubernetes</a></p>
+<p><a href="https://juejin.im/post/5ea7f9ef5188256d9c25988e">K8s 资源全汇总 | K8s 大咖带你 31 堂课从零入门 K8s - 掘金</a></p>
+<h3 id="课时3-k8s-核心概念"><a href="#课时3-k8s-核心概念" class="headerlink" title="课时3. k8s 核心概念"></a>课时3. k8s 核心概念</h3><h4 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h4><p>调度、自动修复、水平伸缩</p>
+<p>服务的发现与负载的均衡；<br><strong>容器的自动装箱–scheduling–调度</strong>，把一个容器放到一个集群的某一个机器上，Kubernetes 会帮助我们去做存储的编排，让存储的声明周期与容器的生命周期能有一个连接；<br><strong>自动化的容器的恢复</strong>。在一个集群中，经常会出现宿主机的问题或者说是 OS 的问题，导致容器本身的不可用，Kubernetes 会自动地对这些不可用的容器进行恢复；<br>Kubernetes 会帮助我们去做<strong>应用的自动发布与应用的回滚</strong>，以及与应用相关的配置密文的管理；<br>对于 job 类型任务，Kubernetes 可以去做批量的执行；<br>为了让这个集群、这个应用更富有弹性，Kubernetes 也<strong>支持水平的伸缩</strong>。</p>
+<h4 id="Kubernetes-的架构"><a href="#Kubernetes-的架构" class="headerlink" title="Kubernetes 的架构"></a>Kubernetes 的架构</h4><img src="https://i.loli.net/2020/05/19/Mk3d2bi7JwPyHQx.png" alt="5728b58a8d2cf6c2be789bca5acbb77dde9c4d4c" style="zoom: 25%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/19/Oi2e5o8jgNauMls.png" alt="b161e11eae280d950de7259873193f1a9359b97f" style="zoom: 25%;" />
+
+
+
+
+
+<img src="https://i.loli.net/2020/05/19/ORNK3QshCVWFMpB.png" alt="9dbdfbe3b7068f32d95b02dc2dd29302c82c9e3e" style="zoom: 25%;" />
+
+
+
+<h4 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h4><img src="https://i.loli.net/2020/05/19/vRxHMos7wycODZu.png" alt="616cc75b2ce8d734d6389f521c16f4d1d6f56dff" style="zoom:25%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/19/paTk4l9nbVUgsqC.png" alt="5d7c4142358a29dee77740cb9ebe978b04aec2eb" style="zoom:25%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/19/VoYe3G6EOsq25WK.png" alt="70fdf18aac3c814fff9c0a6f2a83dd9eed29f387" style="zoom:25%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/19/o17wgJbYSUNBzd8.png" alt="ac386185dd887052ed3236a05c82cb9e565733fd" style="zoom:25%;" />
+
+
+
+<img src="https://i.loli.net/2020/05/19/9KRm6YNWyl8sMDF.png" alt="8995bce3a619f4e182fd65410ddddf477cbf869a" style="zoom:25%;" />
+
+
+
+
+
+
+
+<p>一个比较有意思的 metadata 叫做“label”</p>
+<p>这些 label 是可以被 selector，也就是选择器所查询的。这个能力实际上跟我们的 sql 类型的 select 语句是非常相似的</p>
+<img src="https://i.loli.net/2020/05/19/P8ntC5p6ydsYxjR.png" alt="1_17" style="zoom:25%;" />
+
+
+
+
+
+<h3 id="课时4-Pod-与容器设计模式"><a href="#课时4-Pod-与容器设计模式" class="headerlink" title="课时4. Pod 与容器设计模式"></a>课时4. Pod 与容器设计模式</h3><p><a href="https://mp.weixin.qq.com/s/OW7zvGhPgGAnBuo4A_SXFw">从零入门 K8s| 人人都能看懂 Pod 与容器设计模式</a></p>
+<h4 id="为什么需要-Pod"><a href="#为什么需要-Pod" class="headerlink" title="为什么需要 Pod"></a>为什么需要 Pod</h4><p><strong>容器的基本概念</strong></p>
+<p>容器的本质实际上是一个进程，是一个视图被隔离，资源受限的进程。很多人都说 Kubernetes 是云时代的操作系统，这个非常有意思，因为如果以此类推，容器镜像就是这个操作系统的软件安装包。</p>
+<p><strong>真实操作系统里的例子</strong></p>
+<p>如果说 Kubernetes 就是操作系统的话，那么不妨看一下真实的操作系统的例子。</p>
+<p>例子里面有一个程序叫做 Helloworld，这个 Helloworld 程序实际上是由一组进程组成的，需要注意一下，这里说的进程实际上等同于 Linux 中的线程。</p>
+<p>因为 Linux 中的线程是轻量级进程，所以如果从 Linux 系统中去查看 Helloworld 中的 pstree，将会看到这个 Helloworld 实际上是由四个线程组成的，分别是 {api、main、log、compute}。也就是说，四个这样的线程共同协作，共享 Helloworld 程序的资源，组成了 Helloworld 程序的真实工作情况。</p>
+<p>这是操作系统里面进程组或者线程组中一个非常真实的例子，以上就是进程组的一个概念。</p>
+<p>在真实的操作系统里面，一个程序往往是根据进程组来进行管理的。Kubernetes 把它类比为一个操作系统，比如说 Linux。针对于容器我们前面提到可以类比为进程，就是前面的 Linux 线程。那么 Pod 又是什么呢？实际上 Pod 就是我们刚刚提到的进程组，也就是 Linux 里的线程组。</p>
+<p><strong>进程组概念</strong></p>
+<p>若为了管理很多个进程，直接把容器里 PID=1 的进程直接改成 systemd，那么会有一些问题：</p>
+<p>首先，PID=1 进程是应用本身，如果现在把这个 PID=1 的进程给 kill 了，或者它自己运行过程中死掉了，那么剩下三个进程的资源就没有人回收了。</p>
+<p>其次，不能知道应用是不是退出，fail， 异常</p>
+<p><strong>Pod = “进程组”</strong></p>
+<p>在 Kubernetes 里面，Pod 实际上正是 Kubernetes 项目为你抽象出来的一个可以类比为进程组的概念。</p>
+<p>Pod 在 Kubernetes 里面只有一个逻辑单位，没有一个真实的东西对应说这个就是 Pod。</p>
+<p>真正起来在物理上存在的东西，就是容器</p>
+<p><strong>为什么 Pod 必须是原子调度单位？</strong></p>
+<p>为了解决Task co-scheduling 问题，具体分析过程见原文</p>
+<p><strong>再次理解 Pod</strong></p>
+<p>Pod 里面的容器是“超亲密关系”</p>
+<p>超亲密关系大概分为以下几类：</p>
+<ul>
+<li>比如说两个进程之间会发生<strong>文件交换</strong>，前面提到的例子就是这样，一个写日志，一个读日志；</li>
+<li>两个进程之间需要通过 localhost 或者说是本地的 Socket 去进行<strong>通信</strong>，这种本地通信也是超亲密关系；</li>
+<li>这两个容器或者是微服务之间，需要发生非常<strong>频繁的 RPC 调用</strong>，出于性能的考虑，也希望它们是超亲密关系；</li>
+<li>两个容器或者是应用，它们需要<strong>共享某些 Linux Namespace</strong>。最简单常见的一个例子，就是我有一个容器需要加入另一个容器的 Network Namespace。这样我就能看到另一个容器的网络设备，和它的网络信息。</li>
+</ul>
+<p><strong>Pod 要解决的问题</strong></p>
+<p>具体的解法分为两个部分：网络和存储</p>
+<ul>
+<li><p><strong>共享网络</strong></p>
+</li>
+<li><p>比如说现在有一个 Pod，其中包含了一个容器 A 和一个容器 B，它们两个就要共享 Network Namespace。在 Kubernetes 里的解法是这样的：在每个 Pod 里，额外起一个 Infra container 小容器来共享整个 Pod 的  Network Namespace。（Infra container 是一个非常小的镜像，大概 100~200KB 左右。所以说一个 Pod 里面的所有容器，它们看到的网络视图是完全一样的。即：它们看到的网络设备、IP地址、Mac地址等等，跟网络相关的信息，其实全是一份）</p>
+</li>
+<li><p>所以整个 Pod 里面，必然是 Infra container 第一个启动。并且整个 <strong>Pod 的生命周期是等同于 Infra container 的生命周期</strong>的，与容器 A 和 B 是无关的。这也是为什么在 Kubernetes 里面，<strong>它是允许去单独更新 Pod 里的某一个镜像</strong>的，即：做这个操作，整个 Pod 不会重建，也不会重启，这是非常重要的一个设计。</p>
+</li>
+<li><p><strong>共享存储</strong></p>
+</li>
+<li><p>比如说现在有两个容器，一个是 Nginx，另外一个是非常普通的容器，在 Nginx 里放一些文件，让我能通过 Nginx 访问到。所以它需要去 share 这个目录。我 share 文件或者是 share 目录在 Pod 里面是非常简单的，实际上就是把 volume 变成了 Pod level。然后所有容器，就是所有同属于一个 Pod 的容器，他们共享所有的 volume。</p>
+</li>
+</ul>
+<h4 id="详解容器设计模式"><a href="#详解容器设计模式" class="headerlink" title="详解容器设计模式"></a>详解容器设计模式</h4><p><strong>举例</strong></p>
+<p>有一个 WAR 包需要把它放到 Tomcat 的 web APP 目录下面，这样就可以把它启动起来了。可是像这样一个 WAR 包或 Tomcat 这样一个容器的话，怎么去做，怎么去发布</p>
+<p>第一种方式：可以把 WAR 包和 Tomcat 打包放进一个镜像里面。但是这样带来一个问题，就是现在这个镜像实际上揉进了两个东西。那么接下来，无论是我要更新 WAR 包还是说我要更新 Tomcat，都要重新做一个新的镜像，这是比较麻烦的；</p>
+<p>第二种方式：就是<strong>镜像里面只打包 Tomcat</strong>。它就是一个 Tomcat，但是需要使用数据卷的方式，比如说 hostPath，从宿主机上把 WAR 包挂载进我们 Tomcat 容器中，挂到我的 web APP 目录下面，这样把这个容器启用起来之后，里面就能用了。</p>
+<p><strong>InitContainer</strong></p>
+<p>在上图的 yaml 里，首先定义一个 Init Container，它只做一件事情，就是把 WAR 包从镜像里拷贝到一个 Volume 里面，它做完这个操作就退出了，所以 Init Container 会比用户容器先启动，并且严格按照定义顺序来依次执行</p>
+<p><strong>容器设计模式：Sidecar</strong></p>
+<p>在 Pod 里面，可以定义一些专门的容器，来执行主业务容器所需要的一些辅助工作，比如我们前面举的例子，其实就干了一个事儿，这个 Init Container，它就是一个 Sidecar，它只负责把镜像里的 WAR 包拷贝到共享目录里面，以便被 Tomcat 能够用起来。</p>
+<ul>
+<li>Sidecar：应用与日志收集</li>
+<li>业务容器将日志写在一个 Volume 里面,Sidecar 容器一定可以通过共享该 Volume，直接把日志文件读出来，然后存到远程存储里面，或者转发到另外一个例子</li>
+<li>Sidecar：代理容器</li>
+<li>单独写一个小的 Proxy，用来处理对接外部的服务集群，它对外暴露出来只有一个 IP 地址就可以了。所以接下来，业务容器主要访问 Proxy，然后由 Proxy 去连接这些服务集群</li>
+<li>Sidecar：适配器容器</li>
+<li>有个例子：现在业务容器暴露出来的监控接口是 /metrics，访问这个容器的 metrics 的 URL 就可以拿到了。可是现在，这个监控系统升级了，它访问的 URL 是 /health，我只认得暴露出 health 健康检查的 URL，才能去做监控，metrics 不认识。那这个怎么办？那就需要改代码了，但可以不去改代码，额外写一个 Adapter，用来把所有对 health 的这个请求转发给 metrics 就可以了，所以这个 Adapter 对外暴露的是 health 这样一个监控的 URL，这就可以了，你的业务就又可以工作了。</li>
+</ul>
+<h3 id="课时5-应用编排与管理-一-：核心原理"><a href="#课时5-应用编排与管理-一-：核心原理" class="headerlink" title="课时5. 应用编排与管理(一)：核心原理"></a>课时5. 应用编排与管理(一)：核心原理</h3><h4 id="资源元信息"><a href="#资源元信息" class="headerlink" title="资源元信息"></a>资源元信息</h4><p>元数据 包括 labels annotations owereference, 常用命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查看所有 pods</span></span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl apply -f pod1.yaml</span><br><span class="line">kubectl apply -f pod2.yaml</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看所有 pods, 并且显示 labels</span></span><br><span class="line">kubectl get pods —show-labels</span><br><span class="line">kubectl get pods nginx1 -o yaml | less</span><br><span class="line"><span class="meta">#</span><span class="bash"> 增 label</span></span><br><span class="line">kubectl label pods nginx1 env=test</span><br><span class="line"><span class="meta">#</span><span class="bash"> 改 label</span></span><br><span class="line">kubectl label pods nginx1 env=test —overwrite</span><br><span class="line">kubectl get pods —show-labels</span><br><span class="line"><span class="meta">#</span><span class="bash"> 删 label</span></span><br><span class="line">kubectl label pods nginx tie-</span><br><span class="line">kubectl get pods —show-labels</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查 label</span></span><br><span class="line">kubectl get pods —show-labels -l env=test</span><br><span class="line">kubectl get pods —show-labels -l env=test,env=dev # , 与 的关系</span><br><span class="line">kubectl get pods —show-labels -l env=dev,tie=front</span><br><span class="line">kubectl get pods —show-labels -l ’env in (dev,test)’</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 增加 annotation</span></span><br><span class="line">kubectl annotate pods nginx1 my-annotate=‘my annotate,ok’</span><br><span class="line">kubectl get pods nging1 -o yaml | less</span><br><span class="line">kubectl apply -f rs.yaml</span><br><span class="line">kubectl get replicasets  nginx-replicasets -o yaml |less</span><br><span class="line">kubectl get pods</span><br><span class="line">kubectl get pods nginx-replicasets-rhd68 -o yaml | less</span><br></pre></td></tr></table></figure>
+<h4 id="控制器模式"><a href="#控制器模式" class="headerlink" title="控制器模式"></a>控制器模式</h4><ol>
+<li>控制循环</li>
+<li>Sensor</li>
+<li>控制循环例子-扩容</li>
+</ol>
+<p>没看懂</p>
+<p>总结：</p>
+<ol>
+<li><p>两种 API 设计方法</p>
+<p><strong>Kubernetes 控制器模式依赖声明式的 API</strong>。另外一种常见的 API 类型是命令式 API。为什么 Kubernetes 采用声明式 API，而不是命令式 API 来设计整个控制器呢？</p>
+</li>
+</ol>
+<p>   首先，比较两种 API 在交互行为上的差别。在生活中，常见的<strong>命令式</strong>的交互方式是家长和孩子交流方式，因为孩子欠缺目标意识，无法理解家长期望，家长往往通过<strong>一些命令</strong>，教孩子一些<strong>明确的动作</strong>，比如说：吃饭、睡觉类似的命令。我们在容器编排体系中，命令式 API 就是通过向系统发出明确的操作来执行的。</p>
+<p>   而常见的<strong>声明式</strong>交互方式，就是老板对自己员工的交流方式。老板一般不会给自己的员工下很明确的决定，实际上可能老板对于要操作的事情本身，还不如员工清楚。因此，老板通过给员工<strong>设置可量化的业务目标</strong>的方式，来发挥员工自身的主观能动性。比如说，老板会要求某个产品的市场占有率达到 80%，而不会指出要达到这个市场占有率，要做的具体操作细节。</p>
+<p>   类似的，在容器编排体系中，我们可以执行一个应用实例副本数保持在 3 个，而不用明确的去扩容 Pod 或是删除已有的 Pod，来保证副本数在三个。</p>
+<ol start="2">
+<li><p>命令式 API 的问题</p>
+<img src="https://i.loli.net/2020/05/24/c2WNj5UPGnXBVYk.jpg" alt="img" style="zoom:50%;" />
+</li>
+<li><p>控制器模式总结</p>
+<p>控制型模式中最核心的就是控制循环的概念；</p>
+<p>两种 API 设计方法：声明式 API 和命令式 API ；Kubernetes 所采用的控制器模式，是由声明式 API 驱动的。</p>
+</li>
+</ol>
+<h3 id="课时6-应用编排与管理-二-：Deployment"><a href="#课时6-应用编排与管理-二-：Deployment" class="headerlink" title="课时6. 应用编排与管理(二)：Deployment"></a>课时6. 应用编排与管理(二)：Deployment</h3><h4 id="一、需求来源"><a href="#一、需求来源" class="headerlink" title="一、需求来源"></a>一、需求来源</h4><p><strong>Deployment：管理部署发布的控制器</strong></p>
+<p>Deployment 能帮我们做什么事情呢？</p>
+<p>首先，<strong>Deployment 定义了一种 Pod 期望数量</strong>，比如说应用 A，我们期望 Pod 数量是四个，那么这样的话，controller 就会持续维持 Pod 数量为期望的数量。当我们与 Pod 出现了网络问题或者宿主机问题的话，controller 能帮我们恢复，也就是新扩出来对应的 Pod，来保证可用的 Pod 数量与期望数量一致；<br>配置 Pod 发布方式，也就是说 controller 会<strong>按照用户给定的策略来更新 Pod</strong>，而且更新过程中，也可以设定不可用 Pod 数量在多少范围内；<br>如果更新过程中发生问题的话，即所谓<strong>“一键”回滚</strong>，也就是说你通过一条命令或者一行修改能够将 Deployment 下面所有 Pod 更新为某一个旧版本 。</p>
+<h4 id="二、用例解读"><a href="#二、用例解读" class="headerlink" title="二、用例解读"></a>二、用例解读</h4><p><strong>Deployment 语法</strong></p>
+<p><img src="https://i.loli.net/2020/05/25/U86LwdBntlyrhsM.png" alt="c3"></p>
+<p>“apiVersion：apps/v1”，也就是说 Deployment 当前所属的组是 apps，版本是 v1</p>
+<p>Deployment.spec 中首先要有一个核心的字段，即 replicas，这里定义期望的 Pod 数量为三个；selector 其实是 Pod 选择器，那么所有扩容出来的 Pod，它的 Labels 必须匹配 selector 层上的 image.labels，也就是 app.nginx</p>
+<ul>
+<li>MinReadySeconds：Deployment 会根据 Pod ready 来看 Pod 是否可用，ready 的 Pod 不一定是 available 的，它一定要超过 MinReadySeconds 之后，才会判断为 available；</li>
+<li>revisionHistoryLimit：保留历史 revision，即保留历史 ReplicaSet 的数量，默认值为 10 个。这里可以设置为一个或两个，如果回滚可能性比较大的话，可以设置数量超过 10；</li>
+<li>paused：paused 是标识，Deployment 只做数量维持，不做新的发布，这里在 Debug 场景可能会用到；</li>
+<li>progressDeadlineSeconds：前面提到当 Deployment 处于扩容或者发布状态时，它的 condition 会处于一个 processing 的状态，processing 可以设置一个超时时间。如果超过超时时间还处于 processing，那么 controller 将认为这个 Pod 会进入 <em>failed</em> 的状态。</li>
+</ul>
+<p><img src="https://i.loli.net/2020/05/25/P3HKm8ZdVowSxiq.png" alt="c29"></p>
+<p><strong>升级策略字段解析</strong></p>
+<p>Deployment 在 RollingUpdate 中主要提供了两个策略，一个是 MaxUnavailable，另一个是 MaxSurge。这两个字段解析的意思，可以看下图中详细的 comment，或者简单解释一下：</p>
+<ul>
+<li>MaxUnavailable：滚动过程中最多有多少个 Pod 不可用；</li>
+<li>MaxSurge：滚动过程中最多存在多少个 Pod 超过预期 replicas 数量。</li>
+</ul>
+<p> MaxSurge 和 MaxUnavailable 不能同时为 0。</p>
+<p><strong>查看 Deployment 状态</strong></p>
+<p>kubectl get deployment</p>
+<p><img src="https://i.loli.net/2020/05/25/SbPa2fpuKtLQRyo.png" alt="c4"></p>
+<p><strong>查看 Pod</strong></p>
+<p><img src="https://i.loli.net/2020/05/25/dJ6wFpXaNSfCuMV.png" alt="c5"></p>
+<p>Pod 名字格式我们不难看到。</p>
+<p>最前面一段：nginx-deployment，其实是 Pod 所属 Deployment.name；中间一段：template-hash，这里三个 Pod 是一样的，因为这三个 Pod 其实都是同一个 template 中创建出来的。最后一段，是一个 random 的字符串</p>
+<p><strong>更新镜像</strong></p>
+<p>kubectl set image deployment.v1.apps/nginx-deployment nginx=nginx:1.9.1</p>
+<p><img src="https://i.loli.net/2020/05/25/ZO9FANjJDqmHpxP.png" alt="c6"></p>
+<p>首先 kubectl 后面有一个 set image 固定写法，这里指的是设定镜像；<br>其次是一个 deployment.v1.apps，这里也是一个固定写法，写的是我们要操作的资源类型，deployment 是资源名、v1 是资源版本、apps 是资源组，这里也可以简写为 deployment 或者 deployment.apps，比如说写为 deployment 的时候，默认将使用 apps 组 v1 版本。<br>第三部分是要更新的 deployment 的 name，也就是我们的 nginx-deployment；再往后的 nginx 其实指的是 template，也就是 Pod 中的 container.name；这里我们可以注意到：一个 Pod 中，其实可能存在多个 container，而我们指定想要更新的镜像的 container.name，就是 nginx。<br>最后，指定我们这个容器期望更新的镜像版本，这里指的是 nginx: 1.9.1。如下图所示：当执行完这条命令之后，可以看到 deployment 中的 template.spec 已经更新为 nginx: 1.9.1。</p>
+<p><strong>快速回滚</strong></p>
+<p><img src="https://i.loli.net/2020/05/25/CtnsmlSfHrdEqG8.png" alt="c7"></p>
+<p><strong>DeploymentStatus</strong></p>
+<p><img src="https://i.loli.net/2020/05/25/WB1saQiNyUSx3Gv.png" alt="c8"></p>
+<p>Processing 指的是 Deployment 正在处于扩容和发布中。比如说 Processing 状态的 deployment，它所有的 replicas 及 Pod 副本全部达到最新版本，而且是 available，这样的话，就可以进入 complete 状态。而 complete 状态如果发生了一些扩缩容的话，也会进入 processing 这个处理工作状态。</p>
+<p>如果在处理过程中遇到一些问题：比如说拉镜像失败了，或者说 readiness probe 检查失败了，就会进入 failed 状态；如果在运行过程中即 complete 状态，中间运行时发生了一些 pod readiness probe 检查失败，这个时候 deployment 也会进入 failed 状态。进入 failed 状态之后，除非所有点 replicas 均变成 available，而且是 updated 最新版本，deployment 才会重新进入 complete 状态。</p>
+<h4 id="三、操作演示"><a href="#三、操作演示" class="headerlink" title="三、操作演示"></a>三、操作演示</h4><p>略</p>
+<h4 id="四、架构设计"><a href="#四、架构设计" class="headerlink" title="四、架构设计"></a>四、架构设计</h4><p>管理模式</p>
+<p><img src="https://i.loli.net/2020/05/25/Vt9fZGaIzbNkLeO.png" alt="c23"></p>
+<h3 id="课时7-应用编排与管理-三-：Job-amp-DaemonSet"><a href="#课时7-应用编排与管理-三-：Job-amp-DaemonSet" class="headerlink" title="课时7. 应用编排与管理(三)：Job &amp; DaemonSet"></a>课时7. 应用编排与管理(三)：Job &amp; DaemonSet</h3><h4 id="Job"><a href="#Job" class="headerlink" title="Job"></a>Job</h4><p>Job 为我们<strong>提供的功能</strong></p>
+<ul>
+<li>它可以创建一个或多个 Pod 来指定 Pod 的数量，并可以监控它是否成功地运行或终止；</li>
+<li>我们可以根据 Pod 的状态来给 Job 设置重置的方式及重试的次数；</li>
+<li>我们还可以根据依赖关系，保证上一个任务运行完成之后再运行下一个任务；</li>
+<li>同时还可以控制任务的并行度，根据并行度来确保 Pod 运行过程中的并行次数和总体完成大小。</li>
+</ul>
+<p><strong>Job 语法</strong></p>
+<img src="https://i.loli.net/2020/05/25/C149GlHXgQrxFvj.png" alt="image-20200525164348534" style="zoom:33%;" />
+
+<p>上图是 Job 最简单的一个 yaml 格式，这里主要新引入了一个 kind 叫 Job，这个 Job 其实就是 job-controller 里面的一种类型。 然后 metadata 里面的 name 来指定这个 Job 的名称，下面 spec.template 里面其实就是 pod 的 spec。</p>
+<p>所以在 Job 里面，我们主要重点关注的是 <strong>restartPolicy 重启策略</strong>和 <strong>backoffLimit 重试次数限制</strong>。</p>
+<p>Never、OnFailure、Always</p>
+<p><strong>Job 状态</strong></p>
+<img src="https://i.loli.net/2020/05/25/eOglzMFTWyAZ1xq.png" alt="image-20200525164532590" style="zoom:33%;" />
+
+<p>Job 创建完成之后，我们就可以通过 kubectl get jobs 这个命令，来查看当前 job 的运行状态。得到的值里面，基本就有 Job 的名称、当前完成了多少个 Pod 以及运行了多长时间。</p>
+<p><strong>查看 Pod</strong></p>
+<p>kubectl get pods </p>
+<p>kubectl get pods pi-4cids -o yaml</p>
+<p>Pod 的名称会以“${job-name}-${random-suffix}”</p>
+<p><strong>并行运行 Job</strong></p>
+<p>主要看两个参数：一个是 completions，一个是 parallelism</p>
+<p>分别含义为： Job 指定的可以运行的总次数 、 并行执行的个数</p>
+<p>比如说 Job 一定要执行 8 次（completions），每次并行 2 个 Pod（parallelism），这样的话，一共会执行 4 个批次。</p>
+<p><strong>查看并行 Job 运行</strong></p>
+<h4 id="cronjob"><a href="#cronjob" class="headerlink" title="cronjob"></a>cronjob</h4><img src="https://i.loli.net/2020/05/25/qv7UAIsGMFxNYVj.png" alt="image-20200525164906142" style="zoom:50%;" />
+
+<p>startingDeadlineSeconds：如果等待时间超过startingDeadlineSeconds的话，CronJob 就会停止这个 Job；</p>
+<p>concurrencyPolicy：就是说是否允许并行运行。所谓的并行运行就是，当第二个 Job 要到时间需要去运行的时候，上一个 Job 还没完成。如果这个 policy 设置为 <strong>true</strong> 的话，那么不管你前面的 Job 是否运行完成，每分钟都会去执行；如果是 false，它就会等上一个 Job 运行完成之后才会运行下一个；</p>
+<p>JobsHistoryLimit：这个就是每一次 CronJob 运行完之后，它都会遗留上一个 Job 的运行历史、查看时间。当然这个额不能是无限的，所以需要设置一下历史存留数，一般可以设置默认 10 个或 100 个都可以</p>
+<h4 id="操作演示"><a href="#操作演示" class="headerlink" title="操作演示"></a>操作演示</h4><p><strong>略</strong></p>
+<p>Job 的编排文件<br>Job 的创建及运行验证<br>并行 Job 的编排文件<br>并行 Job 的创建及运行验证<br>Cronjob 的编排文件<br>Cronjob 的创建及运行验证</p>
+<h4 id="架构设计"><a href="#架构设计" class="headerlink" title="架构设计"></a>架构设计</h4><p><strong>略</strong></p>
+<p>Job 管理模式<br>Job 控制器</p>
+<h4 id="DaemonSet"><a href="#DaemonSet" class="headerlink" title="DaemonSet"></a>DaemonSet</h4><p>DaemonSet：守护进程控制器</p>
+<img src="https://i.loli.net/2020/05/25/hylNU3JPtaWoDO1.png" alt="image-20200525165437046" style="zoom: 50%;" />
+
+<p><strong>查看 DaemonSet 状态</strong></p>
+<p>kubectl get ds</p>
+<img src="https://i.loli.net/2020/05/25/ArkPTVvJClXh79H.png" alt="image-20200525165535852" style="zoom:50%;" />
+
+<p>有几个参数，分别是：需要的 pod 个数、当前已经创建的 pod 个数、就绪的个数，以及所有可用的、通过健康检查的 pod；还有 <strong>NODE SELECTOR</strong>，因为 NODE SELECTOR 在 DaemonSet 里面非常有用。</p>
+<p>有时候我们可能<strong>希望只有部分节点去运行这个 pod 而不是所有的节点</strong>，所以有些节点上被打了标的话，DaemonSet 就只运行在这些节点上。比如，我只希望 master 节点运行某些 pod，或者只希望 Worker 节点运行某些 pod，就可以使用这个 NODE SELECTOR。</p>
+<p><strong>更新 DaemonSet</strong></p>
+<img src="https://i.loli.net/2020/05/25/LN4gjsvqcA1Cbxn.jpg" alt="img" style="zoom:50%;" />
+
+<h4 id="操作演示-1"><a href="#操作演示-1" class="headerlink" title="操作演示"></a>操作演示</h4><p><strong>略</strong></p>
+<p>DaemonSet 的编排<br>DaemonSet 的创建与运行验证<br>DaemonSet 的更<br>DaemonSet 管理模式<br>DaemonSet 控制器</p>
+<h3 id="课时8-应用配置管理：ConfigMap-Secret"><a href="#课时8-应用配置管理：ConfigMap-Secret" class="headerlink" title="课时8. 应用配置管理：ConfigMap Secret"></a>课时8. 应用配置管理：ConfigMap Secret</h3><p><a href="https://mp.weixin.qq.com/s/8r-_Ekje__GVHsKLfJ-66A">从零开始入门 K8s | 如何实现应用配置管理？</a></p>
+<h4 id="ConfigMap-和-Secret"><a href="#ConfigMap-和-Secret" class="headerlink" title="ConfigMap 和 Secret"></a>ConfigMap 和 Secret</h4><p>首先介绍了 ConfigMap 和 Secret 的创建方法和使用场景，然后对 ConfigMap 和 Secret 的常见使用注意点进行了分类和整理。最后介绍了私有仓库镜像的使用和配置；</p>
+<p><strong>使用场景</strong>：一些可变的配置。因为我们不可能把一些可变的配置写到镜像里面，当这个配置需要变化的时候，可能需要我们重新编译一次镜像，这个肯定是不能接受的，所以有了 <strong>ConfigMap</strong>; 一些敏感信息的存储和使用。比如说应用需要使用一些密码，或者用一些 token， 所以有了 Secret。</p>
+<p><strong>创建方法</strong>：</p>
+<p><img src="https://i.imgur.com/0LzM8Gh.jpg" alt="640"></p>
+<p>主要用 –from-file 和 –from-literal 引入配置</p>
+<p><img src="https://i.imgur.com/QEyF03B.jpg" alt="下载"></p>
+<p>一二联合使用，首先引入配置为环境变量，再用 $x。三是挂载配置文件到容器内</p>
+<p><img src="https://i.imgur.com/A8vWl2L.jpg" alt="下载"></p>
+<p><strong>Pod 身份认证</strong>: 首先介绍了 ServiceAccount 和 Secret 的关联关系，然后从源码角度对 Pod 身份认证流程和实现细节进行剖析，同时引出了 Pod 的权限管理 (即 RBAC 的配置管理)；</p>
+<p><img src="https://i.imgur.com/qBoFE5t.jpg" alt="下载"></p>
+<p><img src="https://i.imgur.com/beMXTne.jpg" alt="下载"></p>
+<p>容器资源和安全：首先介绍了容器常见资源类型 (CPU/Memory) 的配置，然后对 Pod 服务质量分类进行详细的介绍。同时对 SecurityContext 有效层级和权限配置项进行简要说明；<br>InitContainer: 首先介绍了 InitContainer 和普通 container 的区别以及 InitContainer 的用途。然后基于实际用例对InitContainer 的用途进行了说明。</p>
+<p>略</p>
+<h3 id="课时9-应用存储和持久化数据卷：核心知识"><a href="#课时9-应用存储和持久化数据卷：核心知识" class="headerlink" title="课时9. 应用存储和持久化数据卷：核心知识"></a>课时9. 应用存储和持久化数据卷：核心知识</h3><p>首先来看一下 Pod Volumes 的使用场景：</p>
+<ul>
+<li>场景一：如果 pod 中的某一个容器在运行时异常退出，被 kubelet 重新拉起之后，如何保证之前容器产生的重要数据没有丢失？</li>
+<li>场景二：如果同一个 pod 中的多个容器想要共享数据，应该如何去做？</li>
+</ul>
+<p>以上两个场景，其实都可以借助 Volumes 来很好地解决，接下来首先看一下 Pod Volumes 的常见类型：</p>
+<ol>
+<li>本地存储，常用的有 emptydir/hostpath；</li>
+<li>网络存储：网络存储当前的实现方式有两种，一种是 in-tree，它的实现代码是放在 K8s 代码仓库中的，随着 K8s 对存储类型支持的增多，这种方式会给 K8s 本身的维护和发展带来很大的负担；而第二种实现方式是 out-of-tree，它的实现其实是给 K8s 本身解耦的，通过抽象接口将不同存储的 driver 实现从 K8s 代码仓库中剥离，因此 <strong>out-of-tree 是后面社区主推的一种实现网络存储插件的方式</strong>；</li>
+<li>Persistent Volumes：它其实是将一些配置信息，如 secret/configmap 用卷的形式挂载在容器中，让容器中的程序可以通过 POSIX 接口来访问配置数据；</li>
+</ol>
+<p>课时 9 后面的暂时就不看了</p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="Kubectl-安装、启动"><a href="#Kubectl-安装、启动" class="headerlink" title="Kubectl 安装、启动"></a>Kubectl 安装、启动</h2><h3 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h3><p>安装失败</p>
+<p><a href="https://www.linuxtechi.com/install-kubernetes-k8s-minikube-centos-8/">How to Install Kubernetes(k8s) with Minikube on CentOS 8</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl"</span><br><span class="line"></span><br><span class="line">curl -LO "https://storage.googleapis.com/kubernetes-release/release/v1.18.2/bin/darwin/amd64/kubectl"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 没有代理的话，很慢，可以本地下载好，传到服务器</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> https://storage.googleapis.com/kubernetes-release/release/v1.18.2/bin/darwin/amd64/kubectl</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> rsync -azvhP kubectl root@47.93.53.47:/root/k8s</span></span><br><span class="line"></span><br><span class="line">chmod +x ./kubectl</span><br><span class="line">mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line">kubectl version --client</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="Minikube"><a href="#Minikube" class="headerlink" title="Minikube"></a>Minikube</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</span><br><span class="line">chmod +x minikube</span><br><span class="line">mkdir -p /usr/local/bin/</span><br><span class="line">install minikube /usr/local/bin/</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 用无需虚拟机的方式启动</span></span><br><span class="line">minikube start --driver=none</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p><a href="https://matthewpalmer.net/kubernetes-app-developer/articles/guide-install-kubernetes-mac.html">How to Install Kubernetes on Mac with Docker, Minikube, VirtualBox - Kubernetes Book</a></p>
+<p>/usr/local/bin/kubectl is v1.15.5, which may be incompatible with Kubernetes v1.18.2</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">export HOMEBREW_NO_AUTO_UPDATE=true</span><br><span class="line">brew install kubectl</span><br><span class="line">brew cask install virtualbox</span><br><span class="line">brew install minikube</span><br><span class="line">brew install bash-completion</span><br><span class="line"></span><br><span class="line">minikube start --image-mirror-country cn \</span><br><span class="line">    --iso-url=https://kubernetes.oss-cn-hangzhou.aliyuncs.com/minikube/iso/minikube-v1.9.0.iso \</span><br><span class="line">    --registry-mirror=https://vbd8z16m.mirror.aliyuncs.com</span><br><span class="line">minikube dashboard</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 自动补全</span><br><span class="line"># 编辑 ~&#x2F;.zshrc 文件</span><br><span class="line">if [ $commands[kubectl] ]; then</span><br><span class="line">  source &lt;(kubectl completion zsh)</span><br><span class="line">fi</span><br><span class="line"># 2. 更新 plugins&#x3D; 行以包含 kubectl 插件</span><br><span class="line">plugins&#x3D;(kubectl)</span><br><span class="line"></span><br><span class="line">source ~&#x2F;.zshrc</span><br><span class="line">tail -n 5 ~&#x2F;.zshrc</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> minikube 可选参数</span></span><br><span class="line">minikube start \</span><br><span class="line">  --kubernetes-version v1.18.0 \</span><br><span class="line">  --vm-driver=&lt;driver_name&gt; \</span><br><span class="line">  --extra-config=kubelet.MaxPods=5</span><br></pre></td></tr></table></figure>
+
+<p>minikube stop 命令可用于停止集群</p>
+<p>minikube delete 命令可用于删除集群</p>
+<p>此命令将关闭并删除 Minikube 虚拟机，不保留任何数据或状态</p>
+<p>minikube status 查看集群是否正常</p>
+<h3 id="停止k8s"><a href="#停止k8s" class="headerlink" title="停止k8s"></a>停止k8s</h3><img src="https://i.loli.net/2020/05/19/sMSRDOwT654lK1j.png" alt="image-20200519222349284" style="zoom:33%;" />
+
+
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1.提交一个 nginx deployment</span><br><span class="line">kubectl apply -f https://k8s.io/examples/application/deployment.yaml</span><br><span class="line"></span><br><span class="line">2.升级 nginx deployment</span><br><span class="line">kubectl apply -f https://k8s.io/examples/application/deployment-update.yaml</span><br><span class="line"></span><br><span class="line">3.扩容 nginx deployment</span><br><span class="line">kubectl apply -f https://k8s.io/examples/application/deployment-scale.yaml</span><br><span class="line"></span><br><span class="line">kubectl describe deployment nginx-deployment</span><br><span class="line">kubectl get --watch deployments</span><br><span class="line"></span><br><span class="line">kubectl delete deployment nginx-deployment</span><br><span class="line">kubectl delete deployments --all</span><br><span class="line">kubectl delete pods --all</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://docs.kubernetes.org.cn/618.html">Kubernetes kubectl delete 命令详解 _ Kubernetes(K8S)中文文档_Kubernetes中文社区</a></p>
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="配置高效的-Kubernetes-命令行终端"><a href="#配置高效的-Kubernetes-命令行终端" class="headerlink" title="*配置高效的 Kubernetes 命令行终端"></a>*配置高效的 Kubernetes 命令行终端</h2><p><a href="https://www.chenshaowen.com/blog/how-to-configure-efficient-k8s-terminal.html">如何配置高效的 Kubernetes 命令行终端 - 陈少文的博客</a></p>
+<p><a href="https://ywnz.com/linuxml/3094.html">交互式Kubernetes客户端，搭建高效Kubernetes命令行终端_Linux命令_云网牛站</a></p>
+<h3 id="1-自动补全"><a href="#1-自动补全" class="headerlink" title="1. *自动补全"></a>1. *自动补全</h3><p><strong>kube-shell</strong> 好用点，支持模糊搜索</p>
+<p><a href="https://github.com/cloudnativelabs/kube-shell">cloudnativelabs/kube-shell: Kubernetes shell: An integrated shell for working with the Kubernetes</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install kube-shell</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/c-bata/kube-prompt">c-bata/kube-prompt: An interactive kubernetes client featuring auto-complete.</a></p>
+<p>OS X 安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install bash-complete@2</span><br></pre></td></tr></table></figure>
+
+<p>不仅仅是 kubectl ，也给其他命令行提供自动补全的命令提示。</p>
+<p>在 .zshrc 中添加如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># kubectl complete</span><br><span class="line">source &lt;(kubectl completion zsh)</span><br></pre></td></tr></table></figure>
+
+<p>在输入 <code>kubectl get pod</code> 命令时，键入 <code>Tab</code> 会自动列举当前类型下的资源，如果没有任何资源，则列举目录文件。</p>
+<p><a href="https://www.chenshaowen.com/blog/images/2020/05/completion-demo.gif"><img src="https://i.loli.net/2020/05/16/c7G2k8mFKrzHPpq.gif" alt="Demo"></a></p>
+<h3 id="2-环境切换和管理-kubectx"><a href="#2-环境切换和管理-kubectx" class="headerlink" title="2. 环境切换和管理 - kubectx"></a>2. 环境切换和管理 - kubectx</h3><p>OS X 安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kubectx</span><br></pre></td></tr></table></figure>
+
+<p>提供两个命令行工具：</p>
+<ul>
+<li>kubectx ，切换不同集群</li>
+</ul>
+<p><a href="https://www.chenshaowen.com/blog/images/2020/05/kubectx-demo.gif"><img src="https://i.loli.net/2020/05/16/H8k5BhUpcZnFRiW.gif" alt="官方 Demo"></a></p>
+<ul>
+<li>kubens ，切换不同 Namespaces</li>
+</ul>
+<p><a href="https://www.chenshaowen.com/blog/images/2020/05/kubens-demo.gif"><img src="https://i.loli.net/2020/05/16/CmHiRVcdIZK3Agp.gif" alt="官方 Demo"></a></p>
+<h3 id="3-将当前环境显示在命令中-kube-ps1"><a href="#3-将当前环境显示在命令中-kube-ps1" class="headerlink" title="3. 将当前环境显示在命令中 - kube-ps1"></a>3. 将当前环境显示在命令中 - kube-ps1</h3><p>OS X 安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kube-ps1</span><br></pre></td></tr></table></figure>
+
+<p>在 .profile 中添加如下内容:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># kube-ps1</span><br><span class="line">source &quot;&#x2F;usr&#x2F;local&#x2F;opt&#x2F;kube-ps1&#x2F;share&#x2F;kube-ps1.sh&quot;</span><br><span class="line">PS1&#x3D;&#39;$(kube_ps1)&#39;$PS1</span><br></pre></td></tr></table></figure>
+
+<p>但是由于通常 config 中配置的 context 名比较长，同时不易区分，需要修改下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i&#39;.s&#39; -E &#39;s&#x2F;kubernetes-admin@cluster.local&#39;&#x2F;dev&#x2F; ~&#x2F;.kube&#x2F;config</span><br></pre></td></tr></table></figure>
+
+<p>将 <a href="mailto:kubernetes-admin@cluster.local"><em>kubernetes</em>-admin@cluster.local</a> 替换为 dev ，可以配合 <a href="https://www.chenshaowen.com/blog/developing-tips-19.html#1-本地快速切换不同-Kubernetes-环境">本地快速切换不同 <em>Kubernetes</em> 环境</a> 使用。</p>
+<p><a href="https://www.chenshaowen.com/blog/images/2020/05/kube-ps1-demo.gif"><img src="https://i.loli.net/2020/05/16/9ePf2ADi5lRNdvM.gif" alt="官方 Demo"></a></p>
+<h3 id="4-交互式命令-kube-prompt"><a href="#4-交互式命令-kube-prompt" class="headerlink" title="4. 交互式命令 - kube-prompt"></a>4. 交互式命令 - kube-prompt</h3><p>kube-prompt 可以让用户省略每次都需要输入的 <code>kubectl</code> ，同时给出一些交互式的自动补全。kube-shell 也提供交互式的自动补全，但是很长时间没有更新了，使用 <code>pip install kube-shell</code> 进行安装，在服务器上可能用得上。</p>
+<p>安装命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install c-bata&#x2F;kube-prompt&#x2F;kube-prompt</span><br></pre></td></tr></table></figure>
+
+<p>开始使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kube-prompt</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.chenshaowen.com/blog/images/2020/05/kube-prompt-demo.gif"><img src="https://www.chenshaowen.com/blog/images/2020/05/kube-prompt-demo.gif" alt="官方 Demo"></a></p>
+<h3 id="5-Kubectl-Aliases"><a href="#5-Kubectl-Aliases" class="headerlink" title="5.Kubectl Aliases"></a>5.Kubectl Aliases</h3><p><a href="https://github.com/ahmetb/kubectl-aliases">https://github.com/ahmetb/kubectl-aliases</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">下载 https://raw.githubusercontent.com/ahmetb/kubectl-alias/master/.kubectl_aliases</span><br><span class="line">[ -f ~/dotfiles/kubectl_aliases.sh ] &amp;&amp; source ~/dotfiles/kubectl_aliases.sh</span><br></pre></td></tr></table></figure>
+
+<p>别名规则</p>
+<p><img src="https://i.loli.net/2020/05/19/9YxDIobfXj2RUWP.jpg" alt="交互式Kubernetes客户端，搭建高效Kubernetes命令行终端"></p>
+<h3 id="Kubeval、Kubens"><a href="#Kubeval、Kubens" class="headerlink" title="Kubeval、Kubens"></a>Kubeval、Kubens</h3><p>Kubeval 是一个用于校验 Kubernetes YAML 或 JSON 配置文件的工具，支持多个 Kubernetes 版本，可以帮助我们解决不少的麻烦。</p>
+<p>项目地址：<a href="https://github.com/garethr/kubeval">https://github.com/garethr/kubeval</a></p>
+<p>Kubens</p>
+<p>该工具可以帮助您快速的在 <em>Kubernetes</em> 的多个命名空间之间切换。</p>
+<p>项目地址：<a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></p>
+<p>Kubens 使用效果图：</p>
+<p><img src="https://i.loli.net/2020/05/19/JIYwCd5VmisrMUf.jpg" alt="交互式Kubernetes客户端，搭建高效Kubernetes命令行终端"></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="https://github.com/ahmetb/kubectx">https://github.com/ahmetb/kubectx</a></li>
+<li><a href="https://github.com/jonmosco/kube-ps1">https://github.com/jonmosco/kube-ps1</a></li>
+<li><a href="https://github.com/c-bata/kube-prompt">https://github.com/c-bata/kube-prompt</a></li>
+<li><a href="https://github.com/cloudnativelabs/kube-shell">https://github.com/cloudnativelabs/kube-shell</a></li>
+</ul>
+<h3 id="lens"><a href="#lens" class="headerlink" title="lens"></a>lens</h3><p><a href="https://mp.weixin.qq.com/s/6O_9wEppjaB8GiqoSDIdWQ">最华丽的 Kubernetes 桌面客户端：Lens</a></p>
+<h3 id="python-Official-Python-client-library-for-kubernetes"><a href="#python-Official-Python-client-library-for-kubernetes" class="headerlink" title="python: Official Python client library for kubernetes"></a>python: Official Python client library for kubernetes</h3><p><a href="https://github.com/kubernetes-client/python">kubernetes-client/python: Official Python client library for kubernetes</a></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p><a href="https://www.chenshaowen.com/blog/how-to-set-proxy-for-kubernetes.html">给 Kubernetes 配置 Proxy - 陈少文的博客</a><br><a href="https://www.chenshaowen.com/blog/kubernetes-cheat-sheet.html">Kubernetes Cheat Sheet - 陈少文的博客</a></p>
+<h2 id="Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？"><a href="#Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？" class="headerlink" title="Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？"></a>Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？</h2><p>简单来说就是几个工具的使用场景不一样，Minikube 通过虚拟机方式快速安装单节点 Kubernetes 集群，可用于个人电脑快速体验Kubernetes；Kubeadm 是官方推荐的Kubernetes 分发工具，该工具有助于在现有基础架构上引导最佳 Kubernetes 集群实践，优点是能够在任何地方发布最小的可行 Kubernetes 集群；但 Kubeadm 不提供基础架构配置（例如：网络、负载均衡、存储等都需要额外配置）；Kops适合于在阿里云、AWS、GCE、Azure、OpenStack等云平台上部署Kubernetes群集，目前不支持裸机部署。Kubespray是产线部署常用工具，依赖Ansible，支持AWS，GCE，Azure，OpenStack等云平台，以及物理服务器的IaaS平台。</p>
+<p><a href="https://liqiang.io/post/9f5d6241">Kubernetes 部署 Dashboard</a><br><a href="https://kubernetes.io/zh/docs/tasks/access-application-cluster/web-ui-dashboard/">网页界面 (Dashboard) - Kubernetes</a></p>
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/docker%20k8s/k8s.html">k8s</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/docker%20k8s/k8s.html">https://zronghui.github.io/docker k8s/k8s.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/docker%20k8s/%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E6%9C%80%E4%BD%B3%E7%9A%84Dockerfile.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">如何编写最佳的Dockerfile</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/%E4%B8%87%E4%B8%80%E6%9C%89-iPhone-iPad-%E4%BA%86%E5%91%A2.html"><span class="level-item">万一有 iPhone/iPad 了呢</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '137ab3eb9d39fcda113477d761e48a81',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-学习" href="#学习"><span>学习</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-从零开始入门-K8s" href="#从零开始入门-K8s"><span>**从零开始入门 K8s</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-核心概念" href="#核心概念"><span>核心概念</span></a></li><li><a class="is-flex" id="toc-item-详解容器设计模式" href="#详解容器设计模式"><span>详解容器设计模式</span></a></li><li><a class="is-flex" id="toc-item-控制器模式" href="#控制器模式"><span>控制器模式</span></a></li><li><a class="is-flex" id="toc-item-四、架构设计" href="#四、架构设计"><span>四、架构设计</span></a></li><li><a class="is-flex" id="toc-item-操作演示-1" href="#操作演示-1"><span>操作演示</span></a></li><li><a class="is-flex" id="toc-item-ConfigMap-和-Secret" href="#ConfigMap-和-Secret"><span>ConfigMap 和 Secret</span></a></li><li><a class="is-flex" id="toc-item-课时9-应用存储和持久化数据卷：核心知识" href="#课时9-应用存储和持久化数据卷：核心知识"><span>课时9. 应用存储和持久化数据卷：核心知识</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-实践" href="#实践"><span>实践</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Kubectl-安装、启动" href="#Kubectl-安装、启动"><span>Kubectl 安装、启动</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Minikube" href="#Minikube"><span>Minikube</span></a></li><li><a class="is-flex" id="toc-item-Mac" href="#Mac"><span>Mac</span></a></li><li><a class="is-flex" id="toc-item-停止k8s" href="#停止k8s"><span>停止k8s</span></a></li><li><a class="is-flex" id="toc-item-demo" href="#demo"><span>demo</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-工具" href="#工具"><span>工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-配置高效的-Kubernetes-命令行终端" href="#配置高效的-Kubernetes-命令行终端"><span>*配置高效的 Kubernetes 命令行终端</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-1-自动补全" href="#1-自动补全"><span>1. *自动补全</span></a></li><li><a class="is-flex" id="toc-item-2-环境切换和管理-kubectx" href="#2-环境切换和管理-kubectx"><span>2. 环境切换和管理 - kubectx</span></a></li><li><a class="is-flex" id="toc-item-3-将当前环境显示在命令中-kube-ps1" href="#3-将当前环境显示在命令中-kube-ps1"><span>3. 将当前环境显示在命令中 - kube-ps1</span></a></li><li><a class="is-flex" id="toc-item-4-交互式命令-kube-prompt" href="#4-交互式命令-kube-prompt"><span>4. 交互式命令 - kube-prompt</span></a></li><li><a class="is-flex" id="toc-item-5-Kubectl-Aliases" href="#5-Kubectl-Aliases"><span>5.Kubectl Aliases</span></a></li><li><a class="is-flex" id="toc-item-Kubeval、Kubens" href="#Kubeval、Kubens"><span>Kubeval、Kubens</span></a></li><li><a class="is-flex" id="toc-item-参考" href="#参考"><span>参考</span></a></li><li><a class="is-flex" id="toc-item-lens" href="#lens"><span>lens</span></a></li><li><a class="is-flex" id="toc-item-python-Official-Python-client-library-for-kubernetes" href="#python-Official-Python-client-library-for-kubernetes"><span>python: Official Python client library for kubernetes</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-其他" href="#其他"><span>其他</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？" href="#Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？"><span>Minikube、kubeadm、Kubespray、Kops等Kubernetes部署工具该如何选择？</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

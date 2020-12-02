@@ -1,0 +1,590 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>04 guava - zronghui的博客</title><meta description="[toc]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[toc]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-02-09T02:04:30.000Z"><meta property="article:modified_time" content="2020-05-12T14:34:39.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-02-09T02:04:30.000Z","dateModified":"2020-05-12T14:34:39.000Z","author":{"@type":"Person","name":"removeif"},"description":"[toc]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-02-09T02:04:30.000Z">2020-02-09</time><a class="commentCountImg" href="/java/module%20test/04-guava.html#comment-container"><span class="display-none-class">f28332efc351ef030d91ab9d4ba2db28</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="f28332efc351ef030d91ab9d4ba2db28"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/java/">java</a><span> / </span><a class="link-muted" href="/categories/java/module-test/">module test</a></span><span class="level-item">30 minutes 读完 (大约 4492 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">04 guava</h1><div class="content"><p>[toc]</p>
+<a id="more"></a>
+
+
+
+<p><a href="http://ifeve.com/google-guava/">Google Guava官方教程（中文版） | 并发编程网 – ifeve.com</a><br><a href="https://www.yiibai.com/guava">Guava教程™</a></p>
+<h2 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.google.guava<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>guava<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>28.2-jre<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Optional"><a href="#Optional" class="headerlink" title="Optional"></a>Optional</h2><p>Optional 被 Java 自带的替代</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> guava;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">aOptional</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(aOptional<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(Optional&lt;Integer&gt; a, Optional&lt;Integer&gt; b)</span> </span>&#123;</span><br><span class="line">        logger.info(String.valueOf(a.isPresent()));</span><br><span class="line">        logger.info(String.valueOf(b.isPresent()));</span><br><span class="line">        logger.info(String.valueOf(a.orElse(<span class="number">0</span>) + b.orElse(<span class="number">0</span>)));</span><br><span class="line">        <span class="comment">// 获取值</span></span><br><span class="line">        <span class="comment">// a.get()   a 为 null 报错</span></span><br><span class="line">        <span class="comment">// a.orElse(x)   a 为 null 返回 x</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 构造</span></span><br><span class="line">        <span class="comment">// Optional.empty()</span></span><br><span class="line">        <span class="comment">// Optional.of(x)</span></span><br><span class="line">        <span class="comment">// Optional.ofNullable(x)  若为 null，返回代表 null 的 Optional : Optional.empty()</span></span><br><span class="line">        Optional&lt;Integer&gt; a = Optional.ofNullable(<span class="number">10</span>);</span><br><span class="line">        Optional&lt;Integer&gt; b = Optional.of(<span class="number">10</span>);</span><br><span class="line">        add(a, b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Preconditions"><a href="#Preconditions" class="headerlink" title="Preconditions"></a>Preconditions</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> guava;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.base.Preconditions;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Preconditions.checkArgument</span></span><br><span class="line"><span class="comment">// Preconditions.checkNotNull</span></span><br><span class="line"><span class="comment">// Preconditions.checkElementIndex</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">bPreconditions</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Logger logger = LoggerFactory.getLogger(bPreconditions<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">sqrt</span><span class="params">(<span class="keyword">double</span> input)</span> <span class="keyword">throws</span> IllegalArgumentException </span>&#123;</span><br><span class="line">        Preconditions.checkArgument(input &gt; <span class="number">0.0</span>,</span><br><span class="line">                <span class="string">"Illegal Argument passed: Negative value %s."</span>, input);</span><br><span class="line">        <span class="keyword">return</span> Math.sqrt(input);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">sum</span><span class="params">(Integer a, Integer b)</span> </span>&#123;</span><br><span class="line">        a = Preconditions.checkNotNull(a,</span><br><span class="line">                <span class="string">"Illegal Argument passed: First parameter is Null."</span>);</span><br><span class="line">        b = Preconditions.checkNotNull(b,</span><br><span class="line">                <span class="string">"Illegal Argument passed: Second parameter is Null."</span>);</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">getValue</span><span class="params">(<span class="keyword">int</span> input)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] data = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>&#125;;</span><br><span class="line">        Preconditions.checkElementIndex(input, data.length,</span><br><span class="line">                <span class="string">"Illegal Argument passed: Invalid index."</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(sqrt(-<span class="number">3.0</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IllegalArgumentException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(sum(<span class="keyword">null</span>, <span class="number">3</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NullPointerException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(getValue(<span class="number">6</span>));</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IndexOutOfBoundsException e) &#123;</span><br><span class="line">            System.out.println(e.getMessage());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Guava-Ordering类"><a href="#Guava-Ordering类" class="headerlink" title="Guava Ordering类"></a>Guava Ordering类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> guava;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.Ordering;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collection;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">cOrdering</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ArrayList&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        Collections.addAll(integers, <span class="number">6</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">7</span>, <span class="number">9</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// sort</span></span><br><span class="line">        Ordering&lt;Comparable&gt; ordering = Ordering.natural();</span><br><span class="line">        Collections.sort(integers, ordering);</span><br><span class="line">        <span class="comment">// reverse sort</span></span><br><span class="line">        Collections.sort(integers, ordering.reverse());</span><br><span class="line">        <span class="comment">// isOrdered</span></span><br><span class="line">        System.out.println(ordering.reverse().isOrdered(integers));</span><br><span class="line"></span><br><span class="line">        System.out.println(integers);</span><br><span class="line">        System.out.println(Collections.max(integers));</span><br><span class="line">        System.out.println(Collections.min(integers));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// max min</span></span><br><span class="line">        System.out.println(ordering.max(integers));</span><br><span class="line">        System.out.println(ordering.min(integers));</span><br><span class="line"></span><br><span class="line">        integers.add(<span class="keyword">null</span>);</span><br><span class="line">        <span class="comment">// nullsFirst nullsLast</span></span><br><span class="line">        Collections.sort(integers, ordering.reverse().nullsFirst());</span><br><span class="line">        System.out.println(integers);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Guava-Objects类"><a href="#Guava-Objects类" class="headerlink" title="Guava Objects类"></a>Guava Objects类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> guava;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.base.Objects;</span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.ComparisonChain;</span><br><span class="line"><span class="keyword">import</span> lombok.Data;</span><br><span class="line"><span class="keyword">import</span> lombok.Getter;</span><br><span class="line"><span class="keyword">import</span> lombok.Setter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">dObjects</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Setter</span></span><br><span class="line"><span class="meta">@Getter</span></span><br><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == o) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (o == <span class="keyword">null</span> || getClass() != o.getClass()) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        Student student = (Student) o;</span><br><span class="line">        <span class="keyword">return</span> id == student.id &amp;&amp;</span><br><span class="line">                Objects.equal(name, student.name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Objects.hashCode(field-1, field-2, …, field-n)</span></span><br><span class="line">        <span class="keyword">return</span> Objects.hashCode(id, name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student o)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ComparisonChain.start()</span><br><span class="line">                .compare(<span class="keyword">this</span>.name, o.name)</span><br><span class="line">                .compare(<span class="keyword">this</span>.id, o.id)</span><br><span class="line">                .result();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Guava集合工具"><a href="#Guava集合工具" class="headerlink" title="Guava集合工具"></a>Guava集合工具</h2><h3 id="不可变集合"><a href="#不可变集合" class="headerlink" title="不可变集合"></a>不可变集合</h3><p>不可变集合可以用如下多种方式创建：</p>
+<ul>
+<li>copyOf方法，如ImmutableSet.copyOf(set);</li>
+<li>of方法，如ImmutableSet.of(“a”, “b”, “c”)或 ImmutableMap.of(“a”, 1, “b”, 2);</li>
+<li>Builder工具</li>
+</ul>
+<p>细节：关联可变集合和不可变集合</p>
+<table>
+<thead>
+<tr>
+<th><strong>可变集合接口</strong></th>
+<th><strong>属于**</strong>JDK<strong><strong>还是</strong></strong>Guava**</th>
+<th><strong>不可变版本</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Collection</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableCollection.html"><code>ImmutableCollection</code></a></td>
+</tr>
+<tr>
+<td>List</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableList.html"><code>ImmutableList</code></a></td>
+</tr>
+<tr>
+<td>Set</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableSet.html"><code>ImmutableSet</code></a></td>
+</tr>
+<tr>
+<td>SortedSet/NavigableSet</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableSortedSet.html"><code>ImmutableSortedSet</code></a></td>
+</tr>
+<tr>
+<td>Map</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableMap.html"><code>ImmutableMap</code></a></td>
+</tr>
+<tr>
+<td>SortedMap</td>
+<td>JDK</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableSortedMap.html"><code>ImmutableSortedMap</code></a></td>
+</tr>
+<tr>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#Multiset">Multiset</a></td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableMultiset.html"><code>ImmutableMultiset</code></a></td>
+</tr>
+<tr>
+<td>SortedMultiset</td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/ImmutableSortedMultiset.html"><code>ImmutableSortedMultiset</code></a></td>
+</tr>
+<tr>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#Multimap">Multimap</a></td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableMultimap.html"><code>ImmutableMultimap</code></a></td>
+</tr>
+<tr>
+<td>ListMultimap</td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableListMultimap.html"><code>ImmutableListMultimap</code></a></td>
+</tr>
+<tr>
+<td>SetMultimap</td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableSetMultimap.html"><code>ImmutableSetMultimap</code></a></td>
+</tr>
+<tr>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#BiMap">BiMap</a></td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableBiMap.html"><code>ImmutableBiMap</code></a></td>
+</tr>
+<tr>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#ClassToInstanceMap">ClassToInstanceMap</a></td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableClassToInstanceMap.html"><code>ImmutableClassToInstanceMap</code></a></td>
+</tr>
+<tr>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#Table">Table</a></td>
+<td>Guava</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/ImmutableTable.html"><code>ImmutableTable</code></a></td>
+</tr>
+</tbody></table>
+<h3 id="Guava-Multiset接口"><a href="#Guava-Multiset接口" class="headerlink" title="Guava Multiset接口"></a>Guava Multiset接口</h3><p>允许 set 重复，并统计每个值的次数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.HashMultiset;</span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.Multiset;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GuavaTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      <span class="comment">// HashMultiset.create()</span></span><br><span class="line">      Multiset&lt;String&gt; multiset = HashMultiset.create();</span><br><span class="line">      multiset.add(<span class="string">"a"</span>);</span><br><span class="line">      multiset.add(<span class="string">"b"</span>);</span><br><span class="line">      multiset.add(<span class="string">"c"</span>);</span><br><span class="line">      multiset.add(<span class="string">"d"</span>);</span><br><span class="line">      multiset.add(<span class="string">"a"</span>);</span><br><span class="line">      multiset.add(<span class="string">"b"</span>);</span><br><span class="line">      multiset.add(<span class="string">"c"</span>);</span><br><span class="line">      multiset.add(<span class="string">"b"</span>);</span><br><span class="line">      multiset.add(<span class="string">"b"</span>);</span><br><span class="line">      multiset.add(<span class="string">"b"</span>);</span><br><span class="line">      <span class="comment">// multiset.count("b")  multiset.size()   multiset.elementSet()</span></span><br><span class="line">      System.out.println(<span class="string">"Occurrence of 'b' : "</span>+multiset.count(<span class="string">"b"</span>));</span><br><span class="line">      System.out.println(<span class="string">"Total Size : "</span>+multiset.size());</span><br><span class="line">      Set&lt;String&gt; set = multiset.elementSet();</span><br><span class="line">      System.out.println(<span class="string">"Set ["</span>);</span><br><span class="line">      <span class="keyword">for</span> (String s : set) &#123;			</span><br><span class="line">         System.out.println(s);		    </span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"]"</span>);</span><br><span class="line">      <span class="comment">//display all the elements of the multiset using iterator</span></span><br><span class="line">      Iterator&lt;String&gt; iterator  = multiset.iterator();</span><br><span class="line">      System.out.println(<span class="string">"MultiSet ["</span>);</span><br><span class="line">      <span class="keyword">while</span>(iterator.hasNext())&#123;</span><br><span class="line">         System.out.println(iterator.next());</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"]"</span>);		</span><br><span class="line">      <span class="comment">//display the distinct elements of the multiset with their occurrence count</span></span><br><span class="line">      System.out.println(<span class="string">"MultiSet ["</span>);</span><br><span class="line">      <span class="keyword">for</span> (Multiset.Entry&lt;String&gt; entry : multiset.entrySet())</span><br><span class="line">      &#123;</span><br><span class="line">         System.out.println(<span class="string">"Element: "</span>+entry.getElement() +<span class="string">", Occurrence(s): "</span> + entry.getCount());		    </span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println(<span class="string">"]"</span>);		</span><br><span class="line"></span><br><span class="line">      <span class="comment">//remove extra occurrences </span></span><br><span class="line">      multiset.remove(<span class="string">"b"</span>,<span class="number">2</span>);</span><br><span class="line">      <span class="comment">//print the occurrence of an element</span></span><br><span class="line">      System.out.println(<span class="string">"Occurence of 'b' : "</span>+multiset.count(<span class="string">"b"</span>));</span><br><span class="line">   &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Guava-Bimap接口"><a href="#Guava-Bimap接口" class="headerlink" title="Guava Bimap接口"></a>Guava Bimap接口</h3><p>可以 inverse，获得 value: key 的 map</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.google.common.collect.BiMap;</span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.HashBiMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GuavaTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      BiMap&lt;Integer, String&gt; empIDNameMap = HashBiMap.create();</span><br><span class="line"></span><br><span class="line">      empIDNameMap.put(<span class="keyword">new</span> Integer(<span class="number">101</span>), <span class="string">"Mahesh"</span>);</span><br><span class="line">      empIDNameMap.put(<span class="keyword">new</span> Integer(<span class="number">102</span>), <span class="string">"Sohan"</span>);</span><br><span class="line">      empIDNameMap.put(<span class="keyword">new</span> Integer(<span class="number">103</span>), <span class="string">"Ramesh"</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//Emp Id of Employee "Mahesh"</span></span><br><span class="line">      System.out.println(empIDNameMap.inverse().get(<span class="string">"Mahesh"</span>));</span><br><span class="line">   &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="BiMap的各种实现"><a href="#BiMap的各种实现" class="headerlink" title="BiMap的各种实现"></a>BiMap的各种实现</h4><table>
+<thead>
+<tr>
+<th><strong>键</strong>–值实现</th>
+<th><strong>值–</strong>键实现</th>
+<th>对应BiMap实现</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>HashMap</td>
+<td>HashMap</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/HashBiMap.html">HashBiMap</a></td>
+</tr>
+<tr>
+<td>ImmutableMap</td>
+<td>ImmutableMap</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/ImmutableBiMap.html">ImmutableBiMap</a></td>
+</tr>
+<tr>
+<td>EnumMap</td>
+<td>EnumMap</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/EnumBiMap.html">EnumBiMap</a></td>
+</tr>
+<tr>
+<td>EnumMap</td>
+<td>HashMap</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/EnumHashBiMap.html">EnumHashBiMap</a></td>
+</tr>
+</tbody></table>
+<h3 id="Guava-Table接口"><a href="#Guava-Table接口" class="headerlink" title="Guava Table接口"></a>Guava Table接口</h3><p>类似于 map 的 map，table(r, c, v)   (row, col, value)</p>
+<p>(r, c) 确定 value</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.HashBasedTable;</span><br><span class="line"><span class="keyword">import</span> com.google.common.collect.Table;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GuavaTester</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</span><br><span class="line">      <span class="comment">//Table&lt;R,C,V&gt; == Map&lt;R,Map&lt;C,V&gt;&gt;</span></span><br><span class="line">      <span class="comment">/*</span></span><br><span class="line"><span class="comment">      *  Company: IBM, Microsoft, TCS</span></span><br><span class="line"><span class="comment">      *  IBM 		-&gt; &#123;101:Mahesh, 102:Ramesh, 103:Suresh&#125;</span></span><br><span class="line"><span class="comment">      *  Microsoft 	-&gt; &#123;101:Sohan, 102:Mohan, 103:Rohan &#125; </span></span><br><span class="line"><span class="comment">      *  TCS 		-&gt; &#123;101:Ram, 102: Shyam, 103: Sunil &#125; </span></span><br><span class="line"><span class="comment">      * </span></span><br><span class="line"><span class="comment">      * */</span></span><br><span class="line">      <span class="comment">//create a table</span></span><br><span class="line">      Table&lt;String, String, String&gt; employeeTable = HashBasedTable.create();</span><br><span class="line"></span><br><span class="line">      <span class="comment">//initialize the table with employee details</span></span><br><span class="line">      employeeTable.put(<span class="string">"IBM"</span>, <span class="string">"101"</span>,<span class="string">"Mahesh"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"IBM"</span>, <span class="string">"102"</span>,<span class="string">"Ramesh"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"IBM"</span>, <span class="string">"103"</span>,<span class="string">"Suresh"</span>);</span><br><span class="line"></span><br><span class="line">      employeeTable.put(<span class="string">"Microsoft"</span>, <span class="string">"111"</span>,<span class="string">"Sohan"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"Microsoft"</span>, <span class="string">"112"</span>,<span class="string">"Mohan"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"Microsoft"</span>, <span class="string">"113"</span>,<span class="string">"Rohan"</span>);</span><br><span class="line"></span><br><span class="line">      employeeTable.put(<span class="string">"TCS"</span>, <span class="string">"121"</span>,<span class="string">"Ram"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"TCS"</span>, <span class="string">"122"</span>,<span class="string">"Shyam"</span>);</span><br><span class="line">      employeeTable.put(<span class="string">"TCS"</span>, <span class="string">"123"</span>,<span class="string">"Sunil"</span>);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//get Map corresponding to IBM</span></span><br><span class="line">      Map&lt;String,String&gt; ibmEmployees =  employeeTable.row(<span class="string">"IBM"</span>);</span><br><span class="line"></span><br><span class="line">      System.out.println(<span class="string">"List of IBM Employees"</span>);</span><br><span class="line">      <span class="keyword">for</span>(Map.Entry&lt;String, String&gt; entry : ibmEmployees.entrySet())&#123;</span><br><span class="line">         System.out.println(<span class="string">"Emp Id: "</span> + entry.getKey() + <span class="string">", Name: "</span> + entry.getValue());</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//get all the unique keys of the table</span></span><br><span class="line">      Set&lt;String&gt; employers = employeeTable.rowKeySet();</span><br><span class="line">      System.out.print(<span class="string">"Employers: "</span>);</span><br><span class="line">      <span class="keyword">for</span>(String employer: employers)&#123;</span><br><span class="line">         System.out.print(employer + <span class="string">" "</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      System.out.println();</span><br><span class="line"></span><br><span class="line">      <span class="comment">//get a Map corresponding to 102</span></span><br><span class="line">      Map&lt;String,String&gt; EmployerMap =  employeeTable.column(<span class="string">"102"</span>);</span><br><span class="line">      <span class="keyword">for</span>(Map.Entry&lt;String, String&gt; entry : EmployerMap.entrySet())&#123;</span><br><span class="line">         System.out.println(<span class="string">"Employer: "</span> + entry.getKey() + <span class="string">", Name: "</span> + entry.getValue());</span><br><span class="line">      &#125;		</span><br><span class="line">   &#125;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Multimap"><a href="#Multimap" class="headerlink" title="Multimap"></a>Multimap</h3><p>很少会直接使用Multimap接口，更多时候你会用ListMultimap或SetMultimap接口，它们分别把键映射到List或Set。</p>
+<h4 id="Multimap的各种实现"><a href="#Multimap的各种实现" class="headerlink" title="Multimap的各种实现"></a>Multimap的各种实现</h4><p>Multimap提供了多种形式的实现。在大多数要使用Map&lt;K, Collection<V>&gt;的地方，你都可以使用它们：</p>
+<table>
+<thead>
+<tr>
+<th><strong>实现</strong></th>
+<th><strong>键行为类似</strong></th>
+<th><strong>值行为类似</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/ArrayListMultimap.html">ArrayListMultimap</a></td>
+<td>HashMap</td>
+<td>ArrayList</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/HashMultimap.html">HashMultimap</a></td>
+<td>HashMap</td>
+<td>HashSet</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/LinkedListMultimap.html">LinkedListMultimap</a>*</td>
+<td>LinkedHashMap*</td>
+<td>LinkedList*</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/LinkedHashMultimap.html">LinkedHashMultimap</a>**</td>
+<td>LinkedHashMap</td>
+<td>LinkedHashMap</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/TreeMultimap.html">TreeMultimap</a></td>
+<td>TreeMap</td>
+<td>TreeSet</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/ImmutableListMultimap.html"><code>ImmutableListMultimap</code></a></td>
+<td>ImmutableMap</td>
+<td>ImmutableList</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/collect/ImmutableSetMultimap.html">ImmutableSetMultimap</a></td>
+<td>ImmutableMap</td>
+<td>ImmutableSet</td>
+</tr>
+</tbody></table>
+<h3 id="Guava-集合工具"><a href="#Guava-集合工具" class="headerlink" title="Guava 集合工具"></a>Guava 集合工具</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 用工厂方法模式，我们可以方便地在初始化时就指定起始元素。</span></span><br><span class="line">List theseElements = Lists.newArrayList(<span class="string">"alpha"</span>, <span class="string">"beta"</span>, <span class="string">"gamma"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此外，通过为工厂方法命名（Effective Java第一条），我们可以提高集合初始化大小的可读性：</span></span><br><span class="line">List&lt;Type&gt; exactly100 = Lists.newArrayListWithCapacity(<span class="number">100</span>);</span><br><span class="line">List&lt;Type&gt; approx100 = Lists.newArrayListWithExpectedSize(<span class="number">100</span>);</span><br><span class="line">Set&lt;Type&gt; approx100Set = Sets.newHashSetWithExpectedSize(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Iterables</span></span><br><span class="line">Iterable&lt;Integer&gt; concatenated = Iterables.concat(</span><br><span class="line">        Ints.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>),</span><br><span class="line">        Ints.asList(<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)); <span class="comment">// concatenated包括元素 1, 2, 3, 4, 5, 6</span></span><br><span class="line">String lastAdded = Iterables.getLast(myLinkedHashSet);</span><br><span class="line">String theElement = Iterables.getOnlyElement(thisSetIsDefinitelyASingleton);</span><br><span class="line"></span><br><span class="line">List countUp = Ints.asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// 注: 如果List是不可变的，考虑改用ImmutableList.reverse()。</span></span><br><span class="line">List countDown = Lists.reverse(theList); <span class="comment">// &#123;5, 4, 3, 2, 1&#125;</span></span><br><span class="line">List&lt;List&gt; parts = Lists.partition(countUp, <span class="number">2</span>);<span class="comment">//&#123;&#123;1,2&#125;, &#123;3,4&#125;, &#123;5&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">Set&lt;String&gt; wordsWithPrimeLength = ImmutableSet.of(<span class="string">"one"</span>, <span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"six"</span>, <span class="string">"seven"</span>, <span class="string">"eight"</span>);</span><br><span class="line">Set&lt;String&gt; primes = ImmutableSet.of(<span class="string">"two"</span>, <span class="string">"three"</span>, <span class="string">"five"</span>, <span class="string">"seven"</span>);</span><br><span class="line">SetView&lt;String&gt; intersection = Sets.intersection(primes,wordsWithPrimeLength);</span><br><span class="line"><span class="comment">// intersection包含"two", "three", "seven"</span></span><br><span class="line"></span><br><span class="line">Map&lt;String, Integer&gt; map = ImmutableMap.of(<span class="string">"a"</span>, <span class="number">1</span>, <span class="string">"b"</span>, <span class="number">1</span>, <span class="string">"c"</span>, <span class="number">2</span>);</span><br><span class="line">SetMultimap&lt;String, Integer&gt; multimap = Multimaps.forMap(map);</span><br><span class="line"><span class="comment">// multimap：["a" =&gt; &#123;1&#125;, "b" =&gt; &#123;1&#125;, "c" =&gt; &#123;2&#125;]</span></span><br><span class="line">Multimap&lt;Integer, String&gt; inverse = Multimaps.invertFrom(multimap, HashMultimap&lt;Integer, String&gt;.create());</span><br><span class="line"><span class="comment">// inverse：[1 =&gt; &#123;"a","b"&#125;, 2 =&gt; &#123;"c"&#125;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Iterables-常规方法"><a href="#Iterables-常规方法" class="headerlink" title="Iterables 常规方法"></a>Iterables 常规方法</h4><table>
+<thead>
+<tr>
+<th align="left"><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#concat(java.lang.Iterable)"><code>concat(Iterable)</code></a></th>
+<th>串联多个iterables的懒视图*</th>
+<th><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#concat(java.lang.Iterable...)"><code>concat(Iterable...)</code></a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[<code>frequency(Iterable, Object)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#frequency">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#frequency</a>(java.lang.Iterable, java.lang.Object))</td>
+<td>返回对象在iterable中出现的次数</td>
+<td>与Collections.frequency (Collection,  Object)比较；``<a href="http://code.google.com/p/guava-libraries/wiki/NewCollectionTypesExplained#Multiset">Multiset</a></td>
+</tr>
+<tr>
+<td align="left">[<code>partition(Iterable, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#partition">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#partition</a>(java.lang.Iterable, int))</td>
+<td>把iterable按指定大小分割，得到的子集都不能进行修改操作</td>
+<td>[<code>Lists.partition(List, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Lists.html#partition">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Lists.html#partition</a>(java.util.List, int))；[<code>paddedPartition(Iterable, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#paddedPartition">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#paddedPartition</a>(java.lang.Iterable, int))</td>
+</tr>
+<tr>
+<td align="left">[<code>getFirst(Iterable, T default)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getFirst">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getFirst</a>(java.lang.Iterable, T))</td>
+<td>返回iterable的第一个元素，若iterable为空则返回默认值</td>
+<td>与Iterable.iterator(). next()比较;<a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#first()"><code>FluentIterable.first()</code></a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getLast(java.lang.Iterable)"><code>getLast(Iterable)</code></a></td>
+<td>返回iterable的最后一个元素，若iterable为空则抛出NoSuchElementException</td>
+<td>[<code>getLast(Iterable, T default)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getLast">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getLast</a>(java.lang.Iterable, T))； <a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#last()"><code>FluentIterable.last()</code></a></td>
+</tr>
+<tr>
+<td align="left">[<code>elementsEqual(Iterable, Iterable)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#elementsEqual">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#elementsEqual</a>(java.lang.Iterable, java.lang.Iterable))</td>
+<td>如果两个iterable中的所有元素相等且顺序一致，返回true</td>
+<td>与List.equals(Object)比较</td>
+</tr>
+<tr>
+<td align="left"><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#unmodifiableIterable(java.lang.Iterable)"><code>unmodifiableIterable(Iterable)</code></a></td>
+<td>返回iterable的不可变视图</td>
+<td>与Collections. unmodifiableCollection(Collection)比较</td>
+</tr>
+<tr>
+<td align="left">[<code>limit(Iterable, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#limit">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#limit</a>(java.lang.Iterable, int))</td>
+<td>限制iterable的元素个数限制给定值</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#limit(int)"><code>FluentIterable.limit(int)</code></a></td>
+</tr>
+<tr>
+<td align="left"><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getOnlyElement(java.lang.Iterable)"><code>getOnlyElement(Iterable)</code></a></td>
+<td>获取iterable中唯一的元素，如果iterable为空或有多个元素，则快速失败</td>
+<td>[<code>getOnlyElement(Iterable, T default)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getOnlyElement">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#getOnlyElement</a>(java.lang.Iterable, T))</td>
+</tr>
+</tbody></table>
+<h4 id="与Collection方法相似的工具方法"><a href="#与Collection方法相似的工具方法" class="headerlink" title="与Collection方法相似的工具方法"></a>与Collection方法相似的工具方法</h4><p>通常来说，Collection的实现天然支持操作其他Collection，但却不能<strong>操作Iterable</strong>。</p>
+<p>下面的方法中，如果传入的Iterable是一个Collection实例，则实际操作将会委托给相应的Collection接口方法。例如，往Iterables.size方法传入是一个Collection实例，它不会真的遍历iterator获取大小，而是直接调用Collection.size。</p>
+<table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+<th><strong>类似的**</strong>Collection<strong>**方法</strong></th>
+<th><strong>等价的**</strong>FluentIterable<strong>**方法</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[<code>addAll(Collection addTo,  Iterable toAdd)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#addAll">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#addAll</a>(java.util.Collection, java.lang.Iterable))</td>
+<td>Collection.addAll(Collection)</td>
+<td></td>
+</tr>
+<tr>
+<td>[<code>contains(Iterable, Object)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#contains">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#contains</a>(java.lang.Iterable, java.lang.Object))</td>
+<td>Collection.contains(Object)</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#contains(java.lang.Object)"><code>FluentIterable.contains(Object)</code></a></td>
+</tr>
+<tr>
+<td>[<code>removeAll(Iterable  removeFrom, Collection toRemove)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#removeAll">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#removeAll</a>(java.lang.Iterable, java.util.Collection))</td>
+<td>Collection.removeAll(Collection)</td>
+<td></td>
+</tr>
+<tr>
+<td>[<code>retainAll(Iterable  removeFrom, Collection toRetain)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#retainAll">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#retainAll</a>(java.lang.Iterable, java.util.Collection))</td>
+<td>Collection.retainAll(Collection)</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#size(java.lang.Iterable)"><code>size(Iterable)</code></a></td>
+<td>Collection.size()</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#size()"><code>FluentIterable.size()</code></a></td>
+</tr>
+<tr>
+<td>[<code>toArray(Iterable, Class)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#toArray">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#toArray</a>(java.lang.Iterable, java.lang.Class))</td>
+<td>Collection.toArray(T[])</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#toArray(java.lang.Class)"><code>FluentIterable.toArray(Class)</code></a></td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#isEmpty(java.lang.Iterable)"><code>isEmpty(Iterable)</code></a></td>
+<td>Collection.isEmpty()</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#isEmpty()"><code>FluentIterable.isEmpty()</code></a></td>
+</tr>
+<tr>
+<td>[<code>get(Iterable, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#get">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#get</a>(java.lang.Iterable, int))</td>
+<td>List.get(int)</td>
+<td>[<code>FluentIterable.get(int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-">http://docs.guava-libraries.googlecode.com/git-</a> history/release12/javadoc/com/google/common/collect/FluentIterable.html#get(int))</td>
+</tr>
+<tr>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#toString(java.lang.Iterable)"><code>toString(Iterable)</code></a></td>
+<td>Collection.toString()</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release12/javadoc/com/google/common/collect/FluentIterable.html#toString()"><code>FluentIterable.toString()</code></a></td>
+</tr>
+</tbody></table>
+<h4 id="Sets"><a href="#Sets" class="headerlink" title="Sets"></a>Sets</h4><table>
+<thead>
+<tr>
+<th><strong>方法</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[<code>union(Set, Set)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#union">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#union</a>(java.util.Set, java.util.Set))</td>
+</tr>
+<tr>
+<td>[<code>intersection(Set, Set)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#intersection">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#intersection</a>(java.util.Set, java.util.Set))</td>
+</tr>
+<tr>
+<td>[<code>difference(Set, Set)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#difference">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#difference</a>(java.util.Set, java.util.Set))</td>
+</tr>
+<tr>
+<td>[<code>symmetricDifference(Set,  Set)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#symmetricDifference">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Sets.html#symmetricDifference</a>(java.util.Set, java.util.Set))</td>
+</tr>
+</tbody></table>
+<h2 id="Guava缓存工具"><a href="#Guava缓存工具" class="headerlink" title="Guava缓存工具"></a>Guava缓存工具</h2><p>暂时用不到</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Guava字符串工具"><a href="#Guava字符串工具" class="headerlink" title="Guava字符串工具"></a>Guava字符串工具</h2><h3 id="Guava-Joiner类"><a href="#Guava-Joiner类" class="headerlink" title="Guava Joiner类"></a>Guava Joiner类</h3><p>Joiner 提供了各种方法来处理字符串加入操作，对象等。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// useForNull(String) 给定某个字符串来替换null</span></span><br><span class="line"><span class="comment">// skipNulls() 直接忽略null</span></span><br><span class="line">Joiner joiner = Joiner.on(<span class="string">"; "</span>).skipNulls();</span><br><span class="line"><span class="keyword">return</span> joiner.join(<span class="string">"Harry"</span>, <span class="keyword">null</span>, <span class="string">"Ron"</span>, <span class="string">"Hermione"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Guava-Spiltter类"><a href="#Guava-Spiltter类" class="headerlink" title="Guava Spiltter类"></a>Guava Spiltter类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Splitter.on(<span class="string">','</span>)</span><br><span class="line">        .trimResults()</span><br><span class="line">        .omitEmptyStrings()</span><br><span class="line">        .split(<span class="string">"foo,bar,,   qux"</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Guava-CharMatcher类"><a href="#Guava-CharMatcher类" class="headerlink" title="Guava CharMatcher类"></a>Guava CharMatcher类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// only the digits</span></span><br><span class="line">System.out.println(CharMatcher.DIGIT.retainFrom(<span class="string">"mahesh123"</span>));</span><br><span class="line"><span class="comment">// trim whitespace at ends, and replace/collapse whitespace into single spaces</span></span><br><span class="line">System.out.println(CharMatcher.WHITESPACE.trimAndCollapseFrom(<span class="string">"     Mahesh     Parashar "</span>, <span class="string">' '</span>));</span><br><span class="line"><span class="comment">// star out all digits</span></span><br><span class="line">System.out.println(CharMatcher.JAVA_DIGIT.replaceFrom(<span class="string">"mahesh123"</span>, <span class="string">"*"</span>));</span><br><span class="line">System.out.println(CharMatcher.JAVA_DIGIT.or(CharMatcher.JAVA_LOWER_CASE).retainFrom(<span class="string">"mahesh123"</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Guava-CaseFormat类"><a href="#Guava-CaseFormat类" class="headerlink" title="Guava CaseFormat类"></a>Guava CaseFormat类</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Guava原语工具"><a href="#Guava原语工具" class="headerlink" title="Guava原语工具"></a>Guava原语工具</h2><p>Java的原生类型就是指基本类型：byte、short、int、long、float、double、char和boolean。</p>
+<p>原生类型数组是处理原生类型集合的最有效方式（从内存和性能双方面考虑）。Guava为此提供了许多工具方法。</p>
+<table>
+<thead>
+<tr>
+<th><strong>方法签名</strong></th>
+<th><strong>描述</strong></th>
+<th><strong>类似方法</strong></th>
+<th><strong>可用性</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>List<Wrapper> asList(prim… backingArray)</td>
+<td>把数组转为相应包装类的List</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Arrays.html#asList(T...)">Arrays.asList</a></td>
+<td>符号无关*</td>
+</tr>
+<tr>
+<td>prim[] toArray(Collection<Wrapper> collection)</td>
+<td>把集合拷贝为数组，和collection.toArray()一样线程安全</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html#toArray()">Collection.toArray()</a></td>
+<td>符号无关</td>
+</tr>
+<tr>
+<td>prim[] concat(prim[]… arrays)</td>
+<td>串联多个原生类型数组</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Iterables.html#concat(java.lang.Iterable...)">Iterables.concat</a></td>
+<td>符号无关</td>
+</tr>
+<tr>
+<td>boolean contains(prim[] array, prim target)</td>
+<td>判断原生类型数组是否包含给定值</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Collection.html#contains(java.lang.Object)">Collection.contains</a></td>
+<td>符号无关</td>
+</tr>
+<tr>
+<td>int indexOf(prim[] array, prim target)</td>
+<td>给定值在数组中首次出现处的索引，若不包含此值返回-1</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html#indexOf(java.lang.Object)">List.indexOf</a></td>
+<td>符号无关</td>
+</tr>
+<tr>
+<td>int lastIndexOf(prim[] array, prim target)</td>
+<td>给定值在数组最后出现的索引，若不包含此值返回-1</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/List.html#lastIndexOf(java.lang.Object)">List.lastIndexOf</a></td>
+<td>符号无关</td>
+</tr>
+<tr>
+<td>prim min(prim… array)</td>
+<td>数组中最小的值</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#min(java.util.Collection)">Collections.min</a></td>
+<td>符号相关*</td>
+</tr>
+<tr>
+<td>prim max(prim… array)</td>
+<td>数组中最大的值</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/util/Collections.html#max(java.util.Collection)">Collections.max</a></td>
+<td>符号相关</td>
+</tr>
+<tr>
+<td>String join(String separator, prim… array)</td>
+<td>把数组用给定分隔符连接为字符串</td>
+<td><a href="http://code.google.com/p/guava-libraries/wiki/StringsExplained#Joiner">Joiner.on(separator).join</a></td>
+<td>符号相关</td>
+</tr>
+<tr>
+<td>Comparator&lt;prim[]&gt;  lexicographicalComparator()</td>
+<td>按字典序比较原生类型数组的Comparator</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/collect/Ordering.html#lexicographical()">Ordering.natural().lexicographical()</a></td>
+<td>符号相关</td>
+</tr>
+</tbody></table>
+<p>*符号无关方法存在于Bytes, Shorts, Ints, Longs, Floats, Doubles, Chars, Booleans。而UnsignedInts, UnsignedLongs, SignedBytes, 或UnsignedBytes不存在。</p>
+<p>*符号相关方法存在于SignedBytes, UnsignedBytes, Shorts, Ints, Longs, Floats, Doubles, Chars, Booleans, UnsignedInts, UnsignedLongs。而Bytes不存在。</p>
+<h3 id="Guava-Ints类"><a href="#Guava-Ints类" class="headerlink" title="Guava Ints类"></a>Guava Ints类</h3><table>
+<thead>
+<tr>
+<th>方法及说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>static int compare(int a, int b)</strong>              比较两个指定的int值。</td>
+</tr>
+<tr>
+<td><strong>static boolean contains(int[] array, int target)</strong>              返回true，如果target是否存在在任何地方数组元素。</td>
+</tr>
+<tr>
+<td><strong>static int[] ensureCapacity(int[] array, int minLength, int padding)</strong>              返回一个包含相同的值数组的数组，但保证是一个规定的最小长度。</td>
+</tr>
+<tr>
+<td><strong>static String join(String separator, int… array)</strong>              返回包含由分离器分离所提供的整型值的字符串。</td>
+</tr>
+<tr>
+<td><strong>static int saturatedCast(long value)</strong>              返回最接近的int值。</td>
+</tr>
+<tr>
+<td><strong>static Converter stringConverter()</strong>              返回使用字符串和整数之间的一个转换器序列化对象 Integer.decode(java.lang.String) 和 Integer.toString().</td>
+</tr>
+<tr>
+<td><strong>static int[] toArray(Collection collection)</strong>              返回包含集合的每个值的数组，转换为int值的方式Number.intValue().</td>
+</tr>
+<tr>
+<td><strong>static Integer tryParse(String string)</strong>              解析指定的字符串作为符号十进制整数。</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Guava数学工具"><a href="#Guava数学工具" class="headerlink" title="Guava数学工具"></a>Guava数学工具</h2><p>Guava还另外提供了一些有用的运算函数</p>
+<table>
+<thead>
+<tr>
+<th><strong>运算</strong></th>
+<th><strong>IntMath</strong></th>
+<th><strong>LongMath</strong></th>
+<th><strong>BigIntegerMath*****</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>最大公约数</td>
+<td>[<code>gcd(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#gcd">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#gcd</a>(int, int))</td>
+<td>[<code>gcd(long, long)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#gcd">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#gcd</a>(long, long))</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html#gcd(java.math.BigInteger)"><code>BigInteger.gcd(BigInteger)</code></a></td>
+</tr>
+<tr>
+<td>取模</td>
+<td>[<code>mod(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#mod">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#mod</a>(int, int))</td>
+<td>[<code>mod(long, long)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#mod">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#mod</a>(long, long))</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html#mod(java.math.BigInteger)"><code>BigInteger.mod(BigInteger)</code></a></td>
+</tr>
+<tr>
+<td>取幂</td>
+<td>[<code>pow(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#pow">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#pow</a>(int, int))</td>
+<td>[<code>pow(long, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#pow">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#pow</a>(long, int))</td>
+<td><a href="http://docs.oracle.com/javase/6/docs/api/java/math/BigInteger.html#pow(int)"><code>BigInteger.pow(int)</code></a></td>
+</tr>
+<tr>
+<td>是否2的幂</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#isPowerOfTwo(int)"><code>isPowerOfTwo(int)</code></a></td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#isPowerOfTwo(long)"><code>isPowerOfTwo(long)</code></a></td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/BigIntegerMath.html#isPowerOfTwo(java.math.BigInteger)"><code>isPowerOfTwo(BigInteger)</code></a></td>
+</tr>
+<tr>
+<td>阶乘*</td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#factorial(int)"><code>factorial(int)</code></a></td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#factorial(int)"><code>factorial(int)</code></a></td>
+<td><a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/BigIntegerMath.html#factorial(int)"><code>factorial(int)</code></a></td>
+</tr>
+<tr>
+<td>二项式系数*</td>
+<td>[<code>binomial(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#binomial">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/IntMath.html#binomial</a>(int, int))</td>
+<td>[<code>binomial(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#binomial">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/LongMath.html#binomial</a>(int, int))</td>
+<td>[<code>binomial(int, int)</code>](<a href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/BigIntegerMath.html#binomial">http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/com/google/common/math/BigIntegerMath.html#binomial</a>(int, int))</td>
+</tr>
+</tbody></table>
+<p>​                        </p>
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/java/module%20test/04-guava.html">04 guava</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/java/module%20test/04-guava.html">https://zronghui.github.io/java/module test/04-guava.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/java/module%20test/05-Apache-Commons.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">05 Apache Commons</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/java/module%20test/03-junit.html"><span class="level-item">03 junit</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: 'f28332efc351ef030d91ab9d4ba2db28',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-maven" href="#maven"><span>maven</span></a></li><li><a class="is-flex" id="toc-item-Optional" href="#Optional"><span>Optional</span></a></li><li><a class="is-flex" id="toc-item-Preconditions" href="#Preconditions"><span>Preconditions</span></a></li><li><a class="is-flex" id="toc-item-Guava-Ordering类" href="#Guava-Ordering类"><span>Guava Ordering类</span></a></li><li><a class="is-flex" id="toc-item-Guava-Objects类" href="#Guava-Objects类"><span>Guava Objects类</span></a></li><li><a class="is-flex" id="toc-item-Guava集合工具" href="#Guava集合工具"><span>Guava集合工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-不可变集合" href="#不可变集合"><span>不可变集合</span></a></li><li><a class="is-flex" id="toc-item-Guava-Multiset接口" href="#Guava-Multiset接口"><span>Guava Multiset接口</span></a></li><li><a class="is-flex" id="toc-item-Guava-Bimap接口" href="#Guava-Bimap接口"><span>Guava Bimap接口</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-BiMap的各种实现" href="#BiMap的各种实现"><span>BiMap的各种实现</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Guava-Table接口" href="#Guava-Table接口"><span>Guava Table接口</span></a></li><li><a class="is-flex" id="toc-item-Multimap" href="#Multimap"><span>Multimap</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Multimap的各种实现" href="#Multimap的各种实现"><span>Multimap的各种实现</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Guava-集合工具" href="#Guava-集合工具"><span>Guava 集合工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Iterables-常规方法" href="#Iterables-常规方法"><span>Iterables 常规方法</span></a></li><li><a class="is-flex" id="toc-item-与Collection方法相似的工具方法" href="#与Collection方法相似的工具方法"><span>与Collection方法相似的工具方法</span></a></li><li><a class="is-flex" id="toc-item-Sets" href="#Sets"><span>Sets</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-Guava缓存工具" href="#Guava缓存工具"><span>Guava缓存工具</span></a></li><li><a class="is-flex" id="toc-item-Guava字符串工具" href="#Guava字符串工具"><span>Guava字符串工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Guava-Joiner类" href="#Guava-Joiner类"><span>Guava Joiner类</span></a></li><li><a class="is-flex" id="toc-item-Guava-Spiltter类" href="#Guava-Spiltter类"><span>Guava Spiltter类</span></a></li><li><a class="is-flex" id="toc-item-Guava-CharMatcher类" href="#Guava-CharMatcher类"><span>Guava CharMatcher类</span></a></li><li><a class="is-flex" id="toc-item-Guava-CaseFormat类" href="#Guava-CaseFormat类"><span>Guava CaseFormat类</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Guava原语工具" href="#Guava原语工具"><span>Guava原语工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Guava-Ints类" href="#Guava-Ints类"><span>Guava Ints类</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Guava数学工具" href="#Guava数学工具"><span>Guava数学工具</span></a></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

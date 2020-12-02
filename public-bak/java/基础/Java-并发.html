@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java 并发 - zronghui的博客</title><meta description="CS-Notes"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="CS-Notes"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-01-26T02:01:33.000Z"><meta property="article:modified_time" content="2020-05-12T14:34:39.000Z"><meta property="article:author" content="removeif"><meta property="article:tag" content="Java"><meta property="article:tag" content="并发"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-01-26T02:01:33.000Z","dateModified":"2020-05-12T14:34:39.000Z","author":{"@type":"Person","name":"removeif"},"description":"CS-Notes"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-01-26T02:01:33.000Z">2020-01-26</time><a class="commentCountImg" href="/java/%E5%9F%BA%E7%A1%80/Java-%E5%B9%B6%E5%8F%91.html#comment-container"><span class="display-none-class">38419de8f0d6831e325bf08d6cb27b05</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="38419de8f0d6831e325bf08d6cb27b05"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/java/">java</a><span> / </span><a class="link-muted" href="/categories/java/%E5%9F%BA%E7%A1%80/">基础</a></span><span class="level-item">20 minutes 读完 (大约 2944 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Java 并发</h1><div class="content"><p><a href="https://cyc2018.github.io/CS-Notes/#/notes/Java%20%E5%B9%B6%E5%8F%91">CS-Notes</a></p>
+<a id="more"></a>
+
+
+
+<ul>
+<li><p>[一、使用线程](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=一、使用线程)</p>
+</li>
+<li><ul>
+<li><p>[实现 Runnable 接口](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=实现-runnable-接口)</p>
+</li>
+<li><p>[实现 Callable 接口](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=实现-callable-接口)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">myCallable</span> <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FutureTask&lt;Integer&gt; ft = <span class="keyword">new</span> FutureTask&lt;&gt;(<span class="keyword">new</span> myCallable());</span><br><span class="line"><span class="keyword">new</span> Thread(<span class="keyword">new</span> FutureTask&lt;Integer&gt;(ft).start();</span><br><span class="line">sout(ft.get());</span><br></pre></td></tr></table></figure></code></pre><ul>
+<li><p>[继承 Thread 类](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=继承-thread-类)</p>
+</li>
+<li><p>[实现接口 VS 继承 Thread](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=实现接口-vs-继承-thread)</p>
+<p>用接口好一些</p>
+</li>
+</ul>
+<ul>
+<li><p>[二、基础线程机制](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=二、基础线程机制)</p>
+</li>
+<li><ul>
+<li><p>[Executor](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=executor)</p>
+<p>三种executor：</p>
+<p>CachedThreadPool–不限数量</p>
+<p>FixedThreadPool–固定数量</p>
+<p>SingleThreadExecutor–数量为一</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">  ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; i++)&#123;</span><br><span class="line">    executorService.execute(<span class="keyword">new</span> myRunnable());</span><br><span class="line">  &#125;</span><br><span class="line">  executorService.shutdown();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>[Daemon](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=daemon)</li>
+</ul>
+<ul>
+<li><p>[sleep()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=sleep)</p>
+<p>Sleep 可能会抛出InterruptedException，因为异常不能跨线程传播回main()中，因此必须在本地进行处理。</p>
+</li>
+<li><p>[yield()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=yield)</p>
+</li>
+</ul>
+<ul>
+<li><p>[三、中断](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=三、中断)</p>
+</li>
+<li><ul>
+<li><p>[InterruptedException](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=interruptedexception)</p>
+<p>无法中断IO阻塞和synchronized阻塞</p>
+</li>
+<li><p>[interrupted()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=interrupted)</p>
+<p>如果一个线程的run()方法执行一个无限循环，并且没有执行sleep()等会抛出InterruptedException的操作，那么调用interrupt()方法就无法使线程提前结束。</p>
+<p>但是调用interrupt()方法会设置线程的中断标记，此时调用interrupted()方法会返回true。因此可以在循环体中使用interrupted()方法来判断线程是否处于中断状态，从而提前结束线程。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterruptExample</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread2</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      <span class="keyword">while</span>(!interrupted())&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">      &#125;</span><br><span class="line">      sout(<span class="string">"thread end"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException</span>&#123;</span><br><span class="line">    Thread thread = MyThread2();</span><br><span class="line">    thread2.start();</span><br><span class="line">    thread.interrupt();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>[Executor 的中断操作](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=executor-的中断操作)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">executorService.shutdown();</span><br><span class="line">executorService.shutdownNow();</span><br></pre></td></tr></table></figure>
+
+<p>若要中断某个线程：</p>
+<p>使用submit替代execute</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Future&lt;?&gt; future = executorService.submit(() -&gt; &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br><span class="line">future.cancel(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><p>[四、互斥同步](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=四、互斥同步)</p>
+</li>
+<li><ul>
+<li><p>[synchronized](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=synchronized)</p>
+</li>
+<li><p>[ReentrantLock](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=reentrantlock)</p>
+</li>
+</ul>
+</li>
+<li><p>[比较](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=比较)</p>
+<p>  synchronized 是 JVM 实现的，而 ReentrantLock 是 JDK 实现的。</p>
+<p>  性能大致相同</p>
+<p>  ReentrantLock可中断，而synchronized不行。</p>
+<p>  一个ReentrantLock可以同时绑定多个condition对象。</p>
+<ul>
+<li><p>[使用选择](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=使用选择)</p>
+<p>除非使用ReentrantLock的高级功能，否则优先使用synchronized。这是因为synchronized是JVM实现的一种锁机制，JVM原生地支持它，而ReentrantLock不是所有的JDK版本都支持。并且使用synchronized不用担心没有释放锁而导致死锁问题，因为JVM会确保锁的释放。</p>
+</li>
+</ul>
+</li>
+<li><p>[五、线程之间的协作](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=五、线程之间的协作)</p>
+</li>
+<li><ul>
+<li><p>[join()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=join)</p>
+<p>将当前线程挂起，直到目标线程结束。</p>
+</li>
+<li><p>[wait() notify() notifyAll()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=wait-notify-notifyall)</p>
+<p>它们都是Object的方法</p>
+<p>而sleep是Thread的静态方法</p>
+</li>
+<li><p>[await() signal() signalAll()](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=await-signal-signalall)</p>
+<p>java.util.concurrent类库提供Condition类库来实现线程间的协调</p>
+<p>condition.await()</p>
+<p>conditon.signal()</p>
+<p>condition.signalAll()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AwaitSignalExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line">    <span class="keyword">private</span> Condition condition = lock.newCondition();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lock.lock();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"before"</span>);</span><br><span class="line">            condition.signalAll();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">after</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        lock.lock();</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            condition.await();</span><br><span class="line">            System.out.println(<span class="string">"after"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            lock.unlock();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">      AwaitSignalExample example = <span class="keyword">new</span> AwaitSignalExample();</span><br><span class="line">      executorService.execute(() -&gt; example.after());</span><br><span class="line">      executorService.execute(() -&gt; example.before());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>[六、线程状态](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=六、线程状态)</p>
+</li>
+<li><ul>
+<li>[新建（NEW）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=新建（new）)</li>
+<li>[可运行（RUNABLE）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=可运行（runable）)</li>
+<li>[阻塞（BLOCKED）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=阻塞（blocked）)</li>
+<li>[无限期等待（WAITING）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=无限期等待（waiting）)</li>
+<li>[限期等待（TIMED_WAITING）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=限期等待（timed_waiting）)</li>
+<li>[死亡（TERMINATED）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=死亡（terminated）)</li>
+</ul>
+</li>
+<li><p>[七、J.U.C - AQS](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=七、juc-aqs)</p>
+</li>
+<li><ul>
+<li><p>[CountDownLatch](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=countdownlatch)</p>
+<p>用来控制一个或多个线程等待多个线程</p>
+</li>
+<li><p>[CyclicBarrier](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=cyclicbarrier)</p>
+<p>多个线程互相等待</p>
+</li>
+<li><p>[Semaphore](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=semaphore)</p>
+<p>类似于操作系统的信号量，可以控制对互斥资源的访问线程数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SemaphoreExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> clientCount = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">final</span> <span class="keyword">int</span> totalRequestCount = <span class="number">10</span>;</span><br><span class="line">        Semaphore semaphore = <span class="keyword">new</span> Semaphore(clientCount);</span><br><span class="line">        ExecutorService executorService = Executors.newCachedThreadPool();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; totalRequestCount; i++) &#123;</span><br><span class="line">            executorService.execute(()-&gt;&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    semaphore.acquire();</span><br><span class="line">                    System.out.print(semaphore.availablePermits() + <span class="string">" "</span>);</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">                    semaphore.release();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        executorService.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>[八、J.U.C - 其它组件](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=八、juc-其它组件)</p>
+</li>
+<li><ul>
+<li><p>[FutureTask](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=futuretask)</p>
+</li>
+<li><p>[BlockingQueue](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=blockingqueue)</p>
+<p>java.util.concurrent.BlockingQueue接口有以下阻塞队列的实现</p>
+<p><strong>FIFO队列</strong>： LinkedBlockingQueue ArrayBlockingQueue(固定长度)</p>
+<p><strong>优先级队列</strong>：PriorityBlockingQueue</p>
+<p>提供了阻塞的take put 方法：如果队列为空 take 将阻塞，直到有内容；如果队列为满put将阻塞，直到队列有空闲位置</p>
+<p>使用BlockingQueue实现生产者消费者问题</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProducerConsumer</span></span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> BlockingQueue&lt;String&gt; queue = <span class="keyword">new</span> ArrayBlockingQueue&lt;&gt;(<span class="number">5</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Producer</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">try</span>&#123;</span><br><span class="line">        queue.put(<span class="string">"product"</span>);</span><br><span class="line">      &#125;<span class="keyword">catch</span> (InterruptedException e)&#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">      sout(<span class="string">"produce.."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="keyword">try</span>&#123;</span><br><span class="line">        String product = queue.take();</span><br><span class="line">      &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">      sout(<span class="string">"consume..."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(Stirng[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">        Producer producer = <span class="keyword">new</span> Producer();</span><br><span class="line">        producer.start();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        Consumer consumer = <span class="keyword">new</span> Consumer();</span><br><span class="line">        consumer.start();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">3</span>; i++) &#123;</span><br><span class="line">        Producer producer = <span class="keyword">new</span> Producer();</span><br><span class="line">        producer.start();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">produce..produce..consume..consume..produce..consume..produce..consume..produce..consume..</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>[ForkJoin](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=forkjoin)</p>
+<p>？</p>
+</li>
+</ul>
+</li>
+<li><p>[九、线程不安全示例](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=九、线程不安全示例)</p>
+</li>
+<li><p>[十、Java 内存模型](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=十、java-内存模型)</p>
+</li>
+<li><ul>
+<li><p>[主内存与工作内存](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=主内存与工作内存)</p>
+</li>
+<li><p>[内存间交互操作](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=内存间交互操作)</p>
+</li>
+<li><p>[内存模型三大特性](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=内存模型三大特性)</p>
+</li>
+<li><ul>
+<li><p>[1. 原子性](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_1-原子性)</p>
+</li>
+<li><p>[2. 可见性](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_2-可见性)</p>
+</li>
+<li><p>[3. 有序性](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_3-有序性)</p>
+<p>volatile满足可见性，有序性，不能满足原子性。</p>
+<p>synchronized满足三者</p>
+</li>
+</ul>
+</li>
+<li><p>[先行发生原则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=先行发生原则)</p>
+</li>
+<li><ul>
+<li>[1. 单一线程原则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_1-单一线程原则)</li>
+<li>[2. 管程锁定规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_2-管程锁定规则)</li>
+<li>[3. volatile 变量规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_3-volatile-变量规则)</li>
+<li>[4. 线程启动规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_4-线程启动规则)</li>
+<li>[5. 线程加入规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_5-线程加入规则)</li>
+<li>[6. 线程中断规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_6-线程中断规则)</li>
+<li>[7. 对象终结规则](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_7-对象终结规则)</li>
+<li>[8. 传递性](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_8-传递性)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>[十一、线程安全](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=十一、线程安全)</p>
+</li>
+<li><ul>
+<li><p>[不可变](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=不可变)</p>
+</li>
+<li><p>[互斥同步](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=互斥同步)</p>
+</li>
+<li><p>[非阻塞同步](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=非阻塞同步)</p>
+</li>
+<li><ul>
+<li>[1. CAS](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_1-cas)</li>
+<li>[2. AtomicInteger](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_2-atomicinteger)</li>
+<li>[3. ABA](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_3-aba)</li>
+</ul>
+</li>
+<li><p>[无同步方案](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=无同步方案)</p>
+</li>
+<li><ul>
+<li><p>[1. 栈封闭](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_1-栈封闭)</p>
+</li>
+<li><p>[2. 线程本地存储（Thread Local Storage）](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=_2-线程本地存储（thread-local-storage）)</p>
+<p><img src="https://cs-notes-1256109796.cos.ap-guangzhou.myqcloud.com/6782674c-1bfe-4879-af39-e9d722a95d39.png" alt="img"></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  每个 Thread 都有一个 ThreadLocal.ThreadLocalMap 对象。
+
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ThreadLocal values pertaining to this thread. This map is maintained</span></span><br><span class="line"><span class="comment"> * by the ThreadLocal class. */</span></span><br><span class="line">ThreadLocal.ThreadLocalMap threadLocals = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+
+  当调用一个 ThreadLocal 的 set(T value) 方法时，先得到当前线程的 ThreadLocalMap 对象，然后将 ThreadLocal-&gt;value 键值对插入到该 Map 中。
+
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T value)</span> </span>&#123;</span><br><span class="line">    Thread t = Thread.currentThread();</span><br><span class="line">    ThreadLocalMap map = getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>)</span><br><span class="line">        map.set(<span class="keyword">this</span>, value);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        createMap(t, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+  get() 方法类似。
+
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Thread t = Thread.currentThread();</span><br><span class="line">    ThreadLocalMap map = getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ThreadLocalMap.Entry e = map.getEntry(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">            T result = (T)e.value;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> setInitialValue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+- [3. 可重入代码（Reentrant Code）](https://cyc2018.github.io/CS-Notes/#/notes/Java 并发?id=_3-可重入代码（reentrant-code）)</code></pre><ul>
+<li><p>[十二、锁优化](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=十二、锁优化)</p>
+</li>
+<li><ul>
+<li><p>[自旋锁](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=自旋锁)</p>
+<p>在jdk1.6中引入了自适应的自旋锁，自适应意味着自选的次数不再固定了，而是由前一次在同一个锁上的自旋次数及锁的拥有者的状态来决定。</p>
+</li>
+<li><p>[锁消除](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=锁消除)</p>
+<p>锁消除是指对于被检测出不可能存在竞争的共享数据的锁进行消除。</p>
+</li>
+<li><p>[锁粗化](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=锁粗化)</p>
+<p>如果一系列的连续操作都对同一个对象反复加锁和解锁，频繁的加锁操作就会导致性能损耗。</p>
+<p>锁粗化–把加锁的范围扩展（粗化）到整个操作序列的外部</p>
+</li>
+<li><p>[轻量级锁](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=轻量级锁)</p>
+</li>
+<li><p>[偏向锁](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=偏向锁)</p>
+</li>
+</ul>
+</li>
+<li><p>[十三、多线程开发良好的实践](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=十三、多线程开发良好的实践)</p>
+<p>给线程起个有意义的名字，这样可以方便找bug</p>
+<p>缩小同步范围，从而减少锁的争用，例如对于synchronized, 应该尽量使用同步块而不是同步方法。</p>
+<p>多用同步工具少用wait notify。首先，CountDownLatch, CyclicBarrier, Semaphore 和 Exchanger 这些同步类简化了编码操作，而用wait和notify很难实现复杂控制流；其次，这些同步类是由最好的企业编写和维护，在后续的JDK中</p>
+<p>还会不断优化和完善。</p>
+<p>使用BlockingQueue实现生产者消费者问题</p>
+<p>多用并发集合少用同步集合，例如应该使用ConcurrentHashMap而不是Hashtable.</p>
+<p>使用本地变量和不可变类来保证线程安全。</p>
+<p>使用线程池而不是直接创建线程，这是因为创建线程代价很高，线程池可以有效地利用有限的线程来启动任务。</p>
+</li>
+<li><p>[参考资料](<a href="https://cyc2018.github.io/CS-Notes/#/notes/Java">https://cyc2018.github.io/CS-Notes/#/notes/Java</a> 并发?id=参考资料)</p>
+</li>
+</ul>
+</div><div class="article-tags size-small is-uppercase mb-4"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/tags/%E5%B9%B6%E5%8F%91/">并发</a></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/java/%E5%9F%BA%E7%A1%80/Java-%E5%B9%B6%E5%8F%91.html">Java 并发</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/java/%E5%9F%BA%E7%A1%80/Java-%E5%B9%B6%E5%8F%91.html">https://zronghui.github.io/java/基础/Java-并发.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/java/%E5%9F%BA%E7%A1%80/Java-%E8%99%9A%E6%8B%9F%E6%9C%BA.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java 虚拟机</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/Mac/mac-apps.html"><span class="level-item">mac apps</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '38419de8f0d6831e325bf08d6cb27b05',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><!--!--><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

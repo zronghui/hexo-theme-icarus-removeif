@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Python tricks - zronghui的博客</title><meta description="[toc]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[toc]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-01-15T08:36:18.000Z"><meta property="article:modified_time" content="2020-05-12T14:34:39.000Z"><meta property="article:author" content="removeif"><meta property="article:tag" content="tricks"><meta property="article:tag" content="Python"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-01-15T08:36:18.000Z","dateModified":"2020-05-12T14:34:39.000Z","author":{"@type":"Person","name":"removeif"},"description":"[toc]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-01-15T08:36:18.000Z">2020-01-15</time><a class="commentCountImg" href="/python/Python-tricks.html#comment-container"><span class="display-none-class">59c484d6dd21c6b69afe7334fc2801ed</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="59c484d6dd21c6b69afe7334fc2801ed"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/python/">python</a></span><span class="level-item">29 minutes 读完 (大约 4310 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Python tricks</h1><div class="content"><p>[toc]</p>
+<a id="more"></a>
+
+<h2 id="tabulate-表格化打印文本"><a href="#tabulate-表格化打印文本" class="headerlink" title="tabulate 表格化打印文本"></a>tabulate 表格化打印文本</h2><p><a href="https://bitbucket.org/astanin/python-tabulate/src/master/">astanin / python-tabulate — Bitbucket</a></p>
+<p>支持中文对齐</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">In [<span class="number">1</span>]: <span class="keyword">from</span> tabulate <span class="keyword">import</span> tabulate</span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: table = [[<span class="string">"Sun"</span>,<span class="number">696000</span>,<span class="number">1989100000</span>],[<span class="string">"Earth"</span>,<span class="number">6371</span>,<span class="number">5973.6</span>],[<span class="string">"Moon"</span>,<span class="number">1737</span>,<span class="number">73.5</span>],[<span class="string">"中文测试"</span>,<span class="number">3390</span>,<span class="number">641.85</span>]]</span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: print(tabulate(table))</span><br><span class="line">--------  ------  -------------</span><br><span class="line">Sun       <span class="number">696000</span>     <span class="number">1.9891e+09</span></span><br><span class="line">Earth       <span class="number">6371</span>  <span class="number">5973.6</span></span><br><span class="line">Moon        <span class="number">1737</span>    <span class="number">73.5</span></span><br><span class="line">中文测试    <span class="number">3390</span>   <span class="number">641.85</span></span><br><span class="line">--------  ------  -------------</span><br></pre></td></tr></table></figure>
+
+
+
+<p>颜色打印日志，支持 crontab 自动发送邮件给自己</p>
+<p><a href="https://pypi.org/project/coloredlogs/">coloredlogs · PyPI</a></p>
+<h2 id="xpath"><a href="#xpath" class="headerlink" title="xpath"></a>xpath</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"></span><br><span class="line">xml = etree.HTML(r.text)</span><br><span class="line">currentPrice = float(xml.xpath(<span class="string">"//span[@id='last_last']/text()"</span>)[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+
+<h2 id="生成requirements-txt"><a href="#生成requirements-txt" class="headerlink" title="生成requirements.txt"></a>生成requirements.txt</h2><p><a href="https://blog.csdn.net/lzz957748332/article/details/60958525">查找python项目依赖并生成requirements.txt_Python_orangleliu 笔记本-CSDN博客</a></p>
+<h3 id="使用pip-freeze"><a href="#使用pip-freeze" class="headerlink" title="使用pip freeze"></a>使用pip freeze</h3><p>pip freeze &gt; requirements.txt<br>这种方式配合virtualenv 才好使，否则把整个环境中的包都列出来了。</p>
+<h3 id="使用-pipreqs"><a href="#使用-pipreqs" class="headerlink" title="使用 pipreqs"></a>使用 pipreqs</h3><p>这个工具的好处是可以通过对项目目录的扫描，自动发现使用了那些类库，自动生成依赖清单。</p>
+<p>缺点是可能会有些偏差，需要检查并自己调整下。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip3 install pipreqs</span><br><span class="line">pipreqs ./</span><br><span class="line">cat requirements.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<p>有意思</p>
+<p>f-strings can also be simulated with ‘Hello {name}. You are {age} years old’.format(**locals())`</p>
+<h2 id="imgmaker-把文字转成高清图片"><a href="#imgmaker-把文字转成高清图片" class="headerlink" title="imgmaker-把文字转成高清图片"></a>imgmaker-把文字转成高清图片</h2><p><a href="https://github.com/minimaxir/imgmaker">minimaxir/imgmaker: Create high-quality images programmatically with easily-hackable templates.</a></p>
+<p><img src="https://pepy.tech/badge/icecream" alt="Downloads"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件的访问时间 access</span></span><br><span class="line">os.path.getatime(filePath)</span><br><span class="line"><span class="comment"># 文件的创建时间 create</span></span><br><span class="line">os.path.getctime(filePath)</span><br><span class="line"><span class="comment"># 文件的修改时间 modify</span></span><br><span class="line">os.path.getmtime(filePath)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<img src="https://i.loli.net/2020/04/17/DfVAPvJNTylq3nh.png" alt="DfVAPvJNTylq3nh" style="zoom:50%;" />
+
+
+
+<p><a href="https://github.com/kootenpv/cliche">kootenpv/cliche: Build a simple command-line interface from your functions</a></p>
+<p><a href="https://github.com/maxbachmann/rapidfuzz">maxbachmann/rapidfuzz: Rapid fuzzy string matching in Python using the Levenshtein Distance</a></p>
+<p>最大 int float</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">self.m = sys.maxsize</span><br><span class="line">float(<span class="string">'inf'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pykeyboard <span class="keyword">import</span> PyKeyboardEvent</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TapRecord</span><span class="params">(PyKeyboardEvent)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    PyKeyboardEvent.__init__(self)</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">tap</span><span class="params">(self, keycode, character, press)</span>:</span></span><br><span class="line">    print(time.time(), keycode, character, press)</span><br><span class="line"></span><br><span class="line">t = TapRecord()</span><br><span class="line">t.run()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> chardet</span><br><span class="line">fencoding=chardet.detect(<span class="string">u"test string"</span>)</span><br><span class="line"><span class="keyword">print</span> fencoding</span><br><span class="line"></span><br><span class="line"><span class="comment"># 从URL地址提取文件名</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">url = <span class="string">'http://www.jb51.net/images/logo.gif'</span></span><br><span class="line">filename = os.path.basename(url)</span><br><span class="line">print(filename)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 去除扩展名</span></span><br><span class="line"><span class="keyword">print</span> os.path.splitext(filename)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 打印方法名</span></span><br><span class="line"><span class="keyword">import</span> inspect</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">for</span>  method <span class="keyword">in</span>  inspect.getmembers(sys.path):</span><br><span class="line">    <span class="keyword">print</span> method</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Wget"><a href="#Wget" class="headerlink" title="Wget"></a>Wget</h2><p><a href="https://www.programcreek.com/python/example/83386/wget.download">wget.download Python Example</a></p>
+<p>out 自动识别 dir 或文件</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wget</span><br><span class="line">wget.download(book_url, out=self.outdir, bar=wget.bar_thermometer)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ipython-安装自动补全"><a href="#ipython-安装自动补全" class="headerlink" title="ipython 安装自动补全"></a>ipython 安装自动补全</h2><p>pip install pyreadline或pip3 install pyreadline</p>
+<p>按tab即可自动补全</p>
+<h3 id="Pip-升级-package"><a href="#Pip-升级-package" class="headerlink" title="Pip 升级 package"></a>Pip 升级 package</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install -U you-get</span><br><span class="line">pip install --upgrade you-get</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p><a href="https://hellogithub.com/periodical/statistics/click/?target=https://github.com/laixintao/iredis">iredis</a>：Python 语言写的支持自动补全、语法高亮、命令提示等的 Redis 命令行客户端。超好用，真是相见很晚啊</p>
+<p><img src="https://raw.githubusercontent.com/521xueweihan/img/master/hellogithub/48/img/iredis.gif" alt="img"></p>
+<h1 id="03-27"><a href="#03-27" class="headerlink" title="03-27"></a>03-27</h1><p>Python string 速度优化</p>
+<p><a href="https://github.com/btwael/superstring.py">btwael/superstring.py: A fast and memory-optimized string library for heavy-text manipulation in Python</a></p>
+<p>有意思的几个库</p>
+<p><a href="https://github.com/Python-Markdown/markdown">Python-Markdown/markdown: A Python implementation of John Gruber’s Markdown with Extension support.</a><br><a href="https://github.com/sloisel/pyptex">sloisel/pyptex: Python Preprocessor for LaTeX</a></p>
+<h1 id="03-23"><a href="#03-23" class="headerlink" title="03-23"></a>03-23</h1><h2 id="vardbg"><a href="#vardbg" class="headerlink" title="vardbg"></a>vardbg</h2><p>一个 Python 脚本的调试工具，并可以生成脚本运行流程的可视化视频。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip3 install vardbg</span><br><span class="line"><span class="meta">#</span><span class="bash"> run file</span></span><br><span class="line">vardbg run insertion_sort.py -o qsort.json</span><br><span class="line"><span class="meta">#</span><span class="bash"> or run a method</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vardbg run sort.py quick_sort -o qsort.json -a 9 -a 3 -a 5 -a 1</span></span><br><span class="line">vardbg replay qsort.json -v sort_vis.mp4</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="03-12"><a href="#03-12" class="headerlink" title="03-12"></a>03-12</h1><h3 id="Environs-读取环境变量"><a href="#Environs-读取环境变量" class="headerlink" title="Environs 读取环境变量"></a>Environs 读取环境变量</h3><p><a href="https://cuiqingcai.com/8947.html">Python 使用 environs 库来更好地定义环境变量 | 静觅</a></p>
+<p><a href="https://python.freelycode.com/contribution/detail/168">environs: 简化环境变量解析</a><br><a href="https://github.com/sloria/environs">sloria/environs: simplified environment variable parsing</a></p>
+<p>可以从当前 shell 的环境变量中获取，或者 .env 文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># .env 没有前缀名</span><br><span class="line"># 不用写 export</span><br><span class="line">APP_DEBUG&#x3D;false</span><br><span class="line">APP_ENV&#x3D;prod</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export GITHUB_USER=sloria</span><br><span class="line">export MAX_CONNECTIONS=100</span><br><span class="line">export SHIP_DATE='1984-06-25'</span><br><span class="line">export TTL=42</span><br><span class="line">export ENABLE_LOGIN=true</span><br><span class="line">export GITHUB_REPOS=webargs,konch,ped</span><br><span class="line">export COORDINATES=23.3,50.0</span><br><span class="line">export LOG_LEVEL=DEBUG</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> environs <span class="keyword">import</span> Env</span><br><span class="line"></span><br><span class="line">env = Env()</span><br><span class="line">env.read_env()  <span class="comment"># read .env file, if it exists</span></span><br><span class="line"><span class="comment"># required variables</span></span><br><span class="line">gh_user = env(<span class="string">"GITHUB_USER"</span>)  <span class="comment"># =&gt; 'sloria'</span></span><br><span class="line">secret = env(<span class="string">"SECRET"</span>)  <span class="comment"># =&gt; raises error if not set</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># casting</span></span><br><span class="line">max_connections = env.int(<span class="string">"MAX_CONNECTIONS"</span>)  <span class="comment"># =&gt; 100</span></span><br><span class="line">ship_date = env.date(<span class="string">"SHIP_DATE"</span>)  <span class="comment"># =&gt; datetime.date(1984, 6, 25)</span></span><br><span class="line">ttl = env.timedelta(<span class="string">"TTL"</span>)  <span class="comment"># =&gt; datetime.timedelta(0, 42)</span></span><br><span class="line">log_level = env.log_level(<span class="string">"LOG_LEVEL"</span>)  <span class="comment"># =&gt; logging.DEBUG</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># providing a default value</span></span><br><span class="line">enable_login = env.bool(<span class="string">"ENABLE_LOGIN"</span>, <span class="literal">False</span>)  <span class="comment"># =&gt; True</span></span><br><span class="line">enable_feature_x = env.bool(<span class="string">"ENABLE_FEATURE_X"</span>, <span class="literal">False</span>)  <span class="comment"># =&gt; False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># parsing lists</span></span><br><span class="line">gh_repos = env.list(<span class="string">"GITHUB_REPOS"</span>)  <span class="comment"># =&gt; ['webargs', 'konch', 'ped']</span></span><br><span class="line">coords = env.list(<span class="string">"COORDINATES"</span>, subcast=float)  <span class="comment"># =&gt; [23.3, 50.0]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="03-11"><a href="#03-11" class="headerlink" title="03-11"></a>03-11</h1><p><a href="https://martinheinz.dev/blog/17">Python自动化</a></p>
+<p><a href="https://hynek.me/articles/python-github-actions/">Python in GitHub Actions · Homepage of Hynek Schlawack</a><br><a href="https://www.google.com/search?q=github+action+python+test&oq=github+action+python+test&aqs=chrome..69i57j69i64.9173j0j7&sourceid=chrome&ie=UTF-8">github action python test - Google 搜索</a></p>
+<h3 id="Django-调用流程图"><a href="#Django-调用流程图" class="headerlink" title="Django 调用流程图"></a>Django 调用流程图</h3><p><a href="https://github.com/meshy/django-schema-graph">meshy/django-schema-graph: An interactive graph of your Django model structure</a></p>
+<h3 id="死链检测"><a href="#死链检测" class="headerlink" title="死链检测"></a>死链检测</h3><p>检测 URL、目录、文档的死链</p>
+<p><a href="https://github.com/butuzov/deadlinks">butuzov/deadlinks: Health checks for your documentation links. https://pypi.org/project/deadlinks</a></p>
+<h3 id="creating-command-line-user-interfaces创建命令行用户界面"><a href="#creating-command-line-user-interfaces创建命令行用户界面" class="headerlink" title="creating command line user interfaces创建命令行用户界面"></a>creating command line user interfaces创建命令行用户界面</h3><p>能用 py_cui 写 2048 游戏<a href="https://github.com/jwlodek/py_cui_2048">jwlodek/py_cui_2048: A command line ascii version of the 2048 game written with the help of the py_cui library.</a></p>
+<p><a href="https://github.com/jwlodek/py_cui">jwlodek/py_cui: A python library for intuitively creating CUI/TUI interfaces with widgets, inspired by gocui.</a></p>
+<h3 id="自定义快捷键的功能"><a href="#自定义快捷键的功能" class="headerlink" title="自定义快捷键的功能"></a>自定义快捷键的功能</h3><p><a href="https://github.com/dibsonthis/keyboard_listener">dibsonthis/keyboard_listener: Keyboard Listener is a module that allows you to create custom hotkeys (combinations) or custom keywords and bind them to custom functions in Python</a></p>
+<h3 id="pytest-responsemock"><a href="#pytest-responsemock" class="headerlink" title="pytest-responsemock"></a>pytest-responsemock</h3><p>Mock response</p>
+<p><a href="https://github.com/idlesign/pytest-responsemock">idlesign/pytest-responsemock: Simplified requests calls mocking for pytest</a></p>
+<h3 id="简繁转换"><a href="#简繁转换" class="headerlink" title="简繁转换"></a>简繁转换</h3><p><a href="https://pythonhosted.org/zhconv/#id2">简易中文简繁转换 — zhconv 1.2.1 文档</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install zhconv</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> zhconv <span class="keyword">import</span> convert</span><br><span class="line">print(convert(<span class="string">'我幹什麼不干你事。'</span>, <span class="string">'zh-cn'</span>))</span><br></pre></td></tr></table></figure>
+
+<p>zh-cn 大陆简体<br>zh-tw 台灣正體<br>zh-hk 香港繁體<br>zh-sg 马新简体<br>zh-hans 简体<br>zh-hant 繁體</p>
+<h1 id="03-10"><a href="#03-10" class="headerlink" title="03-10"></a>03-10</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.path.dirname(__file__)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="03-06"><a href="#03-06" class="headerlink" title="03-06"></a>03-06</h1><p><a href="https://www.cnblogs.com/zengchunyun/p/9344664.html">pip离线安装依赖包 - 曾春云 - 博客园</a></p>
+<h4 id="pip安装离线本地包"><a href="#pip安装离线本地包" class="headerlink" title="pip安装离线本地包"></a>pip安装离线本地包</h4><ul>
+<li>导出本地已有的依赖包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将依赖包下载到本地</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 下载到当前目录,指定pip源</span></span><br><span class="line">pip download -r requirements.txt -d . -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建虚拟环境</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> -q 安静的方式创建</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --no-site-packages 不拷贝本地的第三方包,创建干净的虚拟python运行环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> --python=python3.7 指定创建python版本环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> .venv 虚拟环境目录</span></span><br><span class="line">virtualenv -q --no-site-packages --python=python3.7 .venv</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入虚拟环境</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .venv/bin/activate</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装本地依赖包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --no-index --find-links=. -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<h4 id="pip-其它使用方式"><a href="#pip-其它使用方式" class="headerlink" title="pip 其它使用方式"></a>pip 其它使用方式</h4><ul>
+<li>安装最新版本</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 'SomeProject'</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装指定版本</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 'SomeProject==1.4'</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>ss</strong></li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 'SomeProject&gt;=1,&lt;2'</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装兼容某个版本的包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install 'SomeProject~=1.4.2'</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>升级安装</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --upgrade SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定依赖文件安装</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从版本控制服务器</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pip install -e git+https://git.repo/some_pkg.git#egg=SomeProject          # from git</span><br><span class="line">pip install -e hg+https://hg.repo/some_pkg#egg=SomeProject                # from mercurial</span><br><span class="line">pip install -e svn+svn://svn.repo/some_pkg/trunk/#egg=SomeProject         # from svn</span><br><span class="line">pip install -e git+https://git.repo/some_pkg.git@feature#egg=SomeProject  # from a branch</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从其它索引服务器</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --index-url http://my.package.repo/simple/ --trusted-host my.package.repo SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装时，如果默认索引服务器没有该依赖包则提供搜索额外的索引服务器进行搜索获取</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --extra-index-url http://my.package.repo/simple SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从本地</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install -e &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install &lt;path&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从压缩包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install ./downloads/SomeProject-1.0.4.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从本地目录搜索依赖包</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pip install --no-index --find-links=file:///local/dir/ SomeProject</span><br><span class="line">pip install --no-index --find-links=/local/dir/ SomeProject</span><br><span class="line">pip install --no-index --find-links=relative/dir/ SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装从其它源</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --extra-index-url http://localhost:7777 SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装预发布版本</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install --pre SomeProject</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装前配置</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install SomePackage[PDF]</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install SomePackage[PDF]==3.0</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> pip install -e .[PDF]==3.0  <span class="comment"># editable project in current directory</span></span></span><br></pre></td></tr></table></figure>
+
+<h1 id="02-28"><a href="#02-28" class="headerlink" title="02-28"></a>02-28</h1><p><a href="https://arpitbhayani.me/blogs/python-prompts">Personalize your python prompt | Arpit Bhayani</a></p>
+<h1 id="02-14"><a href="#02-14" class="headerlink" title="02-14"></a>02-14</h1><p><a href="https://medium.com/python-features/debugging-in-python-a-cakewalk-with-pdb-cd748ca62ee7">Debugging in Python — A cakewalk with pdb - Python Features - Medium</a></p>
+<h1 id="02-13"><a href="#02-13" class="headerlink" title="02-13"></a>02-13</h1><h3 id="Pathlib-3-4"><a href="#Pathlib-3-4" class="headerlink" title="Pathlib (3.4+)"></a>Pathlib (3.4+)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">root = Path(<span class="string">'post_sub_folder'</span>)</span><br><span class="line">print(root)</span><br><span class="line">path = root / <span class="string">'happy_user'</span></span><br><span class="line">print(path.resolve())</span><br></pre></td></tr></table></figure>
+
+<h3 id="Type-hinting-3-5"><a href="#Type-hinting-3-5" class="headerlink" title="Type hinting (3.5+)"></a>Type hinting (3.5+)</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sentence_has_animal</span><span class="params">(sentence: str)</span> -&gt; bool:</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">"animal"</span> <span class="keyword">in</span> sentence</span><br><span class="line">sentence_has_animal(<span class="string">"Donald had a farm without animals"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Enumerations-3-4"><a href="#Enumerations-3-4" class="headerlink" title="Enumerations (3.4+)"></a>Enumerations (3.4+)</h3><p>Python3提供的Enum类让你很容就能实现一个枚举类型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> enum <span class="keyword">import</span> Enum, auto</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Monster</span><span class="params">(Enum)</span>:</span></span><br><span class="line">  ZOMBIE = auto()</span><br><span class="line">  WARRIOR = auto()</span><br><span class="line">  BEAR = auto()</span><br><span class="line">print(Monster.ZOMBIE)</span><br><span class="line"><span class="keyword">for</span> monster <span class="keyword">in</span> Monster:</span><br><span class="line">  print(monster)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Built-in-LRU-cache-3-2"><a href="#Built-in-LRU-cache-3-2" class="headerlink" title="Built-in LRU cache (3.2+)"></a>Built-in LRU cache (3.2+)</h3><p>缓存是现在的软件领域经常使用的技术，Python3提供了一个lru_cache装饰器，来让你更好的使用缓存。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"></span><br><span class="line"><span class="meta">@lru_cache(maxsize=512)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fib_memoization</span><span class="params">(number: int)</span> -&gt; int:</span></span><br><span class="line">  <span class="keyword">if</span> number == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  <span class="keyword">if</span> number == <span class="number">1</span>: <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">  <span class="keyword">return</span> fib_memoization(number<span class="number">-1</span>) + fib_memoization(number<span class="number">-2</span>)</span><br><span class="line">start = time.time()</span><br><span class="line">fib_memoization(<span class="number">40</span>)</span><br><span class="line">print(<span class="string">f'Duration: <span class="subst">&#123;time.time() - start&#125;</span>s'</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Extended-iterable-unpacking-3-0"><a href="#Extended-iterable-unpacking-3-0" class="headerlink" title="Extended iterable unpacking (3.0+)"></a>Extended iterable unpacking (3.0+)</h3><p><strong>*_用来抛弃元素</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">head, *body, tail = range(<span class="number">5</span>)</span><br><span class="line">print(head, body, tail)</span><br><span class="line"><span class="comment"># 输出： 0 [1, 2, 3] 4</span></span><br><span class="line"></span><br><span class="line">py, filename, *cmds = <span class="string">"python3.7 script.py -n 5 -l 15"</span>.split()</span><br><span class="line">print(py)</span><br><span class="line">print(filename)</span><br><span class="line">print(cmds)</span><br><span class="line"><span class="comment"># 输出：python3.7</span></span><br><span class="line"><span class="comment"># script.py</span></span><br><span class="line"><span class="comment"># ['-n', '5', '-l', '15']</span></span><br><span class="line"></span><br><span class="line">first, _, third, *_ = range(<span class="number">10</span>)</span><br><span class="line">print(first, third)</span><br><span class="line"><span class="comment"># 输出： 0 2</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Data-classes-3-7"><a href="#Data-classes-3-7" class="headerlink" title="Data classes (3.7+)"></a>Data classes (3.7+)</h3><p>Python3提供data class装饰器来让我们更好的处理数据对象，而不用去实现 init() 和 repr() 方法。假设如下的代码:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Armor</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, armor: float, description: str, level: int = <span class="number">1</span>)</span>:</span></span><br><span class="line">      self.armor = armor</span><br><span class="line">      self.level = level</span><br><span class="line">      self.description = description</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">power</span><span class="params">(self)</span> -&gt; float:</span></span><br><span class="line">      <span class="keyword">return</span> self.armor * self.level</span><br><span class="line"></span><br><span class="line">armor = Armor(<span class="number">5.2</span>, <span class="string">"Common armor."</span>, <span class="number">2</span>)</span><br><span class="line">armor.power()</span><br><span class="line"><span class="comment"># 10.4</span></span><br><span class="line">print(armor)</span><br><span class="line"><span class="comment"># &lt;__main__.Armor object at 0x7fc4800e2cf8&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>使用data class实现上面功能的代码，这么写:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dataclasses <span class="keyword">import</span> dataclass</span><br><span class="line"></span><br><span class="line"><span class="meta">@dataclass</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Armor</span>:</span></span><br><span class="line">  armor: float</span><br><span class="line">  description: str</span><br><span class="line">  level: int = <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">power</span><span class="params">(self)</span> -&gt; float:</span></span><br><span class="line">    <span class="keyword">return</span> self.armor * self.level</span><br><span class="line">    </span><br><span class="line">armor = Armor(<span class="number">5.2</span>, <span class="string">"Common armor."</span>, <span class="number">2</span>)</span><br><span class="line">armor.power()</span><br><span class="line"><span class="comment"># 10.4</span></span><br><span class="line">print(armor)</span><br><span class="line"><span class="comment"># Armor(armor=5.2, description='Common armor.', level=2)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Implicit-namespace-packages-3-3"><a href="#Implicit-namespace-packages-3-3" class="headerlink" title="Implicit namespace packages (3.3+)"></a>Implicit namespace packages (3.3+)</h3><p>通常情况下，Python通过把代码打成包（在目录中加入init.py实现）来复用</p>
+<p>在Python2里，每个目录都必须有init.py文件，以便其他模块调用目录下的python代码，在Python3里，通过 Implicit Namespace Packages可是不使用<strong>init</strong>.py文件</p>
+<pre><code>sound/                          Top-level package
+  __init__.py               Initialize the sound package
+  formats/                  Subpackage for file format conversions
+          wavread.py
+          wavwrite.py
+          aiffread.py
+          aiffwrite.py
+          auread.py
+          auwrite.py
+          ...
+  effects/                  Subpackage for sound effects
+          echo.py
+          surround.py
+          reverse.py
+          ...
+  filters/                  Subpackage for filters
+          equalizer.py
+          vocoder.py
+          karaoke.py</code></pre><h1 id="02-10"><a href="#02-10" class="headerlink" title="02-10"></a>02-10</h1><p>neovim: 新时代的 vim，我在这个配置(<a href="https://link.zhihu.com/?target=https%3A//github.com/PegasusWang/vim-config">https://github.com/PegasusWang/vim-config</a>)上自定义了自己的配置，使用起来性能和反应速度上远超原生的老古董 vim</p>
+<p>meld/vimdiff: 文本比对工具。</p>
+<p>tmux/tmuxp</p>
+<ul>
+<li>wemux: tmux 共享，<a href="https://link.zhihu.com/?target=https%3A//github.com/zolrath/wemux">https://github.com/zolrath/wemux</a></li>
+<li>sshfs: 本地挂在服务器文件夹</li>
+<li>tmate: <a href="https://link.zhihu.com/?target=https%3A//tmate.io/">https://tmate.io</a> 终端共享工具，结对编程。很多现代化编辑器 vscode, atom 提供结对编程的插件。</li>
+<li>asciinema: 终端会话记录工具。<a href="https://link.zhihu.com/?target=https%3A//asciinema.org/">https://asciinema.org/</a></li>
+</ul>
+<p>devdocs.io: 文档查询工具</p>
+<p>gitx(mac):方便查看代码提交历史，便于了解整个代码仓库是怎样一步步构建的。<a href="https://link.zhihu.com/?target=http%3A//gitx.frim.nl/user_manual.html">http://gitx.frim.nl/user_manual</a></p>
+<p>tig: text-mode interface for git. 喜欢命令行的可以尝试下。 <a href="https://link.zhihu.com/?target=https%3A//github.com/jonas/tig">https://github.com/jonas/tig</a></p>
+<ul>
+<li>EditorConfig: <a href="https://link.zhihu.com/?target=http%3A//editorconfig.org/">http://editorconfig.org/</a> 用来统一编辑器配置。如果成员用不同的操作系统和编辑器，建议使用。尤其是对于 python 这种使用缩进的语言</li>
+<li>mac-setup: <a href="https://link.zhihu.com/?target=https%3A//github.com/sb2nov/mac-setup">https://github.com/sb2nov/mac-setup</a> mac 下各种编程语言开发环境配置指引</li>
+</ul>
+<p><a href="https://link.zhihu.com/?target=http%3A//ningning.today/2016/11/09/tools/vim-tmux-zsh-autojump/">《使用vim+tmux+zsh+autojump高效工作》</a></p>
+<ul>
+<li>prospector: 集成了众多python代码检测工具</li>
+<li>mccabe: 圈复杂度检测工具。McCabe 是一种度量程序复杂度的方法，如果单个子程序复杂度过高，或许就需要拆分逻辑提高程序的易读性。</li>
+<li>bandit: 用于Python代码的安全性分析，openstack 的项目 <a href="https://link.zhihu.com/?target=https%3A//github.com/openstack/bandit">https://github.com/openstack/bandit</a></li>
+<li>rope，可以用来重构等，功能强大。笔者经常用rope自动帮我重新整理导入的包顺序。</li>
+<li>Pyreverse: 代码 UML 生成工具, 帮助我们理解继承关系 (<a href="https://link.zhihu.com/?target=https%3A//pythonhosted.org/theape/documentation/developer/explorations/explore_graphs/explore_pyreverse.html">https://pythonhosted.org/theape/documentation/developer/explorations/explore_graphs/explore_pyreverse.html</a>)</li>
+<li>Epydoc: Automatic API Documentation Generation for Python</li>
+<li>2to3/python-modernize: python2 转 python3 工具。目前 Instagram 已经全面迁移到 python3</li>
+<li>编写2/3兼容代码：<a href="https://link.zhihu.com/?target=http%3A//python-future.org/compatible_idioms.html">http://python-future.org/compa</a></li>
+<li>pigar: 找出项目使用到的依赖库</li>
+<li>buildout: 项目构建工具</li>
+<li>pyenv/virtualenv/pipenv：多版本管理</li>
+<li>bitbucket: 类似 github，好处是支持免费的私有仓库</li>
+<li>cookiecutter: 一系列项目模板生成工具，懒人必备。<a href="https://link.zhihu.com/?target=https%3A//github.com/audreyr/cookiecutter">https://github.com/audreyr/cookiecutter</a>。笔者之前内部项目就直接用 flask-cookiecutter 直接生成的。</li>
+<li>yeoman: <a href="https://link.zhihu.com/?target=http%3A//yeoman.io/generators/">http://yeoman.io/generators/</a> 前端项目模板生成工具</li>
+<li>ant-design: 后端管理后台项目解决方案 <a href="https://link.zhihu.com/?target=https%3A//ant.design/docs/react/practical-projects-cn">https://ant.design/docs/react/p</a></li>
+<li>Api 工具<ul>
+<li>checklist: <a href="https://link.zhihu.com/?target=http%3A//python.apichecklist.com/">http://python.apichecklist.com/</a></li>
+</ul>
+</li>
+</ul>
+<p>日志、异常收集工具</p>
+<ul>
+<li>Sentry: 用来记录异常非常好用，能看到完善的栈信息，方便排错。</li>
+<li>Fluentd</li>
+</ul>
+<p>管理及运维、监控工具(devops很火)</p>
+<ul>
+<li>Supervisor.进程管理</li>
+<li>Fabric.应用部署</li>
+<li>docker.最近比较火的容器技术。很多采用微服务架构的公司使用 docker 作为容器部署服务，或者构建一致的开发环境</li>
+<li>SaltStack和Ansible. 配置管理</li>
+<li>StatsDGraphite等web监控</li>
+</ul>
+<p>调试工具</p>
+<ul>
+<li>ipdb/pdb: ipdb 支持自动补全，比原生的 pdb 要好用一些。</li>
+<li>pdbpp: <a href="https://link.zhihu.com/?target=https%3A//pypi.org/project/pdbpp/">https://pypi.org/project/pdbpp/</a></li>
+<li><a href="https://link.zhihu.com/?target=https%3A//curl.trillworks.com/">https://curl.trillworks.com/</a> 把 curl 命令参数转成 requests 代码。 <a href="https://link.zhihu.com/?target=https%3A//github.com/NickCarneiro/curlconverter/">https://github.com/NickCarneiro/curlconverter/</a>。</li>
+<li>httpie</li>
+<li>postman</li>
+<li><a href="https://link.zhihu.com/?target=http%3A//httpbin.org">http://httpbin.org</a></li>
+<li>curl/requests 互相转化: <a href="https://link.zhihu.com/?target=https%3A//github.com/oeegor/curlify">https://github.com/oeegor/curlify</a> <a href="https://link.zhihu.com/?target=https%3A//github.com/spulec/uncurl">https://github.com/spulec/uncurl</a></li>
+</ul>
+<p>抓包和下载工具</p>
+<ul>
+<li>mitmproxy: 用 python 实现的终端命令行抓包工具，可以将请求直接导出成 python 代码，笔者经常用来抓包和调试。</li>
+<li>charles</li>
+</ul>
+<p>爬虫相关</p>
+<ul>
+<li>Scrapy: 知名的爬虫框架。生态比较丰富</li>
+<li>pyspider: 国人写的一个不错的爬虫框架</li>
+<li>requests</li>
+<li>lxml/BeautifulSoup/pyquery: 解析 html，xml 等。</li>
+<li>tornado: 异步的 http client 可以写爬虫</li>
+<li>redis/celery: 实现队列、异步爬虫。异步方案也比较多</li>
+<li>phantomjs/puppeteer: 用来处理动态网站。puppeteer 基于 nodejs</li>
+</ul>
+<p>异步任务框架</p>
+<ul>
+<li>celery: python 社区一个流行的异步任务框架</li>
+</ul>
+<p>压测工具</p>
+<ul>
+<li>locust: python实现的压测工具。<a href="https://link.zhihu.com/?target=http%3A//locust.io/">http://locust.io/</a>， 有 web 界面</li>
+<li>ab</li>
+<li>wrk</li>
+</ul>
+<p>Profiler</p>
+<ul>
+<li>pyflame: <a href="https://link.zhihu.com/?target=https%3A//github.com/uber/pyflame">https://github.com/uber/pyflame</a></li>
+</ul>
+<p>数据库工具</p>
+<ul>
+<li>mycli: mysql 命令行补全等。<a href="https://link.zhihu.com/?target=https%3A//github.com/dbcli/mycli">https://github.com/dbcli/mycli</a></li>
+<li>MysqlWorkbench/Sequel Pro: mysql 客户端工具。</li>
+<li>Navicat Premium: 强大的数据库管理工具，收费</li>
+<li><strong>Medis</strong>: redis client 工具</li>
+<li><strong>MongoChef</strong>: Mongodb 客户端工具</li>
+</ul>
+<img src="https://i.loli.net/2020/02/10/UNFt5Hpwy6L1rWu.jpg" alt="UNFt5Hpwy6L1rWu" style="zoom:33%;" />
+<img src="https://i.loli.net/2020/02/10/xECDNp5wjnl8vWQ.jpg" alt="xECDNp5wjnl8vWQ" style="zoom: 33%;" />
+
+<h1 id="2020-年-1-月-15-日-星期三"><a href="#2020-年-1-月-15-日-星期三" class="headerlink" title="2020 年 1 月 15 日(星期三)"></a>2020 年 1 月 15 日(星期三)</h1><p><a href="https://zhuanlan.51cto.com/art/201910/604777.htm">Python技巧小贴士 - 51CTO.COM</a></p>
+<h2 id="字符串一次性执行多个-replace"><a href="#字符串一次性执行多个-replace" class="headerlink" title="字符串一次性执行多个 replace"></a>字符串一次性执行多个 replace</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">user_input = <span class="string">"This\nstring has\tsome whitespaces...\r\n"</span> </span><br><span class="line"> </span><br><span class="line">character_map = &#123; </span><br><span class="line">    ord(<span class="string">'\n'</span>) : <span class="string">' '</span>, </span><br><span class="line">    ord(<span class="string">'\t'</span>) : <span class="string">' '</span>, </span><br><span class="line">    ord(<span class="string">'\r'</span>) : <span class="literal">None</span> </span><br><span class="line">&#125; </span><br><span class="line">user_input.translate(character_map)  <span class="comment"># This string has some whitespaces...</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="迭代器切片-Slice"><a href="#迭代器切片-Slice" class="headerlink" title="迭代器切片(Slice)"></a>迭代器切片(Slice)</h2><p>如果对迭代器进行切片操作，会返回一个「TypeError」，提示生成器对象没有下标，但是我们可以用一个简单的方案来解决这个问题：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools </span><br><span class="line"> </span><br><span class="line">s = itertools.islice(range(<span class="number">50</span>), <span class="number">10</span>, <span class="number">20</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+
+<h2 id="跳过可迭代对象某些元素"><a href="#跳过可迭代对象某些元素" class="headerlink" title="跳过可迭代对象某些元素"></a>跳过可迭代对象某些元素</h2><p>比如跳过文件的注释代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools </span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> itertools.dropwhile(<span class="keyword">lambda</span> line: line.startswith(<span class="string">"//"</span>), string_from_file.split(<span class="string">"\n"</span>)): </span><br><span class="line">    print(line)</span><br></pre></td></tr></table></figure>
+
+<h2 id="实现上下文管理"><a href="#实现上下文管理" class="headerlink" title="实现上下文管理"></a>实现上下文管理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager </span><br><span class="line"> </span><br><span class="line"><span class="meta">@contextmanager </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tag</span><span class="params">(name)</span>:</span> </span><br><span class="line">    print(<span class="string">f"&lt;<span class="subst">&#123;name&#125;</span>&gt;"</span>) </span><br><span class="line">    <span class="keyword">yield</span> </span><br><span class="line">    print(<span class="string">f"&lt;/<span class="subst">&#123;name&#125;</span>&gt;"</span>) </span><br><span class="line"> </span><br><span class="line"><span class="keyword">with</span> tag(<span class="string">"h1"</span>): </span><br><span class="line">    print(<span class="string">"This is Title."</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="控制可以-不可以导入什么"><a href="#控制可以-不可以导入什么" class="headerlink" title="控制可以/不可以导入什么"></a>控制可以/不可以导入什么</h2><p>在 Python 中，所有成员都会被导出(除非我们使用了「<strong>all</strong>」)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span><span class="params">()</span>:</span> </span><br><span class="line">    <span class="keyword">pass</span> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span><span class="params">()</span>:</span> </span><br><span class="line">    <span class="keyword">pass</span> </span><br><span class="line"> </span><br><span class="line">__all__ = [<span class="string">"bar"</span>]</span><br></pre></td></tr></table></figure>
+
+<p>在上面这段代码中，我们知道只有「bar」函数被导出了。同样，我们可以让「<strong>all</strong>」为空，这样就不会导出任何东西，当从这个模块导入的时候，会造成「AttributeError」。</p>
+<h2 id="实现所有比较运算符的简单方法"><a href="#实现所有比较运算符的简单方法" class="headerlink" title="实现所有比较运算符的简单方法"></a>实现所有比较运算符的简单方法</h2><p>为一个类实现所有的比较运算符(如 <strong>lt</strong> , <strong>le</strong> , <strong>gt</strong> , <strong>ge</strong>)是很繁琐的。有更简单的方法可以做到这一点吗？这种时候，「functools.total_ordering」就是一个很好的帮手：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> total_ordering </span><br><span class="line"> </span><br><span class="line"><span class="meta">@total_ordering </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Number</span>:</span> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, value)</span>:</span> </span><br><span class="line">        self.value = value </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__lt__</span><span class="params">(self, other)</span>:</span> </span><br><span class="line">        <span class="keyword">return</span> self.value &lt; other.value </span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__eq__</span><span class="params">(self, other)</span>:</span> </span><br><span class="line">        <span class="keyword">return</span> self.value == other.value </span><br><span class="line"> </span><br><span class="line">print(Number(<span class="number">20</span>) &gt; Number(<span class="number">3</span>)) </span><br><span class="line">print(Number(<span class="number">1</span>) &lt; Number(<span class="number">5</span>)) </span><br><span class="line">print(Number(<span class="number">15</span>) &gt;= Number(<span class="number">15</span>)) </span><br><span class="line">print(Number(<span class="number">10</span>) &lt;= Number(<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<p>用「total_ordering」装饰器简化实现对类实例排序的过程。我们只需要定义「<strong>lt</strong>」和「<strong>eq</strong>」就可以了</p>
+<h2 id="限制「CPU」和内存使用量"><a href="#限制「CPU」和内存使用量" class="headerlink" title="限制「CPU」和内存使用量"></a>限制「CPU」和内存使用量</h2><p>？<br>如果不是想优化程序对内存或 CPU 的使用率（how），而是想直接将其限制为某个确定的数字，Python 也有一个对应的库可以做到：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> signal </span><br><span class="line"><span class="keyword">import</span> resource </span><br><span class="line"><span class="keyword">import</span> os </span><br><span class="line"> </span><br><span class="line"><span class="comment"># To Limit CPU time </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">time_exceeded</span><span class="params">(signo, frame)</span>:</span> </span><br><span class="line">    print(<span class="string">"CPU exceeded..."</span>) </span><br><span class="line">    <span class="keyword">raise</span> SystemExit(<span class="number">1</span>) </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_max_runtime</span><span class="params">(seconds)</span>:</span> </span><br><span class="line">    <span class="comment"># Install the signal handler and set a resource limit </span></span><br><span class="line">    soft, hard = resource.getrlimit(resource.RLIMIT_CPU) </span><br><span class="line">    resource.setrlimit(resource.RLIMIT_CPU, (seconds, hard)) </span><br><span class="line">    signal.signal(signal.SIGXCPU, time_exceeded) </span><br><span class="line"> </span><br><span class="line"><span class="comment"># To limit memory usage </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">set_max_memory</span><span class="params">(size)</span>:</span> </span><br><span class="line">    soft, hard = resource.getrlimit(resource.RLIMIT_AS) </span><br><span class="line">    resource.setrlimit(resource.RLIMIT_AS, (size, hard))</span><br></pre></td></tr></table></figure>
+
+
+
+</div><div class="article-tags size-small is-uppercase mb-4"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted mr-2" rel="tag" href="/tags/tricks/">tricks</a><a class="link-muted mr-2" rel="tag" href="/tags/Python/">Python</a></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/python/Python-tricks.html">Python tricks</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/python/Python-tricks.html">https://zronghui.github.io/python/Python-tricks.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/java/Java-tricks.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java tricks</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/java/%E5%9F%BA%E7%A1%80/Java%E6%8F%90%E9%AB%98%E7%AF%87.html"><span class="level-item">Java提高篇</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '59c484d6dd21c6b69afe7334fc2801ed',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-tabulate-表格化打印文本" href="#tabulate-表格化打印文本"><span>tabulate 表格化打印文本</span></a></li><li><a class="is-flex" id="toc-item-xpath" href="#xpath"><span>xpath</span></a></li><li><a class="is-flex" id="toc-item-生成requirements-txt" href="#生成requirements-txt"><span>生成requirements.txt</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-使用pip-freeze" href="#使用pip-freeze"><span>使用pip freeze</span></a></li><li><a class="is-flex" id="toc-item-使用-pipreqs" href="#使用-pipreqs"><span>使用 pipreqs</span></a></li></ul></li><li><a class="is-flex" id="toc-item-imgmaker-把文字转成高清图片" href="#imgmaker-把文字转成高清图片"><span>imgmaker-把文字转成高清图片</span></a></li><li><a class="is-flex" id="toc-item-Wget" href="#Wget"><span>Wget</span></a></li><li><a class="is-flex" id="toc-item-ipython-安装自动补全" href="#ipython-安装自动补全"><span>ipython 安装自动补全</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Pip-升级-package" href="#Pip-升级-package"><span>Pip 升级 package</span></a></li></ul></li></ul><li><a class="is-flex" id="toc-item-03-27" href="#03-27"><span>03-27</span></a></li><li><a class="is-flex" id="toc-item-03-23" href="#03-23"><span>03-23</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-vardbg" href="#vardbg"><span>vardbg</span></a></li></ul></li><li><a class="is-flex" id="toc-item-03-12" href="#03-12"><span>03-12</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-Environs-读取环境变量" href="#Environs-读取环境变量"><span>Environs 读取环境变量</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-03-11" href="#03-11"><span>03-11</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-Django-调用流程图" href="#Django-调用流程图"><span>Django 调用流程图</span></a></li><li><a class="is-flex" id="toc-item-死链检测" href="#死链检测"><span>死链检测</span></a></li><li><a class="is-flex" id="toc-item-creating-command-line-user-interfaces创建命令行用户界面" href="#creating-command-line-user-interfaces创建命令行用户界面"><span>creating command line user interfaces创建命令行用户界面</span></a></li><li><a class="is-flex" id="toc-item-自定义快捷键的功能" href="#自定义快捷键的功能"><span>自定义快捷键的功能</span></a></li><li><a class="is-flex" id="toc-item-pytest-responsemock" href="#pytest-responsemock"><span>pytest-responsemock</span></a></li><li><a class="is-flex" id="toc-item-简繁转换" href="#简繁转换"><span>简繁转换</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-03-10" href="#03-10"><span>03-10</span></a></li><li><a class="is-flex" id="toc-item-03-06" href="#03-06"><span>03-06</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-pip-其它使用方式" href="#pip-其它使用方式"><span>pip 其它使用方式</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-02-28" href="#02-28"><span>02-28</span></a></li><li><a class="is-flex" id="toc-item-02-14" href="#02-14"><span>02-14</span></a></li><li><a class="is-flex" id="toc-item-02-13" href="#02-13"><span>02-13</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-Pathlib-3-4" href="#Pathlib-3-4"><span>Pathlib (3.4+)</span></a></li><li><a class="is-flex" id="toc-item-Type-hinting-3-5" href="#Type-hinting-3-5"><span>Type hinting (3.5+)</span></a></li><li><a class="is-flex" id="toc-item-Enumerations-3-4" href="#Enumerations-3-4"><span>Enumerations (3.4+)</span></a></li><li><a class="is-flex" id="toc-item-Built-in-LRU-cache-3-2" href="#Built-in-LRU-cache-3-2"><span>Built-in LRU cache (3.2+)</span></a></li><li><a class="is-flex" id="toc-item-Extended-iterable-unpacking-3-0" href="#Extended-iterable-unpacking-3-0"><span>Extended iterable unpacking (3.0+)</span></a></li><li><a class="is-flex" id="toc-item-Data-classes-3-7" href="#Data-classes-3-7"><span>Data classes (3.7+)</span></a></li><li><a class="is-flex" id="toc-item-Implicit-namespace-packages-3-3" href="#Implicit-namespace-packages-3-3"><span>Implicit namespace packages (3.3+)</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-02-10" href="#02-10"><span>02-10</span></a></li><li><a class="is-flex" id="toc-item-2020-年-1-月-15-日-星期三" href="#2020-年-1-月-15-日-星期三"><span>2020 年 1 月 15 日(星期三)</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-字符串一次性执行多个-replace" href="#字符串一次性执行多个-replace"><span>字符串一次性执行多个 replace</span></a></li><li><a class="is-flex" id="toc-item-迭代器切片-Slice" href="#迭代器切片-Slice"><span>迭代器切片(Slice)</span></a></li><li><a class="is-flex" id="toc-item-跳过可迭代对象某些元素" href="#跳过可迭代对象某些元素"><span>跳过可迭代对象某些元素</span></a></li><li><a class="is-flex" id="toc-item-实现上下文管理" href="#实现上下文管理"><span>实现上下文管理</span></a></li><li><a class="is-flex" id="toc-item-控制可以-不可以导入什么" href="#控制可以-不可以导入什么"><span>控制可以&amp;#x2F;不可以导入什么</span></a></li><li><a class="is-flex" id="toc-item-实现所有比较运算符的简单方法" href="#实现所有比较运算符的简单方法"><span>实现所有比较运算符的简单方法</span></a></li><li><a class="is-flex" id="toc-item-限制「CPU」和内存使用量" href="#限制「CPU」和内存使用量"><span>限制「CPU」和内存使用量</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

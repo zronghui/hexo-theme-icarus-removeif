@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>matplotlib - zronghui的博客</title><meta description="[TOC]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[TOC]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-08-11T06:28:08.000Z"><meta property="article:modified_time" content="2020-08-20T12:58:17.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-08-11T06:28:08.000Z","dateModified":"2020-08-20T12:58:17.000Z","author":{"@type":"Person","name":"removeif"},"description":"[TOC]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-08-11T06:28:08.000Z">2020-08-11</time><a class="commentCountImg" href="/python/matplotlib.html#comment-container"><span class="display-none-class">b0f065056974e7266c6b54d3d65e0114</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="b0f065056974e7266c6b54d3d65e0114"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/python/">python</a></span><span class="level-item">4 minutes 读完 (大约 646 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">matplotlib</h1><div class="content"><p>[TOC]</p>
+<a id="more"></a>
+
+<h3 id="引入包"><a href="#引入包" class="headerlink" title="引入包"></a>引入包</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="设置-xlabel-ylabel-title-显示网格线"><a href="#设置-xlabel-ylabel-title-显示网格线" class="headerlink" title="设置 xlabel ylabel title 显示网格线"></a>设置 xlabel ylabel title 显示网格线</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">6</span>, <span class="number">6</span>)) <span class="comment">#</span></span><br><span class="line">ax = plt.gca() <span class="comment"># get current axes</span></span><br><span class="line">ax.set_xlabel(<span class="string">'theta'</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">'omega'</span>)</span><br><span class="line">ax.set_title(<span class="string">'theta_0=1/2, omega_0=0, n_end=200'</span>)</span><br><span class="line">ax.scatter(t1, t2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">plt.grid(<span class="literal">True</span>, linestyle = <span class="string">"-."</span>, color = <span class="string">"r"</span>, linewidth = <span class="string">"3"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置-x-y-轴范围"><a href="#设置-x-y-轴范围" class="headerlink" title="设置 x y 轴范围"></a>设置 x y 轴范围</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">plt.xlim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br><span class="line">plt.ylim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="画点、画线"><a href="#画点、画线" class="headerlink" title="画点、画线"></a>画点、画线</h3><h4 id="画线："><a href="#画线：" class="headerlink" title="画线："></a>画线：</h4><p>ax.plot(lx, ly, ‘r-‘) # 画红色实线</p>
+<h4 id="画点"><a href="#画点" class="headerlink" title="画点:"></a>画点:</h4><p>ax.plot(x, y, marker=’.’, markersize=40, markerfacecolor=’red’)</p>
+<p>更多 marker：</p>
+<p><a href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.axes.Axes.plot.html">matplotlib.axes.Axes.plot — Matplotlib 3.1.2 documentation</a></p>
+<p><strong>Markers</strong></p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;.&#39;</code></td>
+<td>point marker</td>
+</tr>
+<tr>
+<td><code>&#39;,&#39;</code></td>
+<td>pixel marker</td>
+</tr>
+<tr>
+<td><code>&#39;o&#39;</code></td>
+<td>circle marker</td>
+</tr>
+<tr>
+<td><code>&#39;v&#39;</code></td>
+<td>triangle_down marker</td>
+</tr>
+<tr>
+<td><code>&#39;^&#39;</code></td>
+<td>triangle_up marker</td>
+</tr>
+<tr>
+<td><code>&#39;&lt;&#39;</code></td>
+<td>triangle_left marker</td>
+</tr>
+<tr>
+<td><code>&#39;&gt;&#39;</code></td>
+<td>triangle_right marker</td>
+</tr>
+<tr>
+<td><code>&#39;1&#39;</code></td>
+<td>tri_down marker</td>
+</tr>
+<tr>
+<td><code>&#39;2&#39;</code></td>
+<td>tri_up marker</td>
+</tr>
+<tr>
+<td><code>&#39;3&#39;</code></td>
+<td>tri_left marker</td>
+</tr>
+<tr>
+<td><code>&#39;4&#39;</code></td>
+<td>tri_right marker</td>
+</tr>
+<tr>
+<td><code>&#39;s&#39;</code></td>
+<td>square marker</td>
+</tr>
+<tr>
+<td><code>&#39;p&#39;</code></td>
+<td>pentagon marker</td>
+</tr>
+<tr>
+<td><code>&#39;*&#39;</code></td>
+<td>star marker</td>
+</tr>
+<tr>
+<td><code>&#39;h&#39;</code></td>
+<td>hexagon1 marker</td>
+</tr>
+<tr>
+<td><code>&#39;H&#39;</code></td>
+<td>hexagon2 marker</td>
+</tr>
+<tr>
+<td><code>&#39;+&#39;</code></td>
+<td>plus marker</td>
+</tr>
+<tr>
+<td><code>&#39;x&#39;</code></td>
+<td>x marker</td>
+</tr>
+<tr>
+<td><code>&#39;D&#39;</code></td>
+<td>diamond marker</td>
+</tr>
+<tr>
+<td><code>&#39;d&#39;</code></td>
+<td>thin_diamond marker</td>
+</tr>
+<tr>
+<td>`’</td>
+<td>‘`</td>
+</tr>
+<tr>
+<td><code>&#39;_&#39;</code></td>
+<td>hline marker</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">t1, t2 = run_pendulum(<span class="number">0.5</span>, <span class="number">0</span>, <span class="number">20</span>)</span><br><span class="line">xs = list(map(<span class="keyword">lambda</span> i: -sin(i), t1))</span><br><span class="line">ys = list(map(<span class="keyword">lambda</span> i: cos(i), t1))</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">6</span>,<span class="number">6</span>)) <span class="comment">#</span></span><br><span class="line">ax = plt.gca() <span class="comment"># get current axes</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">0</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>]:</span><br><span class="line">    x, y = xs[i], ys[i]</span><br><span class="line">    <span class="comment"># 画线 前一个列表是 x 后一个列表是 y </span></span><br><span class="line">    ax.plot([<span class="number">0</span>,x], [<span class="number">0</span>, y], <span class="string">"k"</span>) <span class="comment"># plot the black line</span></span><br><span class="line">    <span class="comment"># 画一个圆点，颜色是红，大小 40, 坐标 (x, y)</span></span><br><span class="line">    ax.plot(x, y, marker=<span class="string">'.'</span>, markersize=<span class="number">40</span>, markerfacecolor=<span class="string">'red'</span>) <span class="comment"># plot the red square</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set the limits</span></span><br><span class="line">plt.xlim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br><span class="line">plt.ylim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Line Styles</strong></p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;-&#39;</code></td>
+<td>solid line style</td>
+</tr>
+<tr>
+<td><code>&#39;--&#39;</code></td>
+<td>dashed line style</td>
+</tr>
+<tr>
+<td><code>&#39;-.&#39;</code></td>
+<td>dash-dot line style</td>
+</tr>
+<tr>
+<td><code>&#39;:&#39;</code></td>
+<td>dotted line style</td>
+</tr>
+</tbody></table>
+<p>Example format strings:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#39;b&#39;    # blue markers with default shape</span><br><span class="line">&#39;or&#39;   # red circles</span><br><span class="line">&#39;-g&#39;   # green solid line</span><br><span class="line">&#39;--&#39;   # dashed line with default color</span><br><span class="line">&#39;^k:&#39;  # black triangle_up markers connected by a dotted line</span><br></pre></td></tr></table></figure>
+
+<p><strong>Colors</strong></p>
+<p>The supported color abbreviations are the single letter codes</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&#39;b&#39;</code></td>
+<td>blue</td>
+</tr>
+<tr>
+<td><code>&#39;g&#39;</code></td>
+<td>green</td>
+</tr>
+<tr>
+<td><code>&#39;r&#39;</code></td>
+<td>red</td>
+</tr>
+<tr>
+<td><code>&#39;c&#39;</code></td>
+<td>cyan</td>
+</tr>
+<tr>
+<td><code>&#39;m&#39;</code></td>
+<td>magenta</td>
+</tr>
+<tr>
+<td><code>&#39;y&#39;</code></td>
+<td>yellow</td>
+</tr>
+<tr>
+<td><code>&#39;k&#39;</code></td>
+<td>black</td>
+</tr>
+<tr>
+<td><code>&#39;w&#39;</code></td>
+<td>white</td>
+</tr>
+</tbody></table>
+<h3 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h3><p>如果只有一个 plot 需要更新，直接返回就好</p>
+<p>否则， updateALL 函数返回 plot 列表</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">t1, t2 = run_pendulum(<span class="number">0.5</span>, <span class="number">0</span>, <span class="number">200</span>)</span><br><span class="line">xs = list(map(<span class="keyword">lambda</span> i: -sin(i), t1))</span><br><span class="line">ys = list(map(<span class="keyword">lambda</span> i: cos(i), t1))</span><br><span class="line"></span><br><span class="line">fig = plt.figure(figsize=(<span class="number">6</span>,<span class="number">6</span>)) <span class="comment">#</span></span><br><span class="line">ax = plt.gca() <span class="comment"># get current axes</span></span><br><span class="line">plot0, = ax.plot([<span class="number">0</span>,xs[<span class="number">0</span>]], [<span class="number">0</span>, ys[<span class="number">0</span>]], <span class="string">"k"</span>) <span class="comment"># plot the black line</span></span><br><span class="line">plot1, = ax.plot(xs[<span class="number">0</span>], ys[<span class="number">0</span>], marker=<span class="string">'.'</span>, markersize=<span class="number">40</span>, markerfacecolor=<span class="string">'red'</span>) <span class="comment"># plot the red square</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># set the limits</span></span><br><span class="line">plt.xlim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br><span class="line">plt.ylim((<span class="number">-1.1</span>, <span class="number">1.1</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"><span class="keyword">from</span> matplotlib.animation <span class="keyword">import</span> FuncAnimation</span><br><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> HTML</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">updateALL</span><span class="params">(i)</span>:</span></span><br><span class="line">    plot1.set_xdata(xs[i])</span><br><span class="line">    plot1.set_ydata(ys[i])</span><br><span class="line">    plot0.set_xdata([<span class="number">0</span>, xs[i]])</span><br><span class="line">    plot0.set_ydata([<span class="number">0</span>, ys[i]])</span><br><span class="line">    <span class="keyword">return</span> [plot0, plot1]</span><br><span class="line">    </span><br><span class="line">anim = FuncAnimation(fig, updateALL, frames=range(<span class="number">0</span>, <span class="number">200</span>), interval=<span class="number">100</span>, repeat=<span class="literal">True</span>)</span><br><span class="line">HTML(anim.to_html5_video())</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="subplot-子图"><a href="#subplot-子图" class="headerlink" title="subplot 子图"></a>subplot 子图</h3><p><img src="https://i.loli.net/2020/08/11/ehdNzQDfJ96CF7s.png" alt="image-20200811162558483"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize=(<span class="number">15</span>,<span class="number">8</span>))</span><br><span class="line">plt.subplot(<span class="number">121</span>, title=<span class="string">'"Neat" K-Means'</span>)</span><br><span class="line">plt.scatter(x_neat[:,<span class="number">0</span>], x_neat[:,<span class="number">1</span>], c=km_neat)</span><br><span class="line">plt.subplot(<span class="number">122</span>, title=<span class="string">'"Messy" K-Means'</span>)</span><br><span class="line">plt.scatter(x_messy[:,<span class="number">0</span>], x_messy[:,<span class="number">1</span>], c=km_messy)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="设置-legend"><a href="#设置-legend" class="headerlink" title="设置 legend"></a>设置 legend</h3><p>legend 是啥：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/41781440">Matplotlib 系列之「Legend 图例」 - 知乎</a></p>
+<img src="https://i.loli.net/2020/08/11/xRawbpZmgPCt7UT.jpg" alt="img" style="zoom:50%;" />
+
+<p>可以同时设置多条线的 legend </p>
+<p>plt.legend(handles=[s1],labels=[‘theta_0=1/2, omega_0=0, n_end=200’],loc=’best’)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">6</span>, <span class="number">6</span>)) <span class="comment">#</span></span><br><span class="line">ax = plt.gca() <span class="comment"># get current axes</span></span><br><span class="line">ax.set_xlabel(<span class="string">'theta'</span>)</span><br><span class="line">ax.set_ylabel(<span class="string">'omega'</span>)</span><br><span class="line"><span class="comment"># ax.set_title('theta_0=1/2, omega_0=0, n_end=200')</span></span><br><span class="line">s1 = ax.scatter(t1, t2)</span><br><span class="line">plt.legend(handles=[s1],labels=[<span class="string">'theta_0=1/2, omega_0=0, n_end=200'</span>],loc=<span class="string">'best'</span>)</span><br><span class="line">ax</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/python/matplotlib.html">matplotlib</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/python/matplotlib.html">https://zronghui.github.io/python/matplotlib.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/python/kmeans.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">kmeans</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/leetcode/%E5%88%86%E7%B1%BB/%E7%9F%B3%E5%AD%90%E6%B8%B8%E6%88%8F.html"><span class="level-item">石子游戏</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: 'b0f065056974e7266c6b54d3d65e0114',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-引入包" href="#引入包"><span>引入包</span></a></li><li><a class="is-flex" id="toc-item-设置-xlabel-ylabel-title-显示网格线" href="#设置-xlabel-ylabel-title-显示网格线"><span>设置 xlabel ylabel title 显示网格线</span></a></li><li><a class="is-flex" id="toc-item-设置-x-y-轴范围" href="#设置-x-y-轴范围"><span>设置 x y 轴范围</span></a></li><li><a class="is-flex" id="toc-item-画点、画线" href="#画点、画线"><span>画点、画线</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-画线：" href="#画线："><span>画线：</span></a></li><li><a class="is-flex" id="toc-item-画点" href="#画点"><span>画点:</span></a></li></ul></li><li><a class="is-flex" id="toc-item-动画" href="#动画"><span>动画</span></a></li><li><a class="is-flex" id="toc-item-subplot-子图" href="#subplot-子图"><span>subplot 子图</span></a></li><li><a class="is-flex" id="toc-item-设置-legend" href="#设置-legend"><span>设置 legend</span></a></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Dubbo面试28题答案详解：核心功能+服务治理+架构设计等 - zronghui的博客</title><meta description="[toc]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[toc]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-01-30T01:30:52.000Z"><meta property="article:modified_time" content="2020-05-12T14:34:39.000Z"><meta property="article:author" content="removeif"><meta property="article:tag" content="Java"><meta property="article:tag" content="Dubbo"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-01-30T01:30:52.000Z","dateModified":"2020-05-12T14:34:39.000Z","author":{"@type":"Person","name":"removeif"},"description":"[toc]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-01-30T01:30:52.000Z">2020-01-30</time><a class="commentCountImg" href="/java/other/Dubbo%E9%9D%A2%E8%AF%9528%E9%A2%98%E7%AD%94%E6%A1%88%E8%AF%A6%E8%A7%A3%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%AD%89.html#comment-container"><span class="display-none-class">353a1658c078efd9472c9d3b902433af</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="353a1658c078efd9472c9d3b902433af"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/java/">java</a><span> / </span><a class="link-muted" href="/categories/java/other/">other</a></span><span class="level-item">23 minutes 读完 (大约 3516 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Dubbo面试28题答案详解：核心功能+服务治理+架构设计等</h1><div class="content"><p>[toc]</p>
+<a id="more"></a>
+
+<h1 id="Dubbo面试28题答案详解：核心功能-服务治理-架构设计等"><a href="#Dubbo面试28题答案详解：核心功能-服务治理-架构设计等" class="headerlink" title="Dubbo面试28题答案详解：核心功能+服务治理+架构设计等"></a><a href="https://aijishu.com/a/1060000000079785">Dubbo面试28题答案详解：核心功能+服务治理+架构设计等</a></h1><p><a href="https://aijishu.com/t/java">Java</a><a href="https://aijishu.com/t/learning">学习分享</a></p>
+<h5 id="1-Dubbo是什么？"><a href="#1-Dubbo是什么？" class="headerlink" title="1.Dubbo是什么？"></a><strong>1.Dubbo是什么？</strong></h5><p>RPC 指的是远程调用协议，也就是说两个服务器交互数据。</p>
+<p>Dubbo 是一个分布式、高性能、透明化的 RPC 服务框架，提供服务自动注册、自动发现等高效服务治理方案，可以和 Spring 框架无缝集成。</p>
+<h5 id="2-Dubbo的由来？"><a href="#2-Dubbo的由来？" class="headerlink" title="2.Dubbo的由来？"></a><strong>2.Dubbo的由来？</strong></h5><p>互联网的快速发展，Web 应用程序规模的不断扩大，一般会经历如下四个发展阶段。</p>
+<p>单一应用架构</p>
+<p>当网站流量很小时，只需一个应用，<strong>将所有功能都部署在一起</strong>即可。</p>
+<img src="https://aijishu.com/img/bVuUQ" alt="file" style="zoom:50%;" />
+
+
+
+<h6 id="垂直应用架构"><a href="#垂直应用架构" class="headerlink" title="垂直应用架构**"></a>垂直应用架构**</h6><p>当访问量逐渐增大，单一应用按照有业务线<strong>拆成多个应用</strong>，以提升效率。</p>
+<p>此时，用于加速前端页面开发的 <strong>Web框架(MVC)</strong> 是关键。</p>
+<img src="https://aijishu.com/img/bVuUR" alt="file" style="zoom:50%;" />
+
+
+
+<h6 id="分布式服务架构"><a href="#分布式服务架构" class="headerlink" title="分布式服务架构"></a><strong>分布式服务架构</strong></h6><p>当垂直应用越来越多，应用之间交互不可避免，<strong>将核心业务抽取出来，作为独立的服务，逐渐形成稳定的服务中心</strong>，使前端应用能更快速地响应多变的市场需求。</p>
+<p>此时，用于提高业务复用及整合的 <strong>分布式服务框架(RPC)</strong> 是关键。</p>
+<img src="https://aijishu.com/img/bVuUS" alt="file" style="zoom:50%;" />
+
+
+
+<h6 id="流动计算架构"><a href="#流动计算架构" class="headerlink" title="流动计算架构"></a><strong>流动计算架构</strong></h6><p>当服务越来越多，容量的评估，小服务资源的浪费等问题逐渐显现，<strong>此时需增加一个调度中心基于访问压力实时管理集群容量，提高集群利用率。</strong></p>
+<p>此时，用于提高机器利用率的 <strong>资源调度和治理中心(SOA)</strong> 是关键。</p>
+<p><img src="https://aijishu.com/img/bVuUT" alt="file"></p>
+<h6 id="3-Dubbo的主要应用场景？"><a href="#3-Dubbo的主要应用场景？" class="headerlink" title="3.Dubbo的主要应用场景？"></a><strong>3.Dubbo的主要应用场景？</strong></h6><p>透明化的远程方法调用，就像调用本地方法一样调用远程方法，只需简单配置，没有任何API侵入。</p>
+<p>软负载均衡及容错机制，可在内网替代F5等硬件负载均衡器，降低成本，减少单点。</p>
+<p>服务自动注册与发现，不再需要写死服务提供方地址，注册中心基于接口名查询服务提供者的IP地址，并且能够平滑添加或删除服务提供者。</p>
+<h6 id="4-Dubbo的核心功能？"><a href="#4-Dubbo的核心功能？" class="headerlink" title="4.Dubbo的核心功能？"></a><strong>4.Dubbo的核心功能？</strong></h6><p>主要就是如下3个核心功能：</p>
+<ul>
+<li><p><strong>Remoting：</strong>网络通信框架，提供对多种NIO框架抽象封装，包括“同步转异步”和“请求-响应”模式的信息交换方式。</p>
+</li>
+<li><p><strong>Cluster：服务框架</strong>，提供基于接口方法的透明远程过程调用，包括多协议支持，以及软负载均衡，失败容错，地址路由，动态配置等集群支持。</p>
+</li>
+<li><p><strong>Registry：服务注册</strong>，基于注册中心目录服务，使服务消费方能动态的查找服务提供方，使地址透明，使服务提供方可以平滑增加或减少机器。</p>
+</li>
+</ul>
+<h6 id="5-Dubbo的核心组件？"><a href="#5-Dubbo的核心组件？" class="headerlink" title="5.Dubbo的核心组件？"></a><strong>5.Dubbo的核心组件？</strong></h6><img src="https://aijishu.com/img/bVuUU" alt="file" style="zoom:50%;" />
+
+<p>Provider Consumer Registry Monitor Container</p>
+<h6 id="6-Dubbo服务注册与发现的流程？"><a href="#6-Dubbo服务注册与发现的流程？" class="headerlink" title="6.Dubbo服务注册与发现的流程？"></a><strong>6.Dubbo服务注册与发现的流程？</strong></h6><img src="https://aijishu.com/img/bVuUV" alt="file" style="zoom: 67%;" />
+
+<p><strong>流程说明：</strong></p>
+<ul>
+<li>Provider 绑定指定端口并启动服务</li>
+<li>Provider 连接注册中心，并发送 本机IP、端口、应用信息和提供服务信息 至 Registry 存储</li>
+<li>Consumer 连接注册中心 ，并发送应用信息、所求服务信息至注册中心</li>
+<li>Registry 根据 Consumer 所求服务信息匹配对应的 Provider 列表发送至 Consumer 应用缓存。</li>
+<li>Consumer 在发起远程调用时基于缓存的 Provider 列表择其一发起调用。</li>
+<li>Provider 状态变更会实时通知Registry、再由Registry实时推送至Consumer</li>
+</ul>
+<p><strong>设计的原因：</strong></p>
+<ul>
+<li><p>Consumer 与Provider 解偶，双方都可以横向增减节点数。</p>
+</li>
+<li><p>Registry 对本身可做对等集群，可动态增减节点，并且任意一台宕掉后，将自动切换到另一台</p>
+</li>
+<li><p>去中心化，双方不直接依懒注册中心，即使注册中心全部宕机短时间内也不会影响服务的调用</p>
+</li>
+<li><p>服务提供者无状态，任意一台宕掉后，不影响使用</p>
+</li>
+</ul>
+  <img src="https://aijishu.com/img/bVuUW" alt="file" style="zoom:50%;" />
+
+<h6 id="7-Dubbo的架构设计？"><a href="#7-Dubbo的架构设计？" class="headerlink" title="7.Dubbo的架构设计？"></a><strong>7.Dubbo的架构设计？</strong></h6><img src="https://aijishu.com/img/bVuUX" alt="file"  />
+
+<p><strong>Dubbo框架设计一共划分了10个层：</strong></p>
+<p><strong>服务接口层（Service）：</strong>该层是与实际业务逻辑相关的，根据服务提供方和服务消费方的业务设计对应的接口和实现。</p>
+<p><strong>配置层（Config）：</strong>对外配置接口，以ServiceConfig和ReferenceConfig为中心。</p>
+<p><strong>服务代理层（Proxy）：</strong>服务接口透明代理，生成服务的客户端Stub和服务器端Skeleton。</p>
+<p><strong>服务注册层（Registry）：</strong>封装服务地址的注册与发现，以服务URL为中心。</p>
+<p><strong>集群层（Cluster）：</strong>封装多个提供者的路由及负载均衡，并桥接注册中心，以Invoker为中心。</p>
+<p><strong>监控层（Monitor）：</strong>RPC调用次数和调用时间监控。</p>
+<p><strong>远程调用层（Protocol）：</strong>封将RPC调用，以Invocation和Result为中心，扩展接口为Protocol、Invoker和Exporter。</p>
+<p><strong>信息交换层（Exchange）：</strong>封装请求响应模式，同步转异步，以Request和Response为中心。</p>
+<p><strong>网络传输层（Transport）：</strong>抽象mina和netty为统一接口，以Message为中心。</p>
+<h6 id="8-Dubbo的服务调用流程？"><a href="#8-Dubbo的服务调用流程？" class="headerlink" title="8.Dubbo的服务调用流程？"></a><strong>8.Dubbo的服务调用流程？</strong></h6><p><img src="https://aijishu.com/img/bVuUY" alt="file"></p>
+<p>9.Dubbo支持哪些协议，每种协议的应用场景，优缺点？</p>
+<ul>
+<li><strong>dubbo：</strong> 单一长连接和NIO异步通讯，适合大并发小数据量的服务调用，以及消费者远大于提供者。传输协议TCP，异步，Hessian序列化；</li>
+<li><strong>rmi：</strong> 采用JDK标准的rmi协议实现，传输参数和返回参数对象需要实现Serializable接口，使用java标准序列化机制，使用阻塞式短连接，传输数据包大小混合，消费者和提供者个数差不多，可传文件，传输协议TCP。</li>
+<li>多个短连接，TCP协议传输，同步传输，适用常规的远程服务调用和rmi互操作。在依赖低版本的Common-Collections包，java序列化存在安全漏洞；</li>
+<li><strong>webservice：</strong> 基于WebService的远程调用协议，集成CXF实现，提供和原生WebService的互操作。多个短连接，基于HTTP传输，同步传输，适用系统集成和跨语言调用；</li>
+<li><strong>http：</strong> 基于Http表单提交的远程调用协议，使用Spring的HttpInvoke实现。多个短连接，传输协议HTTP，传入参数大小混合，提供者个数多于消费者，需要给应用程序和浏览器JS调用；</li>
+<li>hessian： 集成Hessian服务，基于HTTP通讯，采用Servlet暴露服务，Dubbo内嵌Jetty作为服务器时默认实现，提供与Hession服务互操作。多个短连接，同步HTTP传输，Hessian序列化，传入参数较大，提供者大于消费者，提供者压力较大，可传文件；</li>
+<li>memcache： 基于memcached实现的RPC协议</li>
+<li>redis： 基于redis实现的RPC协议</li>
+</ul>
+<h6 id="10-dubbo推荐用什么协议？"><a href="#10-dubbo推荐用什么协议？" class="headerlink" title="10.dubbo推荐用什么协议？"></a><strong>10.dubbo推荐用什么协议？</strong></h6><p>默认使用dubbo协议</p>
+<h6 id="11-Dubbo有些哪些注册中心？"><a href="#11-Dubbo有些哪些注册中心？" class="headerlink" title="11.Dubbo有些哪些注册中心？"></a><strong>11.Dubbo有些哪些注册中心？</strong></h6><ul>
+<li>Multicast注册中心： Multicast注册中心不需要任何中心节点，只要广播地址，就能进行服务注册和发现。基于网络中组播传输实现；</li>
+<li>Zookeeper注册中心： 基于分布式协调系统Zookeeper实现，采用Zookeeper的watch机制实现数据变更；</li>
+<li>redis注册中心： 基于redis实现，采用key/Map存储，住key存储服务名和类型，Map中key存储服务URL，value服务过期时间。基于redis的发布/订阅模式通知数据变更；</li>
+<li>Simple注册中心</li>
+</ul>
+<h6 id="12-Dubbo的服务治理？"><a href="#12-Dubbo的服务治理？" class="headerlink" title="12.Dubbo的服务治理？"></a><strong>12.Dubbo的服务治理？</strong></h6><p><img src="https://aijishu.com/img/bVuUZ" alt="file"></p>
+<ul>
+<li>过多的服务URL配置困难</li>
+<li>负载均衡分配节点压力过大的情况下也需要部署集群</li>
+<li>服务依赖混乱，启动顺序不清晰</li>
+<li>过多服务导致性能指标分析难度较大，需要监控</li>
+</ul>
+<h6 id="13-Dubbo的注册中心集群挂掉，发布者和订阅者之间还能通信么？"><a href="#13-Dubbo的注册中心集群挂掉，发布者和订阅者之间还能通信么？" class="headerlink" title="13.Dubbo的注册中心集群挂掉，发布者和订阅者之间还能通信么？"></a><strong>13.Dubbo的注册中心集群挂掉，发布者和订阅者之间还能通信么？</strong></h6><p>可以的，启动dubbo时，消费者会从zookeeper拉取注册的生产者的地址接口等数据，缓存在本地。</p>
+<p>每次调用时，按照本地存储的地址进行调用。</p>
+<h6 id="14-Dubbo与Spring的关系？"><a href="#14-Dubbo与Spring的关系？" class="headerlink" title="14.Dubbo与Spring的关系？"></a><strong>14.Dubbo与Spring的关系？</strong></h6><p>Dubbo采用全Spring配置方式，透明化接入应用，对应用没有任何API侵入，只需用Spring加载Dubbo的配置即可，Dubbo基于Spring的Schema扩展进行加载。</p>
+<h6 id="15-Dubbo使用的是什么通信框架"><a href="#15-Dubbo使用的是什么通信框架" class="headerlink" title="15.Dubbo使用的是什么通信框架?"></a><strong>15.Dubbo使用的是什么通信框架?</strong></h6><p>默认使用NIO Netty框架</p>
+<h6 id="16-Dubbo集群提供了哪些负载均衡策略？"><a href="#16-Dubbo集群提供了哪些负载均衡策略？" class="headerlink" title="16.Dubbo集群提供了哪些负载均衡策略？"></a><strong>16.Dubbo集群提供了哪些负载均衡策略？</strong></h6><ul>
+<li>Random LoadBalance: 随机选取提供者策略，有利于动态调整提供者权重。截面碰撞率高，调用次数越多，分布越均匀；</li>
+<li>RoundRobin LoadBalance: 轮循选取提供者策略，平均分布，但是存在请求累积的问题；</li>
+<li>LeastActive LoadBalance: 最少活跃调用策略，解决慢提供者接收更少的请求；</li>
+<li>ConstantHash LoadBalance: 一致性Hash策略，使相同参数请求总是发到同一提供者，一台机器宕机，可以基于虚拟节点，分摊至其他提供者，避免引起提供者的剧烈变动；</li>
+</ul>
+<p>缺省时为Random随机调用</p>
+<p><img src="https://aijishu.com/img/bVmkZ" alt="file"></p>
+<h6 id="17-Dubbo的集群容错方案有哪些？"><a href="#17-Dubbo的集群容错方案有哪些？" class="headerlink" title="17.Dubbo的集群容错方案有哪些？"></a><strong>17.Dubbo的集群容错方案有哪些？</strong></h6><ul>
+<li><strong>Failover Cluster</strong></li>
+<li>失败自动切换，当出现失败，重试其它服务器。通常用于读操作，但重试会带来更长延迟。</li>
+<li><strong>Failfast Cluster</strong></li>
+<li>快速失败，只发起一次调用，失败立即报错。通常用于非幂等性的写操作，比如新增记录。</li>
+<li><strong>Failsafe Cluster</strong></li>
+<li>失败安全，出现异常时，直接忽略。通常用于写入审计日志等操作。</li>
+<li><strong>Failback Cluster</strong></li>
+<li>失败自动恢复，后台记录失败请求，定时重发。通常用于消息通知操作。</li>
+<li><strong>Forking Cluster</strong></li>
+<li>并行调用多个服务器，只要一个成功即返回。通常用于实时性要求较高的读操作，但需要浪费更多服务资源。可通过 forks=”2″ 来设置最大并行数。</li>
+<li><strong>Broadcast Cluster</strong></li>
+<li>广播调用所有提供者，逐个调用，任意一台报错则报错 。通常用于通知所有提供者更新缓存或日志等本地资源信息。</li>
+</ul>
+<h6 id="18-Dubbo的默认集群容错方案？"><a href="#18-Dubbo的默认集群容错方案？" class="headerlink" title="18.Dubbo的默认集群容错方案？"></a><strong>18.Dubbo的默认集群容错方案？</strong></h6><p>Failover Cluster</p>
+<h6 id="19-Dubbo支持哪些序列化方式？"><a href="#19-Dubbo支持哪些序列化方式？" class="headerlink" title="19.Dubbo支持哪些序列化方式？"></a><strong>19.Dubbo支持哪些序列化方式？</strong></h6><p>默认使用Hessian序列化，还有Duddo、FastJson、Java自带序列化。</p>
+<h6 id="20-Dubbo超时时间怎样设置？"><a href="#20-Dubbo超时时间怎样设置？" class="headerlink" title="20.Dubbo超时时间怎样设置？"></a><strong>20.Dubbo超时时间怎样设置？</strong></h6><p>Dubbo超时时间设置有两种方式：</p>
+<ul>
+<li>服务提供者端设置超时时间，在Dubbo的用户文档中，推荐如果能在服务端多配置就尽量多配置，因为服务提供者比消费者更清楚自己提供的服务特性。</li>
+<li>服务消费者端设置超时时间，如果在消费者端设置了超时时间，以消费者端为主，即优先级更高。因为服务调用方设置超时时间控制性更灵活。如果消费方超时，服务端线程不会定制，会产生警告。</li>
+</ul>
+<h6 id="21-服务调用超时问题怎么解决？"><a href="#21-服务调用超时问题怎么解决？" class="headerlink" title="21.服务调用超时问题怎么解决？"></a><strong>21.服务调用超时问题怎么解决？</strong></h6><p>dubbo在调用服务不成功时，默认是会重试两次的。</p>
+<h6 id="22-Dubbo在安全机制方面是如何解决？"><a href="#22-Dubbo在安全机制方面是如何解决？" class="headerlink" title="22.Dubbo在安全机制方面是如何解决？"></a><strong>22.Dubbo在安全机制方面是如何解决？</strong></h6><p>Dubbo通过Token令牌防止用户绕过注册中心直连，然后在注册中心上管理授权。Dubbo还提供服务黑白名单，来控制服务所允许的调用方。</p>
+<h6 id="23-dubbo-和-dubbox-之间的区别？"><a href="#23-dubbo-和-dubbox-之间的区别？" class="headerlink" title="23.dubbo 和 dubbox 之间的区别？"></a><strong>23.dubbo 和 dubbox 之间的区别？</strong></h6><p>dubbox 基于 dubbo 上做了一些扩展，如加了服务可 restful 调用，更新了开源组件等。</p>
+<h6 id="24-除了Dubbo还有哪些分布式框架？"><a href="#24-除了Dubbo还有哪些分布式框架？" class="headerlink" title="24.除了Dubbo还有哪些分布式框架？"></a><strong>24.除了Dubbo还有哪些分布式框架？</strong></h6><p>大家熟知的就是Spring cloud，当然国外也有类似的多个框架。</p>
+<h6 id="25-Dubbo和Spring-Cloud的关系？"><a href="#25-Dubbo和Spring-Cloud的关系？" class="headerlink" title="25.Dubbo和Spring Cloud的关系？"></a><strong>25.Dubbo和Spring Cloud的关系？</strong></h6><p>Dubbo 是 SOA 时代的产物，它的关注点主要在于服务的调用，流量分发、流量监控和熔断。而 Spring Cloud<br>诞生于微服务架构时代，考虑的是微服务治理的方方面面，另外由于依托了 Spirng、Spirng Boot<br>的优势之上，两个框架在开始目标就不一致，Dubbo 定位服务治理、Spirng Cloud 是一个生态。</p>
+<h6 id="26-dubbo和spring-cloud的区别？"><a href="#26-dubbo和spring-cloud的区别？" class="headerlink" title="26.dubbo和spring cloud的区别？"></a><strong>26.dubbo和spring cloud的区别？</strong></h6><p>最大的区别：Dubbo底层是使用Netty这样的NIO框架，是基于TCP协议传输的，配合以Hession序列化完成RPC通信。</p>
+<p>而SpringCloud是基于Http协议+Rest接口调用远程过程的通信，相对来说，Http请求会有更大的报文，占的带宽也会更多。但是REST相比RPC更为灵活，服务提供方和调用方的依赖只依靠一纸契约，不存在代码级别的强依赖，这在强调快速演化的微服务环境下，显得更为合适，至于注重通信速度还是方便灵活性，具体情况具体考虑。</p>
+<p><img src="https://aijishu.com/img/bVuU0" alt="file"></p>
+</div><div class="article-tags size-small is-uppercase mb-4"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a><a class="link-muted mr-2" rel="tag" href="/tags/Dubbo/">Dubbo</a></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/java/other/Dubbo%E9%9D%A2%E8%AF%9528%E9%A2%98%E7%AD%94%E6%A1%88%E8%AF%A6%E8%A7%A3%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%AD%89.html">Dubbo面试28题答案详解：核心功能+服务治理+架构设计等</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/java/other/Dubbo%E9%9D%A2%E8%AF%9528%E9%A2%98%E7%AD%94%E6%A1%88%E8%AF%A6%E8%A7%A3%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD-%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%AD%89.html">https://zronghui.github.io/java/other/Dubbo面试28题答案详解：核心功能-服务治理-架构设计等.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/java/other/%E5%88%86%E5%B8%83%E5%BC%8F%E6%B6%88%E6%81%AFKafka%E7%9A%84%E5%8E%9F%E7%90%86%E3%80%81%E5%9F%BA%E7%A1%80%E6%9E%B6%E6%9E%84%E3%80%81%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">分布式消息Kafka的原理、基础架构、使用场景</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/java/%E5%9F%BA%E7%A1%80/Java-%E8%99%9A%E6%8B%9F%E6%9C%BA.html"><span class="level-item">Java 虚拟机</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '353a1658c078efd9472c9d3b902433af',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-Dubbo面试28题答案详解：核心功能-服务治理-架构设计等" href="#Dubbo面试28题答案详解：核心功能-服务治理-架构设计等"><span>Dubbo面试28题答案详解：核心功能+服务治理+架构设计等</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-26-dubbo和spring-cloud的区别？" href="#26-dubbo和spring-cloud的区别？"><span>26.dubbo和spring cloud的区别？</span></a></li></ul></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

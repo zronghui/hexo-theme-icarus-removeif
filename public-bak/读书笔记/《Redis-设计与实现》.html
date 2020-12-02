@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>《Redis 设计与实现》 - zronghui的博客</title><meta description="Redis 设计与实现 — Redis 设计与实现  [TOC]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="Redis 设计与实现 — Redis 设计与实现  [TOC]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-11-29T14:16:28.000Z"><meta property="article:modified_time" content="2020-12-02T10:40:36.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-11-29T14:16:28.000Z","dateModified":"2020-12-02T10:40:36.000Z","author":{"@type":"Person","name":"removeif"},"description":"Redis 设计与实现 — Redis 设计与实现  [TOC]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><div class="level-item tag is-danger" style="background-color: #3273dc;">已置顶</div><time class="level-item" dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time><a class="commentCountImg" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html#comment-container"><span class="display-none-class">1d49251cb77e8de4ecf24e84c8758436</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="1d49251cb77e8de4ecf24e84c8758436"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></span><span class="level-item">40 minutes 读完 (大约 5974 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">《Redis 设计与实现》</h1><div class="content"><p><a href="http://redisbook.com/">Redis 设计与实现 — Redis 设计与实现</a></p>
+<p><img src="https://i.loli.net/2020/11/30/BqafkQPmG3lWXU6.png" alt="_images/cover.png"></p>
+<p>[TOC]</p>
+<a id="more"></a>
+
+<h1 id="第一部分：数据结构与对象"><a href="#第一部分：数据结构与对象" class="headerlink" title="第一部分：数据结构与对象"></a>第一部分：数据结构与对象</h1><h2 id="2-简单动态字符串"><a href="#2-简单动态字符串" class="headerlink" title="2. 简单动态字符串"></a>2. 简单动态字符串</h2><p>SDS 的定义<br>SDS 与 C 字符串的区别<br>SDS API</p>
+<h3 id="重点回顾"><a href="#重点回顾" class="headerlink" title="重点回顾"></a>重点回顾</h3><p>Redis 只会使用 C 字符串作为字面量， 在大多数情况下， Redis 使用 SDS （Simple Dynamic String，简单动态字符串）作为字符串表示。</p>
+<p>比起 C 字符串， SDS 具有以下优点：</p>
+<ul>
+<li>常数复杂度获取字符串长度。</li>
+<li>杜绝缓冲区溢出。</li>
+<li>减少修改字符串长度时所需的内存重分配次数。</li>
+<li>二进制安全。</li>
+<li>兼容部分 C 字符串函数。</li>
+</ul>
+<h2 id="3-链表"><a href="#3-链表" class="headerlink" title="3. 链表"></a>3. 链表</h2><p>链表和链表节点的实现<br>链表和链表节点的 API</p>
+<h3 id="重点回顾-1"><a href="#重点回顾-1" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>链表被广泛用于实现 Redis 的各种功能， 比如列表键， 发布与订阅， 慢查询， 监视器， 等等。</li>
+<li>每个链表节点由一个 <code>listNode</code> 结构来表示， 每个节点都有一个指向前置节点和后置节点的指针， 所以 Redis 的链表实现是双端链表。</li>
+<li>每个链表使用一个 <code>list</code> 结构来表示， 这个结构带有表头节点指针、表尾节点指针、以及链表长度等信息。</li>
+<li>因为链表表头节点的前置节点和表尾节点的后置节点都指向 <code>NULL</code> ， 所以 Redis 的链表实现是无环链表。</li>
+<li>通过为链表设置不同的类型特定函数， Redis 的链表可以用于保存各种不同类型的值。</li>
+</ul>
+<h2 id="4-字典"><a href="#4-字典" class="headerlink" title="4. 字典"></a>4. 字典</h2><p>字典的实现<br>哈希算法<br>解决键冲突<br>rehash</p>
+<h3 id="渐进式-rehash"><a href="#渐进式-rehash" class="headerlink" title="渐进式 rehash"></a>渐进式 rehash</h3><p><strong>rehash 的过程：</strong></p>
+<ol>
+<li>为 ht[1] 分配空间</li>
+<li>将字典中 rehashidx 设为 0，表示 rehash 工作正式开始(rehashidx 表示 ht[0] 中下一个需要 rehash 的索引位置)</li>
+<li>每次对字典进行增删改查，检测到 rehashidx&gt;=0, 则程序除了处理指定的操作，还会顺带将 ht[0] 在 rehashidx 索引上的所有键值对 rehash 到 ht[1] 中，rehashidx++</li>
+<li>rehashidx 等于 ht[0] 的长度时，rehash结束，将 rehashidx 设为 -1</li>
+</ol>
+<p>渐进式 rehash 的好处在于采取分而治之的方式，将 rehash 键值对的工作均摊到每次增删改查的操作上，避免了几种 rehash 而带来的庞大计算量。</p>
+<p>字典 API</p>
+<h3 id="重点回顾-2"><a href="#重点回顾-2" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>字典被广泛用于实现 Redis 的各种功能， 其中包括数据库和哈希键。</li>
+<li>Redis 中的字典使用哈希表作为底层实现， 每个字典带有两个哈希表， 一个用于平时使用， 另一个仅在进行 rehash 时使用。</li>
+<li>当字典被用作数据库的底层实现， 或者哈希键的底层实现时， Redis 使用 MurmurHash2 算法来计算键的哈希值。</li>
+<li>哈希表使用链地址法来解决键冲突， 被分配到同一个索引上的多个键值对会连接成一个单向链表。</li>
+<li>在对哈希表进行扩展或者收缩操作时， 程序需要将现有哈希表包含的所有键值对 rehash 到新哈希表里面， 并且这个 rehash 过程并不是一次性地完成的， 而是渐进式地完成的。</li>
+</ul>
+<h2 id="5-跳跃表"><a href="#5-跳跃表" class="headerlink" title="5. 跳跃表"></a>5. 跳跃表</h2><h3 id="跳跃表的实现"><a href="#跳跃表的实现" class="headerlink" title="跳跃表的实现"></a>跳跃表的实现</h3><p><strong>跳跃表</strong></p>
+<p>包含的属性：</p>
+<p>header </p>
+<p>tail </p>
+<p>level 目前跳跃表内，层数最大的节点的层数</p>
+<p>length</p>
+<p><strong>跳跃表节点</strong></p>
+<p>包含的属性：</p>
+<p>level: 每个节点的 level 数量可能不同。每个 level 包括当前 level 指向下一个节点的指针和这 2 个节点之间的跨度</p>
+<p>backward 指针</p>
+<p>score</p>
+<p>obj</p>
+<p>每次创建一个新跳跃表节点，程序根据幂次定律（越大的数出现的概率越小）随机生成一个 1~32之间的值作为 level 数组的大小，这个大小就是层的高度。如：高度为 3 的节点有 level[0] level[1] level[2] 三个向前的指针。</p>
+<p>跳跃表 API</p>
+<h3 id="重点回顾-3"><a href="#重点回顾-3" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>跳跃表是有序集合的底层实现之一， 除此之外它在 Redis 中没有其他应用。</li>
+<li>Redis 的跳跃表实现由 <code>zskiplist</code> 和 <code>zskiplistNode</code> 两个结构组成， 其中 <code>zskiplist</code> 用于保存跳跃表信息（比如表头节点、表尾节点、长度）， 而 <code>zskiplistNode</code> 则用于表示跳跃表节点。</li>
+<li>每个跳跃表节点的层高都是 <code>1</code> 至 <code>32</code> 之间的随机数。</li>
+<li>在同一个跳跃表中， 多个节点可以包含相同的分值， 但每个节点的成员对象必须是唯一的。</li>
+<li>跳跃表中的节点按照分值大小进行排序， 当分值相同时， 节点按照成员对象的大小进行排序。</li>
+</ul>
+<h2 id="6-整数集合-intset"><a href="#6-整数集合-intset" class="headerlink" title="6. 整数集合 intset"></a>6. 整数集合 intset</h2><h3 id="整数集合的实现"><a href="#整数集合的实现" class="headerlink" title="整数集合的实现"></a>整数集合的实现</h3><p>intset 包括的属性：</p>
+<p>encoding</p>
+<p>length</p>
+<p>contents[]</p>
+<p>encoding 可以是 intset_enc_int16 intset_enc_int32 intset_enc_int64，表示 contents 数组中元素的整数类型</p>
+<h3 id="升级"><a href="#升级" class="headerlink" title="升级"></a>升级</h3><p>新增元素大于当前 intset 类型的整数上限是，需要对 intset 进行升级</p>
+<h3 id="升级的好处"><a href="#升级的好处" class="headerlink" title="升级的好处"></a>升级的好处</h3><p>降级</p>
+<p>整数集合 API</p>
+<h3 id="重点回顾-4"><a href="#重点回顾-4" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>整数集合是集合键的底层实现之一。</li>
+<li>整数集合的底层实现为数组， 这个数组以有序、无重复的方式保存集合元素， 在有需要时， 程序会根据新添加元素的类型， 改变这个数组的类型。</li>
+<li>升级操作为整数集合带来了操作上的灵活性， 并且尽可能地节约了内存。</li>
+<li>整数集合只支持升级操作， 不支持降级操作。</li>
+</ul>
+<h2 id="7-压缩列表"><a href="#7-压缩列表" class="headerlink" title="7. 压缩列表"></a>7. 压缩列表</h2><h3 id="压缩列表的构成"><a href="#压缩列表的构成" class="headerlink" title="压缩列表的构成"></a>压缩列表的构成</h3><p>压缩列表是为了节约内存开发的</p>
+<h3 id="压缩列表节点的构成"><a href="#压缩列表节点的构成" class="headerlink" title="压缩列表节点的构成"></a>压缩列表节点的构成</h3><p>previous_entry_length </p>
+<p>encoding </p>
+<p>content</p>
+<p>连锁更新<br>压缩列表 API</p>
+<h3 id="重点回顾-5"><a href="#重点回顾-5" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>压缩列表是一种为节约内存而开发的顺序型数据结构。</li>
+<li>压缩列表被用作列表键和哈希键的底层实现之一。</li>
+<li>压缩列表可以包含多个节点，每个节点可以保存一个字节数组或者整数值。</li>
+<li>添加新节点到压缩列表， 或者从压缩列表中删除节点， 可能会引发连锁更新操作， 但这种操作出现的几率并不高。</li>
+</ul>
+<h2 id="8-对象"><a href="#8-对象" class="headerlink" title="8. 对象"></a>8. 对象</h2><h3 id="对象的类型与编码"><a href="#对象的类型与编码" class="headerlink" title="对象的类型与编码"></a>对象的类型与编码</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">redisObject</span>&#123;</span></span><br><span class="line">  <span class="comment">// 类型</span></span><br><span class="line">  <span class="keyword">unsigned</span> type: <span class="number">4</span>;</span><br><span class="line">  <span class="comment">// 编码</span></span><br><span class="line">  <span class="keyword">unsigned</span> encoding: <span class="number">4</span>;</span><br><span class="line">  <span class="comment">// 指向底层实现数据结构的指针</span></span><br><span class="line">  <span class="keyword">void</span> *ptr;</span><br><span class="line">  <span class="comment">// 引用计数</span></span><br><span class="line">  <span class="keyword">int</span> refcount;</span><br><span class="line">  <span class="comment">// 最后一次被程序访问的时间</span></span><br><span class="line">  <span class="keyword">unsigned</span> lru;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h4><p>指的是 Redis 数据库中保存的值的类型，可以是 redis_string , redis_list, redis_hash, redis_set, redis_zset</p>
+<p>使用 type key 查询键对应的值的类型</p>
+<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>底层实际使用的数据结构</p>
+<p>使用 object encoding key 可以查询编码</p>
+<h3 id="字符串对象"><a href="#字符串对象" class="headerlink" title="字符串对象"></a>字符串对象</h3><p>字符串 对象的编码可以是 int、raw、embstr，分别针对 整数 长字符 和 短字符</p>
+<h3 id="列表对象"><a href="#列表对象" class="headerlink" title="列表对象"></a>列表对象</h3><p>列表 对象的编码可以是 ziplist 或者 linkedlist</p>
+<p>某一类型采用不同的编码主要是综合考虑 空间和时间</p>
+<p>编码使用 ziplsit 的条件：</p>
+<ul>
+<li>列表中所有字符串长度小于64字节</li>
+<li>元素数量少于 512 个</li>
+</ul>
+<p>以上 2 个条件的上限值可以修改</p>
+<h3 id="哈希对象"><a href="#哈希对象" class="headerlink" title="哈希对象"></a>哈希对象</h3><p>哈希 对象的编码可以是 ziplist 和 hashtable</p>
+<h3 id="集合对象"><a href="#集合对象" class="headerlink" title="集合对象"></a>集合对象</h3><p>集合 对象的编码可以是 intset 和 hashtable</p>
+<h3 id="有序集合对象"><a href="#有序集合对象" class="headerlink" title="有序集合对象"></a>有序集合对象</h3><p>有序集合 对象的编码可以是 ziplist 和 skiplist</p>
+<p><strong>skiplist 编码的有序集合 同时用了 跳跃表 和 字典</strong></p>
+<p>原因：为了让查找元素的分值与范围查找的复杂度降到最低</p>
+<ul>
+<li>如果只用字典实现有序集合，每次范围操作时都要对所有元素进行排序，消耗 O(NlogN) 的时间复杂度和 O(N) 的额外内存空间。</li>
+<li>如果只使用跳跃表，查找分值的复杂度为 O(logN) , 利用字典可以将复杂度降到 O(1)</li>
+</ul>
+<h3 id="类型检查与命令多态"><a href="#类型检查与命令多态" class="headerlink" title="类型检查与命令多态"></a>类型检查与命令多态</h3><p>Redis 操作建的命令基本分为 2 类：一种可以操作所有类型的键，如 del expire rename type object 等</p>
+<p>另一种只能对特定类型的键执行</p>
+<p>redis 服务器收到命令后，会对命令的合法性进行检查</p>
+<h3 id="内存回收"><a href="#内存回收" class="headerlink" title="内存回收"></a>内存回收</h3><p>c 语言不具备自动内存回收功能，索引 Redis 自己构造了利用引用计数技术实现的内存回收机制，程序可以根据对象的引用计数信息，在适当的时候自动释放对象并进行内存回收。</p>
+<h3 id="对象共享"><a href="#对象共享" class="headerlink" title="对象共享"></a>对象共享</h3><p>Redis 在初始化服务器的时候，创建 0-9999 1 万个字符串对象，</p>
+<h3 id="对象的空转时长"><a href="#对象的空转时长" class="headerlink" title="对象的空转时长"></a>对象的空转时长</h3><p>根据对象的 lru 属性计算出对象的空转时长</p>
+<p>object idletime key</p>
+<h3 id="重点回顾-6"><a href="#重点回顾-6" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>Redis 数据库中的每个键值对的键和值都是一个对象。</li>
+<li>Redis 共有字符串、列表、哈希、集合、有序集合五种类型的对象， 每种类型的对象至少都有两种或以上的编码方式， 不同的编码可以在不同的使用场景上优化对象的使用效率。</li>
+<li>服务器在执行某些命令之前， 会先检查给定键的类型能否执行指定的命令， 而检查一个键的类型就是检查键的值对象的类型。</li>
+<li>Redis 的对象系统带有引用计数实现的内存回收机制， 当一个对象不再被使用时， 该对象所占用的内存就会被自动释放。</li>
+<li>Redis 会共享值为 <code>0</code> 到 <code>9999</code> 的字符串对象。</li>
+<li>对象会记录自己的最后一次被访问的时间， 这个时间可以用于计算对象的空转时间。</li>
+</ul>
+<h1 id="第二部分：单机数据库的实现"><a href="#第二部分：单机数据库的实现" class="headerlink" title="第二部分：单机数据库的实现"></a>第二部分：单机数据库的实现</h1><h2 id="9-数据库"><a href="#9-数据库" class="headerlink" title="9. 数据库"></a>9. 数据库</h2><p>服务器中的数据库<br>切换数据库<br>数据库键空间<br>设置键的生存时间或过期时间<br>过期键删除策略<br>Redis 的过期键删除策略<br>AOF 、RDB 和复制功能对过期键的处理<br>数据库通知</p>
+<h3 id="重点回顾-7"><a href="#重点回顾-7" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>Redis 服务器的所有数据库都保存在 <code>redisServer.db</code> 数组中， 而数据库的数量则由 <code>redisServer.dbnum</code> 属性保存。</li>
+<li>客户端通过修改目标数据库指针， 让它指向 <code>redisServer.db</code> 数组中的不同元素来切换不同的数据库。</li>
+<li>数据库主要由 <code>dict</code> 和 <code>expires</code> 两个字典构成， 其中 <code>dict</code> 字典负责保存键值对， 而 <code>expires</code> 字典则负责保存键的过期时间。</li>
+<li>因为数据库由字典构成， 所以对数据库的操作都是建立在字典操作之上的。</li>
+<li>数据库的键总是一个字符串对象， 而值则可以是任意一种 Redis 对象类型， 包括字符串对象、哈希表对象、集合对象、列表对象和有序集合对象， 分别对应字符串键、哈希表键、集合键、列表键和有序集合键。</li>
+<li><code>expires</code> 字典的键指向数据库中的某个键， 而值则记录了数据库键的过期时间， 过期时间是一个以毫秒为单位的 UNIX 时间戳。</li>
+<li>Redis 使用惰性删除和定期删除两种策略来删除过期的键： 惰性删除策略只在碰到过期键时才进行删除操作， 定期删除策略则每隔一段时间， 主动查找并删除过期键。</li>
+<li>执行 SAVE 命令或者 BGSAVE 命令所产生的新 RDB 文件不会包含已经过期的键。</li>
+<li>执行 BGREWRITEAOF 命令所产生的重写 AOF 文件不会包含已经过期的键。</li>
+<li>当一个过期键被删除之后， 服务器会追加一条 DEL 命令到现有 AOF 文件的末尾， 显式地删除过期键。</li>
+<li>当主服务器删除一个过期键之后， 它会向所有从服务器发送一条 DEL 命令， 显式地删除过期键。</li>
+<li>从服务器即使发现过期键， 也不会自作主张地删除它， 而是等待主节点发来 DEL 命令， 这种统一、中心化的过期键删除策略可以保证主从服务器数据的一致性。</li>
+<li>当 Redis 命令对数据库进行修改之后， 服务器会根据配置， 向客户端发送数据库通知。</li>
+</ul>
+<h2 id="10-RDB-持久化"><a href="#10-RDB-持久化" class="headerlink" title="10. RDB 持久化"></a>10. RDB 持久化</h2><p>RDB 文件的创建与载入<br>自动间隔性保存<br>RDB 文件结构<br>分析 RDB 文件</p>
+<h3 id="重点回顾-8"><a href="#重点回顾-8" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>RDB 文件用于保存和还原 Redis 服务器所有数据库中的所有键值对数据。</li>
+<li>SAVE 命令由服务器进程直接执行保存操作，所以该命令会阻塞服务器。</li>
+<li>BGSAVE 命令由子进程执行保存操作，所以该命令不会阻塞服务器。</li>
+<li>服务器状态中会保存所有用 <code>save</code> 选项设置的保存条件，当任意一个保存条件被满足时，服务器会自动执行 BGSAVE 命令。</li>
+<li>RDB 文件是一个经过压缩的二进制文件，由多个部分组成。</li>
+<li>对于不同类型的键值对， RDB 文件会使用不同的方式来保存它们。</li>
+</ul>
+<h2 id="11-AOF-持久化"><a href="#11-AOF-持久化" class="headerlink" title="11. AOF 持久化"></a>11. AOF 持久化</h2><p>AOF 持久化的实现<br>AOF 文件的载入与数据还原<br>AOF 重写</p>
+<h3 id="重点回顾-9"><a href="#重点回顾-9" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>AOF 文件通过保存所有修改数据库的写命令请求来记录服务器的数据库状态。</li>
+<li>AOF 文件中的所有命令都以 Redis 命令请求协议的格式保存。</li>
+<li><strong>命令请求会先保存到 AOF 缓冲区里面， 之后再定期写入并同步到 AOF 文件。</strong></li>
+<li><code>appendfsync</code> 选项的不同值对 AOF 持久化功能的安全性、以及 Redis 服务器的性能有很大的影响。</li>
+<li>服务器只要载入并重新执行保存在 AOF 文件中的命令， 就可以还原数据库本来的状态。</li>
+<li>AOF 重写可以产生一个新的 AOF 文件， 这个新的 AOF 文件和原有的 AOF 文件所保存的数据库状态一样， 但体积更小。</li>
+<li><strong>AOF 重写是一个有歧义的名字， 该功能是通过读取数据库中的键值对来实现的， 程序无须对现有 AOF 文件进行任何读入、分析或者写入操作。</strong></li>
+<li>在执行 BGREWRITEAOF 命令时， Redis 服务器会维护一个 AOF 重写缓冲区， 该缓冲区会在子进程创建新 AOF 文件的期间， 记录服务器执行的所有写命令。 当子进程完成创建新 AOF 文件的工作之后， 服务器会将重写缓冲区中的所有内容追加到新 AOF 文件的末尾， 使得新旧两个 AOF 文件所保存的数据库状态一致。 最后， 服务器用新的 AOF 文件替换旧的 AOF 文件， 以此来完成 AOF 文件重写操作。(这跟 MySQL 的 recreate 重建表类似，为了不阻塞其他修改，将修改记录到日志，重建完成后将日志应用到新表)</li>
+</ul>
+<h2 id="12-事件"><a href="#12-事件" class="headerlink" title="12. 事件"></a>12. 事件</h2><p>这一节没有太看懂</p>
+<h3 id="文件事件"><a href="#文件事件" class="headerlink" title="文件事件"></a>文件事件</h3><p>Redis 基于 <a href="http://en.wikipedia.org/wiki/Reactor_pattern">Reactor 模式</a>开发了自己的网络事件处理器： 这个处理器被称为文件事件处理器（file event handler）：</p>
+<ul>
+<li>文件事件处理器使用 <a href="http://en.wikipedia.org/wiki/Multiplexing"><strong>I/O 多路复用（multiplexing）</strong></a>程序来同时监听多个套接字， 并根据套接字目前执行的任务来为套接字关联不同的事件处理器。</li>
+<li>当被监听的套接字准备好执行连接应答（accept）、读取（read）、写入（write）、关闭（close）等操作时， 与操作相对应的文件事件就会产生， 这时文件事件处理器就会调用套接字之前关联好的事件处理器来处理这些事件。</li>
+</ul>
+<p><strong>虽然文件事件处理器以单线程方式运行， 但通过使用 I/O 多路复用程序来监听多个套接字， 文件事件处理器既实现了高性能的网络通信模型， 又可以很好地与 Redis 服务器中其他同样以单线程方式运行的模块进行对接， 这保持了 Redis 内部单线程设计的简单性</strong>。</p>
+<p>Redis 的 I/O 多路复用程序的所有功能都是通过包装常见的 <code>select</code> 、 <code>epoll</code> 、 <code>evport</code> 和 <code>kqueue</code> 这些 I/O 多路复用函数库来实现的</p>
+<p>时间事件<br>事件的调度与执行</p>
+<h3 id="重点回顾-10"><a href="#重点回顾-10" class="headerlink" title="重点回顾"></a>重点回顾</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><ul>
+<li>Redis 服务器是一个事件驱动程序， 服务器处理的事件分为时间事件和文件事件两类。</li>
+<li>文件事件处理器是基于 Reactor 模式实现的网络通讯程序。</li>
+<li>文件事件是对套接字操作的抽象： 每次套接字变得可应答（acceptable）、可写（writable）或者可读（readable）时， 相应的文件事件就会产生。</li>
+<li>文件事件分为 <code>AE_READABLE</code> 事件（读事件）和 <code>AE_WRITABLE</code> 事件（写事件）两类。</li>
+<li>时间事件分为定时事件和周期性事件： 定时事件只在指定的时间达到一次， 而周期性事件则每隔一段时间到达一次。</li>
+<li>服务器在一般情况下只执行 <code>serverCron</code> 函数一个时间事件， 并且这个事件是周期性事件。</li>
+<li>文件事件和时间事件之间是合作关系， 服务器会轮流处理这两种事件， 并且处理事件的过程中也不会进行抢占。</li>
+<li>时间事件的实际处理时间通常会比设定的到达时间晚一些。</li>
+</ul>
+<p>参考资料</p>
+<h2 id="13-客户端"><a href="#13-客户端" class="headerlink" title="13. 客户端"></a>13. 客户端</h2><p>这一节没有太看懂</p>
+<p>客户端属性<br>客户端的创建与关闭</p>
+<h3 id="重点回顾-11"><a href="#重点回顾-11" class="headerlink" title="重点回顾"></a>重点回顾</h3><h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3><ul>
+<li>服务器状态结构使用 <code>clients</code> 链表连接起多个客户端状态， 新添加的客户端状态会被放到链表的末尾。</li>
+<li>客户端状态的 <code>flags</code> 属性使用不同标志来表示客户端的角色， 以及客户端当前所处的状态。</li>
+<li>输入缓冲区记录了客户端发送的命令请求， 这个缓冲区的大小不能超过 1 GB 。</li>
+<li>命令的参数和参数个数会被记录在客户端状态的 <code>argv</code> 和 <code>argc</code> 属性里面， 而 <code>cmd</code> 属性则记录了客户端要执行命令的实现函数。</li>
+<li>客户端有固定大小缓冲区和可变大小缓冲区两种缓冲区可用， 其中固定大小缓冲区的最大大小为 16 KB ， 而可变大小缓冲区的最大大小不能超过服务器设置的硬性限制值。</li>
+<li>输出缓冲区限制值有两种， 如果输出缓冲区的大小超过了服务器设置的硬性限制， 那么客户端会被立即关闭； 除此之外， 如果客户端在一定时间内， 一直超过服务器设置的软性限制， 那么客户端也会被关闭。</li>
+<li>当一个客户端通过网络连接连上服务器时， 服务器会为这个客户端创建相应的客户端状态。 网络连接关闭、 发送了不合协议格式的命令请求、 成为 CLIENT_KILL 命令的目标、 空转时间超时、 输出缓冲区的大小超出限制， 以上这些原因都会造成客户端被关闭。</li>
+<li>处理 Lua 脚本的伪客户端在服务器初始化时创建， 这个客户端会一直存在， 直到服务器关闭。</li>
+<li>载入 AOF 文件时使用的伪客户端在载入工作开始时动态创建， 载入工作完毕之后关闭。</li>
+</ul>
+<h2 id="14-服务器"><a href="#14-服务器" class="headerlink" title="14. 服务器"></a>14. 服务器</h2><p>命令请求的执行过程<br>serverCron 函数<br>初始化服务器</p>
+<h3 id="重点回顾-12"><a href="#重点回顾-12" class="headerlink" title="重点回顾"></a>重点回顾</h3><ul>
+<li>一个命令请求从发送到完成主要包括以下步骤： 1. 客户端将命令请求发送给服务器； 2. 服务器读取命令请求，并分析出命令参数； 3. 命令执行器根据参数查找命令的实现函数，然后执行实现函数并得出命令回复； 4. 服务器将命令回复返回给客户端。</li>
+<li><code>serverCron</code> 函数默认每隔 <code>100</code> 毫秒执行一次， 它的工作主要包括更新服务器状态信息， 处理服务器接收的 <code>SIGTERM</code> 信号， 管理客户端资源和数据库状态， 检查并执行持久化操作， 等等。</li>
+<li>服务器从启动到能够处理客户端的命令请求需要执行以下步骤： 1. 初始化服务器状态； 2. 载入服务器配置； 3. 初始化服务器数据结构； 4. 还原数据库状态； 5. 执行事件循环。</li>
+</ul>
+<h1 id="第三部分：多机数据库的实现"><a href="#第三部分：多机数据库的实现" class="headerlink" title="第三部分：多机数据库的实现"></a>第三部分：多机数据库的实现</h1><h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>旧版复制功能的实现<br>旧版复制功能的缺陷<br>新版复制功能的实现<br>部分重同步的实现<br>PSYNC 命令的实现<br>复制的实现<br>心跳检测<br>重点回顾</p>
+<h2 id="Sentinel"><a href="#Sentinel" class="headerlink" title="Sentinel"></a>Sentinel</h2><p>启动并初始化 Sentinel<br>获取主服务器信息<br>获取从服务器信息<br>向主服务器和从服务器发送信息<br>接收来自主服务器和从服务器的频道信息<br>检测主观下线状态<br>检查客观下线状态<br>选举领头 Sentinel<br>故障转移<br>重点回顾<br>参考资料</p>
+<h2 id="集群"><a href="#集群" class="headerlink" title="集群"></a>集群</h2><p>节点<br>槽指派<br>在集群中执行命令<br>重新分片<br>ASK 错误<br>复制与故障转移<br>消息<br>重点回顾</p>
+<h1 id="第四部分：独立功能的实现"><a href="#第四部分：独立功能的实现" class="headerlink" title="第四部分：独立功能的实现"></a>第四部分：独立功能的实现</h1><h2 id="发布与订阅"><a href="#发布与订阅" class="headerlink" title="发布与订阅"></a>发布与订阅</h2><p>频道的订阅与退订<br>模式的订阅与退订<br>发送消息<br>查看订阅信息<br>重点回顾<br>参考资料</p>
+<h2 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h2><p>事务的实现<br>WATCH 命令的实现<br>事务的 ACID 性质<br>重点回顾<br>参考资料</p>
+<h2 id="Lua-脚本"><a href="#Lua-脚本" class="headerlink" title="Lua 脚本"></a>Lua 脚本</h2><p>创建并修改 Lua 环境<br>Lua 环境协作组件<br>EVAL 命令的实现<br>EVALSHA 命令的实现<br>脚本管理命令的实现<br>脚本复制<br>重点回顾<br>参考资料</p>
+<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>SORT <key> 命令的实现<br>ALPHA 选项的实现<br>ASC 选项和 DESC 选项的实现<br>BY 选项的实现<br>带有 ALPHA 选项的 BY 选项的实现<br>LIMIT 选项的实现<br>GET 选项的实现<br>STORE 选项的实现<br>多个选项的执行顺序<br>重点回顾</p>
+<h2 id="二进制位数组"><a href="#二进制位数组" class="headerlink" title="二进制位数组"></a>二进制位数组</h2><p>位数组的表示<br>GETBIT 命令的实现<br>SETBIT 命令的实现<br>BITCOUNT 命令的实现<br>BITOP 命令的实现<br>重点回顾<br>参考资料</p>
+<h2 id="慢查询日志"><a href="#慢查询日志" class="headerlink" title="慢查询日志"></a>慢查询日志</h2><p>慢查询记录的保存<br>慢查询日志的阅览和删除<br>添加新日志<br>重点回顾</p>
+<h2 id="监视器"><a href="#监视器" class="headerlink" title="监视器"></a>监视器</h2><p>成为监视器<br>向监视器发送命令信息<br>重点回顾</p>
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">https://zronghui.github.io/读书笔记/《Redis-设计与实现》.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">《MySQL8 cookbook》 阅读笔记</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html"><span class="level-item">《MongoDB 实战》阅读笔记</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '1d49251cb77e8de4ecf24e84c8758436',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-第一部分：数据结构与对象" href="#第一部分：数据结构与对象"><span>第一部分：数据结构与对象</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-2-简单动态字符串" href="#2-简单动态字符串"><span>2. 简单动态字符串</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾" href="#重点回顾"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-3-链表" href="#3-链表"><span>3. 链表</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-1" href="#重点回顾-1"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-4-字典" href="#4-字典"><span>4. 字典</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-渐进式-rehash" href="#渐进式-rehash"><span>渐进式 rehash</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-2" href="#重点回顾-2"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-5-跳跃表" href="#5-跳跃表"><span>5. 跳跃表</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-跳跃表的实现" href="#跳跃表的实现"><span>跳跃表的实现</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-3" href="#重点回顾-3"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-6-整数集合-intset" href="#6-整数集合-intset"><span>6. 整数集合 intset</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-整数集合的实现" href="#整数集合的实现"><span>整数集合的实现</span></a></li><li><a class="is-flex" id="toc-item-升级" href="#升级"><span>升级</span></a></li><li><a class="is-flex" id="toc-item-升级的好处" href="#升级的好处"><span>升级的好处</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-4" href="#重点回顾-4"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-7-压缩列表" href="#7-压缩列表"><span>7. 压缩列表</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-压缩列表的构成" href="#压缩列表的构成"><span>压缩列表的构成</span></a></li><li><a class="is-flex" id="toc-item-压缩列表节点的构成" href="#压缩列表节点的构成"><span>压缩列表节点的构成</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-5" href="#重点回顾-5"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-8-对象" href="#8-对象"><span>8. 对象</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-编码" href="#编码"><span>编码</span></a></li><li><a class="is-flex" id="toc-item-字符串对象" href="#字符串对象"><span>字符串对象</span></a></li><li><a class="is-flex" id="toc-item-列表对象" href="#列表对象"><span>列表对象</span></a></li><li><a class="is-flex" id="toc-item-哈希对象" href="#哈希对象"><span>哈希对象</span></a></li><li><a class="is-flex" id="toc-item-集合对象" href="#集合对象"><span>集合对象</span></a></li><li><a class="is-flex" id="toc-item-有序集合对象" href="#有序集合对象"><span>有序集合对象</span></a></li><li><a class="is-flex" id="toc-item-类型检查与命令多态" href="#类型检查与命令多态"><span>类型检查与命令多态</span></a></li><li><a class="is-flex" id="toc-item-内存回收" href="#内存回收"><span>内存回收</span></a></li><li><a class="is-flex" id="toc-item-对象共享" href="#对象共享"><span>对象共享</span></a></li><li><a class="is-flex" id="toc-item-对象的空转时长" href="#对象的空转时长"><span>对象的空转时长</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-6" href="#重点回顾-6"><span>重点回顾</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-第二部分：单机数据库的实现" href="#第二部分：单机数据库的实现"><span>第二部分：单机数据库的实现</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-9-数据库" href="#9-数据库"><span>9. 数据库</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-7" href="#重点回顾-7"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-10-RDB-持久化" href="#10-RDB-持久化"><span>10. RDB 持久化</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-8" href="#重点回顾-8"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-11-AOF-持久化" href="#11-AOF-持久化"><span>11. AOF 持久化</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-9" href="#重点回顾-9"><span>重点回顾</span></a></li></ul></li><li><a class="is-flex" id="toc-item-12-事件" href="#12-事件"><span>12. 事件</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-文件事件" href="#文件事件"><span>文件事件</span></a></li><li><a class="is-flex" id="toc-item-重点回顾-10" href="#重点回顾-10"><span>重点回顾</span></a></li><li><a class="is-flex" id="toc-item-null" href="#null"><span> </span></a></li></ul></li><li><a class="is-flex" id="toc-item-13-客户端" href="#13-客户端"><span>13. 客户端</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-11" href="#重点回顾-11"><span>重点回顾</span></a></li><li><a class="is-flex" id="toc-item--1" href="#-1"><span> </span></a></li></ul></li><li><a class="is-flex" id="toc-item-14-服务器" href="#14-服务器"><span>14. 服务器</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-重点回顾-12" href="#重点回顾-12"><span>重点回顾</span></a></li></ul></li></ul></li><li><a class="is-flex" id="toc-item-第三部分：多机数据库的实现" href="#第三部分：多机数据库的实现"><span>第三部分：多机数据库的实现</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-复制" href="#复制"><span>复制</span></a></li><li><a class="is-flex" id="toc-item-Sentinel" href="#Sentinel"><span>Sentinel</span></a></li><li><a class="is-flex" id="toc-item-集群" href="#集群"><span>集群</span></a></li></ul></li><li><a class="is-flex" id="toc-item-第四部分：独立功能的实现" href="#第四部分：独立功能的实现"><span>第四部分：独立功能的实现</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-发布与订阅" href="#发布与订阅"><span>发布与订阅</span></a></li><li><a class="is-flex" id="toc-item-事务" href="#事务"><span>事务</span></a></li><li><a class="is-flex" id="toc-item-Lua-脚本" href="#Lua-脚本"><span>Lua 脚本</span></a></li><li><a class="is-flex" id="toc-item-排序" href="#排序"><span>排序</span></a></li><li><a class="is-flex" id="toc-item-二进制位数组" href="#二进制位数组"><span>二进制位数组</span></a></li><li><a class="is-flex" id="toc-item-慢查询日志" href="#慢查询日志"><span>慢查询日志</span></a></li><li><a class="is-flex" id="toc-item-监视器" href="#监视器"><span>监视器</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

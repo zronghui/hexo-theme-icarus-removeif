@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>docker - zronghui的博客</title><meta description="[TOC]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[TOC]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-05-08T09:30:20.000Z"><meta property="article:modified_time" content="2020-11-29T03:35:14.000Z"><meta property="article:author" content="removeif"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-05-08T09:30:20.000Z","dateModified":"2020-11-29T03:35:14.000Z","author":{"@type":"Person","name":"removeif"},"description":"[TOC]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-05-08T09:30:20.000Z">2020-05-08</time><a class="commentCountImg" href="/docker%20k8s/docker.html#comment-container"><span class="display-none-class">2a14cb51135295a09c3b49d0aefeda9e</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="2a14cb51135295a09c3b49d0aefeda9e"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/docker-k8s/">docker k8s</a></span><span class="level-item">32 minutes 读完 (大约 4728 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">docker</h1><div class="content"><p>[TOC]</p>
+<a id="more"></a>
+
+<h2 id="docker-服务-端口对应"><a href="#docker-服务-端口对应" class="headerlink" title="docker 服务 端口对应"></a>docker 服务 端口对应</h2><p>gitlab 8001</p>
+<p>yunmusic 8002</p>
+<p>portainer 9000</p>
+<h2 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h2><p><a href="https://study.163.com/course/courseLearn.htm?courseId=1002892012#/learn/video?lessonId=1003323253&courseId=1002892012">动手玩Docker - 网易云课堂</a></p>
+<p><a href="https://www.runoob.com/docker/docker-tutorial.html">Docker 教程 | 菜鸟教程</a></p>
+<h2 id="1-docker-安装"><a href="#1-docker-安装" class="headerlink" title="1.docker 安装"></a>1.docker 安装</h2><p><a href="https://docs.docker.com/engine/install/centos/#install-docker-engine">Install Docker Engine on CentOS | Docker Documentation</a></p>
+<p><a href="https://www.runoob.com/docker/macos-docker-install.html">MacOS Docker 安装 | 菜鸟教程</a></p>
+<p><a href="https://www.runoob.com/docker/docker-mirror-acceleration.html">Docker 镜像加速 | 菜鸟教程</a></p>
+<h3 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 卸载旧版本</span></span><br><span class="line">sudo yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-engine</span><br><span class="line">                  </span><br><span class="line"><span class="meta">#</span><span class="bash"> 用存储库进行安装</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 yum-utils 包(它提供 yum-config-manager 实用工具)并设置稳定存储库</span></span><br><span class="line">sudo yum install -y yum-utils</span><br><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装 DOCKER 引擎</span></span><br><span class="line">sudo yum install docker-ce docker-ce-cli containerd.io</span><br><span class="line"><span class="meta">#</span><span class="bash"> 验证指纹是否与060A 61c51b558a7f 742B 77AA C52F EB6B 621E 9F35匹配，如果是，接受它</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动 Docker</span></span><br><span class="line">sudo systemctl start docker</span><br><span class="line">sudo docker run hello-world</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 开机自启</span></span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+
+<p>镜像加速</p>
+<p>配置文件: /etc/docker/daemon.json</p>
+<p>阿里云 ID 见：<a href="https://cr.console.aliyun.com/undefined/instances/mirrors">https://cr.console.aliyun.com/undefined/instances/mirrors</a></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"registry-mirrors"</span>: [<span class="string">"https://my-id.mirror.aliyuncs.com"</span>, <span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">sudo systemctl stop docker</span><br><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<p>docker info 查看是否生效</p>
+<h3 id="docker-compose"><a href="#docker-compose" class="headerlink" title="docker-compose"></a>docker-compose</h3><p>Linux 需要安装 docker-compose ；Mac win 自带</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install epel-release</span><br><span class="line"><span class="meta">#</span><span class="bash">sudo pip install docker-compose <span class="comment"># 此时 alias 失效</span></span></span><br><span class="line">pip3 install docker-compose</span><br><span class="line">docker-compose version</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h3><p><a href="https://www.runoob.com/docker/macos-docker-install.html">MacOS Docker 安装 | 菜鸟教程</a></p>
+<p>从手动下载安装开始看</p>
+<p><del>特慢的 brew</del></p>
+<p><img src="https://i.loli.net/2020/05/09/FL5WbDVsj2myoTq.png" alt="FL5WbDVsj2myoTq"></p>
+<h2 id="2-docker-操作"><a href="#2-docker-操作" class="headerlink" title="2.docker 操作"></a>2.docker 操作</h2><p><a href="https://snowdreams1006.tech/devops/docker-ops.html">docker 操作 · 雪之梦技术驿站</a></p>
+<p><a href="https://www.cnblogs.com/sparkdev/p/7821376.html">查看 docker 容器使用的资源 - sparkdev - 博客园</a></p>
+<ul>
+<li>帮助命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">command</span> --<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行容器</li>
+</ul>
+<blockquote>
+<p><code>docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>退出容器</li>
+</ul>
+<blockquote>
+<p><code>exit</code></p>
+</blockquote>
+<ul>
+<li>查看容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker ps -a</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start b750bbbcfd88</span><br></pre></td></tr></table></figure>
+
+<h3 id="容器-container"><a href="#容器-container" class="headerlink" title="容器-container"></a>容器-container</h3><ul>
+<li>后台运行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name ubuntu-test ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>停止容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop &lt;容器 ID&gt;</span><br><span class="line">docker <span class="built_in">kill</span> &lt;容器 ID&gt; <span class="comment"># 强制停止</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker restart &lt;容器 ID&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入容器</li>
+</ul>
+<blockquote>
+<p><code>docker attach</code> 和 <code>docker exec</code></p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker attach 1e560fca3906</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意: 如果从这个容器退出,会导致容器的停止.</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it 243c32535da7 /bin/bash</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导出容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">export</span> 1e560fca3906 &gt; ubuntu.tar</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>导入容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker import - <span class="built_in">test</span>/ubuntu:v1</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm -f 1e560fca3906</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>清理掉所有处于终止状态的容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker container prune</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>端口映射 ？</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker port bf08b7f2cd89</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看容器日志</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker logs -f bf08b7f2cd89</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看容器进程</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker top wizardly_chandrasekhar</span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h3><ul>
+<li>列出镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下载镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search httpd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi hello-world</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建镜像</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker commit -m=<span class="string">"updated"</span> -a=<span class="string">"snowdreams1006"</span> eb3c83541f05 snowdreams1006/ubuntu</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>构建镜像</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">FROM    centos:6.7</span><br><span class="line">MAINTAINER      Fisher &quot;fisher@sudops.com&quot;</span><br><span class="line"></span><br><span class="line">RUN     &#x2F;bin&#x2F;echo &#39;root:123456&#39; |chpasswd</span><br><span class="line">RUN     useradd runoob</span><br><span class="line">RUN     &#x2F;bin&#x2F;echo &#39;runoob:123456&#39; |chpasswd</span><br><span class="line">RUN     &#x2F;bin&#x2F;echo -e &quot;LANG&#x3D;\&quot;en_US.UTF-8\&quot;&quot; &gt;&#x2F;etc&#x2F;default&#x2F;local</span><br><span class="line">EXPOSE  22</span><br><span class="line">EXPOSE  80</span><br><span class="line">CMD     &#x2F;usr&#x2F;sbin&#x2F;sshd -D</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Dockerfile</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker build -t runoob/centos:6.7 .</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>设置镜像标签</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker tag 860c279d2fec runoob/centos:dev</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="web-应用"><a href="#web-应用" class="headerlink" title="web 应用"></a>web 应用</h3><ul>
+<li>随机映射</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定端口</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 5000:5000 training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>指定地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 127.0.0.1:5001:5000 training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<h3 id="容器互联"><a href="#容器互联" class="headerlink" title="容器互联"></a>容器互联</h3><ul>
+<li>命名容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -P --name runoob training/webapp python app.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>新建网络</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker network create -d bridge <span class="built_in">test</span>-net</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>连接容器</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name test1 --network <span class="built_in">test</span>-net ubuntu /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>sudo docker logs -f -t –tail 10 s12</p>
+<h3 id="常用操作-我用过的操作-："><a href="#常用操作-我用过的操作-：" class="headerlink" title="常用操作(我用过的操作)："></a>常用操作(我用过的操作)：</h3><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>docker ps -a</td>
+<td>查看所有容器</td>
+</tr>
+<tr>
+<td>docker stop xxx</td>
+<td>停止容器</td>
+</tr>
+<tr>
+<td>docker restart xxx</td>
+<td>重启容器</td>
+</tr>
+<tr>
+<td>docker container prune</td>
+<td>清除所有停止的容器</td>
+</tr>
+<tr>
+<td>-p outDocker:inDocker</td>
+<td>端口映射</td>
+</tr>
+<tr>
+<td>docker stats</td>
+<td>类似top, 查看各个容器的 CPU mem 占用情况（为什么不是 states）</td>
+</tr>
+<tr>
+<td>docker stats –no-stream</td>
+<td>查看一次</td>
+</tr>
+<tr>
+<td>docker images</td>
+<td>查看所有 image</td>
+</tr>
+<tr>
+<td>docker log -f xxxxx</td>
+<td>查看容器日志</td>
+</tr>
+<tr>
+<td>docker rmi xx</td>
+<td>删除 image</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="容器资源限制：内存、CPU、带宽"><a href="#容器资源限制：内存、CPU、带宽" class="headerlink" title="容器资源限制：内存、CPU、带宽"></a>容器资源限制：内存、CPU、带宽</h3><p><a href="https://www.hangge.com/blog/cache/detail_2413.html">Docker - 常用命令汇总2（容器资源限制：内存、CPU、带宽）</a></p>
+<p>一、内存限额<br>1，参数说明<br>2，使用样例<br>二、CPU 限额<br>1，参数说明<br>2，使用样例<br>三、Block IO 宽带限额<br>1，block io 权重<br>2，限制 bps 和 iops </p>
+<h3 id="Dockerize"><a href="#Dockerize" class="headerlink" title="Dockerize"></a>Dockerize</h3><p><a href="https://rock-it.pl/better-docker-containers-with-dockerize-wrapper/">Better Docker experience with Dockerize</a></p>
+<p>假设有docker-compose.yml内容如下：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">'2'</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">database:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">postgres</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">registry.example.com/our-application</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">node</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">80</span><span class="string">:80</span></span><br></pre></td></tr></table></figure>
+
+<p>文件没问题，但是逻辑有问题，node 应用依赖于 database，有一定几率 node 启动失败</p>
+<p>解决办法，使用 dockerize</p>
+<p>在 dockerfile 里添加：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ENV DOCKERIZE_VERSION v0.4.0</span><br><span class="line">RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \</span><br><span class="line">    &amp;&amp; tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz \</span><br><span class="line">    &amp;&amp; rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>修改 docker-compose.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">application:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">registry.example.com/our-application</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">dockerize</span> <span class="string">-wait</span> <span class="string">tcp://database:5432</span> <span class="string">node</span></span><br><span class="line">  <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<p>更多用法、参数</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># redirect files to stdout and stderr</span></span><br><span class="line"><span class="string">dockerize</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-stdout</span> <span class="string">info.log</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-stdout</span> <span class="string">perf.log</span> <span class="string">\</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># wait for 2 services with 10s timeout</span></span><br><span class="line"><span class="string">dockerize</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-wait</span> <span class="string">tcp://db:5432</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-wait</span> <span class="string">http://web:80</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-timeout</span> <span class="string">10s</span> <span class="string">\</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># template option</span></span><br><span class="line"><span class="string">dockerize</span> <span class="string">\</span></span><br><span class="line">  <span class="string">-template</span> <span class="string">nginx.tmpl:nginx.conf</span> <span class="string">\</span></span><br><span class="line">  <span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="docker-django-es"><a href="#docker-django-es" class="headerlink" title="docker django es"></a>docker django es</h3><p><a href="https://hub.docker.com/_/elasticsearch?tab=description">elasticsearch - Docker Hub</a></p>
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/docker.html">Install Elasticsearch with Docker | Elasticsearch Reference [7.5] | Elastic</a></p>
+<h3 id="docker-save和docker-export的区别"><a href="#docker-save和docker-export的区别" class="headerlink" title="*docker save和docker export的区别"></a>*docker save和docker export的区别</h3><p>总结一下docker save和docker export的区别：</p>
+<p>docker save保存的是镜像（image），docker export保存的是容器（container）；<br>docker load用来载入镜像包，docker import用来载入容器包，但两者都会恢复为镜像；<br>docker load不能对载入的镜像重命名，而docker import可以为镜像指定新名称。</p>
+<h2 id="3-docker-gitlab-8001"><a href="#3-docker-gitlab-8001" class="headerlink" title="3.docker gitlab :8001"></a>3.docker gitlab :8001</h2><p>主要看 gitlab 官方文档</p>
+<p><a href="https://docs.gitlab.com/omnibus/docker/">GitLab Docker images | GitLab</a></p>
+<p><a href="https://snowdreams1006.tech/devops/docker-gitlab.html">docker + gitlab · 雪之梦技术驿站</a><br><a href="https://www.jianshu.com/p/080a962c35b6">docker下gitlab安装配置使用(完整版) - 简书</a></p>
+<p><a href="https://juejin.im/post/5a4c9ff36fb9a04507700fcc#heading-9">通过 docker 搭建自用的 gitlab 服务 - 掘金</a><br><a href="https://michael728.github.io/2019/06/15/docker-compose-install-gitlab-runner/">使用 Dockcer-Compose 安装 Gitlab 服务 | Michael翔</a><br><a href="https://github.com/sameersbn/docker-gitlab">sameersbn/docker-gitlab: Dockerized GitLab</a></p>
+<p>For Linux users set the path to /srv</p>
+<p>export GITLAB_HOME=/srv</p>
+<p>For Mac OS users, use the user’s $HOME folder.</p>
+<p>export GITLAB_HOME=$HOME</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">export GITLAB_HOME=/srv</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">export</span> GITLAB_HOME=<span class="variable">$HOME</span></span></span><br><span class="line">sudo docker run --detach \</span><br><span class="line">  --hostname gitlab.zronghui.com \</span><br><span class="line">  --publish 443:443 --publish 8001:80 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  -m 500M \</span><br><span class="line">  --volume $GITLAB_HOME/gitlab/config:/etc/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/gitlab/logs:/var/log/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/gitlab/data:/var/opt/gitlab \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
+
+<p><strong>由于某些疏忽，Mac 和服务器的 gitlab home都为空</strong></p>
+<p>所以：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run --detach \</span><br><span class="line">  --hostname gitlab.zronghui.com \</span><br><span class="line">  --publish 443:443 --publish 8001:80 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume /gitlab/config:/etc/gitlab \</span><br><span class="line">  --volume /gitlab/logs:/var/log/gitlab \</span><br><span class="line">  --volume /gitlab/data:/var/opt/gitlab \</span><br><span class="line">  gitlab/gitlab-ce:latest</span><br></pre></td></tr></table></figure>
+
+<h3 id="mem-占用过高问题解决："><a href="#mem-占用过高问题解决：" class="headerlink" title="mem 占用过高问题解决："></a>mem 占用过高问题解决：</h3><p>然而并没有解决，启动不了，而且 mem 占用仍然很高，差点的服务器跑不起来</p>
+<p><a href="https://stackoverflow.com/questions/36122421/high-memory-usage-for-gitlab-ce">git - High memory usage for Gitlab CE - Stack Overflow</a><br><a href="https://edspencer.me.uk/posts/2017-07-30-reducing-the-amount-of-memory-used-by-gitlab/">Reducing the amount of memory used by gitlab - Ed Spencer - Performance obsessive web developer</a><br><a href="https://blog.csdn.net/qq446282412/article/details/84066417">【Git学习】解决GitLab内存消耗大的问题_运维_欧阳鹏-CSDN博客</a></p>
+<p>vim /gitlab/config/gitlab.rb</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 去除注释</span></span><br><span class="line">unicorn[<span class="string">'worker_processes'</span>] = <span class="number">2</span> <span class="comment"># 最低为 2</span></span><br><span class="line">postgresql[<span class="string">'shared_buffers'</span>] = <span class="string">"256MB"</span></span><br><span class="line">postgresql[<span class="string">'max_worker_processes'</span>] = <span class="number">1</span> <span class="comment"># 默认为 8</span></span><br><span class="line">sidekiq[<span class="string">'concurrency'</span>] = <span class="number">1</span> <span class="comment"># 默认为 25</span></span><br><span class="line">prometheus_monitoring[<span class="string">'enable'</span>] = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>之后执行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it gitlab gitlab-ctl reconfigure</span><br><span class="line">docker exec -it gitlab gitlab-ctl restart</span><br></pre></td></tr></table></figure>
+
+
+
+<img src="https://i.loli.net/2020/05/10/7ilcTwUIMGAkYj6.jpg" alt="7ilcTwUIMGAkYj6" style="zoom:50%;" />
+
+<p>等待3分钟，访问 127.0.0.1:8001 ,设置 root 密码</p>
+<p>添加 group，添加用户，将用户添加到 group 里，创建 group 的项目</p>
+<p>我感觉可以直接创建 root 的项目，反正是自己一个人使用</p>
+<p>语言设置：</p>
+<p><img src="https://i.loli.net/2020/05/10/zfFZkTYc4HjMhKW.png" alt="zfFZkTYc4HjMhKW"></p>
+<h3 id="添加本地已有仓库"><a href="#添加本地已有仓库" class="headerlink" title="添加本地已有仓库"></a>添加本地已有仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git remote add gitlab http://47.93.53.47:8001/group1/zronghui_xxxt</span><br><span class="line">git push -u gitlab master</span><br><span class="line"></span><br><span class="line">cot .git/config</span><br><span class="line"></span><br><span class="line">[remote "origin"] 下面添加 gitlab 的 URL:</span><br><span class="line">url = http://47.93.53.47:8001/group1/zronghui_xxxt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-解锁网易云灰色歌曲-8002"><a href="#4-解锁网易云灰色歌曲-8002" class="headerlink" title="4. 解锁网易云灰色歌曲 :8002"></a>4. 解锁网易云灰色歌曲 :8002</h2><p><a href="https://github.com/nondanee/UnblockNeteaseMusic">nondanee/UnblockNeteaseMusic: Revive unavailable songs for Netease Cloud Music</a></p>
+<p><a href="https://github.com/nondanee/UnblockNeteaseMusic/issues/48">进阶配置 · Issue #48 · nondanee/UnblockNeteaseMusic</a><br><a href="https://github.com/nondanee/UnblockNeteaseMusic/issues/22">食用指南 · Issue #22 · nondanee/UnblockNeteaseMusic</a><br><a href="https://github.com/nondanee/UnblockNeteaseMusic/issues/527">全端通用方案搭建教程 · Issue #527 · nondanee/UnblockNeteaseMusic</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --restart always --name yunmusic -p 8002:8080 nondanee/unblockneteasemusic</span><br></pre></td></tr></table></figure>
+
+
+
+<p>小爱 淘宝 不经过代理设置：</p>
+<p>cnbj1.fds.api.xiaomi.com,file.ai.xiaomi.com,resolver.mi.xiaomi.com,access.speech.ai.xiaomi.com,data.mistat.xiaomi.com,tracker.ai.xiaomi.com,account.ai.xiaomi.com,query-suggestion.ai.xiaomi.com,trade-acs.m.taobao.com,guide-acs.m.taobao.com</p>
+<p>想设置更多网址，可以查看日志文件，然后请求资源，记录转发的域名</p>
+<p>不知为何，直接设置 xiaomi.com 没有生效</p>
+<h2 id="5-rsshub-1200"><a href="#5-rsshub-1200" class="headerlink" title="5. rsshub :1200"></a>5. rsshub :1200</h2><p><a href="https://github.com/DIYgod/RSSHub">DIYgod/RSSHub: 🍰 Everything is RSSible</a><br><a href="https://docs.rsshub.app/">介绍 | RSSHub</a></p>
+<p><a href="https://docs.rsshub.app/install/#docker-compose-bu-shu">部署 | RSSHub</a></p>
+<p>部分RSS需要单独配置后方可生成，如 pixiv、disqus、twitter、youtube、telegram、github</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mcd rsshub</span><br><span class="line">wget https://raw.githubusercontent.com/DIYgod/RSSHub/master/docker-compose.yml</span><br><span class="line">docker-compose up -d</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 启动成功，但是外网无法访问</span></span><br><span class="line">git clone https://github.com/DIYgod/RSSHub.git</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者只下载项目下的 lib/middleware/header.js</span></span><br><span class="line">vim lib/middleware/header.js</span><br><span class="line"><span class="meta">#</span><span class="bash"> 将 allow-origin 改为 0.0.0.0</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="string">'Access-Control-Allow-Origin'</span>: <span class="string">'0.0.0.0'</span>,</span></span><br><span class="line">docker cp lib/middleware/header.js 8c144637ddef:/app/lib/middleware/</span><br><span class="line">docker restart 8c144637ddef</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-gogs"><a href="#6-gogs" class="headerlink" title="6. gogs"></a>6. gogs</h2><p><a href="https://gogs.io/">Gogs: A painless self-hosted Git service</a><br><a href="https://github.com/gogs/gogs">gogs/gogs: Gogs is a painless self-hosted Git service</a><br><a href="https://www.cnblogs.com/donaldtdz/p/8443516.html">阿里云Linux CentOS 7 Docker部署使用gogs搭建自己的git服务器 - DonaldTDZ - 博客园</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker pull gogs/gogs</span><br><span class="line">mkdir -p /var/gogs</span><br><span class="line">docker run --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs</span><br><span class="line"><span class="meta">#</span><span class="bash"> 阿里云需要在安全组规则配置入站规则，即服务器端口10080， ssh端口10022</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="https://i.loli.net/2020/06/14/M2KE8og3ne9CRBJ.png" alt="image-20200601194558982"></p>
+<h4 id="更多类似项目："><a href="#更多类似项目：" class="headerlink" title="更多类似项目："></a>更多类似项目：</h4><p><strong>cgit</strong>: “A hyperfast web frontend for <em>git</em> repositories written in C.”</p>
+<ul>
+<li>GPLv2</li>
+<li><a href="https://git.zx2c4.com/cgit/about/">Homepage</a></li>
+<li><a href="https://git.zx2c4.com/cgit/tree/">Source</a></li>
+<li><code>C</code></li>
+</ul>
+<p><strong>Gitea</strong>: “Gitea is a community managed fork of Gogs, lightweight code hosting solution written in Go and published under the MIT license.”</p>
+<ul>
+<li>MIT</li>
+<li><a href="https://gitea.io/en-US/">Homepage</a></li>
+<li><a href="https://github.com/go-gitea/gitea">Source</a></li>
+<li><code>*Go*</code>, <code>SQLite3</code></li>
+</ul>
+<p><strong>GitLab</strong>: “Open source software to collaborate on code.”</p>
+<ul>
+<li>GitLab license</li>
+<li><a href="https://gitlab.com/gitlab-org">Homepage</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/">Source</a></li>
+<li><code>Ruby</code>, <code>*Javascript*</code></li>
+</ul>
+<p><strong>gitolite</strong>: “Gitolite allows you to setup git hosting on a central server, with very fine-grained access control and many (many!) more powerful features.”</p>
+<ul>
+<li>GPLv2</li>
+<li><a href="http://gitolite.com/gitolite/">Homepage</a></li>
+<li><a href="https://github.com/sitaramc/gitolite">Source</a></li>
+<li><code>Perl</code>, <code>Shell</code></li>
+</ul>
+<p><strong>Gogs</strong>: “A painless self-hosted <em>Git</em> service.”</p>
+<ul>
+<li>MIT</li>
+<li><a href="https://gogs.io/">Homepage</a></li>
+<li><a href="https://github.com/gogits/gogs">Source</a></li>
+<li><code>*Go*</code>, <code>SQLite3</code></li>
+</ul>
+<p><strong>Phabricator</strong>: “Phabricator is a collection of web applications which help software companies build better software.”</p>
+<ul>
+<li>Apache 2.0</li>
+<li><a href="http://phacility.com/phabricator/">Homepage</a></li>
+<li><a href="https://github.com/phacility/phabricator">Source</a></li>
+<li><code>PHP</code>, supports <em>Git</em>, Mercurial, and Subversion</li>
+</ul>
+<h2 id="Docker-Spring-Boot-快速搭建和部署Java-Web应用"><a href="#Docker-Spring-Boot-快速搭建和部署Java-Web应用" class="headerlink" title="Docker + Spring Boot: 快速搭建和部署Java Web应用"></a>Docker + Spring Boot: 快速搭建和部署Java Web应用</h2><p><a href="https://github.com/bingoHuang/spring-boot-docker">bingohuang/spring-boot-docker: 《动手玩Docker》示例代码：Docker + Spring Boot: 快速搭建和部署Java Web应用</a></p>
+<p><strong>0、你需要：</strong></p>
+<ul>
+<li>JDK 1.8 : java -version</li>
+<li>Maven 3.0+ : mvn -v</li>
+<li>Git : git –version</li>
+<li>Source Code : <a href="https://github.com/bingoHuang/spring-boot-docker">https://github.com/bingoHuang/spring-boot-docker</a></li>
+<li>Docker : docker version<ul>
+<li>docker-machine ls</li>
+<li>docker-machine start</li>
+<li>docker-machine env</li>
+<li>eval $(docker-machine env)</li>
+</ul>
+</li>
+</ul>
+<p><strong>1、Maven编译工程</strong></p>
+<p>下载源码到本地，进入工程目录，执行maven编译</p>
+<pre><code>git clone https://github.com/bingoHuang/spring-boot-docker.git
+cd spring-boot-docker
+tree</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">项目结构：</span><br><span class="line">├── README.md</span><br><span class="line">├── pom.xml</span><br><span class="line">└── src</span><br><span class="line">    ├── main</span><br><span class="line">    │   ├── docker</span><br><span class="line">    │   │   ├── Dockerfile</span><br><span class="line">    │   │   └── gs-spring-boot-docker-0.1.0.jar</span><br><span class="line">    │   ├── java</span><br><span class="line">    │   │   └── hello</span><br><span class="line">    │   │       └── Application.java</span><br><span class="line">    │   └── resources</span><br><span class="line">    │       └── application.yml</span><br><span class="line">    └── test</span><br><span class="line">        └── java</span><br><span class="line">            └── hello</span><br><span class="line">                └── HelloWorldConfigurationTests.java</span><br></pre></td></tr></table></figure>
+
+<pre><code>mvn package</code></pre><p><strong>2、测试Jar包执行</strong></p>
+<p>执行生成的jar包，运行spring boot应用</p>
+<pre><code>java -jar target/gs-spring-boot-docker-0.1.0.jar</code></pre><p><strong>3、验证本地运行是否可以访问成功</strong></p>
+<ul>
+<li>命令行下访问：curl <a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></li>
+<li>浏览器中访问：<a href="http://127.0.0.1:8080/">http://127.0.0.1:8080/</a></li>
+</ul>
+<hr>
+<p><strong>4、编写Dockerfile文件</strong></p>
+<p>进入到源码的docker目录下，编写Dockerfile文件</p>
+<pre><code>mkdir spring-boot-docker
+cd spring-boot-docker
+拷贝编译好的gs-spring-boot-docker-0.1.0.jar到当前目录，和Dockerfile放在同一目录
+
+# 编写Dockerfile文件
+FROM hub.c.163.com/xbingo/jdk8:latest
+ADD gs-spring-boot-docker-0.1.0.jar app.jar
+CMD [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]</code></pre><p><strong>5、构建Dockerfile</strong></p>
+<pre><code>docker build -t cloudcomb/springbootdocker:1.0 .</code></pre><p><strong>6、查看构建的镜像</strong></p>
+<pre><code>docker images
+
+REPOSITORY                       TAG                 IMAGE ID            CREATED              SIZE
+cloudcomb/springbootdocker       1.0                 c5a57ce057e7        About a minute ago   180.8 MB</code></pre><p><strong>7、运行docker容器</strong></p>
+<pre><code>docker run -p 8081:8080 -t cloudcomb/springbootdocker:1.0
+docker ps</code></pre><p><strong>8、验证Docker容器运行是否可以访问成功</strong></p>
+<ul>
+<li>新建一个命令行tag：command+T</li>
+<li>命令行下访问：curl <a href="http://192.168.99.100:8081">http://192.168.99.100:8081</a></li>
+<li>浏览器中访问：<a href="http://192.168.99.100:8081">http://192.168.99.100:8081</a></li>
+</ul>
+<h2 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h2><p>网址：<a href="https://hub.docker.com/_/nginx/">https://hub.docker.com/_/nginx/</a></p>
+<p><a href="https://hub.docker.com/_/nginx">nginx - Docker Hub</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull nginx</span><br><span class="line"># 运行</span><br><span class="line">docker run -di --name nginx -p 80:80 nginx</span><br><span class="line"># 静态资源放入 nginx 中 &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html 目录下</span><br><span class="line"></span><br><span class="line"># Hosting some simple static content</span><br><span class="line"># 1.</span><br><span class="line">-v &#x2F;some&#x2F;content:&#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html:ro</span><br><span class="line"># 2.</span><br><span class="line">FROM nginx</span><br><span class="line">COPY static-html-directory &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html</span><br><span class="line"></span><br><span class="line"># Complex configuration</span><br><span class="line"># 1.</span><br><span class="line">-v &#x2F;host&#x2F;path&#x2F;nginx.conf:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf:ro</span><br><span class="line"># 2.</span><br><span class="line">docker run --name tmp-nginx-container -d nginx</span><br><span class="line">docker cp tmp-nginx-container:&#x2F;etc&#x2F;nginx&#x2F;nginx.conf &#x2F;host&#x2F;path&#x2F;nginx.conf</span><br><span class="line"># 3.</span><br><span class="line">FROM nginx</span><br><span class="line">COPY nginx.conf &#x2F;etc&#x2F;nginx&#x2F;nginx.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<p>其他 NGINX image</p>
+<p><a href="https://hub.docker.com/r/nginxdemos/nginx-hello">nginxdemos/nginx-hello - Docker Hub</a><br><a href="https://hub.docker.com/r/jwilder/nginx-proxy">jwilder/nginx-proxy - Docker Hub</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<img src="https://i.loli.net/2020/06/15/C7smHfT5PcnoFAj.png" alt="image-20200615071435022" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2020/06/15/4KvhPCrjSGyBQZo.png" alt="image-20200615071458630" style="zoom:50%;" />
+
+<img src="https://i.loli.net/2020/06/15/fvojS2PxhpHwKtz.png" alt="image-20200615071511818" style="zoom:50%;" />
+
+<h3 id="minio"><a href="#minio" class="headerlink" title="minio"></a>minio</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -it -d --restart always -p 9000:9000 --name minio \</span><br><span class="line">  -e "MINIO_ACCESS_KEY=minio" \</span><br><span class="line">  -e "MINIO_SECRET_KEY=miniosecret" \</span><br><span class="line">  -v /home/zhang/minio/data:/data:z \</span><br><span class="line">  -v /home/zhang/minio/config:/root/.minio:z \</span><br><span class="line">  --restart=always \</span><br><span class="line">  minio/minio server /data</span><br></pre></td></tr></table></figure>
+
+<p><a href="http://10.103.242.60:9000/">http://10.103.242.60:9000/</a></p>
+<p><a href="http://10.103.242.76:9000/">http://10.103.242.76:9000/</a></p>
+<p><a href="https://github.com/minio/minio/issues/6237">Can’t mount host data directory to minio server docker container · Issue #6237 · minio/minio</a></p>
+<p>报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Created minio configuration file successfully at &#x2F;root&#x2F;.minio                                                                                                                                                 </span><br><span class="line">ERROR Unable to initialize backend: Unable to write to the backend.                                                                                                                                           </span><br><span class="line">      &gt; Please ensure Minio binary has write permissions for the backend.</span><br></pre></td></tr></table></figure>
+
+<p>解决</p>
+<p>For Project Atomic you can also set append :z or :Z to the have SElinux allow writing to the container:</p>
+<p>docker run -p 9000:9000 –name minio1<br>-v /mnt/data:/data:z<br>minio/minio server /data</p>
+<p>More info at:<br><a href="https://www.projectatomic.io/blog/2016/03/dwalsh_selinux_containers/">https://www.projectatomic.io/blog/2016/03/dwalsh_selinux_containers/</a></p>
+<h2 id="8-可以部署在-docker-里的工具"><a href="#8-可以部署在-docker-里的工具" class="headerlink" title="8.可以部署在 docker 里的工具"></a>8.可以部署在 docker 里的工具</h2><h3 id="记账-budget"><a href="#记账-budget" class="headerlink" title="记账 budget"></a>记账 budget</h3><p><a href="https://github.com/range-of-motion/budget">range-of-motion/budget: Get a grip on your finances.</a></p>
+<p><a href="https://app.budget.pixely.me/dashboard">Dashboard - Budget</a></p>
+<h2 id="9-Django-工具"><a href="#9-Django-工具" class="headerlink" title="9.Django 工具"></a>9.Django 工具</h2><h3 id="kitematic-–-Mac管理-docker"><a href="#kitematic-–-Mac管理-docker" class="headerlink" title="kitematic – Mac管理 docker"></a>kitematic – Mac管理 docker</h3><h3 id="portainer-–-在网页端远程管理-docker"><a href="#portainer-–-在网页端远程管理-docker" class="headerlink" title="portainer – 在网页端远程管理 docker"></a>portainer – 在网页端远程管理 docker</h3><p><a href="https://github.com/portainer/portainer">portainer/portainer: Making Docker management easy.</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker volume create portainer_data</span><br><span class="line">docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动起来后，开启 9000 端口，然后在本地：</p>
+<p>访问 <a href="http://47.93.53.47:9000/">http://47.93.53.47:9000/</a></p>
+<p>设置密码，选择 Local–Manage the local Docker environment</p>
+<p><a href="https://www.infoq.cn/article/687ItzzHZ2P3pN5PMVSb">推荐5款好用的开源Docker工具 - InfoQ</a></p>
+<p>watchtower ：自动更新 Docker 容器<br>docker-gc ：容器和镜像的垃圾回收<br>docker-slim ：面向容器的神奇减肥药<br>rocker ：突破 Dockerfile 的限制<br>ctop：容器的类顶层接口</p>
+<h3 id="docker-squash"><a href="#docker-squash" class="headerlink" title="docker-squash"></a>docker-squash</h3><p><a href="https://github.com/jwilder/docker-squash">jwilder/docker-squash: Squash docker images to make them smaller</a></p>
+<h2 id="常用的Docker"><a href="#常用的Docker" class="headerlink" title="**常用的Docker"></a>**常用的Docker</h2><p><a href="http://bbs.nas66.com/thread-8409-1-1.html">汇总一下我常用的Docker镜像以及说明 - 矿渣社区 - 其他系统 - 软件专区</a></p>
+<p>google 更多</p>
+<ol>
+<li>CentOS6</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">镜像：treasureboat/ssh</span><br><span class="line">用户名：root</span><br><span class="line">密码：<span class="number">123456</span></span><br><span class="line">建站的，配合这个脚本超好用：</span><br><span class="line">yum install -y wget &amp;&amp; wget -O install.sh http:<span class="comment">//download.bt.cn/install/install.sh &amp;&amp; sh install.sh</span></span><br><span class="line">#</span><br><span class="line">#该镜像安装aria的步骤为：</span><br><span class="line">wget http:<span class="comment">//ftp.tu-chemnitz.de/pub/linux/dag/redhat/el6/en/x86_64/rpmforge/RPMS/rpmforge-release-0.5.3-1.el6.rf.x86_64.rpm </span></span><br><span class="line">rpm -ivh rpmforge-<span class="built_in">release</span><span class="number">-0.5</span><span class="number">.3</span><span class="number">-1.</span>el6.rf.x86_64.rpm </span><br><span class="line">yum -y install aria2</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>Ubuntu18</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：rastasheep/ubuntu-sshd</span><br><span class="line">用户名：root</span><br><span class="line">密码：root</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>宝塔面板</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：tangniyuqi/baota</span><br><span class="line">用户名：admin</span><br><span class="line">密码：admin123</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>Debian</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：hklcf/debian-ssh-docker</span><br><span class="line">用户名: root</span><br><span class="line">密码：password</span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>Centos</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tutum/centos:latest .</span><br><span class="line">tutum/centos:centos5 centos5</span><br><span class="line">tutum/centos:centos6 centos6</span><br><span class="line">tutum/centos:centos7 centos7</span><br><span class="line">用户名：root</span><br><span class="line">密码随机，在docker日志中查看密码</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>OwnCloud</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：imdjh/owncloud-with-ocdownloader</span><br><span class="line">端口：<span class="number">80</span></span><br><span class="line">就是owncloud</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>peerflix-server（磁力下载工具）</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像：fish/peerflix-server</span><br><span class="line">端口：<span class="number">9000</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>Owncloud（可以启用外部存储并具有下载功能）</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">镜像：limaofeng/owncloud-with-ocdownloader</span><br><span class="line">端口：<span class="number">80</span></span><br></pre></td></tr></table></figure>
+
+<ol start="9">
+<li>chrome浏览器</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">镜像：</span><br><span class="line">consol/centos-xfce-vnc #（支持中文）</span><br><span class="line">consol/ubuntu-xfce-vnc #（不支持中文）</span><br><span class="line">密码：vncpassword</span><br><span class="line">端口：<span class="number">5901</span></span><br></pre></td></tr></table></figure>
+
+<ol start="10">
+<li>xware-kodexplorer</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：mrlyc/xware-kodexplorer</span><br><span class="line">端口：<span class="number">80</span></span><br><span class="line">初始账号密码：admin</span><br></pre></td></tr></table></figure>
+
+<p>宝塔面板</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">镜像：tangniyuqi/baota</span><br><span class="line">用户名：admin</span><br><span class="line">密码：admin123</span><br></pre></td></tr></table></figure>
+
+<h3 id="tomcat"><a href="#tomcat" class="headerlink" title="tomcat"></a>tomcat</h3><p>网址：<a href="https://hub.docker.com/_/tomcat/">https://hub.docker.com/_/tomcat/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull tomcat</span><br><span class="line"># 运行</span><br><span class="line">docker run -di --name tomcat -p 8081:8080 tomcat</span><br></pre></td></tr></table></figure>
+
+<h3 id="Nginx-1"><a href="#Nginx-1" class="headerlink" title="Nginx"></a>Nginx</h3><p>网址：<a href="https://hub.docker.com/_/nginx/">https://hub.docker.com/_/nginx/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull nginx</span><br><span class="line"># 运行</span><br><span class="line">docker run -di --name nginx -p 80:80 nginx</span><br><span class="line"># 静态资源放入 nginx 中 &#x2F;usr&#x2F;share&#x2F;nginx&#x2F;html 目录下</span><br></pre></td></tr></table></figure>
+
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a><em>MySQL</em></h3><p>网址：<a href="https://hub.docker.com/_/mysql/">https://hub.docker.com/<em>/</em>mysql_/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#拉取</span><br><span class="line">docker pull mysql</span><br><span class="line"># 运行</span><br><span class="line">docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD&#x3D;ROOT_Password -d mysql</span><br></pre></td></tr></table></figure>
+
+<h4 id="MySQL-连接问题"><a href="#MySQL-连接问题" class="headerlink" title="MySQL 连接问题"></a><em>MySQL</em> 连接问题</h4><p><img src="https://i.loli.net/2020/05/18/lzPnNQmOyBsW5kr.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">问题：Client does not support authentication protocol requested by server; consider upgrading MySQL client</span><br><span class="line"></span><br><span class="line">解决方案：进入容器内，登录容器内的MySQL，在SQL中执行以下命令即可：</span><br><span class="line">alter user &#39;root&#39;@&#39;%&#39; identified with mysql_native_password by &#39;19491001&#39;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Oracle"><a href="#Oracle" class="headerlink" title="Oracle"></a>Oracle</h3><p>网址：<a href="https://hub.docker.com/r/wnameless/oracle-xe-11g/">https://hub.docker.com/r/wnameless/oracle-xe-11g/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull wnameless&#x2F;oracle-xe-11g</span><br><span class="line"># 运行，默认账号 system，默认密码 oracle，-e 允许远程连接</span><br><span class="line">docker run -d --name oracle -p 49161:1521 -e ORACLE_ALLOW_REMOTE&#x3D;true wnameless&#x2F;oracle-xe-11g</span><br></pre></td></tr></table></figure>
+
+<h3 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a><em>Redis</em></h3><p>网址：<a href="https://hub.docker.com/_/redis/">https://hub.docker.com/<em>/</em>redis_/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull redis</span><br><span class="line"># 运行</span><br><span class="line">## 无密码运行</span><br><span class="line">docker run -d --name redis -p 6379:6379  redis</span><br><span class="line">## 有密码运行</span><br><span class="line">docker run -d --name redis10 -p 6379:6379 redis --requirepass 19491001</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://juejin.im/post/6844903813162205192">docker 安装 redis 以及配置连接</a><br><a href="https://yeasy.gitbook.io/docker_practice/appendix/repo/redis">Redis - Docker —— 从入门到实践</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">--restart always \</span><br><span class="line">-p 6379:6379 \</span><br><span class="line">-v /home/wang/redis/redis.conf:/etc/redis/redis.conf \</span><br><span class="line">-v /home/wang/redis/data:/data \</span><br><span class="line">--privileged=true \</span><br><span class="line">--name redis \</span><br><span class="line">redis \</span><br><span class="line">redis-server /etc/redis/redis.conf</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>网址：<a href="https://hub.docker.com/_/mongo/">https://hub.docker.com/_/mongo/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull mongo</span><br><span class="line"># 运行</span><br><span class="line">## 无账号密码运行</span><br><span class="line">docker run -d --name mongo -p 27017:27017 mongo</span><br><span class="line">## 账号密码运行</span><br><span class="line">docker run -d --name mongo  -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME&#x3D;mongo -e MONGO_INITDB_ROOT_PASSWORD&#x3D;19491001 mongo</span><br></pre></td></tr></table></figure>
+
+<h3 id="Gitlab"><a href="#Gitlab" class="headerlink" title="Gitlab"></a>Gitlab</h3><p>网址：<a href="https://hub.docker.com/r/gitlab/gitlab-ce/">https://hub.docker.com/r/gitlab/gitlab-ce/</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 使用 docker 拉取 gitlab 镜像</span><br><span class="line">docker pull gitlab&#x2F;gitlab-ce</span><br><span class="line"># 运行 giltab 镜像</span><br><span class="line">docker run -di --name&#x3D;gitlab-ce -p 7000:80 gitlab&#x2F;gitlab-ce</span><br><span class="line"># 进入 gitlab 容器中</span><br><span class="line">docker exec -it gitlab-ce &#x2F;bin&#x2F;bash</span><br><span class="line"># 执行 giltab 配置,访问 http:&#x2F;&#x2F;IP:7000 即可，首次访问需要配置 root 密码</span><br><span class="line">gitlab-ctl reconfigure</span><br></pre></td></tr></table></figure>
+
+<h3 id="Jenkins"><a href="#Jenkins" class="headerlink" title="Jenkins"></a>Jenkins</h3><p>DockerHub 官网：<a href="https://hub.docker.com/_/jenkins/">https://hub.docker.com/_/jenkins/</a></p>
+<p>使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull jenkins</span><br><span class="line"># 运行</span><br><span class="line">docker run -di --name simbajenkins -p 7000:8080 -p 50000:50000 jenkins</span><br></pre></td></tr></table></figure>
+
+<h3 id="Rancher"><a href="#Rancher" class="headerlink" title="Rancher"></a>Rancher</h3><p>DockerHub 官网：<a href="https://hub.docker.com/r/rancher/server/">https://hub.docker.com/r/rancher/server/</a></p>
+<p>使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 拉取</span><br><span class="line">docker pull rancher&#x2F;server</span><br><span class="line"># 运行</span><br><span class="line">docker run -di --name simbarancher -p 7001:8080 rancher&#x2F;server</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="参考、学习资料"><a href="#参考、学习资料" class="headerlink" title="参考、学习资料"></a>参考、学习资料</h2><p><a href="https://github.com/wsargent/docker-cheat-sheet">wsargent/docker-cheat-sheet: Docker Cheat Sheet</a><br><a href="https://github.com/veggiemonk/awesome-docker">veggiemonk/awesome-docker: A curated list of Docker resources and projects</a><br><a href="https://github.com/yeasy/docker_practice">yeasy/docker_practice: Learn and understand Docker technologies, with real DevOps practice!</a></p>
+<p><a href="https://www.infoq.cn/article/tp28JvvgkZ-UPDY4THk5">谁在运行我的Kubernetes Pod？容器运行时的过去、现在和未来 - InfoQ</a></p>
+<p><a href="https://snowdreams1006.tech/devops/docker-ops.html">docker 操作 · 雪之梦技术驿站</a><br><a href="https://snowdreams1006.tech/devops/docker-compose.html">docker compose · 雪之梦技术驿站</a></p>
+<p><a href="https://www.runoob.com/docker/docker-compose.html">Docker Compose | 菜鸟教程</a></p>
+<h3 id="How-to-set-an-environment-variable-in-a-running-docker-container"><a href="#How-to-set-an-environment-variable-in-a-running-docker-container" class="headerlink" title="How to set an environment variable in a running docker container"></a>How to set an environment variable in a running docker container</h3><p><a href="https://www.google.com/search?newwindow=1&sxsrf=ALeKk03ajdVC-dF3XMBQwvG9ttnckF34VQ%3A1593075189507&ei=9WX0XvytHuCIk74P2KahyAE&q=how+to+set+env+while+running&oq=how+to+set+env+while+running&gs_lcp=CgZwc3ktYWIQAzICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADICCAA6BwgjEOoCECc6BggAEAUQHjoECCMQJ1Ccpx5YorofYK28H2gHcAB4AoABpwWIAfMQkgEFNC0xLjOYAQKgAQGqAQdnd3Mtd2l6sAEK&sclient=psy-ab&ved=0ahUKEwi8_JTGy5zqAhVgxMQBHVhTCBkQ4dUDCAw&uact=5">how to set env while running - Google 搜索</a><br><a href="https://stackoverflow.com/questions/27812548/how-to-set-an-environment-variable-in-a-running-docker-container">How to set an environment variable in a running docker container - Stack Overflow</a></p>
+</div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/docker%20k8s/docker.html">docker</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/docker%20k8s/docker.html">https://zronghui.github.io/docker k8s/docker.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/todo/app-to-install.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">app to install</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/todo/%E8%BF%BD%E5%89%A7.html"><span class="level-item">追剧</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '2a14cb51135295a09c3b49d0aefeda9e',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="is-flex" id="toc-item-docker-服务-端口对应" href="#docker-服务-端口对应"><span>docker 服务 端口对应</span></a></li><li><a class="is-flex" id="toc-item-学习资料" href="#学习资料"><span>学习资料</span></a></li><li><a class="is-flex" id="toc-item-1-docker-安装" href="#1-docker-安装"><span>1.docker 安装</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-centos" href="#centos"><span>centos</span></a></li><li><a class="is-flex" id="toc-item-docker-compose" href="#docker-compose"><span>docker-compose</span></a></li><li><a class="is-flex" id="toc-item-Mac" href="#Mac"><span>Mac</span></a></li></ul></li><li><a class="is-flex" id="toc-item-2-docker-操作" href="#2-docker-操作"><span>2.docker 操作</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-容器-container" href="#容器-container"><span>容器-container</span></a></li><li><a class="is-flex" id="toc-item-镜像操作" href="#镜像操作"><span>镜像操作</span></a></li><li><a class="is-flex" id="toc-item-web-应用" href="#web-应用"><span>web 应用</span></a></li><li><a class="is-flex" id="toc-item-容器互联" href="#容器互联"><span>容器互联</span></a></li><li><a class="is-flex" id="toc-item-常用操作-我用过的操作-：" href="#常用操作-我用过的操作-："><span>常用操作(我用过的操作)：</span></a></li><li><a class="is-flex" id="toc-item-容器资源限制：内存、CPU、带宽" href="#容器资源限制：内存、CPU、带宽"><span>容器资源限制：内存、CPU、带宽</span></a></li><li><a class="is-flex" id="toc-item-Dockerize" href="#Dockerize"><span>Dockerize</span></a></li><li><a class="is-flex" id="toc-item-docker-django-es" href="#docker-django-es"><span>docker django es</span></a></li><li><a class="is-flex" id="toc-item-docker-save和docker-export的区别" href="#docker-save和docker-export的区别"><span>*docker save和docker export的区别</span></a></li></ul></li><li><a class="is-flex" id="toc-item-3-docker-gitlab-8001" href="#3-docker-gitlab-8001"><span>3.docker gitlab :8001</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-mem-占用过高问题解决：" href="#mem-占用过高问题解决："><span>mem 占用过高问题解决：</span></a></li><li><a class="is-flex" id="toc-item-添加本地已有仓库" href="#添加本地已有仓库"><span>添加本地已有仓库</span></a></li></ul></li><li><a class="is-flex" id="toc-item-4-解锁网易云灰色歌曲-8002" href="#4-解锁网易云灰色歌曲-8002"><span>4. 解锁网易云灰色歌曲 :8002</span></a></li><li><a class="is-flex" id="toc-item-5-rsshub-1200" href="#5-rsshub-1200"><span>5. rsshub :1200</span></a></li><li><a class="is-flex" id="toc-item-6-gogs" href="#6-gogs"><span>6. gogs</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-更多类似项目：" href="#更多类似项目："><span>更多类似项目：</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-Docker-Spring-Boot-快速搭建和部署Java-Web应用" href="#Docker-Spring-Boot-快速搭建和部署Java-Web应用"><span>Docker + Spring Boot: 快速搭建和部署Java Web应用</span></a></li><li><a class="is-flex" id="toc-item-Nginx" href="#Nginx"><span>Nginx</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-minio" href="#minio"><span>minio</span></a></li></ul></li><li><a class="is-flex" id="toc-item-8-可以部署在-docker-里的工具" href="#8-可以部署在-docker-里的工具"><span>8.可以部署在 docker 里的工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-记账-budget" href="#记账-budget"><span>记账 budget</span></a></li></ul></li><li><a class="is-flex" id="toc-item-9-Django-工具" href="#9-Django-工具"><span>9.Django 工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-kitematic-–-Mac管理-docker" href="#kitematic-–-Mac管理-docker"><span>kitematic – Mac管理 docker</span></a></li><li><a class="is-flex" id="toc-item-portainer-–-在网页端远程管理-docker" href="#portainer-–-在网页端远程管理-docker"><span>portainer – 在网页端远程管理 docker</span></a></li><li><a class="is-flex" id="toc-item-docker-squash" href="#docker-squash"><span>docker-squash</span></a></li></ul></li><li><a class="is-flex" id="toc-item-常用的Docker" href="#常用的Docker"><span>**常用的Docker</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-tomcat" href="#tomcat"><span>tomcat</span></a></li><li><a class="is-flex" id="toc-item-Nginx-1" href="#Nginx-1"><span>Nginx</span></a></li><li><a class="is-flex" id="toc-item-MySQL" href="#MySQL"><span>MySQL</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-MySQL-连接问题" href="#MySQL-连接问题"><span>MySQL 连接问题</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Oracle" href="#Oracle"><span>Oracle</span></a></li><li><a class="is-flex" id="toc-item-Redis" href="#Redis"><span>Redis</span></a></li><li><a class="is-flex" id="toc-item-MongoDB" href="#MongoDB"><span>MongoDB</span></a></li><li><a class="is-flex" id="toc-item-Gitlab" href="#Gitlab"><span>Gitlab</span></a></li><li><a class="is-flex" id="toc-item-Jenkins" href="#Jenkins"><span>Jenkins</span></a></li><li><a class="is-flex" id="toc-item-Rancher" href="#Rancher"><span>Rancher</span></a></li></ul></li><li><a class="is-flex" id="toc-item-参考、学习资料" href="#参考、学习资料"><span>参考、学习资料</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-How-to-set-an-environment-variable-in-a-running-docker-container" href="#How-to-set-an-environment-variable-in-a-running-docker-container"><span>How to set an environment variable in a running docker container</span></a></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>

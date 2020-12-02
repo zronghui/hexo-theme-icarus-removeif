@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Java tricks - zronghui的博客</title><meta description="[toc]"><meta property="og:type" content="blog"><meta property="og:title" content="zronghui"><meta property="og:url" content="https://zronghui.github.io/"><meta property="og:site_name" content="zronghui"><meta property="og:description" content="[toc]"><meta property="og:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><meta property="article:published_time" content="2020-01-15T10:14:20.000Z"><meta property="article:modified_time" content="2020-05-12T14:34:39.000Z"><meta property="article:author" content="removeif"><meta property="article:tag" content="tricks"><meta property="article:tag" content="Java"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png# https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://zronghui.github.io/"},"headline":"zronghui","image":["https://i.loli.net/2020/03/01/Lxsrj19ucvzetiM.png#https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg# https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/avatar.jpg"],"datePublished":"2020-01-15T10:14:20.000Z","dateModified":"2020-05-12T14:34:39.000Z","author":{"@type":"Person","name":"removeif"},"description":"[toc]"}</script><link rel="alternative" href="/atom.xml" title="zronghui的博客" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/removeif/removeif.github.io@latest/img/wico.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;amp;subset=latin,latin-ext"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><link rel="stylesheet" href="/css/style.css"><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="/js/globalUtils.js"></script></head><body class="is-3-column has-navbar-fixed-top"><nav class="navbar navbar-main is-fixed-top"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">首页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/media">影音</a><a class="navbar-item" href="/album">相册</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a><a class="navbar-item" id="night-nav" title="Night Mode" href="javascript:;"><i class="fas fa-moon" id="night-icon"></i></a></div></div></div></nav><script type="text/javascript" src="/js/theme-setting.js"></script><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-9-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2020-01-15T10:14:20.000Z">2020-01-15</time><a class="commentCountImg" href="/java/Java-tricks.html#comment-container"><span class="display-none-class">9b09f523974d057e2eaaff5405990e74</span><img class="not-gallery-item" src="/img/chat.svg"> <span class="commentCount" id="9b09f523974d057e2eaaff5405990e74"> 99+</span>    </a><span class="level-item"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/java/">java</a></span><span class="level-item">34 minutes 读完 (大约 5054 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">Java tricks</h1><div class="content"><hr>
+<p>[toc]</p>
+<a id="more"></a>
+
+<h3 id="降低-idea-的-CPU-使用率"><a href="#降低-idea-的-CPU-使用率" class="headerlink" title="降低 idea 的 CPU 使用率"></a>降低 idea 的 CPU 使用率</h3><p><a href="https://nullpointerexception.tangblack.com/intellij-idea-%e5%8d%a1%e9%a0%93-cpu-%e4%bd%bf%e7%94%a8%e7%8e%87%e8%b6%85%e9%81%8e100/">IntelliJ IDEA 卡顿CPU 使用率超过100% – 软体工程师的踩雷笔记</a></p>
+<h1 id="04-03"><a href="#04-03" class="headerlink" title="04-03"></a>04-03</h1><h2 id="Java-程序该怎么优化？工具篇"><a href="#Java-程序该怎么优化？工具篇" class="headerlink" title="Java 程序该怎么优化？工具篇"></a>Java 程序该怎么优化？工具篇</h2><p>原创 一猿小讲 <a href="javascript:void(0);">一猿小讲</a> <em>1周前</em></p>
+<blockquote>
+<p>程序员：为什么程序总是那么慢？时间都花到哪里去了？</p>
+<p>面试官：若你写的 Java 程序，出现了性能问题，该怎么去排查呢？</p>
+</blockquote>
+<p><strong><em>1.</em></strong> <strong>hprof 工具</strong></p>
+<p>hprof 工具是通过织入监控代码，来对 Java 程序进行监控的一款工具。可以监控 Java 程序在运行时占用的 CPU，及统计堆内存使用等。</p>
+<p>例如：每隔 10 毫秒采样 CPU 消耗信息，并把信息保存到 hprof.txt 文件中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -agentlib:hprof&#x3D;cpu&#x3D;times,interval&#x3D;10,file&#x3D;hprof.txt class</span><br></pre></td></tr></table></figure>
+
+<p>指令运行完，打开 hprof.txt 便很容易统计出哪些方法的运行耗时较长。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBF0dEr4erzUxafQFWhAWDRhfCKEleiaBta4vDKVfnuAODd7PylcSCtOdA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+<p>例如：输出 Java 应用程序中各个类所占用的内存百分比。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -agentlib:hprof&#x3D;heap&#x3D;sites,file&#x3D;hprof.txt class备注：若未指定 file&#x3D;hprof.txt，则默认会生成 java.hprof.txt 文件</span><br></pre></td></tr></table></figure>
+
+
+
+<p>打开输出的文件，效果如下。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFy9dlffnz5VfEiamIePAiaZCsdwWNKnN9R2AVuIOThf2l2TesD4jz0e4g/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>例如：将 Java 应用程序的堆快照保存在文件 core.hprof 中，然后就可以使用 VisualVM 等工具来分析这个堆文件啦。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -agentlib:hprof&#x3D;heap&#x3D;dump,format&#x3D;b,file&#x3D;core.hprof class</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>采用 VisualVM 工具打开 core.hprof 文件进行分析堆快照，效果如下。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFgeCI7s2VXib2PC4QBHKTNORZbicU9L49NLllyhiafYibSlR9jHUpUY9GMg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p><strong><em>2.</em></strong> <strong>JConsole 工具</strong></p>
+<p>JConsole 是 Java 自带的图形化性能监控工具，可以让你摆脱命令行排查问题的痛苦。通过它，会非常容易的监测 Java 程序的运行情况。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFVNwEboHsOXeVu2M59k9RXAaw9vMhHplmvgr5MWicP8acMlByhyKPczg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p><strong><em>2.1.</em></strong> <strong>连接要监控的 Java 程序</strong></p>
+<p>首先进入 JDK 安装之后的 bin 目录，若是配置过 Java 的环境变量，直接运行 JConsole 就行，效果如下。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFvN5undnsvHFo8lU8EHGT0Q5SYV8R03diajgKPBr10ibnDW0F4Bia9tADA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>若是要监控本地 Java 进程，直接选择列表中的名称进行连接即可。</p>
+<p>若是要监控远程 Java 进程，需要在远程 Java 程序启动时，需要加上下面几句话。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># 远程服务器的ip地址-Djava.rmi.server.hostname&#x3D;127.0.0.1 # 指定jmx监听的端口-Dcom.sun.management.jmxremote.port&#x3D;8099 # 指定jmx监听的端口-Dcom.sun.management.jmxremote.rmi.port&#x3D;8099 # 是否开启ssl-Dcom.sun.management.jmxremote.ssl&#x3D;false # 是否开启认证-Dcom.sun.management.jmxremote.authenticate&#x3D;false</span><br></pre></td></tr></table></figure>
+
+
+
+<p>若是在 IDEA 开发工具中进行验证，按照下图进行配置，跑程序就行。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFZOAulnB0HNw8v3AHdww8LUkoFl0kjjGk2TuAjOE92DsThZOeeaxGicA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>若是命令行启动时，按照下述方式配置，启动就行。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -cp . -Djava.rmi.server.hostname&#x3D;127.0.0.1 -Dcom.sun.management.jmxremote.port&#x3D;8099 -Dcom.sun.management.jmxremote.rmi.port&#x3D;8099  -Dcom.sun.management.jmxremote.ssl&#x3D;false -Dcom.sun.management.jmxremote.authenticate&#x3D;false className</span><br></pre></td></tr></table></figure>
+
+
+
+<p>启动远程 Java 程序，JConsole 输入远程服务 IP 和 端口，连接即可。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFCiaBKnDian8Gg6kcnAl4ibmqvM45NN5MCxUib4xwZyQmlVT4ROZcuWfSKw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p><strong><em>2.2.</em></strong> <strong>监控 Java 程序概况</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFEup0BHf0ibVssMDSD8zWmx1d1c75ibu74HsqpRYITSBBCRX05rJEIYgA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+<p>如图所示，JConosle 连接上要监控的 Java 程序后，可以很方便的查看堆内存使用量、线程数量、加载类的数量以及 CPU 的占用率。</p>
+<p><strong><em>2.3.</em></strong> <strong>内存监控</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBF98JfEuG7X7ypZSVKMuTUvWGL34XstZFNUsGCdnWx3yb8SxVg7jHUdw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>如图所示，在 JConsole 提供的内存监控页面，不仅能看到堆内存的使用情况，而且能查看非堆区的内存使用情况等等。另外，还提供了让 Java 应用强制进行一次 GC 的功能。</p>
+<p><strong><em>2.4.</em></strong> <strong>线程监控</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFNM1y4BXZt5dywdXg8WrXNjC3jIFc8Lrq9icwwmicUrt61LSueWAeFEnw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+<p>如图所示，通过 JConsole 提供的线程页面，可以方便查看系统内的线程数量，以及程序中所有的线程，并且还能看到线程的栈信息。另外，该页面还提供了检测死锁的支持，那么就可以快速的帮我们定位死锁的问题啦。</p>
+<p><strong><em>2.5.</em></strong> <strong>类加载情况</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFfcInWfV7XR70ibCVjibstTbzia8n21uGDfq2JGkV8u4AQnz19UcwPlTsg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+
+
+<p>如图所示，JConsole 还能够显示类加载情况，包括已经装载的类数量，以及已经卸载的类数量。</p>
+<p><strong><em>2.6.</em></strong> <strong>VM 摘要</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFCXkTiaR87XzRceynVNShLGMISXmadxUMaicCu6pmLiaj5WbeTgc6RL0oA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>如图所示，JConsole 提供的 VM 概要页面，能够显示当前 Java 应用程序的基本信息，包括运行环境、系统线程信息、堆信息等等。</p>
+<p><strong><em>2.7.</em></strong> <strong>MBean 管理</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFv3zFZC1sImrKgFAOXqwstHc3dKKC5n5Qm1dqq3pszV0EK6YkbsVD9Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom: 50%;" />
+
+
+
+<p>通过 JConsole 提供的 MBean 页面，我们可以对应用中的 MBean 进行统一管理，鉴于之前在剖析 Resin 服务器源码的时候，我们多次用到过，本次不再铺开去说。</p>
+<p><strong><em>3.</em></strong> <strong>VisualVM 工具</strong></p>
+<p>Visual VM 是可以替代 jstat、jmap、jhat、jstack 命令的一款故障诊断和性能监控的可视化工具，甚至可以替代 JConsole，所以我们还是有必要进行了解一下。</p>
+<p><strong><em>3.1</em></strong> <strong>连接要监控的 Java 程序</strong></p>
+<p>首先进入 JDK 安装的 bin 目录，运行 jvisualvm，启动起来后和 JConsole 一样，可以选择本地和远程进行连接，效果如下。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFQSqZLRZcZc16sBZpM3ibJiafBGaZgOiaLbRY99icAXkwCDL2Kn3Eiace7fA/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFMJic6icc2YaLhVC6Dx5wPbickE7wmON4DMdOoChbzrewbHQPkSO7DGM2Q/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p><strong><em>3.2</em></strong> <strong>概述</strong></p>
+<p>**<br>**</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFNLzZQVYlY8DrVnOED6v7RgcTNrxYQVMX5s8ty3so2VLo24LTyKpqbg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>如图所示，通过 VisualVM 提供的概述功能页，可以很方便的查看 Java 程序的进程 ID、JVM 参数、系统属性等等信息。</p>
+<p><strong><em>3.3</em></strong> <strong>监视</strong></p>
+<p>**<br>**</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFuRk9KwXmicu9bRCArWVu367fXZ07LOFXvLH3kPiazJF3aNgiaAkofAUzg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>这块和 JConsole 很像，VisualVM 将 CPU 使用情况、堆使用情况、类加载信息以及线程都做了图形界面展示，可以很直观的进行监测。</p>
+<p><strong><em>3.4</em></strong> <strong>线程监控</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFxTz763dcqialZRDLLbItAO3iccFkicxoRQWibB4zdY7IR7fy6Lrtkb7aUw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>VisualVM 可以展示详细的线程信息，让线程信息一览无余，并且会自动进行死锁检测，如果在当前程序中找到死锁，则会提示“检测到死锁”。另外，通过线程 Dump可以导出当前所有线程的堆栈信息。</p>
+<p><strong><em>3.5</em></strong> <strong>抽样器</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFYa7Jdib8qRffPYqicfQxHqw8ARxuWCTaSFjxUgqu8Rws7ia9kGgaBmMiag/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>Visual VM 提供 CPU 和内存两个抽样器。通过 CPU 抽样器，可以帮助我们快速找到程序中占用 CPU 时间最长的方法；通过内存抽样器，可以帮助我们查看当前程序的堆信息。</p>
+<p>CPU抽样器效果图：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFZicqffvcT2jFicXg79hR88ialzkvkYxtNvY6Vib4y5fArb00rWQBOmopTQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>内存抽样器效果图：</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFShSDkjpXuia4b3IJU1gOjcFW1jZ1mWUwh8dnt1Z223wEI6icjNibAwwVQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p><strong><em>3.6</em></strong> <strong>Profiler</strong></p>
+<p>Profiler 的功能和抽样器其实差不多，只不过抽样器是抽样进行检测，而 Profiler 是全面进行检测。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFgKRfaM8hgPutSCvBTZiaZNraOmm4zXxe8R8kTbKFnQHx1Fk39BBkibrw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>点击 CPU 按钮，效果如上图所示，则开启一个 CPU 性能分析会话，等 VisualVM 收集和统计完相关性能数据信息，将会显示在性能分析结果。</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFXOanMnwrY2wCicbcuqH6UCtUv0VFtOyrTYYBceEQqO25u5BmEjckUCg/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>若点击内存按钮，则开启一个内存分析会话，等 VisualVM 收集和统计完相关性能数据信息，将会显示在性能分析结果，效果如上图所示。</p>
+<p><strong><em>3.7</em></strong> <strong>快照</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFuwyhcKyTzKPajh8yicq8Sticp9yYX3ocCaL4JafS2Gf2mHqq4pvAfDicw/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>VisualVM 很多地方，都提供了快照功能，可以让我们保存某一个时刻应用程序的堆信息、线程堆栈等等保存成快照，以便性能优化后进行对比、分析使用。</p>
+<p><strong><em>3.8</em></strong> <strong>插件</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWOAwZIKY1S6WtouZhbBbibBFEvo4YoDwuoibibBlravsmcMQObWfNyVwG02DYtuHsZ2oukq03LU5rHAQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="img"></p>
+<p>VisualVM 还可以通过安装插件，来实现更多可能性。</p>
+<img src="https://i.loli.net/2020/04/03/iDLq5SyVfZ1EIeb.jpg" alt="iDLq5SyVfZ1EIeb" style="zoom:67%;" />
+
+<p><strong>3.5. 数学运算，搞不好会倾家荡产。</strong></p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWNDYjkiaHumNA9zLAOHs1y9ibrdfXibq63Z6wBpGuxgQKFKwtUCxfDwkGAZ7Z6hPrcpXBM7bJr8iaH8XQ/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>输出结果：0.010000000000005116，一般遇到需要用到浮点数运算的地方，都可以使用 java.math.BigDecimal。</p>
+<p>建议修改为：</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWNDYjkiaHumNA9zLAOHs1y9ibvic3HEAXuEsr9CibfvDia5ksF6iaLp5bZXSo4LRxUarpFX1icO7XSkJyCYw/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+
+
+<p>注意构造 BigDecimal 的参数为 String，千万别搞错了，这也是新手易犯的问题。</p>
+<p>有些时候怎么调，都不通，就想知道 jar 包里面都写了点啥？在此，推荐一款用的最多的<strong>反编译工具 JD-GUI</strong></p>
+<p>SonarQuable，它是一个用于代码质量管理的开源平台，也有助于帮你进行代码审查，提升代码质量。</p>
+<img src="https://mmbiz.qpic.cn/mmbiz_png/waH0DGXhQWO8hhw7iboriaQYnG4pIZJMbzVKROzYtA8SZOQyVfy6H3AiaeRuzGCGRvCPD6CBNDR0sIMb6NCs95eyg/640?wx_fmt=png&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" alt="img" style="zoom:50%;" />
+
+<h2 id="Java-程序该怎么优化？技巧篇"><a href="#Java-程序该怎么优化？技巧篇" class="headerlink" title="Java 程序该怎么优化？技巧篇"></a>Java 程序该怎么优化？技巧篇</h2><p><a href="https://mp.weixin.qq.com/s/jyJ1NkmU7_kOJEaR1x3rLQ">Java 程序该怎么优化？技巧篇</a></p>
+<p>1.字符串处理优化，乃优化之源。<br>1.1.字符串分割</p>
+<img src="https://i.loli.net/2020/04/03/Ur9L7lmsEXTkWZC.jpg" alt="Ur9L7lmsEXTkWZC" style="zoom:50%;" />
+
+<p>从运行效果， <strong>StringTokenizer(?) 其效率高于 split() 方法</strong>。<br>所以，在能够使用 StringTokenizer 进行处理的地方，就尽量使用 StringTokenizer 进行字符串分割处理。<br>1.2. 字符串拼接</p>
+<img src="https://i.loli.net/2020/04/03/QSm4ZOjWqwRAv8l.png" alt="QSm4ZOjWqwRAv8l" style="zoom:50%;" />
+
+<p>使用 + 号拼接字符串，其效率明显较低，采用 StringBuilder 来完成字符串连接性能相对较好，同理，如果需要考虑线程安全的情况下，可以选择 StringBuffer。</p>
+<ol start="2">
+<li><p>善用 arraycopy()，让数组复制不再难。<br> 对数组的操作，如果能用 <strong>System.arraycopy()</strong> 这个方法实现，建议尽量去使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#                   srcPos   destPos</span><br><span class="line">System.arraycopy(src, <span class="number">0</span>, dest, <span class="number">0</span>, size);</span><br></pre></td></tr></table></figure>
+
+<p>Arrays.copyOf() 底层还是调用 System.arraycopy() 来实现</p>
+</li>
+<li><p>集合用的多，使用场景要注意。<br> 充分的选择好数据结构进行数据存储，便是最好的程序优化</p>
+<img src="https://i.loli.net/2020/04/03/eTUpxjqoa6GCVc4.jpg" alt="eTUpxjqoa6GCVc4" style="zoom:50%;" />
+<img src="https://i.loli.net/2020/04/03/qXCN53kAeG8BdS6.jpg" alt="qXCN53kAeG8BdS6" style="zoom:50%;" />
+<img src="https://i.loli.net/2020/04/03/YUmnQDwNFx9ruIa.jpg" alt="YUmnQDwNFx9ruIa" style="zoom:50%;" />
+</li>
+<li><p>缓冲，让子弹飞一会儿。</p>
+<img src="https://i.loli.net/2020/04/03/MaIx8jJZ2klen7E.png" alt="MaIx8jJZ2klen7E" style="zoom:50%;" />
+
+<p>所以，文件读写操作时尽量都使用缓冲流进行操作，有助于提升性能。</p>
+</li>
+<li><p>缓存，让坐飞机的和坐驴车的打交道。</p>
+</li>
+</ol>
+<p>针对银行编码等一些使用频率较高的业务数据，或者来之不易的计算结果，都可以保存到缓存中，当再次使用时，直接从缓存中获取，而不需要再占用宝贵的系统资源。</p>
+<p>目前有很多基于 Java 的缓存框架，而我用的最多的是 <strong>EhCache(?)</strong>。</p>
+<ol start="2">
+<li><p> 日志记的好，线上没烦恼。</p>
+</li>
+<li><p>一个优化原则。<strong>先实现业务功能，再考虑优化性能</strong>，如果功能都没实现，谈其它的都白扯。<br> 一个调优思路。</p>
+<img src="https://i.loli.net/2020/04/03/duRHw6hoGegFOtv.jpg" alt="duRHw6hoGegFOtv" style="zoom:50%;" />
+
+</li>
+</ol>
+<h1 id="03-29"><a href="#03-29" class="headerlink" title="03-29"></a>03-29</h1><h3 id="GsonFormat"><a href="#GsonFormat" class="headerlink" title="GsonFormat"></a>GsonFormat</h3><p>我们在接外部接口时，别人给了一串JSON串，我们在代码中需要将JSON中的字段封装到一个类中，一个一个输入挺麻烦的，这时GsonFormat就可以派上用场了。它可以帮助我们根据JSON中的key快速生成我们需要的类。</p>
+<p>它的使用快捷键是Option + S</p>
+<p><img src="https:////upload-images.jianshu.io/upload_images/2706762-f29945eec825a296.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/1200/format/webp" alt="img"></p>
+<p>GsonFormat</p>
+<p>作者：Jackeyzhe<br>链接：<a href="https://www.jianshu.com/p/d7282aec7665">https://www.jianshu.com/p/d7282aec7665</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<h1 id="02-17"><a href="#02-17" class="headerlink" title="02-17"></a>02-17</h1><p><a href="https://www.jianshu.com/p/e078043071ff">AssertJ一分钟入门 - 简书</a></p>
+<h1 id="02-14"><a href="#02-14" class="headerlink" title="02-14"></a>02-14</h1><p><a href="https://github.com/PatMartin/Dex">PatMartin/Dex: Dex : The Data Explorer – A data visualization tool written in Java/Groovy/JavaFX capable of powerful ETL and publishing web visualizations.</a></p>
+<h1 id="02-09"><a href="#02-09" class="headerlink" title="02-09"></a>02-09</h1><h3 id="写-Excel-word"><a href="#写-Excel-word" class="headerlink" title="写 Excel word"></a>写 Excel word</h3><p><a href="https://www.yiibai.com/javaexamples/java_apache_poi_excel.html">Java POI Excel - Java代码实例™</a><br><a href="https://www.yiibai.com/javaexamples/java_apache_poi_word.html">Java POI Word - Java代码实例™</a></p>
+<h3 id="写pdf"><a href="#写pdf" class="headerlink" title="写pdf"></a>写pdf</h3><p><a href="https://www.yiibai.com/javaexamples/java_itext.html">Java iText示例 - Java代码实例™</a></p>
+<h3 id="读-PDF-XML-HTML"><a href="#读-PDF-XML-HTML" class="headerlink" title="读 PDF XML HTML"></a>读 PDF XML HTML</h3><p><a href="https://www.yiibai.com/javaexamples/java_apache_tika.html">Apache Tika示例 - Java代码实例™</a></p>
+<h3 id="目录-文件处理"><a href="#目录-文件处理" class="headerlink" title="目录 文件处理"></a>目录 文件处理</h3><p><a href="https://www.yiibai.com/javaexamples/java_directories.html">Java目录 - Java代码实例™</a></p>
+<p>了解如何在Java编程中访问和操作目录。下面是有关Java编程中访问和操作目录最常用的例子 -</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_create.html">如何递归创建目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_delete.html">如何删除目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_empty.html">如何确定一个目录是否为空？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_hidden.html">如何确定目录是否隐藏？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_hierarchy.html">如何打印目录层次结构？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_modification.html">如何打印目录的最后修改时间？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_parent.html">如何获取文件的父目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_search.html">如何搜索目录中的所有文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_size.html">如何获取目录的大小？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_traverse.html">如何遍历目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_current.html">如何查找当前工作目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_root.html">如何在系统中显示根目录？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_search_file.html">如何在目录中搜索文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_sub.html">如何显示目录中的所有文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/dir_display.html">如何显示目录中的所有目录？</a></td>
+</tr>
+</tbody></table>
+<p><a href="https://www.yiibai.com/javaexamples/java_files.html">Java文件 - Java代码实例™</a></p>
+<p>了解如何使用Java编程中的文件操作。下面是常用的一些例子 -</p>
+<table>
+<thead>
+<tr>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_compare.html">如何比较两个文件的路径？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_create.html">如何创建新文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_date.html">如何获取文件的最后修改日期？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_dir.html">如何在指定的目录中创建文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_exist.html">如何检查文件是否存在？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_read_only.html">如何设置文件为只读？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_rename.html">如何重命名文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_size.html">如何获取文件大小(以字节为单位)？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_date_modify.html">如何更改文件的最后修改时间？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_create_temp.html">如何创建一个临时文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_append.html">如何向现有文件中附加一个字符串？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_copy.html">如何将一个文件复制到另一个文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_delete.html">如何删除文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_read.html">如何读取一个文件？</a></td>
+</tr>
+<tr>
+<td><a href="http://www.yiibai.com/javaexamples/file_write.html">如何写入一个文件？</a></td>
+</tr>
+</tbody></table>
+<h1 id="2020年1月20日-星期一"><a href="#2020年1月20日-星期一" class="headerlink" title="2020年1月20日(星期一)"></a>2020年1月20日(星期一)</h1><h4 id="JMeter"><a href="#JMeter" class="headerlink" title="JMeter"></a>JMeter</h4><ul>
+<li>官网地址 ：<a href="https://jmeter.apache.org/">https://jmeter.apache.org</a></li>
+</ul>
+<blockquote>
+<p>Apache JMeter是Apache组织开发的基于Java的压力测试工具</p>
+<p>是的就是用来压测的，你怎么模拟很多请求呀，就用它就对了。</p>
+</blockquote>
+<h1 id="2020-年-1-月-15-日"><a href="#2020-年-1-月-15-日" class="headerlink" title="2020 年 1 月 15 日"></a>2020 年 1 月 15 日</h1><h2 id="可以提高千倍效率的Java代码小技巧-51CTO-COM"><a href="#可以提高千倍效率的Java代码小技巧-51CTO-COM" class="headerlink" title="可以提高千倍效率的Java代码小技巧 - 51CTO.COM"></a><a href="https://developer.51cto.com/art/201905/596234.htm">可以提高千倍效率的Java代码小技巧 - 51CTO.COM</a></h2><h2 id="程序员必须搞懂的20个Java类库和API-51CTO-COM"><a href="#程序员必须搞懂的20个Java类库和API-51CTO-COM" class="headerlink" title="程序员必须搞懂的20个Java类库和API - 51CTO.COM"></a><a href="https://developer.51cto.com/art/201905/596295.htm">程序员必须搞懂的20个Java类库和API - 51CTO.COM</a></h2><h3 id="一、日志相关类库"><a href="#一、日志相关类库" class="headerlink" title="一、日志相关类库"></a>一、日志相关类库</h3><p>Log4j 、 SLF4j 和 LogBack<br>应该熟悉日志记录的利弊， 并且了解为什么 SLF4J 要比 Log4J 要好</p>
+<h3 id="二、JSON-解析库"><a href="#二、JSON-解析库" class="headerlink" title="二、JSON 解析库"></a>二、JSON 解析库</h3><p>Jackson 和 Gson</p>
+<h3 id="三、单元测试库"><a href="#三、单元测试库" class="headerlink" title="三、单元测试库"></a>三、单元测试库</h3><p>常见的单测框架有 JUnit , Mockito 和 PowerMock 。</p>
+<h3 id="四、通用类库"><a href="#四、通用类库" class="headerlink" title="四、通用类库"></a>四、通用类库</h3><p>例如 Apache Commons 和 Google Guava。</p>
+<h3 id="五、Http-库"><a href="#五、Http-库" class="headerlink" title="五、Http 库"></a>五、Http 库</h3><p>Apache HttpClient 和 HttpCore 等开源类库</p>
+<h3 id="六、XML-解析库"><a href="#六、XML-解析库" class="headerlink" title="六、XML 解析库"></a>六、XML 解析库</h3><p>市面上有很多 XML 解析的类库，如 Xerces , JAXB , JAXP , Dom4j , Xstream 等。<br><strong>Xerces2</strong>是下一代高性能，完全兼容的 XML 解析工具。Xerces2 定义了 Xerces Native Interface (XNI)规范，并提供了一个完整、兼容标准的 XNI 规范实现。该解析器是完全重新设计和实现的，更简单以及模块化。</p>
+<h3 id="七、Excel-读写库"><a href="#七、Excel-读写库" class="headerlink" title="七、Excel 读写库"></a>七、Excel 读写库</h3><p>Apache POI API</p>
+<h3 id="八、字节码库"><a href="#八、字节码库" class="headerlink" title="八、字节码库"></a>八、字节码库</h3><p>javassist 、Cglib Nodep 、 ASM 。<br>Javassist 使得 Java 字节码操作非常简单。它是一个为编辑 Java 字节码而生的类库。</p>
+<h3 id="九、数据库连接池库"><a href="#九、数据库连接池库" class="headerlink" title="九、数据库连接池库"></a>九、数据库连接池库</h3><p>Commons Pool 和 DBCP</p>
+<h3 id="十、消息传递库"><a href="#十、消息传递库" class="headerlink" title="十、消息传递库"></a>十、消息传递库</h3><p>Java 提供了 JMS Java 消息服务，但这不是 JDK 的一部分，你需要单独的引入 jms.jar。类似地，如果您准备使用第三方消息传递协议， Tibco RV 是个不错的选择。</p>
+<h3 id="十一、PDF-处理库"><a href="#十一、PDF-处理库" class="headerlink" title="十一、PDF 处理库"></a>十一、PDF 处理库</h3><p>iText 和 Apache FOP 类库</p>
+<h3 id="十二、日期和时间库"><a href="#十二、日期和时间库" class="headerlink" title="十二、日期和时间库"></a>十二、日期和时间库</h3><p>Java 8 自带</p>
+<h3 id="十三、集合类库"><a href="#十三、集合类库" class="headerlink" title="十三、集合类库"></a>十三、集合类库</h3><p>虽然 JDK 有丰富的集合类，但还是有很多第三方类库可以提供更多更好的功能。如 <strong>Apache Commons Collections 、 Goldman Sachs collections 、 Google Collections 和 Trove</strong> 。Trove 尤其有用，因为它提供所有标准 Collections 类的更快的版本以及能够直接在原语(primitive)(例如包含 int 键或值的 Map 等)上操作的 Collections 类的功能。<br><strong>FastUtil</strong>是另一个类似的 API，它继承了 Java Collection Framework，提供了数种特定类型的容器，包括映射 map、集合 set、列表 list、优先级队列(prority queue)，实现了 java.util 包的标准接口(还提供了标准类所没有的双向迭代器)，还提供了很大的(64 位)的 array、set、list，以及快速、实用的二进制或文本文件的 I/O 操作类。</p>
+<h3 id="十四、邮件-API"><a href="#十四、邮件-API" class="headerlink" title="十四、邮件 API"></a>十四、邮件 API</h3><p>javax.mail 和 Apache Commons Email 提供了发送邮件的 API。它们建立在 JavaMail API 的基础上，提供简化的用法。</p>
+<h3 id="十五、HTML-解析库"><a href="#十五、HTML-解析库" class="headerlink" title="十五、HTML 解析库"></a>十五、HTML 解析库</h3><p>jsoup 可以解析 HTML，创建 HTML 文档</p>
+<h3 id="十六、加密库"><a href="#十六、加密库" class="headerlink" title="十六、加密库"></a>十六、加密库</h3><p>Apache Commons 家族中的 Commons Codec 就提供了一些公共的编解码实现，比如 Base64, Hex, MD5,Phonetic and URLs 等等。</p>
+<h3 id="十七、嵌入式-SQL-数据库库"><a href="#十七、嵌入式-SQL-数据库库" class="headerlink" title="十七、嵌入式 SQL 数据库库"></a>十七、嵌入式 SQL 数据库库</h3><p><strong>H2</strong> 是一种内存数据库，可以嵌入到 Java 应用中。在跑单测的时候如果需要一个数据库，用来验证 SQL 的话，H2 是个很好的选择。还有 Apache Derby 和 HSQL 可供选择。</p>
+<h3 id="十八、JDBC-故障诊断库"><a href="#十八、JDBC-故障诊断库" class="headerlink" title="十八、JDBC 故障诊断库"></a>十八、JDBC 故障诊断库</h3><p>有不错的 JDBC 扩展库的存在使得调试变得很容易，例如<strong>P6spy</strong>，这是一个针对数据库访问操作的动态监测框架，它使得数据库数据可无缝截取和操纵，而不必对现有应用程序的代码作任何修改。 P6Spy 分发包包括 P6Log，它是一个可记录任何 Java 应用程序的所有 JDBC 事务的应用程序。其配置完成使用时，可以进行数据访问性能的监测。</p>
+<h3 id="十九、序列化库"><a href="#十九、序列化库" class="headerlink" title="十九、序列化库"></a>十九、序列化库</h3><p><strong>Google Protocol Buffer</strong>是一种轻便高效的结构化数据存储格式，可以用于结构化数据串行化，或者说序列化。它很适合做数据存储或 RPC 数据交换格式。可用于通讯协议、数据存储等领域的语言无关、平台无关、可扩展的序列化结构数据格式。目前提供了 C++、Java、Python 三种语言的 API。</p>
+<h3 id="二十、网络库"><a href="#二十、网络库" class="headerlink" title="二十、网络库"></a>二十、网络库</h3><p>一些有用的网络库主要有 <strong>Netty 的和 Apache Mina</strong> 。如果您正在编写一个应用程序，你需要做的底层网络任务，可以考虑使用这些库。</p>
+<h2 id="Java-性能瓶颈分析工具"><a href="#Java-性能瓶颈分析工具" class="headerlink" title="Java 性能瓶颈分析工具"></a><a href="https://developer.51cto.com/art/201905/596229.htm">Java 性能瓶颈分析工具</a></h2><h3 id="1-Java-Mission-Control"><a href="#1-Java-Mission-Control" class="headerlink" title="1. Java Mission Control"></a>1. Java Mission Control</h3><p>gui<br>Oracle Java 官方项目</p>
+<h3 id="2-Tprofiler"><a href="#2-Tprofiler" class="headerlink" title="2. Tprofiler"></a>2. Tprofiler</h3><p>cli<br>命令行<br>TProfiler 是淘宝开源的一个可以在生产环境长期使用的性能分析工具。</p>
+<h3 id="3-Jprofiler"><a href="#3-Jprofiler" class="headerlink" title="3. Jprofiler"></a>3. Jprofiler</h3><p>gui<br>JProfiler 是由 ej-technologies 公司开发的一款性能瓶颈分析工具。</p>
+<h3 id="4-Arthas"><a href="#4-Arthas" class="headerlink" title="4. Arthas"></a>4. Arthas</h3><p>Arthas 是阿里最近刚刚开源的 Java 生成环境诊断工具。<br>Arthas 支持在 Linux/Unix/Mac 等平台上进行一键安装，现在处于试用于反馈阶段，感兴趣的同学可以自己研究试用。</p>
+</div><div class="article-tags size-small is-uppercase mb-4"><i class="fas fa-tags has-text-grey"></i> <a class="link-muted mr-2" rel="tag" href="/tags/tricks/">tricks</a><a class="link-muted mr-2" rel="tag" href="/tags/Java/">Java</a></div><ul class="post-copyright"><li><strong>本文标题：</strong><a href="https://zronghui.github.io/java/Java-tricks.html">Java tricks</a></li><li><strong>本文作者：</strong><a href="https://zronghui.github.io">zronghui</a></li><li><strong>本文链接：</strong><a href="https://zronghui.github.io/java/Java-tricks.html">https://zronghui.github.io/java/Java-tricks.html</a></li><li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li></ul><div class="recommend-post"><span class="is-size-6 has-text-grey has-mr-7"># 推荐文章</span><br><span>  1.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-22.html" target="_blank">biweekly-contest-22</a><br></span><span>  2.<a class="is-size-6" href="/leetcode/%E7%A8%8B%E5%BA%8F%E5%91%98%E9%9D%A2%E8%AF%95%E9%87%91%E5%85%B8/%E9%9D%A2%E8%AF%95%E9%A2%98-01-07-%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5.html" target="_blank">面试题 01.07 旋转矩阵</a><br></span><span>  3.<a class="is-size-6" href="/Chrome/chrome-%E6%8F%92%E4%BB%B6.html" target="_blank">chrome 插件</a><br></span><span>  4.<a class="is-size-6" href="/Leetcode%20weekly%20contest/biweekly-contest-23.html" target="_blank">biweekly-contest-23</a><br></span><span>  5.<a class="is-size-6" href="/Leetcode%20weekly%20contest/weekly-contest-180.html" target="_blank">weekly-contest-180</a><br></span></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css"><div class="social-share"></div><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MeFCknt1wipKvRA.png" alt="支付宝"></span></a><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="https://i.loli.net/2020/03/05/MVJrxG3gO6qHSiz.png" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/java/%E5%9F%BA%E7%A1%80/Java%E6%8F%90%E9%AB%98%E7%AF%872.html"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java提高篇2</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/python/Python-tricks.html"><span class="level-item">Python tricks</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: '9b09f523974d057e2eaaff5405990e74',
+            repo: 'blog_comment',
+            owner: 'zronghui',
+            clientID: 'f1c7f9da01111d2e7163',
+            clientSecret: '3aaaf709bd8edda1f4c57484cceba5fad5218978',
+            admin: ["zronghui"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 20,
+            pagerDirection: 'last',
+            
+            
+            enableHotKey: true,
+            isLocked: false
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget toc-scroll" id="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-降低-idea-的-CPU-使用率" href="#降低-idea-的-CPU-使用率"><span>降低 idea 的 CPU 使用率</span></a></li></ul></ul><li><a class="is-flex" id="toc-item-04-03" href="#04-03"><span>04-03</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-Java-程序该怎么优化？工具篇" href="#Java-程序该怎么优化？工具篇"><span>Java 程序该怎么优化？工具篇</span></a></li><li><a class="is-flex" id="toc-item-Java-程序该怎么优化？技巧篇" href="#Java-程序该怎么优化？技巧篇"><span>Java 程序该怎么优化？技巧篇</span></a></li></ul></li><li><a class="is-flex" id="toc-item-03-29" href="#03-29"><span>03-29</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-GsonFormat" href="#GsonFormat"><span>GsonFormat</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-02-17" href="#02-17"><span>02-17</span></a></li><li><a class="is-flex" id="toc-item-02-14" href="#02-14"><span>02-14</span></a></li><li><a class="is-flex" id="toc-item-02-09" href="#02-09"><span>02-09</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-写-Excel-word" href="#写-Excel-word"><span>写 Excel word</span></a></li><li><a class="is-flex" id="toc-item-写pdf" href="#写pdf"><span>写pdf</span></a></li><li><a class="is-flex" id="toc-item-读-PDF-XML-HTML" href="#读-PDF-XML-HTML"><span>读 PDF XML HTML</span></a></li><li><a class="is-flex" id="toc-item-目录-文件处理" href="#目录-文件处理"><span>目录 文件处理</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-2020年1月20日-星期一" href="#2020年1月20日-星期一"><span>2020年1月20日(星期一)</span></a><ul class="menu-list"><ul class="menu-list"><li><a class="is-flex" id="toc-item-JMeter" href="#JMeter"><span>JMeter</span></a></li></ul></ul></li><li><a class="is-flex" id="toc-item-2020-年-1-月-15-日" href="#2020-年-1-月-15-日"><span>2020 年 1 月 15 日</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-可以提高千倍效率的Java代码小技巧-51CTO-COM" href="#可以提高千倍效率的Java代码小技巧-51CTO-COM"><span>可以提高千倍效率的Java代码小技巧 - 51CTO.COM</span></a></li><li><a class="is-flex" id="toc-item-程序员必须搞懂的20个Java类库和API-51CTO-COM" href="#程序员必须搞懂的20个Java类库和API-51CTO-COM"><span>程序员必须搞懂的20个Java类库和API - 51CTO.COM</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-一、日志相关类库" href="#一、日志相关类库"><span>一、日志相关类库</span></a></li><li><a class="is-flex" id="toc-item-二、JSON-解析库" href="#二、JSON-解析库"><span>二、JSON 解析库</span></a></li><li><a class="is-flex" id="toc-item-三、单元测试库" href="#三、单元测试库"><span>三、单元测试库</span></a></li><li><a class="is-flex" id="toc-item-四、通用类库" href="#四、通用类库"><span>四、通用类库</span></a></li><li><a class="is-flex" id="toc-item-五、Http-库" href="#五、Http-库"><span>五、Http 库</span></a></li><li><a class="is-flex" id="toc-item-六、XML-解析库" href="#六、XML-解析库"><span>六、XML 解析库</span></a></li><li><a class="is-flex" id="toc-item-七、Excel-读写库" href="#七、Excel-读写库"><span>七、Excel 读写库</span></a></li><li><a class="is-flex" id="toc-item-八、字节码库" href="#八、字节码库"><span>八、字节码库</span></a></li><li><a class="is-flex" id="toc-item-九、数据库连接池库" href="#九、数据库连接池库"><span>九、数据库连接池库</span></a></li><li><a class="is-flex" id="toc-item-十、消息传递库" href="#十、消息传递库"><span>十、消息传递库</span></a></li><li><a class="is-flex" id="toc-item-十一、PDF-处理库" href="#十一、PDF-处理库"><span>十一、PDF 处理库</span></a></li><li><a class="is-flex" id="toc-item-十二、日期和时间库" href="#十二、日期和时间库"><span>十二、日期和时间库</span></a></li><li><a class="is-flex" id="toc-item-十三、集合类库" href="#十三、集合类库"><span>十三、集合类库</span></a></li><li><a class="is-flex" id="toc-item-十四、邮件-API" href="#十四、邮件-API"><span>十四、邮件 API</span></a></li><li><a class="is-flex" id="toc-item-十五、HTML-解析库" href="#十五、HTML-解析库"><span>十五、HTML 解析库</span></a></li><li><a class="is-flex" id="toc-item-十六、加密库" href="#十六、加密库"><span>十六、加密库</span></a></li><li><a class="is-flex" id="toc-item-十七、嵌入式-SQL-数据库库" href="#十七、嵌入式-SQL-数据库库"><span>十七、嵌入式 SQL 数据库库</span></a></li><li><a class="is-flex" id="toc-item-十八、JDBC-故障诊断库" href="#十八、JDBC-故障诊断库"><span>十八、JDBC 故障诊断库</span></a></li><li><a class="is-flex" id="toc-item-十九、序列化库" href="#十九、序列化库"><span>十九、序列化库</span></a></li><li><a class="is-flex" id="toc-item-二十、网络库" href="#二十、网络库"><span>二十、网络库</span></a></li></ul></li><li><a class="is-flex" id="toc-item-Java-性能瓶颈分析工具" href="#Java-性能瓶颈分析工具"><span>Java 性能瓶颈分析工具</span></a><ul class="menu-list"><li><a class="is-flex" id="toc-item-1-Java-Mission-Control" href="#1-Java-Mission-Control"><span>1. Java Mission Control</span></a></li><li><a class="is-flex" id="toc-item-2-Tprofiler" href="#2-Tprofiler"><span>2. Tprofiler</span></a></li><li><a class="is-flex" id="toc-item-3-Jprofiler" href="#3-Jprofiler"><span>3. Jprofiler</span></a></li><li><a class="is-flex" id="toc-item-4-Arthas" href="#4-Arthas"><span>4. Arthas</span></a></li></ul></li></ul></li></ul></div></div><script type="text/javascript" async>
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });</script></div><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="is-rounded" src="https://i.loli.net/2020/02/27/giKJ3UbFhv69o7T.jpg" alt="zronghui"></figure><p class="title is-size-4 is-block line-height-inherit">zronghui</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">582</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">49</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">48</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/zronghui" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/zronghui"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-white is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div><hr><p id="hitokoto">:D 一言句子获取中...</p><script type="text/javascript" defer>function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});</script></div></div><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2020-12-01T14:15:50.000Z">2020-12-01</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMySQL8-cookbook%E3%80%8B-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MySQL8 cookbook》 阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:28.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ARedis-%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0%E3%80%8B.html">《Redis 设计与实现》</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:16:13.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8AMongoDB-%E5%AE%9E%E6%88%98%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《MongoDB 实战》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T14:15:56.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8ALinux-Shell-%E8%84%9A%E6%9C%AC%E6%94%BB%E7%95%A5%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0.html">《Linux Shell 脚本攻略》阅读笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2020-11-29T07:52:12.000Z">2020-11-29</time></p><p class="title is-6"><a class="link-muted" href="/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%9E%81%E5%AE%A2%E6%97%B6%E9%97%B4-MYSQL45%E8%AE%B2-%E7%AC%94%E8%AE%B0.html">极客时间-MYSQL45讲-笔记</a></p><p class="is-uppercase"><i class="fas fa-folder-open has-text-grey"> </i><a class="link-muted" href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/categories/Chrome/"><span class="level-start"><span class="level-item">Chrome</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Leetcode-weekly-contest/"><span class="level-start"><span class="level-item">Leetcode weekly contest</span></span><span class="level-end"><span class="level-item tag">41</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Linux/"><span class="level-start"><span class="level-item">Linux</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/Mac/"><span class="level-start"><span class="level-item">Mac</span></span><span class="level-end"><span class="level-item tag">18</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/blockchain/"><span class="level-start"><span class="level-item">blockchain</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/docker-k8s/"><span class="level-start"><span class="level-item">docker k8s</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/frontEnd/"><span class="level-start"><span class="level-item">frontEnd</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/go/"><span class="level-start"><span class="level-item">go</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/categories/java/"><span class="level-start"><span class="level-item">java</span></span><span class="level-end"><span class="level-item tag">40</span></span></a><ul class="mr-0"><li><a class="level is-mobile is-marginless" href="/categories/java/Collections/"><span class="level-start"><span class="level-item">Collections</span></span><span class="level-end"><span class="level-item tag">12</span></span></a></li></ul></li><a class="level is-mobile is-marginless" href="/categories/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2020/12/"><span class="level-start"><span class="level-item">December 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/11/"><span class="level-start"><span class="level-item">November 2020</span></span><span class="level-end"><span class="level-item tag">10</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/10/"><span class="level-start"><span class="level-item">October 2020</span></span><span class="level-end"><span class="level-item tag">6</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/09/"><span class="level-start"><span class="level-item">September 2020</span></span><span class="level-end"><span class="level-item tag">11</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2020/08/"><span class="level-start"><span class="level-item">August 2020</span></span><span class="level-end"><span class="level-item tag">30</span></span></a></li><a class="level is-mobile is-marginless" href="/archives/"><span class="level-start"><span class="level-item">查看全部&gt;&gt;</span></span></a></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/Array/"><span class="tag">Array</span><span class="tag is-grey-lightest">35</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tree/"><span class="tag">Tree</span><span class="tag is-grey-lightest">34</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Dynamic-Programming/"><span class="tag">Dynamic Programming</span><span class="tag is-grey-lightest">21</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Binary-Search/"><span class="tag">Binary Search</span><span class="tag is-grey-lightest">20</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Hash-Table/"><span class="tag">Hash Table</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Depth-first-Search/"><span class="tag">Depth-first Search</span><span class="tag is-grey-lightest">19</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">16</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Math/"><span class="tag">Math</span><span class="tag is-grey-lightest">14</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Two-Pointers/"><span class="tag">Two Pointers</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/String/"><span class="tag">String</span><span class="tag is-grey-lightest">13</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linked-List/"><span class="tag">Linked List</span><span class="tag is-grey-lightest">11</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Stack/"><span class="tag">Stack</span><span class="tag is-grey-lightest">8</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Backtracking/"><span class="tag">Backtracking</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Heap/"><span class="tag">Heap</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Breadth-first-Search/"><span class="tag">Breadth-first Search</span><span class="tag is-grey-lightest">7</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tricks/"><span class="tag">tricks</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Design/"><span class="tag">Design</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Bit-Manipulation/"><span class="tag">Bit Manipulation</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Sort/"><span class="tag">Sort</span><span class="tag is-grey-lightest">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Divide-and-Conquer/"><span class="tag">Divide and Conquer</span><span class="tag is-grey-lightest">5</span></a></div></div><div class="field is-grouped is-grouped-multiline"><a class="tags has-addons" href="/tags/"><span class="tag">查看全部&gt;&gt;</span></a></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=zronghui&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="zronghui" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div><p class="help">输入邮箱开始订阅，更博后邮件通知！</p></form></div></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="https://www.wntool.com/logo/image.php?output=png?fsize=35&amp;font=Snow.ttf&amp;text=zronghui&amp;mirror=No&amp;color=9933FF&amp;vcolor=3333FF&amp;bgcolor=FFFFFF&amp;alpha=yes&amp;output=png&amp;spacing=5&amp;shadow=no&amp;transparent=yes&amp;icon=no&amp;iconic=&amp;top_spacing=5&amp;left_spacing=6&amp;icon_size=48" alt="zronghui的博客" height="28"></a><p class="size-small"><span>&copy; 2020 zronghui</span>  Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>,Modify by <a href="https://github.com/removeif" target="_blank">removeif</a> <br>© 版权说明：[本网站所有内容均收集于互联网或自己创作,<br>    方便于网友与自己学习交流，如有侵权，请<a href="https://zronghui.github.io/message/" target="_blank">留言</a>，立即处理]<br><script type="text/javascript" src="/js/statistics.js"></script><span id="statistic-times"></span><br></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/zronghui"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-Hans");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'https://zronghui.github.io',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back-to-top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script src="/js/gallery.js" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><script src="/js/comment-issue-data.js" defer></script><link rel="stylesheet" href="/css/insight.css"><div class="searchbox ins-search"><div class="searchbox-container ins-search-container"><div class="searchbox-input-wrapper"><input class="searchbox-input ins-search-input" type="text" placeholder="想要查找什么..."><span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span></div><div class="searchbox-result-wrapper ins-section-wrapper"><div class="ins-section-container"></div></div></div></div><script>(function (window) {
+            var INSIGHT_CONFIG = {
+                TRANSLATION: {
+                    POSTS: '文章',
+                    PAGES: '页面',
+                    CATEGORIES: '分类',
+                    TAGS: '标签',
+                    UNTITLED: '(无标题)',
+                },
+                CONTENT_URL: '/content.json',
+            };
+            window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+        })(window);</script><script src="/js/insight.js" defer></script></body></html>
