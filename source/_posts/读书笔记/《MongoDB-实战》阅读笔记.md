@@ -1,3 +1,22 @@
+---
+title: 《MongoDB 实战》阅读笔记
+toc: true
+recommend: 1
+uniqueId: '2020-11-29 14:16:13/"《MongoDB 实战》阅读笔记".html'
+date: 2020-11-29 22:16:13
+thumbnail:
+categories:
+- 读书笔记
+tags:
+keywords:
+---
+
+[TOC]
+
+<!--more-->
+
+
+
 > 图书馆借阅的书，网上也没有电子版，只能自己记了
 
 ## 困惑
@@ -97,6 +116,7 @@ explain 输出的结果的 json 中包括 totalDocsExamined 扫描的条数 inde
 
 
 ### 查看数据库状态
+
 ```shell
 # 可以在数据库或集合中使用 stats
 db.stats()
@@ -107,7 +127,6 @@ db.users.stats()
 
 
 ### 数据库 集合 文档
-
 
 
 
