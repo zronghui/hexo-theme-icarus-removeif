@@ -9,6 +9,7 @@ categories:
 - 读书笔记
 tags:
 keywords:
+top: 12
 ---
 
 [TOC]
@@ -17,7 +18,7 @@ keywords:
 
 <!--more-->
 
-## 困惑
+## 困惑|总结
 
 两阶段锁 两阶段提交
 

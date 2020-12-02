@@ -9,6 +9,7 @@ categories:
 - 读书笔记
 tags:
 keywords:
+top: 11
 ---
 
 [Redis 设计与实现 — Redis 设计与实现](http://redisbook.com/)
